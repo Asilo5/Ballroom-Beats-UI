@@ -8,7 +8,7 @@ class End extends Component {
   render() {
       return (
           <View style={styles.container}>
-            <Text>Pick Your Song</Text>
+            <Text>End, Play Again</Text>
           </View>
       )      
   }

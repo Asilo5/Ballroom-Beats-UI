@@ -8,7 +8,7 @@ class DanceType extends Component {
   render() {
       return (
           <View style={styles.container}>
-            <Text>Pick Your Song</Text>
+            <Text>Pick Your Dance Type</Text>
           </View>
       )      
   }

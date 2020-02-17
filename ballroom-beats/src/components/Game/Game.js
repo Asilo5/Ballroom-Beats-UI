@@ -8,7 +8,7 @@ class Game extends Component {
   render() {
       return (
           <View style={styles.container}>
-            <Text>Pick Your Song</Text>
+            <Text>Playing Game</Text>
           </View>
       )      
   }
