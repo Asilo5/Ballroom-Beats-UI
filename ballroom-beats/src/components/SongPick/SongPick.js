@@ -9,7 +9,21 @@ class SongPick extends Component {
   render() {
       return (
           <View style={styles.container}>
-            <Text>Pick Your Song</Text>
+            <Text style={styles.songPick}>Pick Your Song</Text>
+            <View style={styles.btnContainer}>
+                <Icon.Button style={styles.button1} 
+                    name="arrowleft" 
+                    onPress={() => this.props.navigation.navigate('DanceType')} 
+                    title="BACK">
+                    <Text style={styles.back}>Back</Text>
+                </Icon.Button>
+                <Icon.Button style={styles.button2} 
+                    name="arrowright" 
+                    onPress={() => this.props.navigation.navigate('Loader')} 
+                    title="NEXT">
+                    <Text style={styles.next}>Next</Text>
+                </Icon.Button>
+            </View>
           </View>
       )      
   }
