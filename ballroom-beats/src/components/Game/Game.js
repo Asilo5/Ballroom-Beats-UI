@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 class Game extends Component {
 
@@ -9,6 +10,15 @@ class Game extends Component {
       return (
           <View style={styles.container}>
             <Text>Playing Game</Text>
+            <View style={styles.btnContainer}>
+                <Icon.Button 
+                    style={styles.button} 
+                    name="arrowright" 
+                    onPress={() => this.props.navigation.navigate('End')} 
+                    title="Finish">
+                    <Text style={styles.quit}>Quit</Text>
+                </Icon.Button>
+             </View>
           </View>
       )      
   }
@@ -23,9 +33,23 @@ const AppNavigator = createStackNavigator({
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: 'black',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    btnContainer: {
+        flex: 2,
+        flexDirection: 'row',
+        backgroundColor: "black",
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    button: {
+        backgroundColor: 'green',
+        fontSize: 25,
+    },
+    quit: {
+        fontSize: 25,
     }
 });
 
