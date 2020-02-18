@@ -10,6 +10,15 @@ class Game extends Component {
       return (
           <View style={styles.container}>
             <Text>Playing Game</Text>
+            <View style={styles.btnContainer}>
+                <Icon.Button 
+                    style={styles.button} 
+                    name="arrowright" 
+                    onPress={() => this.props.navigation.navigate('End')} 
+                    title="Finish">
+                    <Text style={styles.quit}>Quit</Text>
+                </Icon.Button>
+             </View>
           </View>
       )      
   }
@@ -27,6 +36,20 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    btnContainer: {
+        flex: 2,
+        flexDirection: 'row',
+        backgroundColor: "black",
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    button: {
+        backgroundColor: 'green',
+        fontSize: 25,
+    },
+    quit: {
+        fontSize: 25,
     }
 });
 
