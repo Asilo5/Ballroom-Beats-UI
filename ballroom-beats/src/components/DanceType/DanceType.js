@@ -64,7 +64,37 @@ const styles = StyleSheet.create({
         fontSize: 40,
         color: 'white',
         marginBottom: 10,
-  },
+    },
+    dance: {
+        fontSize: 40,
+        color: 'white',
+        marginBottom: 10,
+    },
+    pickerContainer:{
+        // flex: 1,
+        // flexDirection: 'row',
+        margin: 10,
+        width: 175,
+        // textAlign: 'center',
+        height: 130,
+        // backgroundColor: 'white',
+        // justifyContent:'space-between',
+        // alignItems:'stretch'
+    },
+    picker: {
+        // height: 50,
+        width: 150,
+        borderColor: 'black',
+        // borderWidth: 1,
+        // backgroundColor: 'white',
+        // height:40,
+        // padding: 10,
+        // marginBottom: 10,
+    },
+    picker_text: {
+        color: 'lime',
+        fontSize: 30,
+    },
     button: {
         backgroundColor: 'green',
         fontSize: 25,
