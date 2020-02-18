@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
+import Navbar from '../Navbar/Navbar';
 
 class Game extends Component {
 
@@ -19,6 +20,7 @@ class Game extends Component {
                     <Text style={styles.quit}>Quit</Text>
                 </Icon.Button>
              </View>
+             <Navbar />
           </View>
       )      
   }

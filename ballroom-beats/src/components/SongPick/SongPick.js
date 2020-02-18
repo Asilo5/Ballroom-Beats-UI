@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
+import Navbar from '../Navbar/Navbar';
 
 class SongPick extends Component {
 
@@ -24,6 +25,7 @@ class SongPick extends Component {
                     <Text style={styles.next}>Next</Text>
                 </Icon.Button>
             </View>
+            <Navbar />
           </View>
       )      
   }

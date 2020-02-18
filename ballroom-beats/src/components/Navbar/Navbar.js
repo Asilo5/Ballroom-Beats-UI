@@ -33,7 +33,7 @@ const AppNavigator = createStackNavigator({
 const styles = StyleSheet.create({
   bottomContainer: {
     backgroundColor: 'blue',
-    bottom: 60,
+    bottom: 3,
     width: '100%',
     position: 'absolute',
   },
