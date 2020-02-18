@@ -6,6 +6,16 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import Navbar from '../Navbar/Navbar';
 
 class DanceType extends Component {
+  constructor() {
+    super()
+    this.state= {
+        PickerSelectedDance : ''
+    }
+  }
+    // method for taking value, passing down to songPick for what songs to display
+    getSelectedPickerDance = () =>{
+    
+    }
 
   render() {
       return (
@@ -16,9 +26,9 @@ class DanceType extends Component {
                     style={styles.picker}
                     itemStyle={styles.picker_text}
                     // style={{height: 30, width: 110}}
-                    selectedValue={this.state.PickerSelectedVal}
+                    selectedValue={this.state.PickerSelectedDance}
                     onValueChange={(itemValue, itemIndex) => 
-                        this.setState({PickerSelectedVal: itemValue})} >
+                        this.setState({PickerSelectedDance: itemValue})} >
                     <Picker.Item label="Beginner" value="Beginner" />
                     <Picker.Item label="Intermediate" value="Intermediate" />
                     <Picker.Item label="Advanced" value="Advanced" />
