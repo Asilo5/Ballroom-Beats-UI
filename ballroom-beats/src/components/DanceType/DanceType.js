@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Picker } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -11,6 +11,19 @@ class DanceType extends Component {
       return (
           <View style={styles.container}>
             <Text style={styles.dance}>Pick Your Dance Type</Text>
+            <View style={styles.pickerContainer}>
+                <Picker
+                    style={styles.picker}
+                    itemStyle={styles.picker_text}
+                    // style={{height: 30, width: 110}}
+                    selectedValue={this.state.PickerSelectedVal}
+                    onValueChange={(itemValue, itemIndex) => 
+                        this.setState({PickerSelectedVal: itemValue})} >
+                    <Picker.Item label="Beginner" value="Beginner" />
+                    <Picker.Item label="Intermediate" value="Intermediate" />
+                    <Picker.Item label="Advanced" value="Advanced" />
+                </Picker>
+            </View>
             <Icon.Button 
                 style={styles.button} 
                 name="arrowright" 
