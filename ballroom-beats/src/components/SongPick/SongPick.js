@@ -6,11 +6,33 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import Navbar from '../Navbar/Navbar';
 
 class SongPick extends Component {
+  constructor() {
+    super()
+    this.state={
+        PickerSelectedSong : ''
+    }
+  }
+
+      // method for taking value, passing down to songPick for what songs to display
+  getSelectedPickerSong = () =>{
+    
+  }
 
   render() {
       return (
           <View style={styles.container}>
             <Text style={styles.songPick}>Pick Your Song</Text>
+            <Picker
+                style={styles.picker}
+                itemStyle={styles.picker_text}
+                style={{height: 50, width: 110}}
+                selectedValue={this.state.PickerSelectedVal}
+                onValueChange={(itemValue, itemIndex) => 
+                    this.setState({PickerSelectedVal: itemValue})} >
+                <Picker.Item label="Song 1" value="Song 1" />
+                <Picker.Item label="Song 2" value="Song 2" />
+                <Picker.Item label="Song 3" value="Song 3" />
+            </Picker>
             <View style={styles.btnContainer}>
                 <Icon.Button style={styles.button1} 
                     name="arrowleft" 
