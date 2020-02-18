@@ -10,6 +10,13 @@ class DanceType extends Component {
       return (
           <View style={styles.container}>
             <Text style={styles.dance}>Pick Your Dance Type</Text>
+            <Icon.Button 
+                style={styles.button} 
+                name="arrowright" 
+                onPress={() => this.props.navigation.navigate('SongPick')} 
+                title="NEXT">
+                <Text style={styles.next}>Next</Text>
+            </Icon.Button>
           </View>
       )      
   }
@@ -29,8 +36,17 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     dance: {
-
+        fontSize: 40,
+        color: 'white',
+        marginBottom: 10,
+  },
+    button: {
+        backgroundColor: 'green',
+        fontSize: 25,
     },
+    next: {
+        fontSize: 25,
+    }
 });
 
 export default withNavigation(DanceType);
