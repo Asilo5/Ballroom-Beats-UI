@@ -9,7 +9,7 @@ class Home extends Component {
   render() {
       return (
           <View style={styles.container}>
-            <Text>Ballroom Beatz</Text>
+            <Text style={styles.homeHeader}>Ballroom Beatz</Text>
             <Icon.Button 
                 style={styles.button} 
                 name="arrowright" 
@@ -31,13 +31,18 @@ const AppNavigator = createStackNavigator({
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: 'black',
         alignItems: 'center',
         justifyContent: 'center',
     },
+    homeHeader: {
+        fontSize: 40,
+        color: 'white',
+        marginBottom: 25,
+  },
     button: {
-      backgroundColor: 'green',
-      fontSize: 25,
+        backgroundColor: 'green',
+        fontSize: 25,
     },
     enter: {
         fontSize: 25,
