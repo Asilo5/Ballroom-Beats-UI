@@ -9,7 +9,22 @@ class Loader extends Component {
   render() {
       return (
           <View style={styles.container}>
-            <Text>Loader</Text>
+            <Text style={styles.countDown}>....to play time</Text>
+            <View style={styles.btnContainer}>
+                <Icon.Button style={styles.button1} 
+                    name="arrowleft" 
+                    onPress={() => this.props.navigation.navigate('SongPick')} 
+                    title="BACK">
+                    <Text style={styles.back}>Back</Text>
+                </Icon.Button>
+                <Icon.Button style={styles.button2} 
+                    name="arrowright" 
+                    onPress={() => this.props.navigation.navigate('Game')} 
+                    title="NEXT">
+                    <Text style={styles.play}>Play</Text>
+                </Icon.Button>
+            </View>
+
           </View>
       )      
   }
