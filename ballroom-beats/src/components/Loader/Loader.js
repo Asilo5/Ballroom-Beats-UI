@@ -42,6 +42,30 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    countDown: {
+        fontSize: 40,
+        color: 'white',
+        marginBottom: 10,
+    },
+    btnContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: '50%',
+    },
+    button1: {
+        backgroundColor: 'green',
+        fontSize: 25,
+    },
+    play: {
+        fontSize: 25,
+    },
+    button2: {
+        backgroundColor: 'green',
+        fontSize: 25,
+    },
+    back: {
+        fontSize: 25,
     }
 });
 
