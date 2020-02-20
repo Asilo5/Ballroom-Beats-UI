@@ -5,12 +5,15 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "jest --watch --coverage=false --changedSince=origin/master",
+    "testDebug": "jest -o --watch --coverage=false",
+    "testFinal": "jest",
+    "updateSnapshots": "jest -u --coverage=false"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.6",
     "expo": "~36.0.0",
-    "jest-expo": "^36.0.1",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
@@ -26,12 +29,25 @@
     "react-test-renderer": "^16.12.0",
     "expo-av": "~8.0.0"
   },
+  "jest": {
+    "preset": "jest-expo",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/coverage/**",
+      "!**/node_modules/**",
+      "!**/babel.config.js",
+      "!**/jest.setup.js"
+   ]
+  },
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "babel-preset-expo": "~8.0.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
-    "enzyme-to-json": "^3.4.4"
+    "enzyme-to-json": "^3.4.4",
+    "jest-expo": "^36.0.1",
+    "react-test-renderer": "^16.12.0"
   },
   "private": true
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DanceFloor from '../DanceFloor/DanceFloor';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
@@ -26,9 +27,14 @@ class Game extends Component {
     }
   };
 
-  _onPlayPressed = () => {
+  _start = (sequenceTiming) => {
+    Animated.loop(
+      Animated.sequence(sequenceTiming), {iterations: -1, useNativeDriver: true}).start();
       this.backgroundMusic.playAsync();
-  };
+  }
+
+  // _onPlayPressed = () => {
+  // };
 
   _onStopPressed = () => {
       this.backgroundMusic.stopAsync();
@@ -37,54 +43,39 @@ class Game extends Component {
   render() {
       return (
         <>
-          <TouchableOpacity 
-          // onPress={this._start}
-          >
-            <Text 
-            style={styles.text}
-            onPress={this._onPlayPressed}>Start
-            </Text>
-            {/* <SongPlayer /> */}
-          </TouchableOpacity>
           <View style={styles.container}>
-            <Text>Playing Game</Text>
-            <TouchableOpacity onPress={this._onStopPressed}>
-                <View style={styles.btnContainer}>
-                    <Icon.Button 
-                        style={styles.button} 
-                        // onPress={this._onStopPressed}
-                        name="arrowright" 
-                        onPress={() => this.props.navigation.navigate('End')} 
-                        title="Finish">
-                        <Text style={styles.quit}>Quit</Text>
-                    </Icon.Button>
-                </View>
-             </TouchableOpacity>
+          <DanceFloor start={this._start}/>
+            <View style={styles.btnContainer}>
+                <TouchableOpacity>
+                  <View style={styles.btnContainer}>
+                      <Icon.Button 
+                          style={styles.button} 
+                          name="arrowright" 
+                          onPress={() => this.props.navigation.navigate('End')} 
+                          title="Finish">
+                          <Text style={styles.quit}>Quit</Text>
+                      </Icon.Button>
+                    </View>
+                 </TouchableOpacity>
+             </View>
           </View>
         </>  
-      )      
+      )
   }
-} 
+}
 
 const AppNavigator = createStackNavigator({
     Game: {
       screen: Game,
     },
 });
-  
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'black',
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    text: {
-        fontSize: 40,
-        color: "#000000",
-        fontWeight: "bold",
-        textAlign: "center",
-        margin: 20
     },
     btnContainer: {
         flex: 2,
