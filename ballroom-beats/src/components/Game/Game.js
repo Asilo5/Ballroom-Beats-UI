@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -8,18 +8,30 @@ class Game extends Component {
 
   render() {
       return (
+        <>
+          <TouchableOpacity onPress={this._start}>
+            <Text 
+            style={styles.text}
+            onPress={this._onPlayPressed}>Start
+            </Text>
+            {/* <SongPlayer /> */}
+          </TouchableOpacity>
           <View style={styles.container}>
             <Text>Playing Game</Text>
-            <View style={styles.btnContainer}>
-                <Icon.Button 
-                    style={styles.button} 
-                    name="arrowright" 
-                    onPress={() => this.props.navigation.navigate('End')} 
-                    title="Finish">
-                    <Text style={styles.quit}>Quit</Text>
-                </Icon.Button>
-             </View>
+            <TouchableOpacity onPress={this._onStopPressed}>
+                <View style={styles.btnContainer}>
+                    <Icon.Button 
+                        style={styles.button} 
+                        // onPress={this._onStopPressed}
+                        name="arrowright" 
+                        onPress={() => this.props.navigation.navigate('End')} 
+                        title="Finish">
+                        <Text style={styles.quit}>Quit</Text>
+                    </Icon.Button>
+                </View>
+             </TouchableOpacity>
           </View>
+        </>  
       )      
   }
 } 
