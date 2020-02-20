@@ -6,6 +6,28 @@ import Icon from 'react-native-vector-icons/AntDesign';
 
 class Game extends Component {
 
+  async componentDidMount() {
+    this.backgroundMusic = new Audio.Sound();
+    this.buttonFX = new Audio.Sound();
+    try {
+      await this.backgroundMusic.loadAsync(
+        require('../../../assets/Music/Black_Ant_-_01_-_Fater_Lee.mp3'),
+      );
+      await this.backgroundMusic.setIsLoopingAsync(true);
+    } catch (error) {
+       console.log("The music isn't playing")
+    }
+  }
+
+  _onPlayPressed = () => {
+      this.backgroundMusic.playAsync();
+  };
+
+  _onStopPressed = () => {
+      this.backgroundMusic.stopAsync();
+  };
+
+
   render() {
       return (
         <>
