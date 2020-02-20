@@ -1,15 +1,40 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Picker } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
+import Navbar from '../Navbar/Navbar';
 
 class SongPick extends Component {
+  constructor() {
+    super()
+    this.state={
+        PickerSelectedSong : ''
+    }
+  }
+
+      // method for taking value, passing down to songPick for what songs to display
+  getSelectedPickerSong = () =>{
+    
+  }
 
   render() {
       return (
           <View style={styles.container}>
             <Text style={styles.songPick}>Pick Your Song</Text>
+            <View style={styles.pickerContainer}>
+            <Picker
+                style={styles.picker}
+                itemStyle={styles.picker_text}
+                style={{height: 50, width: 110}}
+                selectedValue={this.state.PickerSelectedVal}
+                onValueChange={(itemValue, itemIndex) => 
+                    this.setState({PickerSelectedVal: itemValue})} >
+                <Picker.Item label="Song 1" value="Song 1" />
+                <Picker.Item label="Song 2" value="Song 2" />
+                <Picker.Item label="Song 3" value="Song 3" />
+            </Picker>
+            </View>
             <View style={styles.btnContainer}>
                 <Icon.Button style={styles.button1} 
                     name="arrowleft" 
@@ -24,6 +49,7 @@ class SongPick extends Component {
                     <Text style={styles.next}>Next</Text>
                 </Icon.Button>
             </View>
+            <Navbar />
           </View>
       )      
   }
@@ -45,7 +71,21 @@ const styles = StyleSheet.create({
     songPick: {
         fontSize: 40,
         color: 'white',
-        marginBottom: 10,
+    },
+    pickerContainer:{
+        width: 200,
+        height: 138,
+        overflow: 'hidden',
+        // backgroundColor: 'white',
+    },
+    picker: {
+        // overflow: 'hidden',
+        // width: 150,
+    },
+    picker_text: {
+        color: 'lime',
+        fontSize: 30,
+        fontWeight: 'bold',
     },
     btnContainer: {
         flexDirection: 'row',

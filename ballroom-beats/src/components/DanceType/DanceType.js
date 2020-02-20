@@ -1,15 +1,39 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Picker } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
+import Navbar from '../Navbar/Navbar';
 
 class DanceType extends Component {
+  constructor() {
+    super()
+    this.state= {
+        PickerSelectedDance : ''
+    }
+  }
+    // method for taking value, passing down to songPick for what songs to display
+    getSelectedPickerDance = () =>{
+    
+    }
 
   render() {
       return (
           <View style={styles.container}>
             <Text style={styles.dance}>Pick Your Dance Type</Text>
+            <View style={styles.pickerContainer}>
+                <Picker
+                    style={styles.picker}
+                    itemStyle={styles.picker_text}
+                    // style={{height: 30, width: 110}}
+                    selectedValue={this.state.PickerSelectedDance}
+                    onValueChange={(itemValue, itemIndex) => 
+                        this.setState({PickerSelectedDance: itemValue})} >
+                    <Picker.Item label="Beginner" value="Beginner" />
+                    <Picker.Item label="Intermediate" value="Intermediate" />
+                    <Picker.Item label="Advanced" value="Advanced" />
+                </Picker>
+            </View>
             <Icon.Button 
                 style={styles.button} 
                 name="arrowright" 
@@ -17,6 +41,7 @@ class DanceType extends Component {
                 title="NEXT">
                 <Text style={styles.next}>Next</Text>
             </Icon.Button>
+            <Navbar />
           </View>
       )      
   }
@@ -39,7 +64,28 @@ const styles = StyleSheet.create({
         fontSize: 40,
         color: 'white',
         marginBottom: 10,
-  },
+    },
+    dance: {
+        fontSize: 40,
+        color: 'white',
+    },
+    pickerContainer:{
+        width: 200,
+        height: 148,
+        overflow: 'hidden',
+        // backgroundColor: 'white',
+    },
+    picker: {
+      // backgroundColor: 'white',
+        // height: 100,
+        // overflow: 'hidden',
+        // width: 150,
+    },
+    picker_text: {
+        color: 'lime',
+        fontWeight: 'bold',
+        fontSize: 30,
+    },
     button: {
         backgroundColor: 'green',
         fontSize: 25,
