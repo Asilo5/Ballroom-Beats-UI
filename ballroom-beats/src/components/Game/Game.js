@@ -18,7 +18,7 @@ class Game extends Component {
           <View style={styles.container}>
             <Text>Playing Game</Text>
             <View style={styles.btnContainer}>
-              <DanceFloor start={this._start}/>
+              <DanceFloor start={this._start}/> 
                 <Icon.Button
                     style={styles.button}
                     name="arrowright"
@@ -43,6 +43,7 @@ const AppNavigator = createStackNavigator({
 
 const styles = StyleSheet.create({
     container: {
+        // display: 'flex',
         flex: 1,
         backgroundColor: 'black',
         alignItems: 'center',
@@ -50,10 +51,10 @@ const styles = StyleSheet.create({
     },
     btnContainer: {
         flex: 2,
-        flexDirection: 'row',
+        // flexDirection: 'row',
         backgroundColor: "black",
-        alignItems: "center",
-        justifyContent: "center"
+        // alignItems: "center",
+        // justifyContent: "center"
     },
     button: {
         backgroundColor: 'green',

@@ -5,11 +5,11 @@ import {
   Text,
   View,
   StyleSheet,
-  Animated,
+  Animated, 
   Easing,
   TouchableOpacity
 } from "react-native";
-
+ 
 
 export default class DanceFloor extends Component {
   state = {

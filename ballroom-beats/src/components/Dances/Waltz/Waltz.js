@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {
   Text,
   View,
-  StyleSheet,
+  StyleSheet, 
   Animated,
   Easing,
   TouchableOpacity
@@ -53,18 +53,18 @@ export default class Waltz extends Component {
   }
 
   countUp = (num) => {
-    const subCounterList = [...this.state.counters]
+    const subCounterList = [...this.state.counters];
 
-    subCounterList[num]++
+    subCounterList[num]++;
 
-    this.setState({counters: subCounterList})
+    this.setState({counters: subCounterList});
   }
 
 
   // generateNumberCounts = () => {
   //   return this.state.counters.map((counter, i) => {
   //     return (
-  //       <Text key={i} style={styles.text}>{counter.toString()}</Text>
+  //       <Text key={i} style={styles.startText}>{counter.toString()}</Text>
   //     )
   //   })
   // }
@@ -72,12 +72,12 @@ export default class Waltz extends Component {
   generateNumberCounts = () => {
       return (
         <>
-          <Text key={0} style={styles.text}>{this.state.counters[0].toString()}</Text>
-          <Text key={1} style={styles.text}>{this.state.counters[1].toString()}</Text>
-          <Text key={2} style={styles.text}>{this.state.counters[2].toString()}</Text>
-          <Text key={3} style={styles.text}>{this.state.counters[3].toString()}</Text>
-          <Text key={4} style={styles.text}>{this.state.counters[4].toString()}</Text>
-          <Text key={5} style={styles.text}>{this.state.counters[5].toString()}</Text>
+          <Text key={0} style={styles.startText}>{this.state.counters[0].toString()}</Text>
+          <Text key={1} style={styles.startText}>{this.state.counters[1].toString()}</Text>
+          <Text key={2} style={styles.startText}>{this.state.counters[2].toString()}</Text>
+          <Text key={3} style={styles.startText}>{this.state.counters[3].toString()}</Text>
+          <Text key={4} style={styles.startText}>{this.state.counters[4].toString()}</Text>
+          <Text key={5} style={styles.startText}>{this.state.counters[5].toString()}</Text>
         </>
       )
 
@@ -236,19 +236,19 @@ export default class Waltz extends Component {
 
   render() {
     return (
-      <>
+      <View style={styles.waltzComponent}>
         <TouchableOpacity
           style={styles.start}
           onPress={()=> this.props.start(this.generateTiming())}>
-          <Text style={styles.text}>Start</Text>
+          <Text style={styles.startText}>Start</Text>
         </TouchableOpacity>
-        <View style={styles.numberView}>
+        {/* <View style={styles.numberView}>
           {this.generateNumberCounts()}
-        </View>
+        </View> */}
         <View style={styles.stepsContainer}>
           {this.generateViews()}
         </View>
-      </>
+      </View>
     );
   }
 }
@@ -256,33 +256,34 @@ export default class Waltz extends Component {
 const styles = StyleSheet.create({
   stepsContainer: {
     display: "flex",
-    flex: 2,
     flexDirection: "row",
-    backgroundColor: "#FFF",
+    backgroundColor: "blue",
     alignItems: "center",
     justifyContent: "space-around",
     padding: 10,
   },
   numberView: {
-    display: "flex",
-    flex: 1,
-    flexDirection: "row",
+    // display: "flex",
+    // flex: 1,
+    // flexDirection: "row",
     backgroundColor: "#FFF",
-    alignItems: "center",
-    justifyContent: "center",
+    // alignItems: "center",
+    // justifyContent: "center",
     margin: 10,
   },
-  text: {
-    fontSize: 20,
+  startText: {
+    fontSize: 30,
     color: "#000000",
     fontWeight: "bold",
     textAlign: "center",
     margin: 10
   },
   start: {
-    flex: 1,
-    fontSize: 10,
-    backgroundColor: 'white',
-    margin: 10,
-  },
+    backgroundColor: '#1CE61C',
+    color: '#ffff',
+    margin: 30,
+    width: '50%',
+    left: 65,
+    borderRadius: 50
+  }
 });
