@@ -61,39 +61,177 @@ export default class Waltz extends Component {
   }
 
 
+  // generateNumberCounts = () => {
+  //   return this.state.counters.map((counter, i) => {
+  //     return (
+  //       <Text key={i} style={styles.text}>{counter.toString()}</Text>
+  //     )
+  //   })
+  // }
+
   generateNumberCounts = () => {
-    return this.state.counters.map((counter, i) => {
       return (
-        <Text key={i} style={styles.text}>{counter.toString()}</Text>
+        <>
+          <Text key={0} style={styles.text}>{this.state.counters[0].toString()}</Text>
+          <Text key={1} style={styles.text}>{this.state.counters[1].toString()}</Text>
+          <Text key={2} style={styles.text}>{this.state.counters[2].toString()}</Text>
+          <Text key={3} style={styles.text}>{this.state.counters[3].toString()}</Text>
+          <Text key={4} style={styles.text}>{this.state.counters[4].toString()}</Text>
+          <Text key={5} style={styles.text}>{this.state.counters[5].toString()}</Text>
+        </>
       )
-    })
+
   }
+
+  // generateViews = () => {
+  //   const colors = ["#F60091", "#F6811F", "#FFEB00", "#71C043", "#03ABF0", "#6F2C8F"]
+  //   return this.state.counters.map((counter, i) => {
+  //     return (
+  //       <TouchableOpacity onPress={() => {this.countUp(i)}} key={i}>
+  //         <Animated.View
+  //           style={{
+  //             transform: [
+  //               {
+  //                 scaleX: this.state.pulses[i]
+  //               },
+  //               {
+  //                 scaleY: this.state.pulses[i]
+  //               }
+  //             ],
+  //             margin: 20,
+  //             borderWidth: 10,
+  //             borderColor: `${colors[i]}`,
+  //             borderRadius: 10,
+  //           }}
+  //         />
+  //         <Animated.View />
+  //       </TouchableOpacity>
+  //     )
+  //   })
+  // }
 
   generateViews = () => {
     const colors = ["#F60091", "#F6811F", "#FFEB00", "#71C043", "#03ABF0", "#6F2C8F"]
-    return this.state.counters.map((counter, i) => {
+
       return (
-        <TouchableOpacity onPress={() => {this.countUp(i)}} key={i}>
+        <>
+        <TouchableOpacity onPress={() => {this.countUp(0)}} key={0}>
           <Animated.View
             style={{
               transform: [
                 {
-                  scaleX: this.state.pulses[i]
+                  scaleX: this.state.pulses[0]
                 },
                 {
-                  scaleY: this.state.pulses[i]
+                  scaleY: this.state.pulses[0]
                 }
               ],
               margin: 20,
               borderWidth: 10,
-              borderColor: `${colors[i]}`,
+              borderColor: "#F60091",
               borderRadius: 10,
             }}
           />
           <Animated.View />
         </TouchableOpacity>
+        <TouchableOpacity onPress={() => {this.countUp(1)}} key={1}>
+          <Animated.View
+            style={{
+              transform: [
+                {
+                  scaleX: this.state.pulses[1]
+                },
+                {
+                  scaleY: this.state.pulses[1]
+                }
+              ],
+              margin: 20,
+              borderWidth: 10,
+              borderColor: "#F6811F",
+              borderRadius: 10,
+            }}
+          />
+          <Animated.View />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {this.countUp(2)}} key={2}>
+          <Animated.View
+            style={{
+              transform: [
+                {
+                  scaleX: this.state.pulses[2]
+                },
+                {
+                  scaleY: this.state.pulses[2]
+                }
+              ],
+              margin: 20,
+              borderWidth: 10,
+              borderColor: "#FFEB00",
+              borderRadius: 10,
+            }}
+          />
+          <Animated.View />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {this.countUp(3)}} key={3}>
+          <Animated.View
+            style={{
+              transform: [
+                {
+                  scaleX: this.state.pulses[3]
+                },
+                {
+                  scaleY: this.state.pulses[3]
+                }
+              ],
+              margin: 20,
+              borderWidth: 10,
+              borderColor: "#71C043",
+              borderRadius: 10,
+            }}
+          />
+          <Animated.View />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {this.countUp(4)}} key={4}>
+          <Animated.View
+            style={{
+              transform: [
+                {
+                  scaleX: this.state.pulses[4]
+                },
+                {
+                  scaleY: this.state.pulses[4]
+                }
+              ],
+              margin: 20,
+              borderWidth: 10,
+              borderColor: "#03ABF0",
+              borderRadius: 10,
+            }}
+          />
+          <Animated.View />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {this.countUp(5)}} key={5}>
+          <Animated.View
+            style={{
+              transform: [
+                {
+                  scaleX: this.state.pulses[5]
+                },
+                {
+                  scaleY: this.state.pulses[5]
+                }
+              ],
+              margin: 20,
+              borderWidth: 10,
+              borderColor: "#6F2C8F",
+              borderRadius: 10,
+            }}
+          />
+          <Animated.View />
+        </TouchableOpacity>
+        </>
       )
-    })
+
   }
 
   render() {
