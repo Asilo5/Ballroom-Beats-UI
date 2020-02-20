@@ -40,6 +40,11 @@ class Game extends Component {
       this.backgroundMusic.stopAsync();
   };
 
+  _onQuitPress = () => {
+    this.backgroundMusic.stopAsync();
+    this.props.navigation.navigate('End');
+  };
+
   render() {
       return (
         <>
@@ -51,7 +56,7 @@ class Game extends Component {
                       <Icon.Button 
                           style={styles.button} 
                           name="arrowright" 
-                          onPress={() => this.props.navigation.navigate('End')} 
+                          onPress={this._onQuitPress} 
                           title="Finish">
                           <Text style={styles.quit}>Quit</Text>
                       </Icon.Button>
