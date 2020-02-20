@@ -277,8 +277,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#1CE61C',
     color: '#ffff',
     margin: 30,
-    width: '50%',
-    left: 65,
+    width: '80%',
     borderRadius: 50
   }
 });
