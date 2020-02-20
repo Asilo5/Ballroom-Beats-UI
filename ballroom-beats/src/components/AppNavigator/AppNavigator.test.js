@@ -9,4 +9,4 @@ describe('AppNavigator', () => {
     expect(appNav).toMatchSnapshot();
    });
 
-});
+}); 

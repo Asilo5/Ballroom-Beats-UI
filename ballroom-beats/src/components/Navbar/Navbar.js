@@ -12,7 +12,7 @@ class Navbar extends Component {
           </View>
       )      
   }
-}; 
+};  
 
 const AppNavigator = createStackNavigator({
     Navbar: {

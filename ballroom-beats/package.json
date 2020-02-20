@@ -13,13 +13,14 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.6",
+    "@react-navigation/stack": "^5.0.0-alpha.71",
     "expo": "~36.0.0",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
     "react-native-gesture-handler": "~1.5.0",
     "react-native-reanimated": "~1.4.0",
-    "react-native-safe-area-context": "0.6.0",
+    "react-native-safe-area-context": "^0.6.0",
     "react-native-screens": "2.0.0-alpha.12",
     "react-native-swipe-gestures": "^1.0.4",
     "react-native-vector-icons": "^6.6.0",
@@ -29,6 +30,9 @@
   },
   "jest": {
     "preset": "jest-expo",
+  "transformIgnorePatterns": [
+    "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base)"
+  ],
     "collectCoverage": true,
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
@@ -36,14 +40,11 @@
       "!**/node_modules/**",
       "!**/babel.config.js",
       "!**/jest.setup.js"
-   ]
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "babel-preset-expo": "~8.0.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "enzyme-to-json": "^3.4.4",
     "jest-expo": "^36.0.1",
     "react-test-renderer": "^16.12.0"
   },
