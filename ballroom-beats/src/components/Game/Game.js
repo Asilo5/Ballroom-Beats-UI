@@ -4,14 +4,21 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { Audio } from 'expo-av';
+
+
 class Game extends Component {
 
   async componentDidMount() {
     this.backgroundMusic = new Audio.Sound();
     this.buttonFX = new Audio.Sound();
+    // const source = {
+    //     uri: "https://open.spotify.com/album/5MsJK0kqiYIJDmd3cjkGMn?highlight=spotify:track:3KzgdYUlqV6TOG7JCmx2Wg"
+    //   }
+ 
     try {
+      // await this.backgroundMusic.loadAsync(source);
       await this.backgroundMusic.loadAsync(
-        require('../../../assets/Music/Black_Ant_-_01_-_Fater_Lee.mp3'),
+        require('../../../assets/Music/Jahzzar_-_05_-_Siesta.mp3'),
       );
       await this.backgroundMusic.setIsLoopingAsync(true);
     } catch (error) {
