@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
-
+import { Audio } from 'expo-av';
 class Game extends Component {
 
   async componentDidMount() {
@@ -17,7 +17,7 @@ class Game extends Component {
     } catch (error) {
        console.log("The music isn't playing")
     }
-  }
+  };
 
   _onPlayPressed = () => {
       this.backgroundMusic.playAsync();
@@ -27,11 +27,12 @@ class Game extends Component {
       this.backgroundMusic.stopAsync();
   };
 
-
   render() {
       return (
         <>
-          <TouchableOpacity onPress={this._start}>
+          <TouchableOpacity 
+          // onPress={this._start}
+          >
             <Text 
             style={styles.text}
             onPress={this._onPlayPressed}>Start
@@ -70,6 +71,13 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    text: {
+        fontSize: 40,
+        color: "#000000",
+        fontWeight: "bold",
+        textAlign: "center",
+        margin: 20
     },
     btnContainer: {
         flex: 2,
