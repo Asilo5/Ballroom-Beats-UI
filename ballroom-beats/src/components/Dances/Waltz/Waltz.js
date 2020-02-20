@@ -84,7 +84,7 @@ export default class Waltz extends Component {
                   scaleY: this.state.pulses[i]
                 }
               ],
-              margin: 10,
+              margin: 20,
               borderWidth: 10,
               borderColor: `${colors[i]}`,
               borderRadius: 10,
@@ -99,13 +99,15 @@ export default class Waltz extends Component {
   render() {
     return (
       <>
-        <TouchableOpacity onPress={this..props.start(this.generateTiming())}>
+        <TouchableOpacity
+          style={styles.start}
+          onPress={()=> this.props.start(this.generateTiming())}>
           <Text style={styles.text}>Start</Text>
         </TouchableOpacity>
         <View style={styles.numberView}>
           {this.generateNumberCounts()}
         </View>
-        <View style={styles.container1}>
+        <View style={styles.stepsContainer}>
           {this.generateViews()}
         </View>
       </>
@@ -114,13 +116,14 @@ export default class Waltz extends Component {
 }
 
 const styles = StyleSheet.create({
-  container1: {
+  stepsContainer: {
     display: "flex",
-    flex: 1,
+    flex: 2,
     flexDirection: "row",
     backgroundColor: "#FFF",
     alignItems: "center",
-    justifyContent: "space-around"
+    justifyContent: "space-around",
+    padding: 10,
   },
   numberView: {
     display: "flex",
@@ -128,7 +131,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#FFF",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    margin: 10,
   },
   text: {
     fontSize: 20,
@@ -136,5 +140,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     margin: 10
-  }
+  },
+  start: {
+    flex: 1,
+    fontSize: 10,
+    backgroundColor: 'white',
+    margin: 10,
+  },
 });

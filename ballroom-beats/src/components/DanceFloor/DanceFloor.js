@@ -22,6 +22,7 @@ export default class DanceFloor extends Component {
       return (
         <Waltz
         start={this.props.start}
+        style={styles.container1}
         />
       )
     }
@@ -35,8 +36,13 @@ export default class DanceFloor extends Component {
 
   render() {
     return (
-      (chooseDance())
-    }
+      <>
+        {this.chooseDance()}
+      </>
+    )
+  }
+
+}
 
 const styles = StyleSheet.create({
   container1: {
@@ -47,19 +53,4 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-around"
   },
-  numberView: {
-    display: "flex",
-    flex: 1,
-    flexDirection: "row",
-    backgroundColor: "#FFF",
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  text: {
-    fontSize: 20,
-    color: "#000000",
-    fontWeight: "bold",
-    textAlign: "center",
-    margin: 10
-  }
 });
