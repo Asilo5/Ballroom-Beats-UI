@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DanceFloor from '../DanceFloor/DanceFloor.js'
-import { View, Text, StyleSheet, Animated, Easing, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Animated, Easing, TouchableOpacity, Button } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -19,13 +19,11 @@ class Game extends Component {
             <Text>Playing Game</Text>
             <View style={styles.btnContainer}>
               <DanceFloor start={this._start}/> 
-                <Icon.Button
+                <TouchableOpacity  
                     style={styles.button}
-                    name="arrowright"
-                    onPress={() => this.props.navigation.navigate('End')}
-                    title="Finish">
+                    onPress={() => this.props.navigation.navigate('End')}>
                     <Text style={styles.quit}>Quit</Text>
-                </Icon.Button>
+                </TouchableOpacity>
              </View>
              <Navbar />
           </View>
@@ -43,7 +41,6 @@ const AppNavigator = createStackNavigator({
 
 const styles = StyleSheet.create({
     container: {
-        // display: 'flex',
         flex: 1,
         backgroundColor: 'black',
         alignItems: 'center',
@@ -51,17 +48,21 @@ const styles = StyleSheet.create({
     },
     btnContainer: {
         flex: 2,
-        // flexDirection: 'row',
         backgroundColor: "black",
-        // alignItems: "center",
-        // justifyContent: "center"
     },
     button: {
-        backgroundColor: 'green',
-        fontSize: 25,
+        backgroundColor: '#D00000',
+        color: '#ffff',
+        margin: 30,
+        // width: '50%',
+        borderRadius: 50
     },
     quit: {
-        fontSize: 25,
+        fontSize: 30,
+        color: "#000000",
+        fontWeight: "bold",
+        textAlign: "center",
+        padding: 10
     }
 });
 

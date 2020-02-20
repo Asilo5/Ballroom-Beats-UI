@@ -263,12 +263,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   numberView: {
-    // display: "flex",
-    // flex: 1,
-    // flexDirection: "row",
     backgroundColor: "#FFF",
-    // alignItems: "center",
-    // justifyContent: "center",
     margin: 10,
   },
   startText: {
@@ -276,7 +271,7 @@ const styles = StyleSheet.create({
     color: "#000000",
     fontWeight: "bold",
     textAlign: "center",
-    margin: 10
+    padding: 10
   },
   start: {
     backgroundColor: '#1CE61C',
