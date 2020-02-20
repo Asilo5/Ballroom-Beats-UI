@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DanceFloor from '../DanceFloor/DanceFloor';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Animated, Easing, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';

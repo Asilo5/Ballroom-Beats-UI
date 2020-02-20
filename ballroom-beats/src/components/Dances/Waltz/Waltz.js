@@ -118,16 +118,16 @@ export default class Waltz extends Component {
 const styles = StyleSheet.create({
   stepsContainer: {
     display: "flex",
-    flex: 2,
+    flex: 5,
     flexDirection: "row",
-    backgroundColor: "#FFF",
+    backgroundColor: "black",
     alignItems: "center",
     justifyContent: "space-around",
     padding: 10,
   },
   numberView: {
     display: "flex",
-    flex: 1,
+    flex: 0,
     flexDirection: "row",
     backgroundColor: "#FFF",
     alignItems: "center",
@@ -142,12 +142,10 @@ const styles = StyleSheet.create({
     margin: 10
   },
   start: {
-    text: {
     fontSize: 40,
-    color: "#000000",
+    backgroundColor: "green",
     fontWeight: "bold",
     textAlign: "center",
     margin: 20,
-  }
   },
 });
