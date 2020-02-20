@@ -1,6 +1,6 @@
 import React from 'react';
 import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from '@react-navigation/stack';
+// import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../Home/Home';
 import DanceType from '../DanceType/DanceType';
 import SongPick from '../SongPick/SongPick';
@@ -9,41 +9,41 @@ import Game from '../Game/Game';
 import End from '../End/End';
 
 
-// const AppNavigator = createAppContainer({
-//     Home: Home,
-//     DanceType: DanceType,
-//     SongPick: SongPick,
-//     Loader: Loader,
-//     Game: Game,
-//     End: End
-// },
-// {
-//   initialRouteName: 'Home',
-// }
-// );
-
-// export default class App extends React.Component {
-//   render() {
-//     return <AppNavigator />;
-//   }
-// };
+const AppNavigator = createAppContainer({
+    Home: Home,
+    DanceType: DanceType,
+    SongPick: SongPick,
+    Loader: Loader,
+    Game: Game,
+    End: End
+},
+{
+  initialRouteName: 'Home',
+}
+);
 
 export default class App extends React.Component {
   render() {
     return <AppNavigator />;
   }
-}
+};
 
-const AuthenticationNavigator = createStackNavigator({
-  Home: Home,
-  DanceType: DanceType,
-  SongPick: SongPick,
-  Loader: Loader,
-  Game: Game,
-  End: End
-  },
-  {
-  initialRouteName: 'Home',
-});
+// export default class App extends React.Component {
+//   render() {
+//     return <AppNavigator />;
+//   }
+// }
 
-const AppNavigator = createAppContainer(AuthenticationNavigator);
+// const AuthenticationNavigator = createStackNavigator({
+//   Home: Home,
+//   DanceType: DanceType,
+//   SongPick: SongPick,
+//   Loader: Loader,
+//   Game: Game,
+//   End: End
+//   },
+//   {
+//   initialRouteName: 'Home',
+// });
+
+// const AppNavigator = createAppContainer(AuthenticationNavigator);

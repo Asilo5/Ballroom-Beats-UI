@@ -1,12 +1,12 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Navbar from '../Navbar/Navbar';
+import { shallow } from 'enzyme';
 
 describe('Navbar', () => {
 
    it('should match snapshot', () => {
-    const navbar = renderer.create(<Navbar />).toJSON();
-    expect(navbar).toMatchSnapshot();
+     const wrapper = shallow(<Navbar />);
+     expect(wrapper).toMatchSnapshot();
    });
 
 });
