@@ -5,11 +5,11 @@ import {
   Text,
   View,
   StyleSheet,
-  Animated,
+  Animated, 
   Easing,
   TouchableOpacity
 } from "react-native";
-
+ 
 
 export default class DanceFloor extends Component {
   state = {
@@ -46,11 +46,11 @@ export default class DanceFloor extends Component {
 
 const styles = StyleSheet.create({
   container1: {
-    display: "flex",
-    flex: 1,
-    flexDirection: "row",
-    backgroundColor: "#FFF",
-    alignItems: "center",
-    justifyContent: "space-around"
+    // display: "flex",
+    // flex: 1,
+    // flexDirection: "row",
+    // backgroundColor: "#FFF",
+    // alignItems: "center",
+    // justifyContent: "space-around"
   },
 });

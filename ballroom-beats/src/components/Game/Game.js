@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import DanceFloor from '../DanceFloor/DanceFloor';
-import { Text, View, StyleSheet, Animated, Easing, TouchableOpacity } from 'react-native';
+import DanceFloor from '../DanceFloor/DanceFloor'
+import { View, Text, StyleSheet, Animated, Easing, TouchableOpacity, Button } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -50,17 +50,12 @@ class Game extends Component {
           <View style={styles.container}>
           <DanceFloor start={this._start}/>
             <View style={styles.btnContainer}>
-                <TouchableOpacity>
-                  <View style={styles.btnContainer}>
-                      <Icon.Button 
-                          style={styles.button} 
-                          name="arrowright" 
-                          onPress={this._onQuitPress} 
-                          title="Finish">
-                          <Text style={styles.quit}>Quit</Text>
-                      </Icon.Button>
-                    </View>
-                 </TouchableOpacity>
+              <DanceFloor start={this._start}/> 
+                <TouchableOpacity  
+                    style={styles.button}
+                    onPress={() => this.props.navigation.navigate('End')}>
+                    <Text style={styles.quit}>Quit</Text>
+                </TouchableOpacity>
              </View>
           </View>
         </>  
@@ -83,17 +78,20 @@ const styles = StyleSheet.create({
     },
     btnContainer: {
         flex: 2,
-        flexDirection: 'row',
         backgroundColor: "black",
-        alignItems: "center",
-        justifyContent: "center"
     },
     button: {
-        backgroundColor: 'green',
-        fontSize: 25,
+        backgroundColor: '#D00000',
+        color: '#ffff',
+        margin: 30,
+        borderRadius: 50
     },
     quit: {
-        fontSize: 25,
+        fontSize: 30,
+        color: "#000000",
+        fontWeight: "bold",
+        textAlign: "center",
+        padding: 10
     }
 });
 
