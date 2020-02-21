@@ -6,19 +6,13 @@ import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { Audio } from 'expo-av';
 
-
 class Game extends Component {
 
   async componentDidMount() {
     this.backgroundMusic = new Audio.Sound();
-    // const source = {
-    //     uri: "https://open.spotify.com/album/5MsJK0kqiYIJDmd3cjkGMn?highlight=spotify:track:3KzgdYUlqV6TOG7JCmx2Wg"
-    //   }
- 
     try {
-      // await this.backgroundMusic.loadAsync(source);
       await this.backgroundMusic.loadAsync(
-        require('../../../assets/Music/Jahzzar_-_05_-_Siesta.mp3'),
+        require('../../../assets/Music/17 - Beyond the Sea.mp3'),
       );
       await this.backgroundMusic.setIsLoopingAsync(true);
     } catch (error) {
@@ -31,9 +25,6 @@ class Game extends Component {
       Animated.sequence(sequenceTiming), {iterations: -1, useNativeDriver: true}).start();
       this.backgroundMusic.playAsync();
   }
-
-  // _onPlayPressed = () => {
-  // };
 
   _onStopPressed = () => {
       this.backgroundMusic.stopAsync();
@@ -50,10 +41,9 @@ class Game extends Component {
           <View style={styles.container}>
           <DanceFloor start={this._start}/>
             <View style={styles.btnContainer}>
-              <DanceFloor start={this._start}/> 
                 <TouchableOpacity  
                     style={styles.button}
-                    onPress={() => this.props.navigation.navigate('End')}>
+                    onPress={this._onQuitPress}>
                     <Text style={styles.quit}>Quit</Text>
                 </TouchableOpacity>
              </View>
