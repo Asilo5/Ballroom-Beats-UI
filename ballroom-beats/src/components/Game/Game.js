@@ -11,7 +11,6 @@ class Game extends Component {
 
   async componentDidMount() {
     this.backgroundMusic = new Audio.Sound();
-    this.buttonFX = new Audio.Sound();
     // const source = {
     //     uri: "https://open.spotify.com/album/5MsJK0kqiYIJDmd3cjkGMn?highlight=spotify:track:3KzgdYUlqV6TOG7JCmx2Wg"
     //   }
