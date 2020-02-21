@@ -12,7 +12,7 @@ class Game extends Component {
     this.backgroundMusic = new Audio.Sound();
     try {
       await this.backgroundMusic.loadAsync(
-        require('../../../assets/Music/17 - Beyond the Sea.mp3'),
+        require('../../../assets/Music/Beyond_-_the_-_Sea.mp3'),
       );
       await this.backgroundMusic.setIsLoopingAsync(true);
     } catch (error) {
