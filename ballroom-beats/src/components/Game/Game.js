@@ -13,12 +13,12 @@ class Game extends Component {
     this.backgroundMusic = new Audio.Sound();
     // const source = {
     //     uri: "https://open.spotify.com/album/5MsJK0kqiYIJDmd3cjkGMn?highlight=spotify:track:3KzgdYUlqV6TOG7JCmx2Wg"
-    //   }
+    //   }spotify:track:3KzgdYUlqV6TOG7JCmx2Wg
  
     try {
       // await this.backgroundMusic.loadAsync(source);
       await this.backgroundMusic.loadAsync(
-        require('../../../assets/Music/Jahzzar_-_05_-_Siesta.mp3'),
+        require('../../../assets/Music/17 - Beyond the Sea.mp3'),
       );
       await this.backgroundMusic.setIsLoopingAsync(true);
     } catch (error) {
