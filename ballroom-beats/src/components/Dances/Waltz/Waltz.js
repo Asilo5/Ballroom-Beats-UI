@@ -5,7 +5,8 @@ import {
   StyleSheet, 
   Animated,
   Easing,
-  TouchableOpacity
+  TouchableOpacity,
+  ImageBackground
 } from "react-native";
 
 export default class Waltz extends Component {
@@ -245,9 +246,9 @@ export default class Waltz extends Component {
         {/* <View style={styles.numberView}>
           {this.generateNumberCounts()}
         </View> */}
-        <View style={styles.stepsContainer}>
+        <ImageBackground source={'https://images.unsplash.com/photo-1532452119098-a3650b3c46d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'} style={styles.stepsContainer}>
           {this.generateViews()}
-        </View>
+        </ImageBackground> 
       </View>
     );
   }
@@ -257,7 +258,7 @@ const styles = StyleSheet.create({
   stepsContainer: {
     display: "flex",
     flexDirection: "row",
-    backgroundColor: "blue",
+    // backgroundColor: "blue",
     alignItems: "center",
     justifyContent: "space-around",
     padding: 10,

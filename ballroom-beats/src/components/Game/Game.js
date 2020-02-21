@@ -54,7 +54,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#D00000',
         color: '#ffff',
         margin: 30,
-        // width: '50%',
         borderRadius: 50
     },
     quit: {
