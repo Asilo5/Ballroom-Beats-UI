@@ -6,15 +6,13 @@ import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { Audio } from 'expo-av';
 
-
 class Game extends Component {
 
   async componentDidMount() {
-    this.backgroundMusic = new Audio.Sound()
- 
+    this.backgroundMusic = new Audio.Sound();
     try {
       await this.backgroundMusic.loadAsync(
-        require('../../../assets/Music/Jahzzar_-_05_-_Siesta.mp3'),
+        require('../../../assets/Music/17 - Beyond the Sea.mp3'),
       );
       await this.backgroundMusic.setIsLoopingAsync(true);
     } catch (error) {
