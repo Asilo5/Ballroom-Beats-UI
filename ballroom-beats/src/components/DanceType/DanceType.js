@@ -16,24 +16,22 @@ class DanceType extends Component {
     getSelectedPickerDance = () =>{
     
     }
-
+// Lets try not to use redux. Instead pass dance type to song pick to measure the difficulty of song that is available
   render() {
       return (
           <View style={styles.container}>
             <Text style={styles.dance}>Pick Your Dance Type</Text>
-            <View style={styles.pickerContainer}>
                 <Picker
                     style={styles.picker}
                     itemStyle={styles.picker_text}
-                    // style={{height: 30, width: 110}}
                     selectedValue={this.state.PickerSelectedDance}
                     onValueChange={(itemValue, itemIndex) => 
                         this.setState({PickerSelectedDance: itemValue})} >
-                    <Picker.Item label="Beginner" value="Beginner" />
-                    <Picker.Item label="Intermediate" value="Intermediate" />
-                    <Picker.Item label="Advanced" value="Advanced" />
+                    <Picker.Item label="--Pick a Dance--" value="" />
+                    <Picker.Item label="Beginner: Waltz" value="Waltz" />
+                    <Picker.Item label="Intermediate: Bachata" value="Bachata" />
+                    <Picker.Item label="Advanced: Swing" value="Swing" />
                 </Picker>
-            </View>
             <Icon.Button 
                 style={styles.button} 
                 name="arrowright" 
@@ -65,23 +63,21 @@ const styles = StyleSheet.create({
         color: 'white',
         marginBottom: 10,
     },
-    dance: {
-        fontSize: 40,
-        color: 'white',
-    },
-    pickerContainer:{
-        width: 200,
-        height: 148,
-        overflow: 'hidden',
-        // backgroundColor: 'white',
-    },
     picker: {
-      // backgroundColor: 'white',
-        // height: 100,
-        // overflow: 'hidden',
-        // width: 150,
+        width: 350,
+        borderColor: 'lime',
+        borderWidth: 1,
+        marginBottom: 10,
+        // backgroundColor: 'wheat',
+        height: 64,
     },
     picker_text: {
+        color: 'lime',
+        fontWeight: 'bold',
+        fontSize: 30,
+        height: 64,
+    },
+    item: {
         color: 'lime',
         fontWeight: 'bold',
         fontSize: 30,

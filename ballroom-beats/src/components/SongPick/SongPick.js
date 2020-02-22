@@ -28,10 +28,10 @@ class SongPick extends Component {
                 itemStyle={styles.picker_text}
                 style={{height: 50, width: 110}}
                 selectedValue={this.state.PickerSelectedVal}
-                onValueChange={(itemValue, itemIndex) => 
+                onValueChange={(itemValue) => 
                     this.setState({PickerSelectedVal: itemValue})} >
-                <Picker.Item label="Song 1" value="Song 1" />
-                <Picker.Item label="Song 2" value="Song 2" />
+                <Picker.Item label="Beyond The Sea" value="Beyond The Sea" />
+                <Picker.Item label="Be My Baby" value="Be My Baby by Leslie Grace" />
                 <Picker.Item label="Song 3" value="Song 3" />
             </Picker>
             </View>
