@@ -9,12 +9,12 @@ class SongPick extends Component {
   constructor() {
     super()
     this.state={
-        PickerSelectedSong : ''
+        selectedSong : ''
     }
   }
 
       // method for taking value, passing down to songPick for what songs to display
-  getSelectedPickerSong = () =>{
+  getSelectedSong = () =>{
     
   }
 

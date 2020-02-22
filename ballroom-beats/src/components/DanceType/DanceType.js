@@ -9,14 +9,14 @@ class DanceType extends Component {
   constructor() {
     super()
     this.state= {
-        PickerSelectedDance : ''
+        selectedDance : ''
     }
   }
     // method for taking value, passing down to songPick for what songs to display
-    getSelectedPickerDance = () =>{
+    getSelectedDance = () =>{
     
     }
-// Lets try not to use redux. Instead pass dance type to song pick to measure the difficulty of song that is available
+
   render() {
       return (
           <View style={styles.container}>
@@ -26,9 +26,9 @@ class DanceType extends Component {
                     style={styles.picker}
                     iosIcon={<Icon name="arrowdown"></Icon>}
                     itemStyle={styles.picker_text}
-                    selectedValue={this.state.PickerSelectedDance}
+                    selectedValue={this.state.selectedDance}
                     onValueChange={(itemValue, itemIndex) => 
-                        this.setState({PickerSelectedDance: itemValue})} >
+                        this.setState({selectedDance: itemValue})} >
                     <Picker.Item label="-- Pick a Dance --" value="" />
                     <Picker.Item label="Beginner: Waltz" value="Waltz" />
                     <Picker.Item label="Intermediate: Bachata" value="Bachata" />
