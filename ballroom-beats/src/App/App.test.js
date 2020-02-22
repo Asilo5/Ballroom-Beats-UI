@@ -1,12 +1,13 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import App  from '../App/App';
 
 describe('App', () => {
 
    it('should match snapshot', () => {
-    const app = renderer.create(<App />).toJSON();
-    expect(app).toMatchSnapshot();
+    const wrapper = shallow(<App />)
+    console.log(wrapper);
+    expect(wrapper).toMatchSnapshot();
    });
-
+ 
 });
