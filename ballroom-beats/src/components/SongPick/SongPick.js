@@ -31,7 +31,7 @@ class SongPick extends Component {
                 <Picker.Item label="-- Pick a Song --" value="" />
                 <Picker.Item label="Beyond The Sea" value="Beyond The Sea" />
                 <Picker.Item label="Be My Baby" value="Be My Baby by Leslie Grace" />
-                <Picker.Item label="Song 3" value="Song 3" />
+                <Picker.Item label="Jump Jive an’ Wail" value="Jump Jive an’ Wail" />
             </Picker>
             <View style={styles.btnContainer}>
                 <Icon.Button style={styles.button1} 
@@ -92,18 +92,20 @@ const styles = StyleSheet.create({
         width: '60%',
     },
     button1: {
-        backgroundColor: 'green',
+        backgroundColor: '#32CD32',
         fontSize: 25,
     },
     next: {
         fontSize: 30,
+        fontWeight: 'bold',
     },
     button2: {
-        backgroundColor: 'green',
+        backgroundColor: '#32CD32',
         fontSize: 25,
     },
     back: {
         fontSize: 30,
+        fontWeight: 'bold',
     }
 });
 
