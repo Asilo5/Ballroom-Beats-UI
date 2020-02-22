@@ -30,7 +30,9 @@
   },
   "jest": {
     "preset": "jest-expo",
-    "setupFilesAfterEnv": ["./src/setupTests.js"],
+    "setupFilesAfterEnv": [
+      "./src/setupTests.js"
+    ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]

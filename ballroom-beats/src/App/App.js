@@ -1,11 +1,12 @@
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
-import Home from '../Home/Home.js';
-import DanceType from '../DanceType/DanceType.js';
-import SongPick from '../SongPick/SongPick.js';
-import Loader from '../Loader/Loader.js';
-import Game from '../Game/Game.js';
-import End from '../End/End.js';
+import { registerRootComponent } from 'expo';
+import Home from '../components/Home/Home';
+import DanceType from '../components/DanceType/DanceType.js';
+import SongPick from '../components/SongPick/SongPick.js';
+import Loader from '../components/Loader/Loader.js';
+import Game from '../components/Game/Game.js';
+import End from '../components/End/End.js';
 import 'react-native-gesture-handler';
 
 
@@ -51,5 +52,5 @@ const MainNavigator = createStackNavigator({
 
 const App = createAppContainer(MainNavigator);
 
-export default App;
+export default registerRootComponent(App); 
 
