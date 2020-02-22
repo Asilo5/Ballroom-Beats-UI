@@ -269,16 +269,15 @@ const styles = StyleSheet.create({
   },
   startText: {
     fontSize: 30,
-    color: "#000000",
     fontWeight: "bold",
     textAlign: "center",
-    padding: 10
+    padding: 20
   },
   start: {
     backgroundColor: '#1CE61C',
-    color: '#ffff',
     margin: 30,
     width: '80%',
-    borderRadius: 50
+    borderRadius: 50,
+    left: 105
   }
 });
