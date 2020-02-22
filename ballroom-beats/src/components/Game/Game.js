@@ -72,16 +72,15 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: '#D00000',
-        color: '#ffff',
         margin: 30,
+        width: '80%',
         borderRadius: 50
     },
     quit: {
         fontSize: 30,
-        color: "#000000",
         fontWeight: "bold",
         textAlign: "center",
-        padding: 10
+        padding: 20
     }
 });
 
