@@ -314,6 +314,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#1CE61C',
     margin: 40,
     width: '80%',
+    left: 100,
     borderRadius: 50,
   }
 });
