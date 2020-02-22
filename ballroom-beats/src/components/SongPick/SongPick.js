@@ -22,19 +22,17 @@ class SongPick extends Component {
       return (
           <View style={styles.container}>
             <Text style={styles.songPick}>Pick Your Song</Text>
-            <View style={styles.pickerContainer}>
             <Picker
                 style={styles.picker}
                 itemStyle={styles.picker_text}
-                style={{height: 50, width: 110}}
                 selectedValue={this.state.PickerSelectedVal}
                 onValueChange={(itemValue) => 
                     this.setState({PickerSelectedVal: itemValue})} >
+                <Picker.Item label="-- Pick a Song --" value="" />
                 <Picker.Item label="Beyond The Sea" value="Beyond The Sea" />
                 <Picker.Item label="Be My Baby" value="Be My Baby by Leslie Grace" />
                 <Picker.Item label="Song 3" value="Song 3" />
             </Picker>
-            </View>
             <View style={styles.btnContainer}>
                 <Icon.Button style={styles.button1} 
                     name="arrowleft" 
@@ -70,41 +68,42 @@ const styles = StyleSheet.create({
     },
     songPick: {
         fontSize: 40,
+        fontWeight: 'bold',
         color: 'white',
-    },
-    pickerContainer:{
-        width: 200,
-        height: 138,
-        overflow: 'hidden',
-        // backgroundColor: 'white',
+        marginBottom: 20,
     },
     picker: {
-        // overflow: 'hidden',
-        // width: 150,
-    },
-    picker_text: {
+        width: 350,
+        borderColor: 'lime',
+        borderWidth: 1,
+        marginBottom: 20,
+        height: 75,
+  },
+  picker_text: {
         color: 'lime',
-        fontSize: 30,
         fontWeight: 'bold',
+        backgroundColor: '#39373A',
+        fontSize: 30,
+        height: 73,
     },
     btnContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        width: '50%',
+        width: '60%',
     },
     button1: {
         backgroundColor: 'green',
         fontSize: 25,
     },
     next: {
-        fontSize: 25,
+        fontSize: 30,
     },
     button2: {
         backgroundColor: 'green',
         fontSize: 25,
     },
     back: {
-        fontSize: 25,
+        fontSize: 30,
     }
 });
 

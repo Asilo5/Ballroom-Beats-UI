@@ -27,7 +27,7 @@ class DanceType extends Component {
                     selectedValue={this.state.PickerSelectedDance}
                     onValueChange={(itemValue, itemIndex) => 
                         this.setState({PickerSelectedDance: itemValue})} >
-                    <Picker.Item label="--Pick a Dance--" value="" />
+                    <Picker.Item label="-- Pick a Dance --" value="" />
                     <Picker.Item label="Beginner: Waltz" value="Waltz" />
                     <Picker.Item label="Intermediate: Bachata" value="Bachata" />
                     <Picker.Item label="Advanced: Swing" value="Swing" />
@@ -59,35 +59,32 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     dance: {
-        fontSize: 40,
+        fontSize: 35,
+        fontWeight: 'bold',
         color: 'white',
-        marginBottom: 10,
+        marginBottom: 20,
     },
     picker: {
         width: 350,
         borderColor: 'lime',
         borderWidth: 1,
-        marginBottom: 10,
-        // backgroundColor: 'wheat',
-        height: 64,
+        marginBottom: 20,
+        height: 66,
     },
     picker_text: {
         color: 'lime',
         fontWeight: 'bold',
+        backgroundColor: '#39373A',
         fontSize: 30,
         height: 64,
     },
-    item: {
-        color: 'lime',
-        fontWeight: 'bold',
-        fontSize: 30,
-    },
     button: {
         backgroundColor: 'green',
-        fontSize: 25,
+        width: 130,
     },
     next: {
-        fontSize: 25,
+        fontSize: 30,
+        fontWeight: 'bold',
     }
 });
 

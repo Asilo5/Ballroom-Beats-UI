@@ -52,21 +52,23 @@ const styles = StyleSheet.create({
     btnContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        width: '50%',
+        width: '60%',
     },
     button1: {
         backgroundColor: 'green',
         fontSize: 25,
     },
     play: {
-        fontSize: 25,
+        fontSize: 28,
+        fontWeight: 'bold',
     },
     button2: {
         backgroundColor: 'green',
         fontSize: 25,
     },
     back: {
-        fontSize: 25,
+        fontSize: 28,
+        fontWeight: 'bold',
     }
 });
 
