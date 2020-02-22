@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
         width: '60%',
     },
     button1: {
-        backgroundColor: 'green',
+        backgroundColor: '#32CD32',
         fontSize: 25,
     },
     play: {
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     button2: {
-        backgroundColor: 'green',
+        backgroundColor: '#32CD32',
         fontSize: 25,
     },
     back: {
