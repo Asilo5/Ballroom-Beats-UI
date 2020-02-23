@@ -21,6 +21,12 @@ class SongPick extends Component {
     this.setState({allSongs: {songList}})
   }
 
+  findSong = () => {
+    return songList.find(song => {
+      return song.title === this.state.selectedSong
+    })
+  }
+
       // method for taking value, passing down to songPick for what songs to display
   getSelectedSongs = () =>{
     if (this.props.selectedDance.includes("Waltz")) {
@@ -78,7 +84,7 @@ class SongPick extends Component {
                 </Icon.Button>
                 <Icon.Button style={styles.button2}
                     name="arrowright"
-                    onPress={() => this.props.navigation.navigate('Loader')}
+                    onPress={() => this.props.navigation.navigate('Loader', {song: this.findSong()})}
                     title="NEXT">
                     <Text style={styles.next}>Next</Text>
                 </Icon.Button>

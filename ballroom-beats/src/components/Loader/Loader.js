@@ -12,31 +12,31 @@ class Loader extends Component {
           <View style={styles.container}>
             <Text style={styles.countDown}>....to play time</Text>
             <View style={styles.btnContainer}>
-                <Icon.Button style={styles.button1} 
-                    name="arrowleft" 
-                    onPress={() => this.props.navigation.navigate('SongPick')} 
+                <Icon.Button style={styles.button1}
+                    name="arrowleft"
+                    onPress={() => this.props.navigation.navigate('SongPick')}
                     title="BACK">
                     <Text style={styles.back}>Back</Text>
                 </Icon.Button>
-                <Icon.Button style={styles.button2} 
-                    name="arrowright" 
-                    onPress={() => this.props.navigation.navigate('Game')} 
+                <Icon.Button style={styles.button2}
+                    name="arrowright"
+                    onPress={() => this.props.navigation.navigate('Game', {song: this.props.song})} 
                     title="NEXT">
                     <Text style={styles.play}>Play</Text>
                 </Icon.Button>
             </View>
             <Navbar />
           </View>
-      )      
+      )
   }
-} 
+}
 
 const AppNavigator = createStackNavigator({
     Loader: {
       screen: Loader,
     },
 });
-  
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
