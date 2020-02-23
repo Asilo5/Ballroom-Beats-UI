@@ -24,7 +24,7 @@ class Game extends Component {
     Animated.loop(
       Animated.sequence(sequenceTiming), {iterations: -1, useNativeDriver: true}).start();
       this.backgroundMusic.playAsync();
-  }
+  } 
 
   _onStopPressed = () => {
       this.backgroundMusic.stopAsync();
@@ -41,14 +41,14 @@ class Game extends Component {
           <View style={styles.container}>
           <DanceFloor start={this._start}/>
             <View style={styles.btnContainer}>
-                <TouchableOpacity  
+                <TouchableOpacity
                     style={styles.button}
                     onPress={this._onQuitPress}>
                     <Text style={styles.quit}>Quit</Text>
                 </TouchableOpacity>
              </View>
           </View>
-        </>  
+        </>
       )
   }
 }
