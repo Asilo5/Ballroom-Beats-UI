@@ -12,7 +12,7 @@ class Game extends Component {
     this.backgroundMusic = new Audio.Sound();
     try {
       await this.backgroundMusic.loadAsync(
-        require('../../../assets/Music/17 - Beyond the Sea.mp3'),
+        require('../../../assets/Music/Beyond_-_the_-_Sea.mp3'),
       );
       await this.backgroundMusic.setIsLoopingAsync(true);
     } catch (error) {
@@ -72,16 +72,15 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: '#D00000',
-        color: '#ffff',
         margin: 30,
+        width: '80%',
         borderRadius: 50
     },
     quit: {
         fontSize: 30,
-        color: "#000000",
         fontWeight: "bold",
         textAlign: "center",
-        padding: 10
+        padding: 20
     }
 });
 

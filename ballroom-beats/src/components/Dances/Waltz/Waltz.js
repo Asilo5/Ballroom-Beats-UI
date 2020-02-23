@@ -115,125 +115,139 @@ export default class Waltz extends Component {
     const colors = ["#F60091", "#F6811F", "#FFEB00", "#71C043", "#03ABF0", "#6F2C8F"]
 
       return (
-        <>
-        <TouchableOpacity onPress={() => {this.countUp(0)}} key={0}>
-          <Animated.View
-            style={{
-              transform: [
-                {
-                  scaleX: this.state.pulses[0]
-                },
-                {
-                  scaleY: this.state.pulses[0]
-                }
-              ],
-              margin: 20,
-              borderWidth: 10,
-              borderColor: "#F60091",
-              borderRadius: 10,
-            }}
-          />
-          <Animated.View />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => {this.countUp(1)}} key={1}>
-          <Animated.View
-            style={{
-              transform: [
-                {
-                  scaleX: this.state.pulses[1]
-                },
-                {
-                  scaleY: this.state.pulses[1]
-                }
-              ],
-              margin: 20,
-              borderWidth: 10,
-              borderColor: "#F6811F",
-              borderRadius: 10,
-            }}
-          />
-          <Animated.View />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => {this.countUp(2)}} key={2}>
-          <Animated.View
-            style={{
-              transform: [
-                {
-                  scaleX: this.state.pulses[2]
-                },
-                {
-                  scaleY: this.state.pulses[2]
-                }
-              ],
-              margin: 20,
-              borderWidth: 10,
-              borderColor: "#FFEB00",
-              borderRadius: 10,
-            }}
-          />
-          <Animated.View />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => {this.countUp(3)}} key={3}>
-          <Animated.View
-            style={{
-              transform: [
-                {
-                  scaleX: this.state.pulses[3]
-                },
-                {
-                  scaleY: this.state.pulses[3]
-                }
-              ],
-              margin: 20,
-              borderWidth: 10,
-              borderColor: "#71C043",
-              borderRadius: 10,
-            }}
-          />
-          <Animated.View />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => {this.countUp(4)}} key={4}>
-          <Animated.View
-            style={{
-              transform: [
-                {
-                  scaleX: this.state.pulses[4]
-                },
-                {
-                  scaleY: this.state.pulses[4]
-                }
-              ],
-              margin: 20,
-              borderWidth: 10,
-              borderColor: "#03ABF0",
-              borderRadius: 10,
-            }}
-          />
-          <Animated.View />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => {this.countUp(5)}} key={5}>
-          <Animated.View
-            style={{
-              transform: [
-                {
-                  scaleX: this.state.pulses[5]
-                },
-                {
-                  scaleY: this.state.pulses[5]
-                }
-              ],
-              margin: 20,
-              borderWidth: 10,
-              borderColor: "#6F2C8F",
-              borderRadius: 10,
-            }}
-          />
-          <Animated.View />
-        </TouchableOpacity>
-        </>
+        <View style={styles.danceFloor}>
+          <View style={styles.upperSteps}>
+            <TouchableOpacity onPress={() => {this.countUp(0)}} key={0}>
+              <Animated.View
+                style={{
+                  transform: [
+                    {
+                      scaleX: this.state.pulses[0]
+                    },
+                    {
+                      scaleY: this.state.pulses[0]
+                    }
+                  ],
+                  margin: 20,
+                  borderWidth: 10,
+                  borderColor: "#F60091",
+                  borderRadius: 10,
+                }}
+              />
+              <Animated.View />
+            </TouchableOpacity>
+          <View style={styles.upperTwoSteps}>
+
+              <TouchableOpacity onPress={() => {this.countUp(2)}} key={2}>
+                <Animated.View
+                  style={{
+                    transform: [
+                      {
+                        scaleX: this.state.pulses[2]
+                      },
+                      {
+                        scaleY: this.state.pulses[2]
+                      }
+                    ],
+                    margin: 20,
+                    borderWidth: 10,
+                    borderColor: "#FFEB00",
+                    borderRadius: 10,
+                  }}
+                />
+                <Animated.View />
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={() => {this.countUp(1)}} key={1}>
+                <Animated.View
+                  style={{
+                    transform: [
+                      {
+                        scaleX: this.state.pulses[1]
+                      },
+                      {
+                        scaleY: this.state.pulses[1]
+                      }
+                    ],
+                    margin: 20,
+                    borderWidth: 10,
+                    borderColor: "#F6811F",
+                    borderRadius: 10,
+                  }}
+                />
+                <Animated.View />
+              </TouchableOpacity>
+
+             </View>
+          </View>
+
+          <View style={styles.lowerSteps}>
+            <View style={styles.lowerTwoSteps}>
+                <TouchableOpacity onPress={() => {this.countUp(4)}} key={4}>
+                  <Animated.View
+                    style={{
+                      transform: [
+                        {
+                          scaleX: this.state.pulses[4]
+                        },
+                        {
+                          scaleY: this.state.pulses[4]
+                        }
+                      ],
+                      margin: 20,
+                      borderWidth: 10,
+                      borderColor: "#03ABF0",
+                      borderRadius: 10,
+                    }}
+                  />
+                  <Animated.View />
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => {this.countUp(5)}} key={5}>
+                      <Animated.View
+                        style={{
+                          transform: [
+                            {
+                              scaleX: this.state.pulses[5]
+                            },
+                            {
+                              scaleY: this.state.pulses[5]
+                            }
+                          ],
+                          margin: 20,
+                          borderWidth: 10,
+                          borderColor: "#6F2C8F",
+                          borderRadius: 10,
+                        }}
+                      />
+                      <Animated.View />
+                </TouchableOpacity>    
+            </View>
+
+             <TouchableOpacity onPress={() => {this.countUp(3)}} key={3}>
+                  <Animated.View
+                    style={{
+                      transform: [
+                        {
+                          scaleX: this.state.pulses[3]
+                        },
+                        {
+                          scaleY: this.state.pulses[3]
+                        }
+                      ],
+                      margin: 20,
+                      borderWidth: 10,
+                      borderColor: "#71C043",
+                      borderRadius: 10,
+                    }}
+                  />
+                  <Animated.View />
+              </TouchableOpacity>
+          </View>
+        </View>
       )
 
-  }
+  };
 
   render() {
     return (
@@ -246,22 +260,45 @@ export default class Waltz extends Component {
         {/* <View style={styles.numberView}>
           {this.generateNumberCounts()}
         </View> */}
-        <ImageBackground source={'https://images.unsplash.com/photo-1532452119098-a3650b3c46d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'} style={styles.stepsContainer}>
+        <View style={styles.stepsContainer}>
           {this.generateViews()}
-        </ImageBackground> 
+        </View> 
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  stepsContainer: {
+  danceFloor: {
     display: "flex",
+    flexDirection: "column",
+  },
+  upperSteps:{
+    display: 'flex',
     flexDirection: "row",
-    // backgroundColor: "blue",
-    alignItems: "center",
-    justifyContent: "space-around",
+    width: '70%',
+    height: 100,
+    justifyContent: 'space-between'
+  },
+  upperTwoSteps: {
+    display: 'flex',
+    flexDirection: "row",
+  },
+  lowerSteps:{
+    display: 'flex',
+    flexDirection: "row",
+    width: '70%',
+    justifyContent: 'space-between'
+  },
+  lowerTwoSteps:{
+    display: 'flex',
+    flexDirection: "row",
+  },
+  stepsContainer: {
     padding: 10,
+    left: 55,
+    marginTop: 60,
+    marginBottom: 60
   },
   numberView: {
     backgroundColor: "#FFF",
@@ -269,16 +306,15 @@ const styles = StyleSheet.create({
   },
   startText: {
     fontSize: 30,
-    color: "#000000",
     fontWeight: "bold",
     textAlign: "center",
-    padding: 10
+    padding: 20
   },
   start: {
     backgroundColor: '#1CE61C',
-    color: '#ffff',
-    margin: 30,
+    margin: 40,
     width: '80%',
-    borderRadius: 50
+    left: 100,
+    borderRadius: 50,
   }
 });
