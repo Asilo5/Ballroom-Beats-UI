@@ -9,11 +9,11 @@ class DanceType extends Component {
   constructor() {
     super()
     this.state= {
-        PickerSelectedDance : ''
+        selectedDance : ''
     }
   }
-    // method for taking value, passing down to songPick for what songs to display
-    getSelectedPickerDance = () =>{
+    
+  getSelectedDance = () =>{
     
     }
 
@@ -21,26 +21,26 @@ class DanceType extends Component {
       return (
           <View style={styles.container}>
             <Text style={styles.dance}>Pick Your Dance Type</Text>
-            <View style={styles.pickerContainer}>
                 <Picker
+                    mode="dropdown"
                     style={styles.picker}
+                    iosIcon={<Icon name="arrowdown"></Icon>}
                     itemStyle={styles.picker_text}
-                    // style={{height: 30, width: 110}}
-                    selectedValue={this.state.PickerSelectedDance}
+                    selectedValue={this.state.selectedDance}
                     onValueChange={(itemValue, itemIndex) => 
-                        this.setState({PickerSelectedDance: itemValue})} >
-                    <Picker.Item label="Beginner" value="Beginner" />
-                    <Picker.Item label="Intermediate" value="Intermediate" />
-                    <Picker.Item label="Advanced" value="Advanced" />
+                        this.setState({selectedDance: itemValue})} >
+                    <Picker.Item label="-- Pick a Dance --" value="" />
+                    <Picker.Item label="Beginner: Waltz" value="Waltz" />
+                    <Picker.Item label="Intermediate: Bachata" value="Bachata" />
+                    <Picker.Item label="Advanced: Swing" value="Swing" />
                 </Picker>
-            </View>
-            <Icon.Button 
-                style={styles.button} 
-                name="arrowright" 
-                onPress={() => this.props.navigation.navigate('SongPick')} 
-                title="NEXT">
-                <Text style={styles.next}>Next</Text>
-            </Icon.Button>
+                <Icon.Button 
+                    style={styles.button} 
+                    name="arrowright" 
+                    onPress={() => this.props.navigation.navigate('SongPick')} 
+                    title="NEXT">
+                    <Text style={styles.next}>Next</Text>
+                </Icon.Button>
             <Navbar />
           </View>
       )      
@@ -61,38 +61,34 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     dance: {
-        fontSize: 40,
+        fontSize: 35,
+        fontWeight: 'bold',
         color: 'white',
-        marginBottom: 10,
-    },
-    dance: {
-        fontSize: 40,
-        color: 'white',
-    },
-    pickerContainer:{
-        width: 200,
-        height: 148,
-        overflow: 'hidden',
-        // backgroundColor: 'white',
+        marginBottom: 20,
     },
     picker: {
-      // backgroundColor: 'white',
-        // height: 100,
-        // overflow: 'hidden',
-        // width: 150,
+        width: 350,
+        borderColor: 'lime',
+        borderWidth: 1,
+        marginBottom: 20,
+        height: 66,
+        borderRadius: 3,
     },
     picker_text: {
         color: 'lime',
         fontWeight: 'bold',
+        backgroundColor: '#39373A',
         fontSize: 30,
+        height: 64,
     },
     button: {
-        backgroundColor: 'green',
-        fontSize: 25,
+        backgroundColor: '#32CD32',
+        width: 130,
     },
     next: {
-        fontSize: 25,
-    }
+        fontSize: 30,
+        fontWeight: 'bold',
+    },
 });
 
 export default withNavigation(DanceType);
