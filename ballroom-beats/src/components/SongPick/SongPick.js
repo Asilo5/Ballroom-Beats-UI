@@ -4,19 +4,57 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Navbar from '../Navbar/Navbar';
+import { getData } from '../../apiCalls.js'
 
 class SongPick extends Component {
   constructor() {
     super()
     this.state={
-        selectedSong : ''
+        songList: [],
+        selectedSong : '',
+        tempo: ""
     }
   }
 
-      // method for taking value, passing down to songPick for what songs to display
-  getSelectedSong = () =>{
-    
+  async componentDidMount() {
+    const songList = await getData('https://ballroom-blitz.herokuapp.com/api/v1/songs', 'songs')
+    this.setState({allSongs: {songList}})
   }
+
+      // method for taking value, passing down to songPick for what songs to display
+  getSelectedSongs = () =>{
+    if (this.props.selectedDance.includes("Waltz")) {
+      return (
+        <>
+          <Picker.Item label="Beyond The Sea" value="Beyond The Sea" />
+          <Picker.Item label="Games of Thrones" value="Game of Thrones" />
+        </>
+
+      )
+    }
+
+    if (this.props.selectedDance.includes("Swing")) {
+      return (
+        <>
+          <Picker.Item label="Jump Jive an’ Wail" value="Jump Jive an’ Wail" />
+          <Picker.Item label="Be My Baby" value="Be My Baby" />
+        </>
+
+      )
+    }
+
+    if (this.props.selectedDance.includes("Bachata")) {
+      return (
+        <>
+          <Picker.Item label="Deja Vu" value="Deja Vu" />
+          <Picker.Item label="Blinding Lights" value="Blinding Lights" />
+        </>
+
+      )
+    }
+  }
+
+
 
   render() {
       return (
@@ -26,39 +64,37 @@ class SongPick extends Component {
                 style={styles.picker}
                 itemStyle={styles.picker_text}
                 selectedValue={this.state.PickerSelectedVal}
-                onValueChange={(itemValue) => 
+                onValueChange={(itemValue) =>
                     this.setState({PickerSelectedVal: itemValue})} >
                 <Picker.Item label="-- Pick a Song --" value="" />
-                <Picker.Item label="Beyond The Sea" value="Beyond The Sea" />
-                <Picker.Item label="Be My Baby" value="Be My Baby by Leslie Grace" />
-                <Picker.Item label="Jump Jive an’ Wail" value="Jump Jive an’ Wail" />
+                {this.getSelectedSongs()}
             </Picker>
             <View style={styles.btnContainer}>
-                <Icon.Button style={styles.button1} 
-                    name="arrowleft" 
-                    onPress={() => this.props.navigation.navigate('DanceType')} 
+                <Icon.Button style={styles.button1}
+                    name="arrowleft"
+                    onPress={() => this.props.navigation.navigate('DanceType')}
                     title="BACK">
                     <Text style={styles.back}>Back</Text>
                 </Icon.Button>
-                <Icon.Button style={styles.button2} 
-                    name="arrowright" 
-                    onPress={() => this.props.navigation.navigate('Loader')} 
+                <Icon.Button style={styles.button2}
+                    name="arrowright"
+                    onPress={() => this.props.navigation.navigate('Loader')}
                     title="NEXT">
                     <Text style={styles.next}>Next</Text>
                 </Icon.Button>
             </View>
             <Navbar />
           </View>
-      )      
+      )
   }
-} 
+}
 
 const AppNavigator = createStackNavigator({
     SongPick: {
       screen: SongPick,
     },
 });
-  
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
