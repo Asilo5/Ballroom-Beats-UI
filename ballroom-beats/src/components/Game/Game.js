@@ -8,12 +8,12 @@ import { Audio } from 'expo-av';
 import CountDown from 'react-native-countdown-component';
 
 class Game extends Component {
-  constructor() {
-    super()
-    this.state = {
-      timerId: 'null'
-    }
-  }
+  // constructor() {
+  //   super()
+  //   this.state = {
+  //     timerId: 'null'
+  //   }
+  // }
 
   async componentDidMount() {
     this.backgroundMusic = new Audio.Sound();
@@ -27,8 +27,11 @@ class Game extends Component {
     }
   };
 
-  _start = (sequenceTiming) => {
+  _startMusic = () => {
     this.backgroundMusic.playAsync();
+  }
+
+  _start = (sequenceTiming) => {
     Animated.loop(
       Animated.sequence(sequenceTiming), {iterations: -1, useNativeDriver: true}).start();
   }
@@ -48,12 +51,12 @@ class Game extends Component {
           <View style={styles.container}>
           <Text style={styles.text}>The game will start in....
             <CountDown
-                id={this.state.timerId}
+                // id={this.state.timerId}
                 until={5}
                 size={30}
                 digitStyle={{backgroundColor: 'white', borderWidth: 2, borderColor: 'lime'}}
                 digitTxtStyle={{color: '#1CC625'}}
-                onFinish={this._start}
+                onFinish={this._startMusic}
                 digitStyle={{backgroundColor: 'black'}}
                 digitTxtStyle={{color: 'white'}}
                 timeToShow={['S']}

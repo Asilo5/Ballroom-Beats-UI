@@ -43,11 +43,13 @@ export default class Waltz extends Component {
         Animated.timing(pulse, {
           toValue: 3,
           duration: 439.61519,
-          easing: Easing.back()
+          easing: Easing.back(),
+          // delay: 1000,
         }),
         Animated.timing(pulse, {
           toValue: 1,
           duration: 439.61519,
+          // delay: 1000,
         })
       ]
     }).flat();
