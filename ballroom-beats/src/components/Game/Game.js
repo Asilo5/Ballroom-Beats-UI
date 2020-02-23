@@ -11,7 +11,7 @@ class Game extends Component {
   constructor() {
     super()
     this.state = {
-      timerId = 0
+      timerId: 'null'
     }
   }
 
