@@ -8,6 +8,12 @@ import { Audio } from 'expo-av';
 import CountDown from 'react-native-countdown-component';
 
 class Game extends Component {
+  constructor() {
+    super()
+    this.state = {
+      timerId = 0
+    }
+  }
 
   async componentDidMount() {
     this.backgroundMusic = new Audio.Sound();
@@ -42,6 +48,7 @@ class Game extends Component {
           <View style={styles.container}>
           <Text style={styles.text}>The game will start in....
             <CountDown
+                id={this.state.timerId}
                 until={5}
                 size={30}
                 digitStyle={{backgroundColor: 'white', borderWidth: 2, borderColor: 'lime'}}
