@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Waltz from "../Dances/Waltz/Waltz.js"
-// import Salsa from "../Dances/Salsa/Salsa.js"
+import Bachata from "../Dances/Bachata/Bachata.js";
 import {
   Text,
   View,
@@ -13,7 +13,7 @@ import {
 
 export default class DanceFloor extends Component {
   state = {
-    dance: "waltz"
+    dance: "bachata"
 
   };
 
@@ -27,11 +27,14 @@ export default class DanceFloor extends Component {
       )
     }
 
-    // if (this.state.dance === "salsa") {
-    //   return (
-    //     <Salsa />
-    //   )
-    // }
+    if (this.state.dance === "bachata") {
+      return (
+        <Bachata 
+          start={this.props.start}
+          style={styles.container1}
+        />
+      )
+    }
   }
 
   render() {
