@@ -14,6 +14,8 @@ export default class Bachata extends Component {
         new Animated.Value(1),
         new Animated.Value(1),
         new Animated.Value(1),
+        new Animated.Value(1),
+        new Animated.Value(1),
         new Animated.Value(1)
       ],
       counters: [
@@ -23,23 +25,99 @@ export default class Bachata extends Component {
           0
       ]
     };
-   
 
-   generateTiming = () => {
-     return this.state.pulses.map((pulse) => {
-       return [
-          Animated.timing(pulse, {
-              toValue: 3,
-              duration: 439,
-              easing: Easing.back()
-          }),
-          Animated.timing(pulse, {
-              toValue: 1,
-              duration: 439
-          })
-       ]
-     }).flat();
-   };
+    generateTiming = () => {
+        return [
+           Animated.timing(this.state.pulses[2], {
+               toValue: 3,
+               duration: 439,
+               easing: Easing.back()
+           }),
+           Animated.timing(this.state.pulses[2], {
+               toValue: 1,
+               duration: 439
+           }),
+           Animated.timing(this.state.pulses[3], {
+               toValue: 3,
+               duration: 439,
+               easing: Easing.back()
+           }),
+           Animated.timing(this.state.pulses[3], {
+               toValue: 1,
+               duration: 439
+           }),
+           Animated.timing(this.state.pulses[4], {
+               toValue: 3,
+               duration: 439,
+               easing: Easing.back()
+           }),
+           Animated.timing(this.state.pulses[4], {
+               toValue: 1,
+               duration: 439
+           }),
+           Animated.timing(this.state.pulses[5], {
+               toValue: 4,
+               duration: 439,
+               easing: Easing.back()
+           }),
+           Animated.timing(this.state.pulses[5], {
+               toValue: 1,
+               duration: 439
+           }),
+           Animated.timing(this.state.pulses[3], {
+               toValue: 3,
+               duration: 439,
+               easing: Easing.back()
+           }),
+           Animated.timing(this.state.pulses[3], {
+               toValue: 1,
+               duration: 439
+           }),
+           Animated.timing(this.state.pulses[2], {
+               toValue: 3,
+               duration: 439,
+               easing: Easing.back()
+           }),
+           Animated.timing(this.state.pulses[2], {
+               toValue: 1,
+               duration: 439
+           }),
+           Animated.timing(this.state.pulses[1], {
+               toValue: 3,
+               duration: 439,
+               easing: Easing.back()
+           }),
+           Animated.timing(this.state.pulses[1], {
+               toValue: 1,
+               duration: 439
+           }),
+           Animated.timing(this.state.pulses[0], {
+               toValue: 3,
+               duration: 439,
+               easing: Easing.back()
+           }),
+           Animated.timing(this.state.pulses[0], {
+               toValue: 1,
+               duration: 439
+           }),
+        ]
+    };
+
+   // generateTiming = () => {
+   //   return this.state.pulses.map((pulse) => {
+   //     return [
+   //        Animated.timing(pulse, {
+   //            toValue: 3,
+   //            duration: 439,
+   //            easing: Easing.back()
+   //        }),
+   //        Animated.timing(pulse, {
+   //            toValue: 1,
+   //            duration: 439
+   //        })
+   //     ]
+   //   }).flat();
+   // };
 
    countUp = (num) => {
      const subCounterList = [...this.state.counters];
@@ -49,10 +127,82 @@ export default class Bachata extends Component {
 
 
    generateViews = () => {
-     const colours = ["#F60091", "#F6811F", "#FFEB00", "#71C043"];
+     const colours = ["#FCFDF9","#F60091", "#F6811F", "#FFEB00", "#71C043", "#03ABF0", "274FA2", "#6F2C8F"];
 
      return (
        <View style={styles.danceFloor}>
+       <TouchableOpacity onPress={() => {this.countUp(2)}} >
+           <Animated.View
+               style={{
+                   transform: [
+                       {
+                           scaleX: this.state.pulses[2]
+                       },
+                       {
+                          scaleY: this.state.pulses[2]
+                      }
+                   ],
+                   margin: 20,
+                   borderWidth: 10,
+                   borderColor: "#FCFDF9",
+                   borderRadius: 10
+               }}  >
+           </Animated.View>
+       </TouchableOpacity>
+       <TouchableOpacity onPress={() => {this.countUp(2)}} >
+           <Animated.View
+               style={{
+                   transform: [
+                       {
+                           scaleX: this.state.pulses[2]
+                       },
+                       {
+                          scaleY: this.state.pulses[2]
+                      }
+                   ],
+                   margin: 20,
+                   borderWidth: 10,
+                   borderColor: "#F60091",
+                   borderRadius: 10
+               }}  >
+           </Animated.View>
+       </TouchableOpacity>
+       <TouchableOpacity onPress={() => {this.countUp(2)}} >
+           <Animated.View
+               style={{
+                   transform: [
+                       {
+                           scaleX: this.state.pulses[2]
+                       },
+                       {
+                          scaleY: this.state.pulses[2]
+                      }
+                   ],
+                   margin: 20,
+                   borderWidth: 10,
+                   borderColor: "#F6811F",
+                   borderRadius: 10
+               }}  >
+           </Animated.View>
+       </TouchableOpacity>
+       <TouchableOpacity onPress={() => {this.countUp(3)}} >
+           <Animated.View
+               style={{
+                   transform: [
+                       {
+                           scaleX: this.state.pulses[3]
+                       },
+                       {
+                          scaleY: this.state.pulses[3]
+                      }
+                   ],
+                   margin: 20,
+                   borderWidth: 10,
+                   borderColor: "#FFEB00",
+                   borderRadius: 10
+               }}  >
+           </Animated.View>
+       </TouchableOpacity>
          <TouchableOpacity onPress={() => {this.countUp(0)}} >
              <Animated.View
                  style={{
@@ -66,7 +216,7 @@ export default class Bachata extends Component {
                      ],
                      margin: 20,
                      borderWidth: 10,
-                     borderColor: "#F60091",
+                     borderColor: "#71C043",
                      borderRadius: 10
                  }}  >
              </Animated.View>
@@ -84,7 +234,7 @@ export default class Bachata extends Component {
                      ],
                      margin: 20,
                      borderWidth: 10,
-                     borderColor: "#F6811F",
+                     borderColor: "#03ABF0",
                      borderRadius: 10
                  }}  >
              </Animated.View>
@@ -102,7 +252,7 @@ export default class Bachata extends Component {
                      ],
                      margin: 20,
                      borderWidth: 10,
-                     borderColor: "#FFEB00",
+                     borderColor: "#274FA2",
                      borderRadius: 10
                  }}  >
              </Animated.View>
@@ -120,7 +270,7 @@ export default class Bachata extends Component {
                      ],
                      margin: 20,
                      borderWidth: 10,
-                     borderColor: "#71C043",
+                     borderColor: "#6F2C8F",
                      borderRadius: 10
                  }}  >
              </Animated.View>
@@ -194,4 +344,3 @@ const styles = StyleSheet.create({
       borderRadius: 50,
     }
   });
-
