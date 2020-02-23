@@ -4,7 +4,8 @@ import {
     Text,
     Animated,
     Easing,
-    TouchableOpacity
+    TouchableOpacity,
+    StyleSheet
 } from 'react-native';
 
 export default class Bachata extends Component {
@@ -22,7 +23,7 @@ export default class Bachata extends Component {
           0
       ]
     };
-
+   
 
    generateTiming = () => {
      return this.state.pulses.map((pulse) => {
@@ -83,7 +84,7 @@ export default class Bachata extends Component {
                      ],
                      margin: 20,
                      borderWidth: 10,
-                     borderColor: "#F60091",
+                     borderColor: "#F6811F",
                      borderRadius: 10
                  }}  >
              </Animated.View>
@@ -101,25 +102,25 @@ export default class Bachata extends Component {
                      ],
                      margin: 20,
                      borderWidth: 10,
-                     borderColor: "#F60091",
+                     borderColor: "#FFEB00",
                      borderRadius: 10
                  }}  >
              </Animated.View>
          </TouchableOpacity>
-         <TouchableOpacity onPress={() => {this.countUp(2)}} >
+         <TouchableOpacity onPress={() => {this.countUp(3)}} >
              <Animated.View
                  style={{
                      transform: [
                          {
-                             scaleX: this.state.pulses[2]
+                             scaleX: this.state.pulses[3]
                          },
                          {
-                            scaleY: this.state.pulses[2]
+                            scaleY: this.state.pulses[3]
                         }
                      ],
                      margin: 20,
                      borderWidth: 10,
-                     borderColor: "#F60091",
+                     borderColor: "#71C043",
                      borderRadius: 10
                  }}  >
              </Animated.View>
