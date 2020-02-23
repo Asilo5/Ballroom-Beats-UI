@@ -12,8 +12,8 @@ class DanceType extends Component {
         selectedDance : ''
     }
   }
-    // method for taking value, passing down to songPick for what songs to display
-    getSelectedDance = () =>{
+    
+  getSelectedDance = () =>{
     
     }
 
