@@ -18,13 +18,12 @@ class Loader extends Component {
             <Text style={styles.countDown}>Get ready to start the game.....</Text>
                 <CountDown
                     until={5}
-                    size={30}
+                    size={35}
                     onFinish={this._gameScreen}
                     digitStyle={{backgroundColor: 'black'}}
                     digitTxtStyle={{color: 'white'}}
                     timeToShow={['S']}
                 />
-                
                 <Icon.Button style={styles.button1} 
                     name="arrowleft" 
                     onPress={() => this.props.navigation.navigate('SongPick')} 
@@ -51,7 +50,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     countDown: {
-        fontSize: 30,
+        fontSize: 35,
         color: 'white',
         marginBottom: 10,
     },
