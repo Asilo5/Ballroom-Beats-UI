@@ -44,12 +44,10 @@ export default class Waltz extends Component {
           toValue: 3,
           duration: 439.61519,
           easing: Easing.back(),
-          // delay: 1000,
         }),
         Animated.timing(pulse, {
           toValue: 1,
           duration: 439.61519,
-          // delay: 1000,
         })
       ]
     }).flat();
@@ -254,14 +252,7 @@ export default class Waltz extends Component {
   render() {
     return (
       <View style={styles.waltzComponent}>
-        <TouchableOpacity
-          style={styles.start}
-          onPress={()=> this.props.start(this.generateTiming())}>
-          <Text style={styles.startText}>Start</Text>
-        </TouchableOpacity>
-        {/* <View style={styles.numberView}>
-          {this.generateNumberCounts()}
-        </View> */}
+          {this.props.start(this.generateTiming())}
         <View style={styles.stepsContainer}>
           {this.generateViews()}
         </View> 
