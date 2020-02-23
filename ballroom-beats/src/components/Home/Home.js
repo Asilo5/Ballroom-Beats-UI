@@ -41,11 +41,12 @@ const styles = StyleSheet.create({
         marginBottom: 25,
   },
     button: {
-        backgroundColor: 'green',
+        backgroundColor: '#32CD32',
         fontSize: 25,
     },
     enter: {
         fontSize: 25,
+        fontWeight: 'bold',
     }
 });
 

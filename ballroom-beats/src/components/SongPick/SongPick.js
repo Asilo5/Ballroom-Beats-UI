@@ -9,12 +9,12 @@ class SongPick extends Component {
   constructor() {
     super()
     this.state={
-        PickerSelectedSong : ''
+        selectedSong : ''
     }
   }
 
       // method for taking value, passing down to songPick for what songs to display
-  getSelectedPickerSong = () =>{
+  getSelectedSong = () =>{
     
   }
 
@@ -22,19 +22,17 @@ class SongPick extends Component {
       return (
           <View style={styles.container}>
             <Text style={styles.songPick}>Pick Your Song</Text>
-            <View style={styles.pickerContainer}>
             <Picker
                 style={styles.picker}
                 itemStyle={styles.picker_text}
-                style={{height: 50, width: 110}}
                 selectedValue={this.state.PickerSelectedVal}
-                onValueChange={(itemValue, itemIndex) => 
+                onValueChange={(itemValue) => 
                     this.setState({PickerSelectedVal: itemValue})} >
-                <Picker.Item label="Song 1" value="Song 1" />
-                <Picker.Item label="Song 2" value="Song 2" />
-                <Picker.Item label="Song 3" value="Song 3" />
+                <Picker.Item label="-- Pick a Song --" value="" />
+                <Picker.Item label="Beyond The Sea" value="Beyond The Sea" />
+                <Picker.Item label="Be My Baby" value="Be My Baby by Leslie Grace" />
+                <Picker.Item label="Jump Jive an’ Wail" value="Jump Jive an’ Wail" />
             </Picker>
-            </View>
             <View style={styles.btnContainer}>
                 <Icon.Button style={styles.button1} 
                     name="arrowleft" 
@@ -70,41 +68,44 @@ const styles = StyleSheet.create({
     },
     songPick: {
         fontSize: 40,
+        fontWeight: 'bold',
         color: 'white',
-    },
-    pickerContainer:{
-        width: 200,
-        height: 138,
-        overflow: 'hidden',
-        // backgroundColor: 'white',
+        marginBottom: 20,
     },
     picker: {
-        // overflow: 'hidden',
-        // width: 150,
-    },
-    picker_text: {
+        width: 350,
+        borderColor: 'lime',
+        borderWidth: 1,
+        marginBottom: 20,
+        height: 75,
+  },
+  picker_text: {
         color: 'lime',
-        fontSize: 30,
         fontWeight: 'bold',
+        backgroundColor: '#39373A',
+        fontSize: 30,
+        height: 73,
     },
     btnContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        width: '50%',
+        width: '60%',
     },
     button1: {
-        backgroundColor: 'green',
+        backgroundColor: '#32CD32',
         fontSize: 25,
     },
     next: {
-        fontSize: 25,
+        fontSize: 30,
+        fontWeight: 'bold',
     },
     button2: {
-        backgroundColor: 'green',
+        backgroundColor: '#32CD32',
         fontSize: 25,
     },
     back: {
-        fontSize: 25,
+        fontSize: 30,
+        fontWeight: 'bold',
     }
 });
 
