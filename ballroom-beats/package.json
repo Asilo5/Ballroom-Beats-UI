@@ -28,9 +28,11 @@
   },
   "jest": {
     "preset": "jest-expo",
-    "setupFilesAfterEnv": ["./src/setupTests.js"],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
+    "setupFilesAfterEnv": [
+      "./src/setupTests.js"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base)"
     ]
   },
   "devDependencies": {
@@ -39,7 +41,8 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
-    "jest-expo": "^36.0.1"
+    "jest-expo": "^36.0.1",
+    "react-test-renderer": "^16.12.0"
   },
   "private": true
 }
