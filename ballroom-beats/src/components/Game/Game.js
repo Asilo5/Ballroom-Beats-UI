@@ -15,12 +15,12 @@ class Game extends Component {
 
   async componentDidMount() {
     console.log('SONGPATH', this.props.navigation.getParam('song', '').url)
-    let songPath = this.props.navigation.getParam('song', '').url
+    // let songPath = require('../../../assets/Music/Deja_-_vu.mp3')
     this.backgroundMusic = new Audio.Sound();
     try {
       await this.backgroundMusic.loadAsync(
-        this.props.navigation.getParam('song', '').url
-        // require('../../../assets/Music/Deja_-_vu.mp3'),
+        // songpath
+        require('../../../assets/Music/Deja_-_vu.mp3'),
 
       );
       await this.backgroundMusic.playAsync();
