@@ -22,30 +22,29 @@ export default class DanceFloor extends Component {
   }
 
   chooseDance = () => {
-    if (this.state.dance === "waltz") {
+    if (this.state.dance.includes("Waltz")) {
       return (
         <Waltz
         start={this.props.start}
         style={styles.container1}
         song={this.props.song}
-        tempoMultiplier={this.props.tempoMultiplier}
         />
       )
     }
 
-    if (this.state.dance === "bachata") {
+    if (this.state.dance.includes("Bachata")) {
       return (
         <Bachata
           start={this.props.start}
           style={styles.container1}
           song={this.props.song}
-          tempoMultiplier={this.props.tempoMultiplier}
         />
       )
     }
   }
 
   render() {
+    console.log('DANCEFLOOR SONG', this.props.song)
     return (
       <>
         {this.chooseDance()}

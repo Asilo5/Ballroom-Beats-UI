@@ -28,18 +28,11 @@ export default class Waltz extends Component {
       0,
       0,
     ]
-
-
   };
-
-  // _start = () => {
-  //   Animated.loop(
-  //     Animated.sequence(this.generateTiming()), {iterations: -1, useNativeDriver: true}).start();
-  // };
 
   assessPulseDuration = () => {
     return (
-      60000/this.song.tempo * 1/this.tempoMultiplier
+      60000/this.props.song.tempo
     )
   }
 

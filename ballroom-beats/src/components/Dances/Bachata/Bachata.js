@@ -288,6 +288,7 @@ export default class Bachata extends Component {
    };
 
     render() {
+      console.log('BACHATA SONG', this.props.songs)
         return (
           <View style={styles.bachataComponent}>
               {this.props.start(this.generateTiming())}

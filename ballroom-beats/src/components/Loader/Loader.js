@@ -15,11 +15,11 @@ class Loader extends Component {
   }
 
   _gameScreen = () => {
-    this.props.navigation.navigate('Game', {song: this.props.navigation.getParam('song', ''), tempoMultiplier: this.props.navigation.getParam('tempoMultiplier', ''), dance: this.props.navigation.getParam('dance', '')});
+    this.props.navigation.navigate('Game', {song: this.props.navigation.getParam('song', ''), dance: this.props.navigation.getParam('dance', '')});
   }
 
   render() {
-    console.log('LOADER PROPS', this.props)
+    console.log('LOADER SONG', this.props.navigation.getParam('song', ''))
       return (
           <View style={styles.container}>
             <Text style={styles.countDown}>Get ready to start the game.....</Text>
