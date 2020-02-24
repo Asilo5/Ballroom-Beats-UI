@@ -131,6 +131,7 @@ export default class Waltz extends Component {
                   borderRadius: 24,
                 }}
               />
+                <Text style={styles.bob}>Bob</Text>
               <Animated.View />
             </TouchableOpacity>
           <View style={styles.upperTwoSteps}>
@@ -300,4 +301,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
     margin: 10,
   },
+  bob: {
+    color: 'white',
+    fontSize: 20
+  }
 });
