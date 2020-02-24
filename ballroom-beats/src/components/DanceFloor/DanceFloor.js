@@ -49,11 +49,6 @@ export default class DanceFloor extends Component {
 
 const styles = StyleSheet.create({
   container1: {
-    // display: "flex",
-    // flex: 1,
-    // flexDirection: "row",
-    // backgroundColor: "#FFF",
-    // alignItems: "center",
-    // justifyContent: "space-around"
+    
   },
 });
