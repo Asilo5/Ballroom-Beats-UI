@@ -7,12 +7,19 @@ import Navbar from '../Navbar/Navbar';
 import CountDown from 'react-native-countdown-component';
 
 class Loader extends Component {
+  constructor(props) {
+    super(props)
+    this.state= {
+
+    }
+  }
 
   _gameScreen = () => {
     this.props.navigation.navigate('Game', {song: this.props.navigation.getParam('song', ''), tempoMultiplier: this.props.navigation.getParam('tempoMultiplier', '')});
   }
 
   render() {
+    console.log('LOADER PROPS', this.props)
       return (
           <View style={styles.container}>
             <Text style={styles.countDown}>Get ready to start the game.....</Text>

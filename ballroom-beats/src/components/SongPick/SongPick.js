@@ -9,10 +9,9 @@ import { getData } from '../../../apiCalls.js'
 class SongPick extends Component {
   constructor(props) {
     super(props)
-    this.state={
+    this.state= {
         allSongs: [],
-        selectedSong : '',
-        tempoMultiplier: ""
+        selectedSong: '',
     }
   }
 
@@ -24,17 +23,19 @@ class SongPick extends Component {
 
   findSong = () => {
     return this.state.allSongs.find(song => {
+      console.log('SONGS TITLE', song.title)
+      console.log('Sleted', this.state.selectedSong)
       return song.title === this.state.selectedSong
     })
   }
 
   getSelectedTempo = () => {
     if (this.props.navigation.getParam('selectedDance', '').includes("Advanced")) {
-      this.setState({tempoMultiplier: 2})
+      return 2
     }
 
     if (this.props.navigation.getParam('selectedDance', '').includes("Beginner")) {
-      this.setState({tempoMultiplier: 1})
+      return  1
     }
   }
 
@@ -42,13 +43,15 @@ class SongPick extends Component {
   getSelectedSongs = () => {
     if (this.props.navigation.getParam('selectedDance', '').includes("Waltz")) {
       return [
-        <Picker.Item label="Beyond The Sea" value="Beyond The Sea" />,
+        <Picker.Item label="-- Pick a Song --" value="" />,
+        <Picker.Item label="Beyond The Sea" value="Beyond the Sea" />,
         <Picker.Item label="Games of Thrones" value="Game of Thrones" />
       ]
     }
 
     if (this.props.navigation.getParam('selectedDance', '').includes("Swing")) {
       return [
+        <Picker.Item label="-- Pick a Song --" value="" />,
         <Picker.Item label="Jump Jive an’ Wail" value="Jump Jive an’ Wail" />,
         <Picker.Item label="Be My Baby" value="Be My Baby" />
       ]
@@ -56,6 +59,7 @@ class SongPick extends Component {
 
     if (this.props.navigation.getParam('selectedDance', '').includes("Bachata")) {
       return [
+        <Picker.Item label="-- Pick a Song --" value="" />,
         <Picker.Item label="Deja Vu" value="Deja Vu" />,
         <Picker.Item label="Melancolia Tropical" value="Melancolia Tropical" />
       ]
@@ -65,17 +69,19 @@ class SongPick extends Component {
 
 
   render() {
-    console.log('SONGS', this.state.allSongs)
+    console.log('SONGS the list', this.state.allSongs)
+    console.log('Sleted', this.state.selectedSong)
       return (
           <View style={styles.container}>
             <Text style={styles.songPick}>Pick Your Song</Text>
+            <Text style={styles.dance}>{`${this.state.selectedSong}`}</Text>
             <Picker
+                mode="dropdown"
                 style={styles.picker}
                 itemStyle={styles.picker_text}
                 selectedValue={this.state.selectedSong}
                 onValueChange={(itemValue, itemIndex) =>
                     this.setState({selectedSong: itemValue})} >
-                <Picker.Item label="-- Pick a Song --" value="" />
                 {this.getSelectedSongs()}
             </Picker>
             <View style={styles.btnContainer}>
@@ -89,7 +95,7 @@ class SongPick extends Component {
                 <Icon.Button
                     style={[styles.button2, { backgroundColor: this.state.selectedSong ? '#32CD32' : '#545454'}]}
                     name="arrowright"
-                    onPress={() => this.props.navigation.navigate('Loader', {song: this.findSong(), tempoMultiplier: this.state.tempoMultiplier})}
+                    onPress={() => this.props.navigation.navigate('Loader', {song: this.findSong(), tempoMultiplier: this.getSelectedTempo()})}
                     disabled={(this.state.selectedSong == '') ? true : false}
                     title="NEXT">
                     <Text style={styles.next}>Next</Text>

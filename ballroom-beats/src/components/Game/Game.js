@@ -6,13 +6,21 @@ import { withNavigation } from 'react-navigation';
 import { Audio } from 'expo-av';
 
 class Game extends Component {
+  constructor(props) {
+    super(props)
+    this.state= {
+
+    }
+  }
 
   async componentDidMount() {
+    console.log('SONGPATH', this.props.navigation.getParam('song', '').url)
+    let songPath = this.props.navigation.getParam('song', '').url
     this.backgroundMusic = new Audio.Sound();
     try {
       await this.backgroundMusic.loadAsync(
-        // require(this.props.song.url),
-        require('../../../assets/Music/Deja_-_vu.mp3'),
+        this.props.navigation.getParam('song', '').url
+        // require('../../../assets/Music/Deja_-_vu.mp3'),
 
       );
       await this.backgroundMusic.playAsync();
