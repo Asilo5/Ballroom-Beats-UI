@@ -19,7 +19,7 @@ class Game extends Component {
        console.log("The music isn't playing")
     }
   };
-  
+
   _start = (sequenceTiming) => {
     Animated.loop(
       Animated.sequence(sequenceTiming), {iterations: -1, useNativeDriver: true}).start();
@@ -37,14 +37,14 @@ class Game extends Component {
           <DanceFloor start={this._start}/>
           {this._startMusic}
             <View style={styles.btnContainer}>
-                <TouchableOpacity  
+                <TouchableOpacity
                     style={styles.button}
                     onPress={this._onQuitPress}>
                     <Text style={styles.quit}>Quit</Text>
                 </TouchableOpacity>
              </View>
           </View>
-        </>  
+        </>
       )
   }
 };
