@@ -95,7 +95,7 @@ class SongPick extends Component {
                 <Icon.Button
                     style={[styles.button2, { backgroundColor: this.state.selectedSong ? '#32CD32' : '#545454'}]}
                     name="arrowright"
-                    onPress={() => this.props.navigation.navigate('Loader', {song: this.findSong(), tempoMultiplier: this.getSelectedTempo()})}
+                    onPress={() => this.props.navigation.navigate('Loader', {song: this.findSong(), tempoMultiplier: this.getSelectedTempo(), dance: this.props.navigation.getParam('selectedDance', '')})}
                     disabled={(this.state.selectedSong == '') ? true : false}
                     title="NEXT">
                     <Text style={styles.next}>Next</Text>

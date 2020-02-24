@@ -13,9 +13,13 @@ import {
 
 export default class DanceFloor extends Component {
   state = {
-    dance: "bachata"
+    dance: ""
 
   };
+
+  componentDidMount() {
+    this.setState({dance: this.props.dance})
+  }
 
   chooseDance = () => {
     if (this.state.dance === "waltz") {

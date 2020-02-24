@@ -19,8 +19,9 @@ class Game extends Component {
     this.backgroundMusic = new Audio.Sound();
     try {
       await this.backgroundMusic.loadAsync(
+        require(songPath)
         // songpath
-        require('../../../assets/Music/Deja_-_vu.mp3'),
+        // require('../../../assets/Music/Deja_-_vu.mp3'),
 
       );
       await this.backgroundMusic.playAsync();
@@ -44,7 +45,7 @@ class Game extends Component {
       return (
         <>
           <View style={styles.container}>
-          <DanceFloor start={this._start} song={this.props.song} tempoMultiplier={this.props.tempoMultiplier}/>
+          <DanceFloor start={this._start} song={this.props.navigation.getParam('song', '')} tempoMultiplier={this.props.navigation.getParam('tempoMultiplier', '')} dance={this.props.navigation.getParam('dance', '')}/>
           {this._startMusic}
             <View style={styles.btnContainer}>
                 <TouchableOpacity

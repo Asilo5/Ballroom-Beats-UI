@@ -15,7 +15,7 @@ class Loader extends Component {
   }
 
   _gameScreen = () => {
-    this.props.navigation.navigate('Game', {song: this.props.navigation.getParam('song', ''), tempoMultiplier: this.props.navigation.getParam('tempoMultiplier', '')});
+    this.props.navigation.navigate('Game', {song: this.props.navigation.getParam('song', ''), tempoMultiplier: this.props.navigation.getParam('tempoMultiplier', ''), dance: this.props.navigation.getParam('dance', '')});
   }
 
   render() {
