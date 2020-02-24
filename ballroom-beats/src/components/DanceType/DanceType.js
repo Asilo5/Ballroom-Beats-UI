@@ -9,7 +9,7 @@ class DanceType extends Component {
   constructor() {
     super()
     this.state= {
-        selectedDance : ''
+        selectedDance: ''
     }
   }
     
@@ -37,7 +37,8 @@ class DanceType extends Component {
                 <Icon.Button 
                     style={styles.button} 
                     name="arrowright" 
-                    onPress={() => this.props.navigation.navigate('SongPick')} 
+                    onPress={() => this.props.navigation.navigate('SongPick')}
+                    disabled={(this.state.selectedDance == '') ? true : false}
                     title="NEXT">
                     <Text style={styles.next}>Next</Text>
                 </Icon.Button>

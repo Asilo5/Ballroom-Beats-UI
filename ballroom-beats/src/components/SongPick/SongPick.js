@@ -9,7 +9,7 @@ class SongPick extends Component {
   constructor() {
     super()
     this.state={
-        selectedSong : ''
+        selectedSong: ''
     }
   }
 
@@ -40,9 +40,11 @@ class SongPick extends Component {
                     title="BACK">
                     <Text style={styles.back}>Back</Text>
                 </Icon.Button>
-                <Icon.Button style={styles.button2}
+                <Icon.Button 
+                    style={styles.button2}
                     name="arrowright" 
-                    onPress={() => this.props.navigation.navigate('Loader')} 
+                    onPress={() => this.props.navigation.navigate('Loader')}
+                    disabled={(this.state.selectedSong == '') ? true : false} 
                     title="NEXT">
                     <Text style={styles.next}>Next</Text>
                 </Icon.Button>
@@ -51,7 +53,7 @@ class SongPick extends Component {
           </View>
       )      
   }
-} 
+}; 
 
 const AppNavigator = createStackNavigator({
     SongPick: {
@@ -78,8 +80,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         marginBottom: 20,
         height: 75,
-  },
-  picker_text: {
+    },
+    picker_text: {
         color: 'lime',
         fontWeight: 'bold',
         backgroundColor: '#39373A',
