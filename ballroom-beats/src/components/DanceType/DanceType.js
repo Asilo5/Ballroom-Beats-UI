@@ -35,7 +35,7 @@ class DanceType extends Component {
                     <Picker.Item label="Advanced: Swing" value="Swing" />
                 </Picker>
                 <Icon.Button 
-                    style={styles.button} 
+                    style={[styles.button, { backgroundColor: this.state.selectedDance ? '#32CD32' : '#545454'}]} 
                     name="arrowright" 
                     onPress={() => this.props.navigation.navigate('SongPick')}
                     disabled={(this.state.selectedDance == '') ? true : false}
@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
         height: 64,
     },
     button: {
-        backgroundColor: '#32CD32',
         width: 130,
     },
     next: {
