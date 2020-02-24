@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import DanceFloor from '../DanceFloor/DanceFloor'
-import { View, Text, StyleSheet, Animated, Easing, TouchableOpacity, Button } from 'react-native';
+import { View, Text, StyleSheet, Animated, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
-import Icon from 'react-native-vector-icons/AntDesign';
 import { Audio } from 'expo-av';
 
 class Game extends Component {
@@ -14,6 +13,7 @@ class Game extends Component {
       await this.backgroundMusic.loadAsync(
         require('../../../assets/Music/Beyond_-_the_-_Sea.mp3'),
       );
+      await this.backgroundMusic.playAsync();
       await this.backgroundMusic.setIsLoopingAsync(true);
     } catch (error) {
        console.log("The music isn't playing")
@@ -23,11 +23,6 @@ class Game extends Component {
   _start = (sequenceTiming) => {
     Animated.loop(
       Animated.sequence(sequenceTiming), {iterations: -1, useNativeDriver: true}).start();
-      this.backgroundMusic.playAsync();
-  }
-
-  _onStopPressed = () => {
-      this.backgroundMusic.stopAsync();
   };
 
   _onQuitPress = () => {
@@ -40,6 +35,7 @@ class Game extends Component {
         <>
           <View style={styles.container}>
           <DanceFloor start={this._start} song={this.props.song} tempoMultiplier={this.props.tempoMultiplier}/>
+          {this._startMusic}
             <View style={styles.btnContainer}>
                 <TouchableOpacity
                     style={styles.button}
@@ -51,7 +47,7 @@ class Game extends Component {
         </>
       )
   }
-}
+};
 
 const AppNavigator = createStackNavigator({
     Game: {
@@ -81,6 +77,12 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         textAlign: "center",
         padding: 20
+    },
+    text: {
+      color: 'white',
+      fontSize: 20,
+      display: 'flex',
+      flexDirection: 'row',
     }
 });
 
