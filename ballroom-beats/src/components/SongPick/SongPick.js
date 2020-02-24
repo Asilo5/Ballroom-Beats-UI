@@ -9,7 +9,7 @@ class SongPick extends Component {
   constructor() {
     super()
     this.state={
-        selectedSong : ''
+        selectedSong: ''
     }
   }
 
@@ -25,24 +25,27 @@ class SongPick extends Component {
             <Picker
                 style={styles.picker}
                 itemStyle={styles.picker_text}
-                selectedValue={this.state.PickerSelectedVal}
-                onValueChange={(itemValue) => 
-                    this.setState({PickerSelectedVal: itemValue})} >
+                selectedValue={this.state.selectedSong}
+                onValueChange={(itemValue, itemIndex) => 
+                    this.setState({selectedSong: itemValue})} >
                 <Picker.Item label="-- Pick a Song --" value="" />
                 <Picker.Item label="Beyond The Sea" value="Beyond The Sea" />
                 <Picker.Item label="Be My Baby" value="Be My Baby by Leslie Grace" />
                 <Picker.Item label="Jump Jive an’ Wail" value="Jump Jive an’ Wail" />
             </Picker>
             <View style={styles.btnContainer}>
-                <Icon.Button style={styles.button1} 
+                <Icon.Button 
+                    style={styles.button1} 
                     name="arrowleft" 
                     onPress={() => this.props.navigation.navigate('DanceType')} 
                     title="BACK">
                     <Text style={styles.back}>Back</Text>
                 </Icon.Button>
-                <Icon.Button style={styles.button2} 
+                <Icon.Button 
+                    style={[styles.button2, { backgroundColor: this.state.selectedSong ? '#A9C344' : '#545454'}]} 
                     name="arrowright" 
-                    onPress={() => this.props.navigation.navigate('Loader')} 
+                    onPress={() => this.props.navigation.navigate('Loader')}
+                    disabled={(this.state.selectedSong == '') ? true : false} 
                     title="NEXT">
                     <Text style={styles.next}>Next</Text>
                 </Icon.Button>
@@ -51,7 +54,7 @@ class SongPick extends Component {
           </View>
       )      
   }
-} 
+}; 
 
 const AppNavigator = createStackNavigator({
     SongPick: {
@@ -89,7 +92,7 @@ const styles = StyleSheet.create({
     btnContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        width: '60%',
+        width: '85%',
     },
     button1: {
         backgroundColor: '#A9C344',

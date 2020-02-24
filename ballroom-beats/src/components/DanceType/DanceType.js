@@ -9,7 +9,7 @@ class DanceType extends Component {
   constructor() {
     super()
     this.state= {
-        selectedDance : ''
+        selectedDance: ''
     }
   }
     
@@ -35,9 +35,10 @@ class DanceType extends Component {
                     <Picker.Item label="Advanced: Swing" value="Swing" />
                 </Picker>
                 <Icon.Button 
-                    style={styles.button} 
+                    style={[styles.button, { backgroundColor: this.state.selectedDance ? '#A9C344' : '#545454'}]} 
                     name="arrowright" 
-                    onPress={() => this.props.navigation.navigate('SongPick')} 
+                    onPress={() => this.props.navigation.navigate('SongPick')}
+                    disabled={(this.state.selectedDance == '') ? true : false}
                     title="NEXT">
                     <Text style={styles.next}>Next</Text>
                 </Icon.Button>
