@@ -20,7 +20,7 @@ class Loader extends Component {
                 </Icon.Button>
                 <Icon.Button style={styles.button2}
                     name="arrowright"
-                    onPress={() => this.props.navigation.navigate('Game', {song: this.props.song})} 
+                    onPress={() => this.props.navigation.navigate('Game', {song: this.props.song, tempoMultiplier: this.props.tempoMultiplier})} 
                     title="NEXT">
                     <Text style={styles.play}>Play</Text>
                 </Icon.Button>

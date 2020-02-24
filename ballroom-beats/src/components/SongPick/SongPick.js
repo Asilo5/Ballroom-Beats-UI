@@ -12,7 +12,7 @@ class SongPick extends Component {
     this.state={
         songList: [],
         selectedSong : '',
-        tempo: ""
+        tempoMultiplier: ""
     }
   }
 
@@ -27,8 +27,18 @@ class SongPick extends Component {
     })
   }
 
+  getSelectedTempo = () => {
+    if (this.props.selectedDance.includes("Advanced")) {
+      this.setState({tempoMultiplier: 2})
+    }
+
+    if (this.props.selectedDance.includes("Beginner")) {
+      this.setState({tempoMultiplier: 1})
+    }
+  }
+
       // method for taking value, passing down to songPick for what songs to display
-  getSelectedSongs = () =>{
+  getSelectedSongs = () => {
     if (this.props.selectedDance.includes("Waltz")) {
       return (
         <>
@@ -84,7 +94,7 @@ class SongPick extends Component {
                 </Icon.Button>
                 <Icon.Button style={styles.button2}
                     name="arrowright"
-                    onPress={() => this.props.navigation.navigate('Loader', {song: this.findSong()})}
+                    onPress={() => this.props.navigation.navigate('Loader', {song: this.findSong(), tempoMultiplier: this.state.tempoMultiplier})}
                     title="NEXT">
                     <Text style={styles.next}>Next</Text>
                 </Icon.Button>
