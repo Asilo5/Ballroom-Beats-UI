@@ -5,7 +5,8 @@ import {
     Animated,
     Easing,
     TouchableOpacity,
-    StyleSheet
+    StyleSheet,
+    ImageBackground
 } from 'react-native';
 
 export default class Bachata extends Component {
@@ -167,78 +168,84 @@ export default class Bachata extends Component {
                }}  >
            </Animated.View>
        </TouchableOpacity>
-       <TouchableOpacity onPress={() => {this.countUp(2)}} >
-           <Animated.View
-               style={{
-                   transform: [
-                       {
-                           scaleX: this.state.pulses[2]
-                       },
-                       {
-                          scaleY: this.state.pulses[2]
-                      }
-                   ],
-                   margin: 20,
-                   borderWidth: 10,
-                   borderColor: "#F6811F",
-                   borderRadius: 10
-               }}  >
-           </Animated.View>
-       </TouchableOpacity>
-       <TouchableOpacity onPress={() => {this.countUp(3)}} >
-           <Animated.View
-               style={{
-                   transform: [
-                       {
-                           scaleX: this.state.pulses[3]
-                       },
-                       {
-                          scaleY: this.state.pulses[3]
-                      }
-                   ],
-                   margin: 20,
-                   borderWidth: 10,
-                   borderColor: "#FFEB00",
-                   borderRadius: 10
-               }}  >
-           </Animated.View>
-       </TouchableOpacity>
-         <TouchableOpacity onPress={() => {this.countUp(0)}} >
-             <Animated.View
-                 style={{
-                     transform: [
-                         {
-                             scaleX: this.state.pulses[0]
-                         },
-                         {
-                            scaleY: this.state.pulses[0]
-                        }
-                     ],
-                     margin: 20,
-                     borderWidth: 10,
-                     borderColor: "#71C043",
-                     borderRadius: 10
-                 }}  >
-             </Animated.View>
-         </TouchableOpacity>
-         <TouchableOpacity onPress={() => {this.countUp(1)}} >
-             <Animated.View
-                 style={{
-                     transform: [
-                         {
-                             scaleX: this.state.pulses[1]
-                         },
-                         {
-                            scaleY: this.state.pulses[1]
-                        }
-                     ],
-                     margin: 20,
-                     borderWidth: 10,
-                     borderColor: "#03ABF0",
-                     borderRadius: 10
-                 }}  >
-             </Animated.View>
-         </TouchableOpacity>
+       <View style={styles.middleDots}>
+          <View style={styles.splitDots}>
+          <TouchableOpacity onPress={() => {this.countUp(2)}} >
+              <Animated.View
+                  style={{
+                      transform: [
+                          {
+                              scaleX: this.state.pulses[2]
+                          },
+                          {
+                             scaleY: this.state.pulses[2]
+                         }
+                      ],
+                      margin: 20,
+                      borderWidth: 10,
+                      borderColor: "#F6811F",
+                      borderRadius: 10
+                  }}  >
+              </Animated.View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => {this.countUp(3)}} >
+              <Animated.View
+                  style={{
+                      transform: [
+                          {
+                              scaleX: this.state.pulses[3]
+                          },
+                          {
+                             scaleY: this.state.pulses[3]
+                         }
+                      ],
+                      margin: 20,
+                      borderWidth: 10,
+                      borderColor: "#FFEB00",
+                      borderRadius: 10
+                  }}  >
+              </Animated.View>
+          </TouchableOpacity>
+          </View>
+          <View style={styles.splitDots}>
+          <TouchableOpacity onPress={() => {this.countUp(0)}} >
+              <Animated.View
+                  style={{
+                      transform: [
+                          {
+                              scaleX: this.state.pulses[0]
+                          },
+                          {
+                             scaleY: this.state.pulses[0]
+                         }
+                      ],
+                      margin: 20,
+                      borderWidth: 10,
+                      borderColor: "#71C043",
+                      borderRadius: 10
+                  }}  >
+              </Animated.View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => {this.countUp(1)}} >
+              <Animated.View
+                  style={{
+                      transform: [
+                          {
+                              scaleX: this.state.pulses[1]
+                          },
+                          {
+                             scaleY: this.state.pulses[1]
+                         }
+                      ],
+                      margin: 20,
+                      borderWidth: 10,
+                      borderColor: "#03ABF0",
+                      borderRadius: 10
+                  }}  >
+              </Animated.View>
+          </TouchableOpacity>
+        </View>
+       </View>
          <TouchableOpacity onPress={() => {this.countUp(2)}} >
              <Animated.View
                  style={{
@@ -282,22 +289,54 @@ export default class Bachata extends Component {
 
     render() {
         return (
-          <View style={styles.bachataComponent}>
-              <TouchableOpacity style={styles.start} onPress={() => this.props.start(this.generateTiming())}>
-                  <Text style={styles.startText}>Start</Text>
-              </TouchableOpacity>
-              <View style={styles.stepsContainer}>
-                  {this.generateViews()}
-              </View>
-          </View>
+            <View style={styles.bachataComponent}>
+                <TouchableOpacity style={styles.start} onPress={() => this.props.start(this.generateTiming())}>
+                    <Text style={styles.startText}>Start</Text>
+                </TouchableOpacity>
+                <View style={styles.stepsContainer}>
+                    {this.generateViews()}
+                </View>
+            </View>
         );
     }
 }
 
+// render() {
+//     return (
+//       <ImageBackground source={"https://images.unsplash.com/photo-1532452119098-a3650b3c46d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"} style={styles.backgroundImage}>
+//         <View style={styles.bachataComponent}>
+//             <TouchableOpacity style={styles.start} onPress={() => this.props.start(this.generateTiming())}>
+//                 <Text style={styles.startText}>Start</Text>
+//             </TouchableOpacity>
+//             <View style={styles.stepsContainer}>
+//                 {this.generateViews()}
+//             </View>
+//         </View>
+//       </ImageBackground>
+//     );
+// }
+
+
 const styles = StyleSheet.create({
+    // backgroundImage: {
+    //   flex: 1,
+    //   alignSelf: 'stretch',
+    //   width: "100%",
+    //   height: "100%"
+    // },
     danceFloor: {
       display: "flex",
-      flexDirection: "column",
+      flexDirection: "row",
+      justifyContent: "space-around",
+      right: 50
+    },
+    middleDots: {
+      display: "flex",
+      bottom: 30
+    },
+    splitDots: {
+      display: "flex",
+      flexDirection: "row",
     },
     upperSteps:{
       display: 'flex',
