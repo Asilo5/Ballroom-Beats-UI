@@ -22,7 +22,6 @@ class DanceType extends Component {
       return (
           <View style={styles.container}>
             <Text style={styles.dance}>Pick Your Dance Type</Text>
-            <Text style={styles.dance}>{`${this.state.selectedDance}`}</Text>
                 <Picker
                     mode="dropdown"
                     style={styles.picker}
@@ -69,20 +68,20 @@ const styles = StyleSheet.create({
         fontSize: 35,
         fontWeight: 'bold',
         color: 'white',
-        marginBottom: 20,
+        marginBottom: 10,
     },
     picker: {
         width: 350,
         borderColor: '#A9C344',
         borderWidth: 1,
-        marginBottom: 20,
+        marginBottom: 10,
         height: 66,
         borderRadius: 3,
     },
     picker_text: {
         color: '#A9C344',
         fontWeight: 'bold',
-        backgroundColor: 'transparent',
+        backgroundColor: '#39373A',
         fontSize: 30,
         height: 64,
     },
