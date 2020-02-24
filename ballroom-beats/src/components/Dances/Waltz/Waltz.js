@@ -40,12 +40,12 @@ export default class Waltz extends Component {
     return this.state.pulses.map(pulse => {
       return [
         Animated.timing(pulse, {
-          toValue: 3,
+          toValue: 2,
           duration: this.assessPulseDuration(),
           easing: Easing.back(),
         }),
         Animated.timing(pulse, {
-          toValue: 1,
+          toValue: 0,
           duration: this.assessPulseDuration(),
         })
       ]
@@ -54,9 +54,7 @@ export default class Waltz extends Component {
 
   countUp = (num) => {
     const subCounterList = [...this.state.counters];
-
     subCounterList[num]++;
-
     this.setState({counters: subCounterList});
   }
 
@@ -72,12 +70,12 @@ export default class Waltz extends Component {
   generateNumberCounts = () => {
       return (
         <>
-          <Text key={0} style={styles.startText}>{this.state.counters[0].toString()}</Text>
-          <Text key={1} style={styles.startText}>{this.state.counters[1].toString()}</Text>
-          <Text key={2} style={styles.startText}>{this.state.counters[2].toString()}</Text>
-          <Text key={3} style={styles.startText}>{this.state.counters[3].toString()}</Text>
-          <Text key={4} style={styles.startText}>{this.state.counters[4].toString()}</Text>
-          <Text key={5} style={styles.startText}>{this.state.counters[5].toString()}</Text>
+          <Text key={0}>{this.state.counters[0].toString()}</Text>
+          <Text key={1}>{this.state.counters[1].toString()}</Text>
+          <Text key={2}>{this.state.counters[2].toString()}</Text>
+          <Text key={3}>{this.state.counters[3].toString()}</Text>
+          <Text key={4}>{this.state.counters[4].toString()}</Text>
+          <Text key={5}>{this.state.counters[5].toString()}</Text>
         </>
       )
 
@@ -128,11 +126,12 @@ export default class Waltz extends Component {
                     }
                   ],
                   margin: 20,
-                  borderWidth: 10,
+                  borderWidth: 24,
                   borderColor: "#F60091",
-                  borderRadius: 10,
+                  borderRadius: 24,
                 }}
               />
+                <Text style={styles.bob}>Bob</Text>
               <Animated.View />
             </TouchableOpacity>
           <View style={styles.upperTwoSteps}>
@@ -149,9 +148,9 @@ export default class Waltz extends Component {
                       }
                     ],
                     margin: 20,
-                    borderWidth: 10,
+                    borderWidth: 24,
                     borderColor: "#FFEB00",
-                    borderRadius: 10,
+                    borderRadius: 24,
                   }}
                 />
                 <Animated.View />
@@ -169,9 +168,9 @@ export default class Waltz extends Component {
                       }
                     ],
                     margin: 20,
-                    borderWidth: 10,
+                    borderWidth: 24,
                     borderColor: "#F6811F",
-                    borderRadius: 10,
+                    borderRadius: 24,
                   }}
                 />
                 <Animated.View />
@@ -194,9 +193,9 @@ export default class Waltz extends Component {
                         }
                       ],
                       margin: 20,
-                      borderWidth: 10,
+                      borderWidth: 24,
                       borderColor: "#03ABF0",
-                      borderRadius: 10,
+                      borderRadius: 24,
                     }}
                   />
                   <Animated.View />
@@ -214,9 +213,9 @@ export default class Waltz extends Component {
                             }
                           ],
                           margin: 20,
-                          borderWidth: 10,
+                          borderWidth:24,
                           borderColor: "#6F2C8F",
-                          borderRadius: 10,
+                          borderRadius:24,
                         }}
                       />
                       <Animated.View />
@@ -235,9 +234,9 @@ export default class Waltz extends Component {
                         }
                       ],
                       margin: 20,
-                      borderWidth: 10,
+                      borderWidth: 24,
                       borderColor: "#71C043",
-                      borderRadius: 10,
+                      borderRadius: 24,
                     }}
                   />
                   <Animated.View />
@@ -264,13 +263,16 @@ const styles = StyleSheet.create({
   danceFloor: {
     display: "flex",
     flexDirection: "column",
+    height: '60%',
+    width: 400
   },
   upperSteps:{
     display: 'flex',
     flexDirection: "row",
-    width: '70%',
+    width: '80%',
     height: 100,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginBottom: 150,
   },
   upperTwoSteps: {
     display: 'flex',
@@ -279,21 +281,28 @@ const styles = StyleSheet.create({
   lowerSteps:{
     display: 'flex',
     flexDirection: "row",
-    width: '70%',
-    justifyContent: 'space-between'
+    width: '80%',
+    justifyContent: 'space-between',
+    // marginTop: 25,
   },
   lowerTwoSteps:{
     display: 'flex',
     flexDirection: "row",
+    // marginTop: 30,
   },
   stepsContainer: {
-    padding: 10,
-    left: 55,
-    marginTop: 60,
-    marginBottom: 60
+    padding: 20,
+    left: 40,
+    marginTop: 20,
+    marginBottom: 60,
+    height: 350
   },
   numberView: {
     backgroundColor: "#FFF",
     margin: 10,
   },
+  bob: {
+    color: 'white',
+    fontSize: 20
+  }
 });

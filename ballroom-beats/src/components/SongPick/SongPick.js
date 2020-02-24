@@ -114,16 +114,16 @@ const styles = StyleSheet.create({
         fontSize: 40,
         fontWeight: 'bold',
         color: 'white',
-        marginBottom: 20,
+        marginBottom: 10,
     },
     picker: {
         width: 350,
         borderColor: '#A9C344',
         borderWidth: 1,
-        marginBottom: 20,
+        marginBottom: 10,
         height: 75,
-  },
-  picker_text: {
+    },
+    picker_text: {
         color: '#A9C344',
         fontWeight: 'bold',
         backgroundColor: '#39373A',
