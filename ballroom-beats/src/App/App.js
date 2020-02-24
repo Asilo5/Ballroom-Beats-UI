@@ -15,37 +15,37 @@ const MainNavigator = createStackNavigator({
   Home: {
     screen: Home,
     navigationOptions: {
-      header: null,
+      header: false,
     }
   },
   DanceType: {
     screen: DanceType,
     navigationOptions: {
-      header: null,
+      header: false,
     }
   },
   SongPick: {
     screen: SongPick,
     navigationOptions: {
-      header: null,
+      header: false,
     }
   },
   Loader: {
     screen: Loader,
     navigationOptions: {
-      header: null,
+      header: false,
     }
   },
   Game: {
     screen: Game,
     navigationOptions: {
-      header: null,
+      header: false,
     }
   },
   End: {
     screen: End,
     navigationOptions: {
-      header: null,
+      header: false,
     }
   }
 });
