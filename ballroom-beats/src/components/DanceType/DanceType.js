@@ -68,21 +68,21 @@ const styles = StyleSheet.create({
     },
     picker: {
         width: 350,
-        borderColor: 'lime',
+        borderColor: '#A9C344',
         borderWidth: 1,
         marginBottom: 20,
         height: 66,
         borderRadius: 3,
     },
     picker_text: {
-        color: 'lime',
+        color: '#A9C344',
         fontWeight: 'bold',
-        backgroundColor: '#39373A',
+        backgroundColor: 'transparent',
         fontSize: 30,
         height: 64,
     },
     button: {
-        backgroundColor: '#32CD32',
+        backgroundColor: '#A9C344',
         width: 130,
     },
     next: {
