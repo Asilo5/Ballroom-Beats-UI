@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export const Score = () => {
-  return (
+  return ( 
     <View style={styles.container}>
       <Text>Score</Text>
     </View>

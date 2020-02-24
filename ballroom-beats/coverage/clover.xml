@@ -1,63 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1582410229742" clover="3.2.0">
-  <project timestamp="1582410229742" name="All files">
-    <metrics statements="40" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="0" elements="58" coveredelements="5" complexity="0" loc="40" ncloc="40" packages="3" files="3" classes="3"/>
-    <package name="App">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="App.js" path="/Users/allisonwagner/mod4/Ballroom-Beats-UI/ballroom-beats/src/App/App.js">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
+<coverage generated="1582579065291" clover="3.2.0">
+  <project timestamp="1582579065291" name="All files">
+    <metrics statements="53" coveredstatements="33" conditionals="14" coveredconditionals="2" methods="23" coveredmethods="11" elements="90" coveredelements="46" complexity="0" loc="53" ncloc="53" packages="7" files="7" classes="7"/>
+    <package name="AppNavigator">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="AppNavigator.js" path="/Users/amandasierralopez/Turing/Mod-4/ballroom-beats/ballroom-beats/src/components/AppNavigator/AppNavigator.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="components.Dances.Waltz">
-      <metrics statements="22" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="13" coveredmethods="0"/>
-      <file name="Waltz.js" path="/Users/allisonwagner/mod4/Ballroom-Beats-UI/ballroom-beats/src/components/Dances/Waltz/Waltz.js">
-        <metrics statements="22" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="13" coveredmethods="0"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="61" count="0" type="stmt"/>
-        <line num="73" count="0" type="stmt"/>
-        <line num="74" count="0" type="stmt"/>
-        <line num="114" count="0" type="stmt"/>
-        <line num="115" count="0" type="stmt"/>
-        <line num="117" count="0" type="stmt"/>
-        <line num="120" count="0" type="stmt"/>
-        <line num="141" count="0" type="stmt"/>
-        <line num="161" count="0" type="stmt"/>
-        <line num="186" count="0" type="stmt"/>
-        <line num="206" count="0" type="stmt"/>
-        <line num="227" count="0" type="stmt"/>
-        <line num="253" count="0" type="stmt"/>
-        <line num="257" count="0" type="stmt"/>
-        <line num="271" count="3" type="stmt"/>
-      </file>
-    </package>
-    <package name="components.Game">
-      <metrics statements="16" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
-      <file name="Game.js" path="/Users/allisonwagner/mod4/Ballroom-Beats-UI/ballroom-beats/src/components/Game/Game.js">
-        <metrics statements="16" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
+    <package name="DanceType">
+      <metrics statements="8" coveredstatements="6" conditionals="4" coveredconditionals="2" methods="5" coveredmethods="2"/>
+      <file name="DanceType.js" path="/Users/amandasierralopez/Turing/Mod-4/ballroom-beats/ballroom-beats/src/components/DanceType/DanceType.js">
+        <metrics statements="8" coveredstatements="6" conditionals="4" coveredconditionals="2" methods="5" coveredmethods="2"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="55" count="3" type="stmt"/>
+        <line num="61" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="Loader">
+      <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+      <file name="Loader.js" path="/Users/amandasierralopez/Turing/Mod-4/ballroom-beats/ballroom-beats/src/components/Loader/Loader.js">
+        <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="46" count="3" type="stmt"/>
+        <line num="52" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="Navbar">
+      <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="Navbar.js" path="/Users/amandasierralopez/Turing/Mod-4/ballroom-beats/ballroom-beats/src/components/Navbar/Navbar.js">
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="27" count="6" type="stmt"/>
+        <line num="33" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="Score">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Score.js" path="/Users/amandasierralopez/Turing/Mod-4/ballroom-beats/ballroom-beats/src/components/Score/Score.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="SongPick">
+      <metrics statements="25" coveredstatements="10" conditionals="10" coveredconditionals="0" methods="9" coveredmethods="3"/>
+      <file name="SongPick.js" path="/Users/amandasierralopez/Turing/Mod-4/ballroom-beats/ballroom-beats/src/components/SongPick/SongPick.js">
+        <metrics statements="25" coveredstatements="10" conditionals="10" coveredconditionals="0" methods="9" coveredmethods="3"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="cond" truecount="0" falsecount="2"/>
         <line num="35" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="56" count="3" type="stmt"/>
-        <line num="62" count="3" type="stmt"/>
+        <line num="42" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="50" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="100" count="3" type="stmt"/>
+        <line num="106" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="SongPlayer">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="SongPlayer.js" path="/Users/amandasierralopez/Turing/Mod-4/ballroom-beats/ballroom-beats/src/components/SongPlayer/SongPlayer.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
       </file>
     </package>
   </project>

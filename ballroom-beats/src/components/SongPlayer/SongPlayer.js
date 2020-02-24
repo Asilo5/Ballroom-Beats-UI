@@ -6,7 +6,7 @@ export const SongPlayer = () => {
     <View style={styles.container}>
       <Text>Song Player</Text>
     </View>
-  );
+  ); 
 }
 
 const styles = StyleSheet.create({

@@ -8,5 +8,5 @@ describe('SongPlayer', () => {
     const player = renderer.create(<SongPlayer />).toJSON();
     expect(player).toMatchSnapshot();
    });
-
+ 
 });
