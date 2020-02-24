@@ -7,12 +7,19 @@ import Navbar from '../Navbar/Navbar';
 import CountDown from 'react-native-countdown-component';
 
 class Loader extends Component {
+  constructor(props) {
+    super(props)
+    this.state= {
+
+    }
+  }
 
   _gameScreen = () => {
-    this.props.navigation.navigate('Game');
-  }  
+    this.props.navigation.navigate('Game', {song: this.props.navigation.getParam('song', ''), dance: this.props.navigation.getParam('dance', '')});
+  }
 
   render() {
+    console.log('LOADER SONG', this.props.navigation.getParam('song', ''))
       return (
           <View style={styles.container}>
             <Text style={styles.countDown}>Get ready to start the game.....</Text>
@@ -24,24 +31,24 @@ class Loader extends Component {
                     digitTxtStyle={{color: 'white'}}
                     timeToShow={['S']}
                 />
-                <Icon.Button style={styles.button1} 
-                    name="arrowleft" 
-                    onPress={() => this.props.navigation.navigate('SongPick')} 
+                <Icon.Button style={styles.button1}
+                    name="arrowleft"
+                    onPress={() => this.props.navigation.navigate('SongPick')}
                     title="BACK">
                     <Text style={styles.back}>Back</Text>
                 </Icon.Button>
             <Navbar />
           </View>
-      )      
+      )
   }
-} 
+}
 
 const AppNavigator = createStackNavigator({
     Loader: {
       screen: Loader,
     },
 });
-  
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
