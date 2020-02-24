@@ -9,8 +9,7 @@ class Home extends Component {
   render() {
       return (
           <View style={styles.container}>
-            <Image source={require('../../../images/logo_transparent.png')} />
-            <Text style={styles.homeHeader}>Ballroom Beatz</Text>
+            <Image source={require('../../../images/logo_transparent.png')} style={styles.logo} />
             <Icon.Button 
                 style={styles.button} 
                 name="arrowright" 
@@ -36,18 +35,17 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    homeHeader: {
-        fontSize: 40,
-        color: 'white',
-        marginBottom: 25,
-  },
     button: {
-        backgroundColor: '#32CD32',
-        fontSize: 25,
+        backgroundColor: '#BD4413',
     },
     enter: {
-        fontSize: 25,
+        fontSize: 30,
         fontWeight: 'bold',
+    },
+    logo: {
+        height: 450, 
+        width: 450, 
+        resizeMode : 'stretch'
     }
 });
 
