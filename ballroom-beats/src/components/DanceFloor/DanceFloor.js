@@ -49,6 +49,7 @@ export default class DanceFloor extends Component {
 
 const styles = StyleSheet.create({
   container1: {
-    
+    height: '80%',
+    flex: 1
   },
 });
