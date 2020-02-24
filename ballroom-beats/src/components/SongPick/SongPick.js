@@ -23,20 +23,17 @@ class SongPick extends Component {
 
   findSong = () => {
     return this.state.allSongs.find(song => {
-      console.log('SONGS TITLE', song.title)
-      console.log('Selected', this.state.selectedSong)
       return song.title === this.state.selectedSong
     })
   }
 
-      // method for taking value, passing down to songPick for what songs to display
   getSelectedSongs = () => {
     if (this.props.navigation.getParam('selectedDance', '') === "Waltz") {
       return [
         <Picker.Item label="-- Pick a Song --" value="" />,
         <Picker.Item label="Beyond The Sea - Beginner" value="Beyond the Sea" />,
         <Picker.Item label="Games of Thrones - Advanced" value="Game of Thrones" />
-      ] 
+      ]
     }
 
     if (this.props.navigation.getParam('selectedDance', '') === "Swing") {
@@ -59,8 +56,6 @@ class SongPick extends Component {
 
 
   render() {
-    console.log('SONGS the list', this.state.allSongs)
-    console.log('SELECTED SONGPICK', this.state.selectedSong)
       return (
           <View style={styles.container}>
             <Text style={styles.songPick}>Pick Your Song</Text>

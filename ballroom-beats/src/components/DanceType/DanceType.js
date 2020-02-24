@@ -14,10 +14,6 @@ class DanceType extends Component {
     }
   }
 
-  getSelectedDance = () =>{
-
-    }
-
   render() {
       return (
           <View style={styles.container}>
@@ -96,4 +92,3 @@ const styles = StyleSheet.create({
 });
 
 export default withNavigation(DanceType);
- 

@@ -52,8 +52,6 @@ class Game extends Component {
   };
 
   render() {
-    console.log('DANCE PARAM', this.props.navigation.getParam('dance', ''))
-    console.log('GAME SONG', this.props.navigation.getParam('song', ''))
       return (
         <>
           <View style={styles.container}>
