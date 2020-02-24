@@ -36,7 +36,7 @@ class SongPick extends Component {
         <Picker.Item label="-- Pick a Song --" value="" />,
         <Picker.Item label="Beyond The Sea - Beginner" value="Beyond the Sea" />,
         <Picker.Item label="Games of Thrones - Advanced" value="Game of Thrones" />
-      ]
+      ] 
     }
 
     if (this.props.navigation.getParam('selectedDance', '') === "Swing") {
