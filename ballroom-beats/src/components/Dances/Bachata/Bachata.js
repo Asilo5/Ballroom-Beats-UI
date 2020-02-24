@@ -289,14 +289,12 @@ export default class Bachata extends Component {
 
     render() {
         return (
-            <View style={styles.bachataComponent}>
-                <TouchableOpacity style={styles.start} onPress={() => this.props.start(this.generateTiming())}>
-                    <Text style={styles.startText}>Start</Text>
-                </TouchableOpacity>
-                <View style={styles.stepsContainer}>
-                    {this.generateViews()}
-                </View>
+          <View style={styles.bachataComponent}>
+              {this.props.start(this.generateTiming())}
+            <View style={styles.stepsContainer}>
+                {this.generateViews()}
             </View>
+          </View>
         );
     }
 }
@@ -328,7 +326,8 @@ const styles = StyleSheet.create({
       display: "flex",
       flexDirection: "row",
       justifyContent: "space-around",
-      right: 50
+      right: 50,
+      top: 100
     },
     middleDots: {
       display: "flex",
@@ -369,17 +368,4 @@ const styles = StyleSheet.create({
       backgroundColor: "#FFF",
       margin: 10,
     },
-    startText: {
-      fontSize: 30,
-      fontWeight: "bold",
-      textAlign: "center",
-      padding: 20
-    },
-    start: {
-      backgroundColor: '#1CE61C',
-      margin: 40,
-      width: '80%',
-      left: 100,
-      borderRadius: 50,
-    }
   });
