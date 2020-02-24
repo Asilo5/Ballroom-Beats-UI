@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -9,6 +9,7 @@ class Home extends Component {
   render() {
       return (
           <View style={styles.container}>
+            <Image source={require('../../../images/logo_transparent.png')} />
             <Text style={styles.homeHeader}>Ballroom Beatz</Text>
             <Icon.Button 
                 style={styles.button} 
