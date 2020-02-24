@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     },
     logo: {
         height: 450, 
-        width: 450, 
+        width: 425, 
         resizeMode : 'stretch'
     }
 });
