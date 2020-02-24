@@ -83,7 +83,7 @@ class SongPick extends Component {
                     <Text style={styles.back}>Back</Text>
                 </Icon.Button>
                 <Icon.Button
-                    style={[styles.button2, { backgroundColor: this.state.selectedSong ? '#32CD32' : '#545454'}]}
+                    style={[styles.button2, { backgroundColor: this.state.selectedSong ? '#A9C344' : '#545454'}]}
                     name="arrowright"
                     onPress={() => this.props.navigation.navigate('Loader', {song: this.findSong(), dance: this.props.navigation.getParam('selectedDance', '')})}
                     disabled={(this.state.selectedSong == '') ? true : false}
@@ -117,14 +117,14 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     picker: {
-        width: 340,
-        borderColor: 'lime',
+        width: 350,
+        borderColor: '#A9C344',
         borderWidth: 1,
         marginBottom: 20,
         height: 75,
-    },
-    picker_text: {
-        color: 'lime',
+  },
+  picker_text: {
+        color: '#A9C344',
         fontWeight: 'bold',
         backgroundColor: '#39373A',
         fontSize: 30,
@@ -136,15 +136,18 @@ const styles = StyleSheet.create({
         width: '85%',
     },
     button1: {
-        backgroundColor: '#32CD32',
+        backgroundColor: '#A9C344',
         fontSize: 25,
+        color: 'white'
     },
     next: {
         fontSize: 30,
         fontWeight: 'bold',
     },
     button2: {
+        backgroundColor: '#A9C344',
         fontSize: 25,
+        color: 'white'
     },
     back: {
         fontSize: 30,

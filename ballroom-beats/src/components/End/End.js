@@ -8,7 +8,7 @@ class End extends Component {
   render() {
       return (
           <View style={styles.container}>
-            <Text style={styles.gameEnd}>End, Play Again</Text>
+            <Text style={styles.gameEnd}>End Of Game</Text>
             <Button 
                 style={styles.button} 
                 onPress={() => this.props.navigation.navigate('DanceType')} 
@@ -39,13 +39,13 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     button: {
-        backgroundColor: 'green',
-        fontSize: 45,
-        color: 'black',
+        backgroundColor: '#BD4413',
+        padding: 20,
+        fontSize: 35
     },
     playAgain: {
-        fontSize: 25,
-        color: 'black',
+        fontSize: 30,
+        fontWeight: 'bold',
     }
 });
 
