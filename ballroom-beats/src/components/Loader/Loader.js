@@ -4,27 +4,32 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Navbar from '../Navbar/Navbar';
+import CountDown from 'react-native-countdown-component';
 
 class Loader extends Component {
+
+  _gameScreen = () => {
+    this.props.navigation.navigate('Game');
+  }  
 
   render() {
       return (
           <View style={styles.container}>
-            <Text style={styles.countDown}>....to play time</Text>
-            <View style={styles.btnContainer}>
+            <Text style={styles.countDown}>Get ready to start the game.....</Text>
+                <CountDown
+                    until={5}
+                    size={35}
+                    onFinish={this._gameScreen}
+                    digitStyle={{backgroundColor: 'black'}}
+                    digitTxtStyle={{color: 'white'}}
+                    timeToShow={['S']}
+                />
                 <Icon.Button style={styles.button1} 
                     name="arrowleft" 
                     onPress={() => this.props.navigation.navigate('SongPick')} 
                     title="BACK">
                     <Text style={styles.back}>Back</Text>
                 </Icon.Button>
-                <Icon.Button style={styles.button2} 
-                    name="arrowright" 
-                    onPress={() => this.props.navigation.navigate('Game')} 
-                    title="NEXT">
-                    <Text style={styles.play}>Play</Text>
-                </Icon.Button>
-            </View>
             <Navbar />
           </View>
       )      
@@ -45,24 +50,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     countDown: {
-        fontSize: 40,
+        fontSize: 35,
         color: 'white',
         marginBottom: 10,
     },
-    btnContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        width: '60%',
-    },
     button1: {
-        backgroundColor: '#32CD32',
-        fontSize: 25,
-    },
-    play: {
-        fontSize: 28,
-        fontWeight: 'bold',
-    },
-    button2: {
         backgroundColor: '#32CD32',
         fontSize: 25,
     },
