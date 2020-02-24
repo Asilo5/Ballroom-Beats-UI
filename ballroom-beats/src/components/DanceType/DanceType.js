@@ -9,7 +9,7 @@ class DanceType extends Component {
   constructor() {
     super()
     this.state= {
-        selectedDance : ''
+        selectedDance: ''
     }
   }
     
@@ -35,9 +35,10 @@ class DanceType extends Component {
                     <Picker.Item label="Advanced: Swing" value="Swing" />
                 </Picker>
                 <Icon.Button 
-                    style={styles.button} 
+                    style={[styles.button, { backgroundColor: this.state.selectedDance ? '#32CD32' : '#545454'}]} 
                     name="arrowright" 
-                    onPress={() => this.props.navigation.navigate('SongPick')} 
+                    onPress={() => this.props.navigation.navigate('SongPick')}
+                    disabled={(this.state.selectedDance == '') ? true : false}
                     title="NEXT">
                     <Text style={styles.next}>Next</Text>
                 </Icon.Button>
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     picker: {
-        width: 350,
+        width: 340,
         borderColor: 'lime',
         borderWidth: 1,
         marginBottom: 20,
@@ -82,7 +83,6 @@ const styles = StyleSheet.create({
         height: 64,
     },
     button: {
-        backgroundColor: '#32CD32',
         width: 130,
     },
     next: {
