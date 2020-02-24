@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar should match snapshot 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#D1005A",
+      "bottom": 3,
+      "position": "absolute",
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "overflow": "hidden",
+          },
+          Object {
+            "backgroundColor": "#007AFF",
+            "borderRadius": 5,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "flex-start",
+              "padding": 8,
+            },
+            Object {
+              "backgroundColor": "#007AFF",
+              "borderRadius": 5,
+            },
+            Object {
+              "backgroundColor": "#D1005A",
+              "fontSize": 35,
+              "padding": 20,
+            },
+          ]
+        }
+        title="BACK"
+      >
+        <Text />
+        <Text
+          style={
+            Object {
+              "color": "white",
+              "fontSize": 35,
+              "fontWeight": "bold",
+              "textDecorationLine": "none",
+            }
+          }
+        >
+          Home
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

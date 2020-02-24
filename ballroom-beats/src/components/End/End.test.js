@@ -9,7 +9,7 @@ const mockProps = {
  };
 
 describe('End', () => {  
-
+ 
 
    it('should match snapshot', () => {
     const end = renderer.create(<End navigation={mockProps.navigation} />).toJSON();

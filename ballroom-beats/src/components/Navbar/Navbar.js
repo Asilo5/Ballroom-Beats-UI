@@ -4,7 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { StyleSheet, View, Text, Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 
-
+ 
 class Navbar extends Component {
   
   render() {

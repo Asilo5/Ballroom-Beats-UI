@@ -11,7 +11,7 @@ class Loader extends Component {
     super(props)
     this.state= {
 
-    }
+    } 
   }
 
   _gameScreen = () => {
@@ -19,7 +19,7 @@ class Loader extends Component {
   }
 
   render() {
-    console.log('LOADER SONG', this.props.navigation.getParam('song', ''))
+    // console.log('LOADER SONG', this.props.navigation.getParam('song', ''))
       return (
           <View style={styles.container}>
             <Text style={styles.countDown}>Get ready to start the game.....</Text>

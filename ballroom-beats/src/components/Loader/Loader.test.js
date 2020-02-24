@@ -2,11 +2,17 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Loader from '../Loader/Loader';
 
-describe('Loader', () => {
+const mockProps = {
+   navigation: {
+     navigate: jest.fn()
+   }
+ };
 
+describe('Loader', () => {
+ 
    it('should match snapshot', () => {
-    const loader = renderer.create(<Loader />).toJSON();
+    const loader = renderer.create(<Loader navigation={mockProps.navigation} />).toJSON();
     expect(loader).toMatchSnapshot();
    });
 
-});
+}); 
