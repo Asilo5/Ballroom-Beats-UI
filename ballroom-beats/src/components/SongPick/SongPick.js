@@ -74,13 +74,13 @@ const styles = StyleSheet.create({
     },
     picker: {
         width: 350,
-        borderColor: 'lime',
+        borderColor: '#A9C344',
         borderWidth: 1,
         marginBottom: 20,
         height: 75,
   },
   picker_text: {
-        color: 'lime',
+        color: '#A9C344',
         fontWeight: 'bold',
         backgroundColor: '#39373A',
         fontSize: 30,
@@ -92,16 +92,18 @@ const styles = StyleSheet.create({
         width: '60%',
     },
     button1: {
-        backgroundColor: '#32CD32',
+        backgroundColor: '#A9C344',
         fontSize: 25,
+        color: 'white' 
     },
     next: {
         fontSize: 30,
         fontWeight: 'bold',
     },
     button2: {
-        backgroundColor: '#32CD32',
+        backgroundColor: '#A9C344',
         fontSize: 25,
+        color: 'white' 
     },
     back: {
         fontSize: 30,

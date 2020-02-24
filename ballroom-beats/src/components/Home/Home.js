@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     button: {
-        backgroundColor: '#BD4413',
+        backgroundColor: '#A9C344',
     },
     enter: {
         fontSize: 30,
