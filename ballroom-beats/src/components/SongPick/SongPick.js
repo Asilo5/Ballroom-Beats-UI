@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     picker: {
-        width: 350,
+        width: 340,
         borderColor: 'lime',
         borderWidth: 1,
         marginBottom: 20,
