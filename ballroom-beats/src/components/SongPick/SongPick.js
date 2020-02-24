@@ -40,7 +40,7 @@ class SongPick extends Component {
                     title="BACK">
                     <Text style={styles.back}>Back</Text>
                 </Icon.Button>
-                <Icon.Button style={styles.button2} 
+                <Icon.Button style={styles.button2}
                     name="arrowright" 
                     onPress={() => this.props.navigation.navigate('Loader')} 
                     title="NEXT">
