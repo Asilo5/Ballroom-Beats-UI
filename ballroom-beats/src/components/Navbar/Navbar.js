@@ -32,7 +32,7 @@ const AppNavigator = createStackNavigator({
 
 const styles = StyleSheet.create({
   bottomContainer: {
-    backgroundColor: '#BD4413',
+    backgroundColor: '#D1005A',
     bottom: 3,
     width: '100%',
     position: 'absolute',
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   button: {
-    backgroundColor: '#BD4413',
+    backgroundColor: '#D1005A',
     padding: 20,
     fontSize: 35
   },
