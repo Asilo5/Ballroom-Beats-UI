@@ -9,7 +9,7 @@ import CountDown from 'react-native-countdown-component';
 class Loader extends Component {
 
   _gameScreen = () => {
-    this.props.navigation.navigate('Game', {song: this.props.song, tempoMultiplier: this.props.tempoMultiplier});
+    this.props.navigation.navigate('Game', {song: this.props.navigation.getParam('song', ''), tempoMultiplier: this.props.navigation.getParam('tempoMultiplier', '')});
   }
 
   render() {

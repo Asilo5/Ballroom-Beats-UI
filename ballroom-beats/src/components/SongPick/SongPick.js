@@ -4,14 +4,13 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Navbar from '../Navbar/Navbar';
-import { getData } from '../../apiCalls.js'
+import { getData } from '../../../apiCalls.js'
 
 class SongPick extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state={
-<<<<<<< HEAD
-        songList: [],
+        allSongs: [],
         selectedSong : '',
         tempoMultiplier: ""
     }
@@ -19,64 +18,54 @@ class SongPick extends Component {
 
   async componentDidMount() {
     const songList = await getData('https://ballroom-blitz.herokuapp.com/api/v1/songs', 'songs')
-    this.setState({allSongs: {songList}})
+    const songData = await songList.data
+    this.setState({allSongs: songData})
   }
 
   findSong = () => {
-    return songList.find(song => {
+    return this.state.allSongs.find(song => {
       return song.title === this.state.selectedSong
     })
   }
 
   getSelectedTempo = () => {
-    if (this.props.selectedDance.includes("Advanced")) {
+    if (this.props.navigation.getParam('selectedDance', '').includes("Advanced")) {
       this.setState({tempoMultiplier: 2})
     }
 
-    if (this.props.selectedDance.includes("Beginner")) {
+    if (this.props.navigation.getParam('selectedDance', '').includes("Beginner")) {
       this.setState({tempoMultiplier: 1})
-=======
-        selectedSong: ''
->>>>>>> master
     }
   }
 
       // method for taking value, passing down to songPick for what songs to display
   getSelectedSongs = () => {
-    if (this.props.selectedDance.includes("Waltz")) {
-      return (
-        <>
-          <Picker.Item label="Beyond The Sea" value="Beyond The Sea" />
-          <Picker.Item label="Games of Thrones" value="Game of Thrones" />
-        </>
-
-      )
+    if (this.props.navigation.getParam('selectedDance', '').includes("Waltz")) {
+      return [
+        <Picker.Item label="Beyond The Sea" value="Beyond The Sea" />,
+        <Picker.Item label="Games of Thrones" value="Game of Thrones" />
+      ]
     }
 
-    if (this.props.selectedDance.includes("Swing")) {
-      return (
-        <>
-          <Picker.Item label="Jump Jive an’ Wail" value="Jump Jive an’ Wail" />
-          <Picker.Item label="Be My Baby" value="Be My Baby" />
-        </>
-
-      )
+    if (this.props.navigation.getParam('selectedDance', '').includes("Swing")) {
+      return [
+        <Picker.Item label="Jump Jive an’ Wail" value="Jump Jive an’ Wail" />,
+        <Picker.Item label="Be My Baby" value="Be My Baby" />
+      ]
     }
 
-    if (this.props.selectedDance.includes("Bachata")) {
-      return (
-        <>
-          <Picker.Item label="Deja Vu" value="Deja Vu" />
-          <Picker.Item label="Blinding Lights" value="Blinding Lights" />
-        </>
-
-      )
+    if (this.props.navigation.getParam('selectedDance', '').includes("Bachata")) {
+      return [
+        <Picker.Item label="Deja Vu" value="Deja Vu" />,
+        <Picker.Item label="Melancolia Tropical" value="Melancolia Tropical" />
+      ]
     }
   }
 
 
 
   render() {
+    console.log('SONGS', this.state.allSongs)
       return (
           <View style={styles.container}>
             <Text style={styles.songPick}>Pick Your Song</Text>

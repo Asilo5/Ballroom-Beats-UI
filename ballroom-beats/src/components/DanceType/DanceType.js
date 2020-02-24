@@ -22,7 +22,7 @@ class DanceType extends Component {
       return (
           <View style={styles.container}>
             <Text style={styles.dance}>Pick Your Dance Type</Text>
-            <Text style={styles.dance}>{this.state.selectedDance}</Text>
+            <Text style={styles.dance}>{`${this.state.selectedDance}`}</Text>
                 <Picker
                     mode="dropdown"
                     style={styles.picker}
@@ -43,7 +43,7 @@ class DanceType extends Component {
                     style={[styles.button, { backgroundColor: this.state.selectedDance ? '#32CD32' : '#545454'}]}
                     name="arrowright"
                     onPress={() => this.props.navigation.navigate('SongPick', {
-                      selectedDance: {this.state.selectedDance}
+                      selectedDance: `${this.state.selectedDance}`
                     })}
                     disabled={(this.state.selectedDance == '') ? true : false}
                     title="NEXT">

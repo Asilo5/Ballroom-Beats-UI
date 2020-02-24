@@ -5,11 +5,11 @@ import {
   Text,
   View,
   StyleSheet,
-  Animated, 
+  Animated,
   Easing,
   TouchableOpacity
 } from "react-native";
- 
+
 
 export default class DanceFloor extends Component {
   state = {
@@ -23,15 +23,19 @@ export default class DanceFloor extends Component {
         <Waltz
         start={this.props.start}
         style={styles.container1}
+        song={this.props.song}
+        tempoMultiplier={this.props.tempoMultiplier}
         />
       )
     }
 
     if (this.state.dance === "bachata") {
       return (
-        <Bachata 
+        <Bachata
           start={this.props.start}
           style={styles.container1}
+          song={this.props.song}
+          tempoMultiplier={this.props.tempoMultiplier}
         />
       )
     }
