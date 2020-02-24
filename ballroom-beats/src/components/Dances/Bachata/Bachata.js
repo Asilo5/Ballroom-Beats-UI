@@ -17,6 +17,8 @@ export default class Bachata extends Component {
         new Animated.Value(1),
         new Animated.Value(1),
         new Animated.Value(1),
+        new Animated.Value(1),
+        new Animated.Value(1),
         new Animated.Value(1)
       ],
       counters: [
@@ -27,79 +29,85 @@ export default class Bachata extends Component {
       ]
     };
 
+    assessPulseDuration = () => {
+      return (
+        60000/this.props.song.tempo * .5
+      )
+    }
+
     generateTiming = () => {
         return [
+           Animated.timing(this.state.pulses[0], {
+               toValue: 3,
+               duration: this.assessPulseDuration(),
+               easing: Easing.back()
+           }),
+           Animated.timing(this.state.pulses[0], {
+               toValue: 1,
+               duration: this.assessPulseDuration()
+           }),
+           Animated.timing(this.state.pulses[1], {
+               toValue: 3,
+               duration: this.assessPulseDuration(),
+               easing: Easing.back()
+           }),
+           Animated.timing(this.state.pulses[1], {
+               toValue: 1,
+               duration: this.assessPulseDuration()
+           }),
            Animated.timing(this.state.pulses[2], {
                toValue: 3,
-               duration: 439,
+               duration: this.assessPulseDuration(),
                easing: Easing.back()
            }),
            Animated.timing(this.state.pulses[2], {
                toValue: 1,
-               duration: 439
+               duration: this.assessPulseDuration()
            }),
            Animated.timing(this.state.pulses[3], {
-               toValue: 3,
-               duration: 439,
-               easing: Easing.back()
-           }),
-           Animated.timing(this.state.pulses[3], {
-               toValue: 1,
-               duration: 439
-           }),
-           Animated.timing(this.state.pulses[4], {
-               toValue: 3,
-               duration: 439,
-               easing: Easing.back()
-           }),
-           Animated.timing(this.state.pulses[4], {
-               toValue: 1,
-               duration: 439
-           }),
-           Animated.timing(this.state.pulses[5], {
                toValue: 4,
-               duration: 439,
+               duration: this.assessPulseDuration(),
+               easing: Easing.back()
+           }),
+           Animated.timing(this.state.pulses[3], {
+               toValue: 1,
+               duration: this.assessPulseDuration()
+           }),
+           Animated.timing(this.state.pulses[4], {
+               toValue: 3,
+               duration: this.assessPulseDuration(),
+               easing: Easing.back()
+           }),
+           Animated.timing(this.state.pulses[4], {
+               toValue: 1,
+               duration: this.assessPulseDuration()
+           }),
+           Animated.timing(this.state.pulses[5], {
+               toValue: 3,
+               duration: this.assessPulseDuration(),
                easing: Easing.back()
            }),
            Animated.timing(this.state.pulses[5], {
                toValue: 1,
-               duration: 439
+               duration: this.assessPulseDuration()
            }),
-           Animated.timing(this.state.pulses[3], {
+           Animated.timing(this.state.pulses[6], {
                toValue: 3,
-               duration: 439,
+               duration: this.assessPulseDuration(),
                easing: Easing.back()
            }),
-           Animated.timing(this.state.pulses[3], {
+           Animated.timing(this.state.pulses[6], {
                toValue: 1,
-               duration: 439
+               duration: this.assessPulseDuration()
            }),
-           Animated.timing(this.state.pulses[2], {
-               toValue: 3,
-               duration: 439,
+           Animated.timing(this.state.pulses[7], {
+               toValue: 4,
+               duration: this.assessPulseDuration(),
                easing: Easing.back()
            }),
-           Animated.timing(this.state.pulses[2], {
+           Animated.timing(this.state.pulses[7], {
                toValue: 1,
-               duration: 439
-           }),
-           Animated.timing(this.state.pulses[1], {
-               toValue: 3,
-               duration: 439,
-               easing: Easing.back()
-           }),
-           Animated.timing(this.state.pulses[1], {
-               toValue: 1,
-               duration: 439
-           }),
-           Animated.timing(this.state.pulses[0], {
-               toValue: 3,
-               duration: 439,
-               easing: Easing.back()
-           }),
-           Animated.timing(this.state.pulses[0], {
-               toValue: 1,
-               duration: 439
+               duration: this.assessPulseDuration()
            }),
         ]
     };
@@ -137,10 +145,10 @@ export default class Bachata extends Component {
                style={{
                    transform: [
                        {
-                           scaleX: this.state.pulses[2]
+                           scaleX: this.state.pulses[6]
                        },
                        {
-                          scaleY: this.state.pulses[2]
+                          scaleY: this.state.pulses[6]
                       }
                    ],
                    margin: 20,
@@ -155,10 +163,10 @@ export default class Bachata extends Component {
                style={{
                    transform: [
                        {
-                           scaleX: this.state.pulses[2]
+                           scaleX: this.state.pulses[7]
                        },
                        {
-                          scaleY: this.state.pulses[2]
+                          scaleY: this.state.pulses[7]
                       }
                    ],
                    margin: 20,
@@ -175,10 +183,10 @@ export default class Bachata extends Component {
                   style={{
                       transform: [
                           {
-                              scaleX: this.state.pulses[2]
+                              scaleX: this.state.pulses[1]
                           },
                           {
-                             scaleY: this.state.pulses[2]
+                             scaleY: this.state.pulses[1]
                          }
                       ],
                       margin: 20,
@@ -193,10 +201,10 @@ export default class Bachata extends Component {
                   style={{
                       transform: [
                           {
-                              scaleX: this.state.pulses[3]
+                              scaleX: this.state.pulses[0]
                           },
                           {
-                             scaleY: this.state.pulses[3]
+                             scaleY: this.state.pulses[0]
                          }
                       ],
                       margin: 20,
@@ -213,10 +221,10 @@ export default class Bachata extends Component {
                   style={{
                       transform: [
                           {
-                              scaleX: this.state.pulses[0]
+                              scaleX: this.state.pulses[4]
                           },
                           {
-                             scaleY: this.state.pulses[0]
+                             scaleY: this.state.pulses[4]
                          }
                       ],
                       margin: 20,
@@ -231,10 +239,10 @@ export default class Bachata extends Component {
                   style={{
                       transform: [
                           {
-                              scaleX: this.state.pulses[1]
+                              scaleX: this.state.pulses[5]
                           },
                           {
-                             scaleY: this.state.pulses[1]
+                             scaleY: this.state.pulses[5]
                          }
                       ],
                       margin: 20,
@@ -251,10 +259,10 @@ export default class Bachata extends Component {
                  style={{
                      transform: [
                          {
-                             scaleX: this.state.pulses[2]
+                             scaleX: this.state.pulses[3]
                          },
                          {
-                            scaleY: this.state.pulses[2]
+                            scaleY: this.state.pulses[3]
                         }
                      ],
                      margin: 20,
@@ -269,10 +277,10 @@ export default class Bachata extends Component {
                  style={{
                      transform: [
                          {
-                             scaleX: this.state.pulses[3]
+                             scaleX: this.state.pulses[2]
                          },
                          {
-                            scaleY: this.state.pulses[3]
+                            scaleY: this.state.pulses[2]
                         }
                      ],
                      margin: 20,
@@ -288,7 +296,6 @@ export default class Bachata extends Component {
    };
 
     render() {
-      console.log('BACHATA SONG', this.props.songs)
         return (
           <View style={styles.bachataComponent}>
               {this.props.start(this.generateTiming())}

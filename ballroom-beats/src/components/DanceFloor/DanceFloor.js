@@ -44,7 +44,6 @@ export default class DanceFloor extends Component {
   }
 
   render() {
-    console.log('DANCEFLOOR SONG', this.props.song)
     return (
       <>
         {this.chooseDance()}

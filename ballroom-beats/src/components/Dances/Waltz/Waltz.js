@@ -32,7 +32,7 @@ export default class Waltz extends Component {
 
   assessPulseDuration = () => {
     return (
-      60000/this.props.song.tempo
+      60000/this.props.song.tempo * .5
     )
   }
 

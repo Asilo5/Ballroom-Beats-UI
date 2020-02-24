@@ -33,6 +33,10 @@ class Game extends Component {
         return require('../../../assets/Music/Beyond_-_the_-_Sea.mp3');
       case "deja-vu":
         return require('../../../assets/Music/Deja_-_vu.mp3');
+      case "game-of-thrones":
+        return require('../../../assets/Music/Game_-_of_-_Thrones.mp3');
+      case "melancolia-tropical":
+        return require('../../../assets/Music/Melancolia_-_Tropical.mp3');
       default:
         return require('../../../assets/Music/Never_-_Gonna_-_Give_-_You_-_Up.mp3');
     }
@@ -48,8 +52,6 @@ class Game extends Component {
   };
 
   render() {
-    console.log('DANCE PARAM', this.props.navigation.getParam('dance', ''))
-    console.log('GAME SONG', this.props.navigation.getParam('song', ''))
       return (
         <>
           <View style={styles.container}>
