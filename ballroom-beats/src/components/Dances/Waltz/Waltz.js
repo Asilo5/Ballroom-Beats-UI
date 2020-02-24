@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {
   Text,
   View,
-  StyleSheet, 
+  StyleSheet,
   Animated,
   Easing,
   TouchableOpacity,
@@ -28,26 +28,25 @@ export default class Waltz extends Component {
       0,
       0,
     ]
-
-
   };
 
-  // _start = () => {
-  //   Animated.loop(
-  //     Animated.sequence(this.generateTiming()), {iterations: -1, useNativeDriver: true}).start();
-  // };
+  assessPulseDuration = () => {
+    return (
+      60000/this.props.song.tempo
+    )
+  }
 
   generateTiming = () => {
     return this.state.pulses.map(pulse => {
       return [
         Animated.timing(pulse, {
           toValue: 3,
-          duration: 439.61519,
+          duration: this.assessPulseDuration(),
           easing: Easing.back(),
         }),
         Animated.timing(pulse, {
           toValue: 1,
-          duration: 439.61519,
+          duration: this.assessPulseDuration(),
         })
       ]
     }).flat();
@@ -221,7 +220,7 @@ export default class Waltz extends Component {
                         }}
                       />
                       <Animated.View />
-                </TouchableOpacity>    
+                </TouchableOpacity>
             </View>
 
              <TouchableOpacity onPress={() => {this.countUp(3)}} key={3}>
@@ -255,7 +254,7 @@ export default class Waltz extends Component {
           {this.props.start(this.generateTiming())}
         <View style={styles.stepsContainer}>
           {this.generateViews()}
-        </View> 
+        </View>
       </View>
     );
   }
