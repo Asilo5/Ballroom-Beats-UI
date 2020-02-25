@@ -45,10 +45,10 @@ export default class Waltz extends Component {
   }
 
   getSongLength = () => {
-    return (
-      this.props.song.duration * 1000
-    )
-
+    // return (
+    //   this.props.song.duration * 1000
+    // )
+    return 10000
   }
 
   assessPulseDuration = () => {
@@ -74,7 +74,9 @@ export default class Waltz extends Component {
   }
 
   countUp = () => {
-    this.setState({counter: this.state.counter++});
+    let newCount = this.state.counter
+    newCount++
+    this.setState({counter: newCount});
   }
 
   // countUp = (num) => {
@@ -272,7 +274,7 @@ export default class Waltz extends Component {
   };
 
   render() {
-    console.log('COUNTERS', this.state.counters)
+    console.log('COUNTER', this.state.counter)
     return (
       <View style={styles.waltzComponent}>
         <View style={styles.stepsContainer}>

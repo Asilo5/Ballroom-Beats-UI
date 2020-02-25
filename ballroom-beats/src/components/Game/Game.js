@@ -59,7 +59,9 @@ class Game extends Component {
     }, time);
   }
 
-  getScore = (getCounterValue, getExpectedValue) => {
+  getScore = (getCounterValue, getExpectedFloat) => {
+    let getExpectedValue = Math.floor(getExpectedFloat)
+    
     if (getCounterValue > getExpectedValue) {
       return `${getCounterValue} out of ${getExpectedValue} steps - stop stumbling around!`
     } else if (getCounterValue < getExpectedValue) {
