@@ -10,7 +10,7 @@ class Game extends Component {
     super(props)
     this.state= {
     }
-  }
+  };
 
   async componentDidMount() {
     let songPath = this.props.navigation.getParam('song', '').url
@@ -40,7 +40,8 @@ class Game extends Component {
       default:
         return require('../../../assets/Music/Never_-_Gonna_-_Give_-_You_-_Up.mp3');
     }
-  }
+  };
+
   _start = (sequenceTiming) => {
     Animated.loop(
       Animated.sequence(sequenceTiming), {iterations: -1, useNativeDriver: true}).start();
@@ -51,24 +52,16 @@ class Game extends Component {
     this.props.navigation.navigate('End');
   };
 
-  // _musicTimeout () {
-  //   setTimeout(() => {
-  //     this.backgroundMusic.stopAsync();
-  //     this.props.navigation.navigate('End');
-  //   }, 10000);
-  // };
-
   render() {
     setTimeout(() => {
       this.backgroundMusic.stopAsync();
       this.props.navigation.navigate('End');
-    }, 10000);
+    }, 30000);
       return (
         <>
           <View style={styles.container}>
           <DanceFloor start={this._start} song={this.props.navigation.getParam('song', '')} tempoMultiplier={this.props.navigation.getParam('tempoMultiplier', '')} dance={this.props.navigation.getParam('dance', '')}/>
           {this._startMusic}
-          {/* {this._musicTimeout} */}
             <View style={styles.btnContainer}>
                 <TouchableOpacity
                     style={styles.button}
