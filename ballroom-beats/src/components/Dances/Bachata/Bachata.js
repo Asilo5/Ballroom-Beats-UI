@@ -159,9 +159,9 @@ export default class Bachata extends Component {
                       }
                    ],
                    margin: 20,
-                   borderWidth: 10,
+                   borderWidth: 18,
                    borderColor: "#FCFDF9",
-                   borderRadius: 10
+                   borderRadius: 18
                }}  >
            </Animated.View>
        </TouchableOpacity>
@@ -177,9 +177,9 @@ export default class Bachata extends Component {
                       }
                    ],
                    margin: 20,
-                   borderWidth: 10,
+                   borderWidth: 18,
                    borderColor: "#F60091",
-                   borderRadius: 10
+                   borderRadius: 18
                }}  >
            </Animated.View>
        </TouchableOpacity>
@@ -197,9 +197,9 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 10,
+                      borderWidth: 18,
                       borderColor: "#F6811F",
-                      borderRadius: 10
+                      borderRadius: 18
                   }}  >
               </Animated.View>
           </TouchableOpacity>
@@ -215,9 +215,9 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 10,
+                      borderWidth: 18,
                       borderColor: "#FFEB00",
-                      borderRadius: 10
+                      borderRadius: 18
                   }}  >
               </Animated.View>
           </TouchableOpacity>
@@ -235,9 +235,9 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 10,
+                      borderWidth: 18,
                       borderColor: "#71C043",
-                      borderRadius: 10
+                      borderRadius: 18
                   }}  >
               </Animated.View>
           </TouchableOpacity>
@@ -253,9 +253,9 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 10,
+                      borderWidth: 18,
                       borderColor: "#03ABF0",
-                      borderRadius: 10
+                      borderRadius: 18
                   }}  >
               </Animated.View>
           </TouchableOpacity>
@@ -273,9 +273,9 @@ export default class Bachata extends Component {
                         }
                      ],
                      margin: 20,
-                     borderWidth: 10,
+                     borderWidth: 18,
                      borderColor: "#274FA2",
-                     borderRadius: 10
+                     borderRadius: 18
                  }}  >
              </Animated.View>
          </TouchableOpacity>
@@ -291,9 +291,9 @@ export default class Bachata extends Component {
                         }
                      ],
                      margin: 20,
-                     borderWidth: 10,
+                     borderWidth: 18,
                      borderColor: "#6F2C8F",
-                     borderRadius: 10
+                     borderRadius: 18
                  }}  >
              </Animated.View>
          </TouchableOpacity>
@@ -345,11 +345,13 @@ const styles = StyleSheet.create({
     },
     middleDots: {
       display: "flex",
-      bottom: 30
+      bottom: 40
     },
     splitDots: {
       display: "flex",
       flexDirection: "row",
+      marginBottom: 30,
+      // marginTop: 30,
     },
     upperSteps:{
       display: 'flex',
@@ -376,7 +378,8 @@ const styles = StyleSheet.create({
       padding: 10,
       left: 55,
       marginTop: 60,
-      marginBottom: 60
+      marginBottom: 60,
+      height: '50%'
     },
     numberView: {
       backgroundColor: "#FFF",

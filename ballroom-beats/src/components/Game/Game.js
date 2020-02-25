@@ -9,19 +9,19 @@ class Game extends Component {
   constructor(props) {
     super(props)
     this.state= {
-
     }
-  }
+  };
 
   async componentDidMount() {
     let songPath = this.props.navigation.getParam('song', '').url
     this.backgroundMusic = new Audio.Sound();
     try {
+      // await this.backgroundMusic.unloadAsync();
       await this.backgroundMusic.loadAsync(
         this.checkSongSwitch(songPath)
       );
       await this.backgroundMusic.playAsync();
-      await this.backgroundMusic.setIsLoopingAsync(true);
+      await this.backgroundMusic.setIsLoopingAsync(false);
     } catch (error) {
        console.log("The music isn't playing")
     }
@@ -40,7 +40,8 @@ class Game extends Component {
       default:
         return require('../../../assets/Music/Never_-_Gonna_-_Give_-_You_-_Up.mp3');
     }
-  }
+  };
+
   _start = (sequenceTiming) => {
     Animated.loop(
       Animated.sequence(sequenceTiming), {iterations: -1, useNativeDriver: true}).start();
@@ -52,6 +53,10 @@ class Game extends Component {
   };
 
   render() {
+    setTimeout(() => {
+      this.backgroundMusic.stopAsync();
+      this.props.navigation.navigate('End');
+    }, 30000);
       return (
         <>
           <View style={styles.container}>
