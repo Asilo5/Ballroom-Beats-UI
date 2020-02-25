@@ -9,7 +9,6 @@ class Game extends Component {
   constructor(props) {
     super(props)
     this.state= {
-        timeLeft: 15,
     }
   }
 
@@ -27,19 +26,6 @@ class Game extends Component {
        console.log("The music isn't playing")
     }
   };
-
-  // _musicTimeout () {
-  //   this.interval = setInterval(() => {
-  //     const { timeLeft } = this.state;
-
-  //     if(timeLeft <= 0) {
-  //     this.backgroundMusic.stopAsync();
-  //     this.props.navigation.navigate('End');
-  //     } else {
-  //       this.setState(state => ({ timeLeft: state.timeLeft - 1 }));
-  //     }
-  //   }, 100);
-  // }
 
   checkSongSwitch = (path) => {
     switch (path) {
@@ -65,13 +51,24 @@ class Game extends Component {
     this.props.navigation.navigate('End');
   };
 
+  // _musicTimeout () {
+  //   setTimeout(() => {
+  //     this.backgroundMusic.stopAsync();
+  //     this.props.navigation.navigate('End');
+  //   }, 10000);
+  // };
+
   render() {
+    setTimeout(() => {
+      this.backgroundMusic.stopAsync();
+      this.props.navigation.navigate('End');
+    }, 10000);
       return (
         <>
           <View style={styles.container}>
           <DanceFloor start={this._start} song={this.props.navigation.getParam('song', '')} tempoMultiplier={this.props.navigation.getParam('tempoMultiplier', '')} dance={this.props.navigation.getParam('dance', '')}/>
           {this._startMusic}
-          {this._musicTimeout}
+          {/* {this._musicTimeout} */}
             <View style={styles.btnContainer}>
                 <TouchableOpacity
                     style={styles.button}

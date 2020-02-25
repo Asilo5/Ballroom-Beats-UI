@@ -76,7 +76,6 @@ export default class Waltz extends Component {
           <Text key={3}>{this.state.counters[3].toString()}</Text>
           <Text key={4}>{this.state.counters[4].toString()}</Text>
           <Text key={5}>{this.state.counters[5].toString()}</Text>
-          {console.log(this.state.counters[0])}
         </>
       )
   }
