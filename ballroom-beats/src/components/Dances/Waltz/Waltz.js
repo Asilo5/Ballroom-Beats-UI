@@ -44,12 +44,12 @@ export default class Waltz extends Component {
     return this.state.pulses.map(pulse => {
       return [
         Animated.timing(pulse, {
-          toValue: 2,
+          toValue: 3,
           duration: this.assessPulseDuration(),
           easing: Easing.back(),
         }),
         Animated.timing(pulse, {
-          toValue: 0,
+          toValue: 1,
           duration: this.assessPulseDuration(),
         })
       ]
