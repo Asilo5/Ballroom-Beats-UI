@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Picker } from 'react-native';
+import { View, Text, StyleSheet, Picker, Platform } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -19,12 +19,10 @@ class DanceType extends Component {
           <View style={styles.container}>
             <Text style={styles.dance}>Pick Your Dance Type</Text>
                 <Picker
-                    mode="dropdown"
                     style={styles.picker}
-                    iosIcon={<Icon name="arrowdown"></Icon>}
                     itemStyle={styles.picker_text}
                     selectedValue={this.state.selectedDance}
-                    onValueChange={(itemValue, itemIndex) =>
+                    onValueChange={(itemValue) =>
                         this.setState({selectedDance: itemValue})} >
                     <Picker.Item label="-- Pick a Dance --" value="" />
                     <Picker.Item label="Waltz" value="Waltz" />
@@ -56,14 +54,14 @@ const AppNavigator = createStackNavigator({
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'black',
+        backgroundColor: '#666363',
         alignItems: 'center',
         justifyContent: 'center',
     },
     dance: {
         fontSize: 35,
         fontWeight: 'bold',
-        color: 'white',
+        color: 'black',
         marginBottom: 10,
     },
     picker: {
@@ -73,11 +71,32 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         height: 66,
         borderRadius: 3,
+        ...Platform.select({
+            android: {
+                width: 350,
+        borderColor: '#A9C344',
+        borderWidth: 1,
+        marginBottom: 10,
+        height: 66,
+        borderRadius: 3,
+            },
+        }),
     },
     picker_text: {
         color: '#A9C344',
         fontWeight: 'bold',
-        backgroundColor: '#39373A',
+        ...Platform.select({
+            ios: {
+              backgroundColor: '#39373A',
+            },
+            android: {
+              backgroundColor: '#39373A',
+              fontWeight: 'bold',
+              fontWeight: 'bold',
+              height: 64,
+              fontSize: 30,
+            },
+        }),  
         fontSize: 30,
         height: 64,
     },
