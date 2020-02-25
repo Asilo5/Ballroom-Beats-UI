@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   ImageBackground
 } from "react-native";
+import Comments from "../../Comments/Comments";
 
 export default class Waltz extends Component {
   state = {
@@ -247,13 +248,21 @@ export default class Waltz extends Component {
 
   };
 
+  
   render() {
+    const positiveComments = [{id: 1, comment: 'Great Job!'}, {id: 2, comment: 'Yea!'}, {id: 3, comment: 'Keep Going!'}, {id: 4, comment: 'Doing Great!'}];
+
     return (
       <View style={styles.waltzComponent}>
           {this.props.start(this.generateTiming())}
         <View style={styles.stepsContainer}>
           {this.generateViews()}
         </View>
+         <View style={styles.commentsContainer}>
+            {positiveComments.map((comment) => {
+              return <Comments key={comment.id} {...comment} />
+            })}
+         </View>
       </View>
     );
   }
@@ -304,5 +313,10 @@ const styles = StyleSheet.create({
   bob: {
     color: 'white',
     fontSize: 20
+  },
+  commentsContainer: {
+    position:'absolute',
+    bottom: 30,
+    backgroundColor: 'transparent'
   }
 });
