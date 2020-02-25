@@ -267,7 +267,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     height: '60%',
-    width: 400
+    width: 400,
   },
   upperSteps:{
     display: 'flex',

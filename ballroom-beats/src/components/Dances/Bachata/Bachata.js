@@ -341,11 +341,13 @@ const styles = StyleSheet.create({
       flexDirection: "row",
       justifyContent: "space-around",
       right: 50,
-      top: 100
+      top: 100,
+      height: 400
     },
     middleDots: {
       display: "flex",
-      bottom: 40
+      bottom: 40,
+      marginBottom: 100
     },
     splitDots: {
       display: "flex",
