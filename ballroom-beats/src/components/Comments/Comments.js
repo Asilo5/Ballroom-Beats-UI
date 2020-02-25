@@ -5,9 +5,10 @@ class Comments extends Component {
    
 
     render() {
+        console.log(this.props.comment)
         return (
             <Animated.View>
-                <Text style={styles.comment}>Good Job!</Text>
+                <Text style={styles.comment}>{this.props.comment}</Text>
             </Animated.View>
         );
     }
@@ -16,7 +17,9 @@ class Comments extends Component {
 export default Comments;
 
 const styles = StyleSheet.create({
+    comment: {
     color: 'white',
     fontSize: 20,
     left: 100
+   }
 });
