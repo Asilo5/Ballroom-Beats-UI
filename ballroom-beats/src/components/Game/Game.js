@@ -51,15 +51,18 @@ class Game extends Component {
     this.props.navigation.navigate('End');
   };
 
-  render() {
+  stopDance = (time) => {
     setTimeout(() => {
       this.backgroundMusic.stopAsync();
       this.props.navigation.navigate('End');
-    }, 30000);
+    }, time);
+  }
+
+  render() {
       return (
         <>
           <View style={styles.container}>
-          <DanceFloor start={this._start} song={this.props.navigation.getParam('song', '')} tempoMultiplier={this.props.navigation.getParam('tempoMultiplier', '')} dance={this.props.navigation.getParam('dance', '')}/>
+          <DanceFloor start={this._start} song={this.props.navigation.getParam('song', '')} tempoMultiplier={this.props.navigation.getParam('tempoMultiplier', '')} dance={this.props.navigation.getParam('dance', '')} stop={this.stopDance}/>
             <View style={styles.btnContainer}>
                 <TouchableOpacity
                     style={styles.button}

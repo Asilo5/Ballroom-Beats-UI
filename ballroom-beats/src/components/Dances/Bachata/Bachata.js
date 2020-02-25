@@ -35,7 +35,16 @@ export default class Bachata extends Component {
 
     componentDidMount() {
       this.props.start(this.generateTiming())
+      this.props.stop(this.getSongLength())
     }
+
+    getSongLength = () => {
+      return (
+        this.props.song.duration * 1000
+      )
+
+    }
+
     assessPulseDuration = () => {
       return (
         60000/this.props.song.tempo * .5
@@ -159,9 +168,9 @@ export default class Bachata extends Component {
                       }
                    ],
                    margin: 20,
-                   borderWidth: 18,
+                   borderWidth: 10,
                    borderColor: "#FCFDF9",
-                   borderRadius: 18
+                   borderRadius: 10
                }}  >
            </Animated.View>
        </TouchableOpacity>
@@ -177,9 +186,9 @@ export default class Bachata extends Component {
                       }
                    ],
                    margin: 20,
-                   borderWidth: 18,
+                   borderWidth: 10,
                    borderColor: "#F60091",
-                   borderRadius: 18
+                   borderRadius: 10
                }}  >
            </Animated.View>
        </TouchableOpacity>
@@ -197,9 +206,9 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 18,
+                      borderWidth: 10,
                       borderColor: "#F6811F",
-                      borderRadius: 18
+                      borderRadius: 10
                   }}  >
               </Animated.View>
           </TouchableOpacity>
@@ -215,9 +224,9 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 18,
+                      borderWidth: 10,
                       borderColor: "#FFEB00",
-                      borderRadius: 18
+                      borderRadius: 10
                   }}  >
               </Animated.View>
           </TouchableOpacity>
@@ -235,9 +244,9 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 18,
+                      borderWidth: 10,
                       borderColor: "#71C043",
-                      borderRadius: 18
+                      borderRadius: 10
                   }}  >
               </Animated.View>
           </TouchableOpacity>
@@ -253,9 +262,9 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 18,
+                      borderWidth: 10,
                       borderColor: "#03ABF0",
-                      borderRadius: 18
+                      borderRadius: 10
                   }}  >
               </Animated.View>
           </TouchableOpacity>
@@ -273,9 +282,9 @@ export default class Bachata extends Component {
                         }
                      ],
                      margin: 20,
-                     borderWidth: 18,
+                     borderWidth: 10,
                      borderColor: "#274FA2",
-                     borderRadius: 18
+                     borderRadius: 10
                  }}  >
              </Animated.View>
          </TouchableOpacity>
@@ -291,9 +300,9 @@ export default class Bachata extends Component {
                         }
                      ],
                      margin: 20,
-                     borderWidth: 18,
+                     borderWidth: 10,
                      borderColor: "#6F2C8F",
-                     borderRadius: 18
+                     borderRadius: 10
                  }}  >
              </Animated.View>
          </TouchableOpacity>
@@ -345,13 +354,11 @@ const styles = StyleSheet.create({
     },
     middleDots: {
       display: "flex",
-      bottom: 40
+      bottom: 30
     },
     splitDots: {
       display: "flex",
       flexDirection: "row",
-      marginBottom: 30,
-      // marginTop: 30,
     },
     upperSteps:{
       display: 'flex',
@@ -378,8 +385,7 @@ const styles = StyleSheet.create({
       padding: 10,
       left: 55,
       marginTop: 60,
-      marginBottom: 60,
-      height: '50%'
+      marginBottom: 60
     },
     numberView: {
       backgroundColor: "#FFF",

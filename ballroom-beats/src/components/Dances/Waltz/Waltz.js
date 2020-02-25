@@ -12,12 +12,12 @@ import {
 export default class Waltz extends Component {
   state = {
     pulses: [
-      new Animated.Value(0),
-      new Animated.Value(0),
-      new Animated.Value(0),
-      new Animated.Value(0),
-      new Animated.Value(0),
-      new Animated.Value(0),
+      new Animated.Value(1),
+      new Animated.Value(1),
+      new Animated.Value(1),
+      new Animated.Value(1),
+      new Animated.Value(1),
+      new Animated.Value(1),
     ],
 
     counters: [
@@ -32,11 +32,19 @@ export default class Waltz extends Component {
 
   componentDidMount() {
     this.props.start(this.generateTiming())
+    this.props.stop(this.getSongLength())
+  }
+
+  getSongLength = () => {
+    return (
+      this.props.song.duration * 1000
+    )
+
   }
 
   assessPulseDuration = () => {
     return (
-      60000/this.props.song.tempo * .5
+      60000/this.props.song.tempo
     )
   }
 

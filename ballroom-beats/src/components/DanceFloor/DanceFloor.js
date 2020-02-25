@@ -28,6 +28,7 @@ export default class DanceFloor extends Component {
         start={this.props.start}
         style={styles.container1}
         song={this.props.song}
+        stop={this.props.stop}
         />
       )
     }
@@ -38,6 +39,7 @@ export default class DanceFloor extends Component {
           start={this.props.start}
           style={styles.container1}
           song={this.props.song}
+          stop={this.props.stop}
         />
       )
     }
