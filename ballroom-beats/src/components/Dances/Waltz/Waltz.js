@@ -20,19 +20,28 @@ export default class Waltz extends Component {
       new Animated.Value(1),
     ],
 
-    counters: [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-    ]
+    counter: 0
+    // counters: [
+    //   0,
+    //   0,
+    //   0,
+    //   0,
+    //   0,
+    //   0,
+    // ]
   };
 
   componentDidMount() {
     this.props.start(this.generateTiming())
-    this.props.stop(this.getSongLength())
+    this.props.stop(this.getSongLength(), this.getCounterValue(), this.getExpectedValue())
+  }
+
+  getCounterValue = () => {
+    return this.state.counter
+  }
+
+  getExpectedValue = () => {
+    return this.props.song.duration/60 * this.props.song.tempo
   }
 
   getSongLength = () => {
@@ -64,11 +73,15 @@ export default class Waltz extends Component {
     }).flat();
   }
 
-  countUp = (num) => {
-    const subCounterList = [...this.state.counters];
-    subCounterList[num]++;
-    this.setState({counters: subCounterList});
+  countUp = () => {
+    this.setState({counter: this.state.counter++});
   }
+
+  // countUp = (num) => {
+  //   const subCounterList = [...this.state.counters];
+  //   subCounterList[num]++;
+  //   this.setState({counters: subCounterList});
+  // }
 
 
   // generateNumberCounts = () => {
@@ -125,7 +138,7 @@ export default class Waltz extends Component {
       return (
         <View style={styles.danceFloor}>
           <View style={styles.upperSteps}>
-            <TouchableOpacity onPress={() => {this.countUp(3)}} key={0}>
+            <TouchableOpacity onPress={() => {this.countUp()}} key={0}>
               <Animated.View
                 style={{
                   transform: [
@@ -147,7 +160,7 @@ export default class Waltz extends Component {
             </TouchableOpacity>
           <View style={styles.upperTwoSteps}>
 
-              <TouchableOpacity onPress={() => {this.countUp(3)}} key={2}>
+              <TouchableOpacity onPress={() => {this.countUp()}} key={2}>
                 <Animated.View
                   style={{
                     transform: [
@@ -167,7 +180,7 @@ export default class Waltz extends Component {
                 <Animated.View />
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => {this.countUp(1)}} key={1}>
+              <TouchableOpacity onPress={() => {this.countUp()}} key={1}>
                 <Animated.View
                   style={{
                     transform: [
@@ -192,7 +205,7 @@ export default class Waltz extends Component {
 
           <View style={styles.lowerSteps}>
             <View style={styles.lowerTwoSteps}>
-                <TouchableOpacity onPress={() => {this.countUp(3)}} key={4}>
+                <TouchableOpacity onPress={() => {this.countUp()}} key={4}>
                   <Animated.View
                     style={{
                       transform: [
@@ -212,7 +225,7 @@ export default class Waltz extends Component {
                   <Animated.View />
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => {this.countUp(3)}} key={5}>
+                <TouchableOpacity onPress={() => {this.countUp()}} key={5}>
                       <Animated.View
                         style={{
                           transform: [
@@ -233,7 +246,7 @@ export default class Waltz extends Component {
                 </TouchableOpacity>
             </View>
 
-             <TouchableOpacity onPress={() => {this.countUp(3)}} key={3}>
+             <TouchableOpacity onPress={() => {this.countUp()}} key={3}>
                   <Animated.View
                     style={{
                       transform: [

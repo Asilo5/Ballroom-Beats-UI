@@ -51,18 +51,29 @@ class Game extends Component {
     this.props.navigation.navigate('End');
   };
 
-  stopDance = (time) => {
+  stopDance = (time, getCounterValue, getExpectedValue) => {
     setTimeout(() => {
       this.backgroundMusic.stopAsync();
-      this.props.navigation.navigate('End');
+      const scoreText = this.getScore(getCounterValue, getExpectedValue)
+      this.props.navigation.navigate('End', {scoreText: scoreText});
     }, time);
+  }
+
+  getScore = (getCounterValue, getExpectedValue) => {
+    if (getCounterValue > getExpectedValue) {
+      return `${getCounterValue} out of ${getExpectedValue} steps - stop stumbling around!`
+    } else if (getCounterValue < getExpectedValue) {
+      return `${getCounterValue} out of ${getExpectedValue} steps - try to keep up!`
+    } else {
+      return `${getCounterValue} out of ${getExpectedValue} steps - you're perfect!  You don't need this app!`
+    }
   }
 
   render() {
       return (
         <>
           <View style={styles.container}>
-          <DanceFloor start={this._start} song={this.props.navigation.getParam('song', '')} tempoMultiplier={this.props.navigation.getParam('tempoMultiplier', '')} dance={this.props.navigation.getParam('dance', '')} stop={this.stopDance}/>
+          <DanceFloor start={this._start} song={this.props.navigation.getParam('song', '')} dance={this.props.navigation.getParam('dance', '')} stop={this.stopDance}/>
             <View style={styles.btnContainer}>
                 <TouchableOpacity
                     style={styles.button}
