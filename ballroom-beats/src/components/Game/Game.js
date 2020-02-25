@@ -16,7 +16,6 @@ class Game extends Component {
     let songPath = this.props.navigation.getParam('song', '').url
     this.backgroundMusic = new Audio.Sound();
     try {
-      // await this.backgroundMusic.unloadAsync();
       await this.backgroundMusic.loadAsync(
         this.checkSongSwitch(songPath)
       );
@@ -61,7 +60,6 @@ class Game extends Component {
         <>
           <View style={styles.container}>
           <DanceFloor start={this._start} song={this.props.navigation.getParam('song', '')} tempoMultiplier={this.props.navigation.getParam('tempoMultiplier', '')} dance={this.props.navigation.getParam('dance', '')}/>
-          {this._startMusic}
             <View style={styles.btnContainer}>
                 <TouchableOpacity
                     style={styles.button}
