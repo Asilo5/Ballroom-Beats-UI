@@ -10,6 +10,8 @@ import {
 } from "react-native";
 import Comments from "../../Comments/Comments";
 
+const commentCount = 1;
+
 export default class Waltz extends Component {
   state = {
     pulses: [
@@ -28,7 +30,9 @@ export default class Waltz extends Component {
       0,
       0,
       0,
-    ]
+    ],
+
+    comment: []
   };
 
   assessPulseDuration = () => {
@@ -223,7 +227,7 @@ export default class Waltz extends Component {
                 </TouchableOpacity>
             </View>
 
-             <TouchableOpacity onPress={() => {this.countUp(3)}} key={3}>
+             <TouchableOpacity onPress={() => {this.countUp(3), this.addComment}} key={3}>
                   <Animated.View
                     style={{
                       transform: [
@@ -248,10 +252,17 @@ export default class Waltz extends Component {
 
   };
 
+  addComment = () => {
+     this.setState({ comment: [...this.state.comment, { id: commentCount, right: this.randomNumber(20, 150), comment: 'Great Job!' }] }, () => commentCount++ );
+  };
+
+  randomNumber = (min, max) => {
+    return Math.random() * (max-min) + min;
+  }
   
   render() {
-    const positiveComments = [{id: 1, comment: 'Great Job!'}, {id: 2, comment: 'Yea!'}, {id: 3, comment: 'Keep Going!'}, {id: 4, comment: 'Doing Great!'}];
-
+    console.log(commentCount)
+    // const positiveComments = [{id: 1, comment: 'Great Job!'}, {id: 2, comment: 'Yea!'}, {id: 3, comment: 'Keep Going!'}, {id: 4, comment: 'Doing Great!'}];
     return (
       <View style={styles.waltzComponent}>
           {this.props.start(this.generateTiming())}
@@ -259,8 +270,8 @@ export default class Waltz extends Component {
           {this.generateViews()}
         </View>
          <View style={styles.commentsContainer}>
-            {positiveComments.map((comment) => {
-              return <Comments key={comment.id} {...comment} />
+            {this.state.comment.map((comment) => {
+              return <Comments key={comment.id} {...comment} style={{ right: comment.right }} />
             })}
          </View>
       </View>
