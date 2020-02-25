@@ -12,12 +12,12 @@ import {
 export default class Waltz extends Component {
   state = {
     pulses: [
-      new Animated.Value(1),
-      new Animated.Value(1),
-      new Animated.Value(1),
-      new Animated.Value(1),
-      new Animated.Value(1),
-      new Animated.Value(1),
+      new Animated.Value(0),
+      new Animated.Value(0),
+      new Animated.Value(0),
+      new Animated.Value(0),
+      new Animated.Value(0),
+      new Animated.Value(0),
     ],
 
     counters: [
@@ -29,6 +29,10 @@ export default class Waltz extends Component {
       0,
     ]
   };
+
+  componentDidMount() {
+    this.props.start(this.generateTiming())
+  }
 
   assessPulseDuration = () => {
     return (
@@ -62,23 +66,24 @@ export default class Waltz extends Component {
   // generateNumberCounts = () => {
   //   return this.state.counters.map((counter, i) => {
   //     return (
-  //       <Text key={i} style={styles.startText}>{counter.toString()}</Text>
+  //       <Text key={i} style={styles.bob}>{counter.toString()}</Text>
   //     )
   //   })
   // }
 
-  generateNumberCounts = () => {
-      return (
-        <>
-          <Text key={0}>{this.state.counters[0].toString()}</Text>
-          <Text key={1}>{this.state.counters[1].toString()}</Text>
-          <Text key={2}>{this.state.counters[2].toString()}</Text>
-          <Text key={3}>{this.state.counters[3].toString()}</Text>
-          <Text key={4}>{this.state.counters[4].toString()}</Text>
-          <Text key={5}>{this.state.counters[5].toString()}</Text>
-        </>
-      )
-  }
+  // generateNumberCounts = () => {
+  //     return (
+  //       <>
+  //         <Text key={0}>{this.state.counters[0].toString()}</Text>
+  //         <Text key={1}>{this.state.counters[1].toString()}</Text>
+  //         <Text key={2}>{this.state.counters[2].toString()}</Text>
+  //         <Text key={3}>{this.state.counters[3].toString()}</Text>
+  //         <Text key={4}>{this.state.counters[4].toString()}</Text>
+  //         <Text key={5}>{this.state.counters[5].toString()}</Text>
+  //       </>
+  //     )
+  //
+  // }
 
   // generateViews = () => {
   //   const colors = ["#F60091", "#F6811F", "#FFEB00", "#71C043", "#03ABF0", "#6F2C8F"]
@@ -109,11 +114,10 @@ export default class Waltz extends Component {
 
   generateViews = () => {
     const colors = ["#F60091", "#F6811F", "#FFEB00", "#71C043", "#03ABF0", "#6F2C8F"]
-
       return (
         <View style={styles.danceFloor}>
           <View style={styles.upperSteps}>
-            <TouchableOpacity onPress={() => {this.countUp(0)}} key={0}>
+            <TouchableOpacity onPress={() => {this.countUp(3)}} key={0}>
               <Animated.View
                 style={{
                   transform: [
@@ -135,7 +139,7 @@ export default class Waltz extends Component {
             </TouchableOpacity>
           <View style={styles.upperTwoSteps}>
 
-              <TouchableOpacity onPress={() => {this.countUp(2)}} key={2}>
+              <TouchableOpacity onPress={() => {this.countUp(3)}} key={2}>
                 <Animated.View
                   style={{
                     transform: [
@@ -180,7 +184,7 @@ export default class Waltz extends Component {
 
           <View style={styles.lowerSteps}>
             <View style={styles.lowerTwoSteps}>
-                <TouchableOpacity onPress={() => {this.countUp(4)}} key={4}>
+                <TouchableOpacity onPress={() => {this.countUp(3)}} key={4}>
                   <Animated.View
                     style={{
                       transform: [
@@ -200,7 +204,7 @@ export default class Waltz extends Component {
                   <Animated.View />
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => {this.countUp(5)}} key={5}>
+                <TouchableOpacity onPress={() => {this.countUp(3)}} key={5}>
                       <Animated.View
                         style={{
                           transform: [
@@ -247,9 +251,9 @@ export default class Waltz extends Component {
   };
 
   render() {
+    console.log('COUNTERS', this.state.counters)
     return (
       <View style={styles.waltzComponent}>
-          {this.props.start(this.generateTiming())}
         <View style={styles.stepsContainer}>
           {this.generateViews()}
         </View>
