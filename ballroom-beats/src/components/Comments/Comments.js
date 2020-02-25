@@ -5,10 +5,9 @@ class Comments extends Component {
    
 
     render() {
-        console.log('Great job')
         return (
             <Animated.View>
-                <Text style={styles.comment}>Great job!</Text>
+                <Text style={styles.comment}>{this.props.comment}</Text>
             </Animated.View>
         );
     }

@@ -9,6 +9,7 @@ import {
   ImageBackground
 } from "react-native";
 import Comments from "../../Comments/Comments";
+import { AntDesign } from '@expo/vector-icons';
 
 const commentCount = 1;
 
@@ -32,7 +33,7 @@ export default class Waltz extends Component {
       0,
     ],
 
-    comment: []
+    comment: ''
   };
 
   assessPulseDuration = () => {
@@ -253,27 +254,31 @@ export default class Waltz extends Component {
   };
 
   addComment = () => {
-     this.setState({ comment: [...this.state.comment, { id: commentCount, right: this.randomNumber(20, 150), comment: 'Great Job!' }] }, () => commentCount++ );
+    //  this.setState({ comment: 'Great Job!'});
   };
 
   randomNumber = (min, max) => {
     return Math.random() * (max-min) + min;
   }
+
+  Heart = (props) => {
+    return (
+      <View {...props} style={[styles.commentsContainer, props.style]}>
+          <AntDesign name='star' size='48' color={props.color} />
+      </View>
+    )
+  };
   
   render() {
-    console.log(commentCount)
-    // const positiveComments = [{id: 1, comment: 'Great Job!'}, {id: 2, comment: 'Yea!'}, {id: 3, comment: 'Keep Going!'}, {id: 4, comment: 'Doing Great!'}];
     return (
       <View style={styles.waltzComponent}>
           {this.props.start(this.generateTiming())}
         <View style={styles.stepsContainer}>
           {this.generateViews()}
         </View>
-         <View style={styles.commentsContainer}>
-            {this.state.comment.map((comment) => {
-              return <Comments key={comment.id} {...comment} style={{ right: comment.right }} />
-            })}
-         </View>
+         <Animated.View style={styles.commentsContainer}>
+            <this.Heart color='blue' />
+         </Animated.View>
       </View>
     );
   }
