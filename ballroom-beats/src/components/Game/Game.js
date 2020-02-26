@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import DanceFloor from '../DanceFloor/DanceFloor'
-import { View, Text, StyleSheet, Animated, TouchableOpacity } from 'react-native';
+import { 
+  View, 
+  Text, 
+  StyleSheet, 
+  Animated, 
+  TouchableOpacity 
+} from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import { Audio } from 'expo-av';
@@ -30,8 +36,6 @@ class Game extends Component {
        console.log("The music isn't playing")
     }
   };
-
-
 
   checkSongSwitch = (path) => {
     switch (path) {
@@ -64,12 +68,11 @@ class Game extends Component {
       // const scoreText = this.getScore(getCounterValue, getExpectedValue)
       // this.props.navigation.navigate('End', {scoreText: scoreText});
     }, time);
-  }
+  };
 
   stopDance = (getCounterValue, getExpectedValue) => {
     this.props.navigation.navigate('End', {scoreText: this.getScore(getCounterValue, getExpectedValue)});
-  }
-
+  };
 
   getScore = (getCounterValue, getExpectedFloat, moose) => {
     let getExpectedValue = Math.floor(getExpectedFloat)
@@ -81,7 +84,7 @@ class Game extends Component {
     } else {
       return `${getCounterValue} out of ${getExpectedValue} steps - you're perfect!  You don't need this app!`
     }
-  }
+  };
 
   render() {
       return (

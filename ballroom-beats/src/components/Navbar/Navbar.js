@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import { createAppContainer, withNavigation  } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import { StyleSheet, View, Text, Dimensions } from 'react-native';
+import { 
+  StyleSheet, 
+  View, 
+  Text, 
+} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
-
  
 class Navbar extends Component {
   
   render() {
     return (
       <View style={styles.bottomContainer}>
-          <View style={styles.btnContainer}>
+        <View style={styles.btnContainer}>
             <Icon.Button 
                 style={styles.button} 
                 name="home" 
@@ -18,10 +21,10 @@ class Navbar extends Component {
                 title="BACK">
                 <Text style={styles.home}>Home</Text>
             </Icon.Button>
+        </View>
       </View>
-    </View>
-  )
-}
+    )
+  }
 };
 
 const AppNavigator = createStackNavigator({

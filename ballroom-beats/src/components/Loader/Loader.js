@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { 
+    View, 
+    Text, 
+    StyleSheet 
+} from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -9,16 +13,13 @@ import CountDown from 'react-native-countdown-component';
 class Loader extends Component {
   constructor(props) {
     super(props)
-    this.state= {
-
-    }
-  }
+  };
 
   _gameScreen = () => {
     this.props.navigation.navigate('Game', {song: this.props.navigation.getParam('song', ''), dance: this.props.navigation.getParam('dance', '')});
-  }
+  };
 
-  render() {
+   render() {
       return (
           <View style={styles.container}>
             <Text style={styles.countDown}>Get ready to start the game.....</Text>
@@ -44,8 +45,8 @@ class Loader extends Component {
             <Navbar />
           </View>
       )
-  }
-}
+   }
+};
 
 const AppNavigator = createStackNavigator({
     Loader: {

@@ -12,7 +12,6 @@ import Comments from "../../Comments/Comments";
 const randomiseNumber = (min, max) => {
    return Math.random() * (min - max) + min;
 };
-
 export default class Waltz extends Component {
   state = {
     pulses: [
@@ -31,7 +30,7 @@ export default class Waltz extends Component {
   componentDidMount() {
     this.props.start(this.generateTiming())
     this.props.stopMusic(this.getSongLength())
-  }
+  };
 
   endGame = (userPoints, gamePoints) => {
       this.props.stopDance(userPoints, gamePoints)
@@ -83,9 +82,8 @@ export default class Waltz extends Component {
     newCount++
     this.setState({counter: newCount});
   };
- 
+
   generateViews = () => {
-    const colors = ["#F60091", "#F6811F", "#FFEB00", "#71C043", "#03ABF0", "#6F2C8F"]
       return (
         <View style={styles.danceFloor}>
           <View style={styles.upperSteps}>

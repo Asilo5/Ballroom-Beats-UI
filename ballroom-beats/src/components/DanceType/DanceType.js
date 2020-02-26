@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Picker } from 'react-native';
+import { 
+    View, 
+    Text, 
+    StyleSheet, 
+    Picker 
+} from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -14,7 +19,7 @@ class DanceType extends Component {
     }
   }
 
-  render() {
+   render() {
       return (
           <View style={styles.container}>
             <Text style={styles.dance}>Pick Your Dance Type</Text>
@@ -27,9 +32,8 @@ class DanceType extends Component {
                     onValueChange={(itemValue, itemIndex) =>
                         this.setState({selectedDance: itemValue})} >
                     <Picker.Item label="-- Pick a Dance --" value="" />
-                    <Picker.Item label="Waltz" value="Waltz" />
-                    <Picker.Item label="Bachata" value="Bachata" />
-                    <Picker.Item label="Swing" value="Swing" />
+                    <Picker.Item label="Novice: Waltz" value="Waltz" />
+                    <Picker.Item label="Pro: Bachata" value="Bachata" />
                 </Picker>
                 <Icon.Button
                     style={[styles.button, { backgroundColor: this.state.selectedDance ? '#A9C344' : '#3E3E3E'}]}
@@ -44,8 +48,8 @@ class DanceType extends Component {
             <Navbar />
           </View>
       )
-  }
-}
+   }
+};
 
 const AppNavigator = createStackNavigator({
     DanceType: {
