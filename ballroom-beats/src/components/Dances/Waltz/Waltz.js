@@ -11,7 +11,9 @@ import {
 import Comments from "../../Comments/Comments";
 import { AntDesign } from '@expo/vector-icons';
 
-const commentCount = 1;
+const getRandomNumber = (min, max) => {
+   return Math.random() * (min - max) + min;
+}
 
 export default class Waltz extends Component {
   state = {
@@ -33,7 +35,9 @@ export default class Waltz extends Component {
       0,
     ],
 
-    comment: ''
+    stars: [],
+
+    starCount: 1
   };
 
   assessPulseDuration = () => {
@@ -228,7 +232,7 @@ export default class Waltz extends Component {
                 </TouchableOpacity>
             </View>
 
-             <TouchableOpacity onPress={() => {this.countUp(3), this.addComment}} key={3}>
+             <TouchableOpacity onPress={() => {this.countUp(3), this.addComment()}} key={3}>
                   <Animated.View
                     style={{
                       transform: [
@@ -254,12 +258,12 @@ export default class Waltz extends Component {
   };
 
   addComment = () => {
-    //  this.setState({ comment: 'Great Job!'});
+     this.setState({ stars: [...this.state.stars, { id: this.state.starCount++, right: getRandomNumber(20,150) }]} );
   };
 
-  randomNumber = (min, max) => {
-    return Math.random() * (max-min) + min;
-  }
+  // randomNumber = (min, max) => {
+  //   return Math.random() * (max-min) + min;
+  // }
 
   Heart = (props) => {
     return (
@@ -270,15 +274,21 @@ export default class Waltz extends Component {
   };
   
   render() {
+    console.log(this.state.stars)
     return (
       <View style={styles.waltzComponent}>
           {this.props.start(this.generateTiming())}
         <View style={styles.stepsContainer}>
           {this.generateViews()}
         </View>
-         <Animated.View style={styles.commentsContainer}>
+        <View >
+           {this.state.stars.map((star) => {
+               return <Comments heart={this.Heart} key={star.id} style={{ right: star.right }} />
+           })}
+        </View>
+         {/* <Animated.View style={styles.commentsContainer}>
             <this.Heart color='blue' />
-         </Animated.View>
+         </Animated.View> */}
       </View>
     );
   }

@@ -5,9 +5,11 @@ class Comments extends Component {
    
 
     render() {
+        console.log('hey', this.props.heart);
         return (
-            <Animated.View>
-                <Text style={styles.comment}>{this.props.comment}</Text>
+            <Animated.View style={[styles.commentsContainer, this.props.style]}>
+                <Text style={styles.text} >Insideeee</Text>
+               {/* <this.props.Heart color='blue' /> */}
             </Animated.View>
         );
     }
@@ -16,9 +18,13 @@ class Comments extends Component {
 export default Comments;
 
 const styles = StyleSheet.create({
-    comment: {
-    color: 'white',
-    fontSize: 20,
-    left: 100
-   }
+    commentsContainer: {
+        position: 'absolute',
+        bottom: 30,
+        backgroundColor: 'transparent'
+    },
+    text: {
+        color: 'blue',
+        fontSize: 30
+    }
 });
