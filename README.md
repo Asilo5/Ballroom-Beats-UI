@@ -21,6 +21,7 @@ Once you have cloned the repo, install dependencies:
 And to view on your local browser:
 
 ``$ npm start``  or ``$ expo start`` then open simulator of choice.
+
 You can also scan the QR code on the expo page that opens after you do the steps above once you download the Expo App to be able to view Ballroom Beats on your phone.
 
 ## Built With:
