@@ -15,10 +15,6 @@ const getRandomNumber = (min, max) => {
    return Math.random() * (min - max) + min;
 };
 
-const randomiseColour = () => {
-  return ` rgb(${getRandomNumber(100, 144)})`
-}
-
 export default class Waltz extends Component {
   state = {
     pulses: [
@@ -274,8 +270,8 @@ export default class Waltz extends Component {
           {this.generateViews()}
         </View>
         <View >
-           {this.state.comments.map((star) => {
-               return <Comments key={star.id} style={{ left: star.right }} />
+           {this.state.comments.map((comment) => {
+               return <Comments key={comment.id} style={{ left: comment.right, color: comment.color }} />
            })}
         </View>
       </View>

@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent'
     },
     text: {
-        color: 'purple',
+        color: 'white',
         fontSize: 30,
         fontWeight: 'bold'
     }
