@@ -27,7 +27,7 @@ You can also scan the QR code on the expo page that opens after you do the steps
 ## Built With:
 - React Native
 - Jest
-- Enzyme
+- React Native Animations
 - [API we built specifically for Ballroom Beats](https://github.com/Jonpatt92/ballroom-beats-service)
 
 ![Screenshot](https://github.com/Asilo5/Ballroom-Beats-UI/blob/master/Screenshot%202020-02-26%20at%2013.44.38.png)
