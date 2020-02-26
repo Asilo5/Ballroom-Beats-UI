@@ -7,9 +7,9 @@ import {
   StyleSheet,
   Animated,
   Easing,
-  TouchableOpacity
+  TouchableOpacity,
+  ImageBackground
 } from "react-native";
-
 
 export default class DanceFloor extends Component {
   state = {
@@ -46,7 +46,13 @@ export default class DanceFloor extends Component {
   render() {
     return (
       <>
-        {this.chooseDance()}
+        {/* <ImageBackground source={require('../../../images/wood_floor.png/')} style={styles.backgroundImage}> */}
+        <ImageBackground source={require('../../../images/stage_lights_blue.png/')} style={styles.backgroundImage}>
+        {/* <ImageBackground source={require('../../../images/lights.png/')} style={styles.backgroundImage}> */}
+
+
+          {this.chooseDance()}
+        </ImageBackground>
       </>
     )
   }
@@ -54,8 +60,10 @@ export default class DanceFloor extends Component {
 }
 
 const styles = StyleSheet.create({
-  container1: {
-    height: '80%',
-    flex: 1
+  backgroundImage: {
+    flex: 1,
+    width: null,
+    height: '90%',
+    // opacity: 0.7
   },
 });
