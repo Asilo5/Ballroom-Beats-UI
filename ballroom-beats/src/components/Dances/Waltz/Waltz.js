@@ -224,8 +224,8 @@ export default class Waltz extends Component {
         <View style={styles.stepsContainer}>
           {this.generateViews()}
         </View>
-        <Text style={styles.bob}>Your Points: {`${this.counter}`}</Text>
-        <Text style={styles.bob}>Possible Points: {`${this.getExpectedValue()}`}</Text>
+        <Text style={styles.points}>Your Points: {`${this.state.counter}`}</Text>
+        <Text style={styles.points}>Possible Points: {`${Math.floor(this.getExpectedValue())}`}</Text>
       </View>
     );
   }
@@ -273,8 +273,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
     margin: 10,
   },
-  bob: {
-    color: 'white',
-    fontSize: 20
+  points: {
+    color: '#A9C344',
+    fontSize: 15,
+    textAlign: 'center',
+    margin: 10
   }
 });

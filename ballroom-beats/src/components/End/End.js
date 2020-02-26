@@ -15,7 +15,7 @@ class End extends Component {
                 title="PLAY AGAIN">
                 <Text style={styles.playAgain}>Play Again</Text>
             </Button>
-            <Text style={styles.gameEnd}>{this.props.navigation.getParam('scoreText', '')}</Text>
+            <Text style={styles.score}>{this.props.navigation.getParam('scoreText', '')}</Text>
           </View>
       )
   }
@@ -38,6 +38,12 @@ const styles = StyleSheet.create({
         fontSize: 40,
         color: 'white',
         marginBottom: 10,
+    },
+    score: {
+        fontSize: 40,
+        color: '#A9C344',
+        margin: 10,
+        textAlign: "center"
     },
     button: {
         backgroundColor: '#BD4413',
