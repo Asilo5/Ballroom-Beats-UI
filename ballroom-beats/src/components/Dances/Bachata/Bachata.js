@@ -5,11 +5,9 @@ import {
     Easing,
     TouchableOpacity,
     StyleSheet,
-<<<<<<< HEAD
     ImageBackground,
-    Image
-=======
->>>>>>> master
+    Image,
+    Text
 } from 'react-native';
 
 export default class Bachata extends Component {
@@ -308,24 +306,17 @@ export default class Bachata extends Component {
 
     render() {
         return (
+          <View>
             <View style={styles.stepsContainer}>
                 {this.generateViews()}
             </View>
-<<<<<<< HEAD
             <Text style={styles.points}>Your Points: {`${this.state.counter}`}</Text>
             <Text style={styles.points}>Possible Points: {`${Math.floor(this.getExpectedValue())}`}</Text>
           </View>
-=======
->>>>>>> master
         );
     }
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> master
 const styles = StyleSheet.create({
     danceFloor: {
       display: "flex",
@@ -337,12 +328,8 @@ const styles = StyleSheet.create({
     },
     middleDots: {
       display: "flex",
-<<<<<<< HEAD
-      bottom: 30
-=======
       bottom: 40,
       marginBottom: 100
->>>>>>> master
     },
     splitDots: {
       display: "flex",
@@ -379,7 +366,6 @@ const styles = StyleSheet.create({
       backgroundColor: "#FFF",
       margin: 10,
     },
-<<<<<<< HEAD
     points: {
       color: '#A9C344',
       fontSize: 15,
@@ -387,6 +373,3 @@ const styles = StyleSheet.create({
       margin: 10
     }
   });
-=======
-  });
->>>>>>> master

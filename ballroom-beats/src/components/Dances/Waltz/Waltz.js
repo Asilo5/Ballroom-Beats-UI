@@ -218,6 +218,7 @@ export default class Waltz extends Component {
 
   render() {
     return (
+      <View>
         <View style={styles.stepsContainer}>
           {this.generateViews()}
         </View>
