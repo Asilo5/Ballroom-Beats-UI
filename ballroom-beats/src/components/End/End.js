@@ -30,13 +30,16 @@ const AppNavigator = createStackNavigator({
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'black',
+        backgroundColor: '#666363',
         alignItems: 'center',
         justifyContent: 'center',
     },
     gameEnd: {
         fontSize: 40,
         color: 'white',
+        textShadowOffset: { width: 2, height: 2 },
+        textShadowRadius: 2,
+        textShadowColor: '#000',
         marginBottom: 10,
     },
     score: {

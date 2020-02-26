@@ -31,7 +31,7 @@ const AppNavigator = createStackNavigator({
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'black',
+        backgroundColor: '#666363',
         alignItems: 'center',
         justifyContent: 'center',
     },
