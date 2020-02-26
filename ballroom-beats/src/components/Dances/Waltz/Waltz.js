@@ -233,8 +233,8 @@ export default class Waltz extends Component {
                return <Comments key={comment.id} style={{ left: comment.right, color: comment.color }} />
            })}
         </View>
-        <Text style={styles.points}>Your Points: {`${this.state.counter}`}</Text>
-        <Text style={styles.points}>Possible Points: {`${Math.floor(this.getExpectedValue())}`}</Text>
+        <Text style={styles.userPoints}>Your Points: {`${this.state.counter}`}</Text>
+        <Text style={styles.possiblePoints}>Possible Points: {`${Math.floor(this.getExpectedValue())}`}</Text>
       </View>
     );
   }
@@ -253,7 +253,7 @@ const styles = StyleSheet.create({
     width: '80%',
     height: 100,
     justifyContent: 'space-between',
-    marginBottom: 150,
+    marginBottom: 100,
   },
   upperTwoSteps: {
     display: 'flex',
@@ -276,10 +276,6 @@ const styles = StyleSheet.create({
     marginBottom: 60,
     height: 300
   },
-  numberView: {
-    backgroundColor: "#FFF",
-    margin: 10,
-  },
   footingPosition: {
     color: 'white',
     fontSize: 20,
@@ -290,10 +286,23 @@ const styles = StyleSheet.create({
     bottom: 30,
     backgroundColor: 'transparent'
   },
-  points: {
+  userPoints: {
     color: '#A9C344',
-    fontSize: 15,
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 2,
+    textShadowColor: '#000',
+    fontSize: 23,
     textAlign: 'center',
-    margin: 10
+    marginTop: 15
+  },
+  possiblePoints: {
+    color: '#A9C344',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 2,
+    textShadowColor: '#000',
+    fontSize: 23,
+    textAlign: 'center',
+    marginBottom: 10,
+    marginTop: 5,
   }
 });

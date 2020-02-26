@@ -302,8 +302,6 @@ export default class Bachata extends Component {
             <View style={styles.stepsContainer}>
                 {this.generateViews()}
             </View>
-            <Text style={styles.points}>Your Points: {`${this.state.counter}`}</Text>
-            <Text style={styles.points}>Possible Points: {`${Math.floor(this.getExpectedValue())}`}</Text>
           </View>
         );
     };
@@ -354,14 +352,4 @@ const styles = StyleSheet.create({
       marginTop: 60,
       marginBottom: 60
     },
-    numberView: {
-      backgroundColor: "#FFF",
-      margin: 10,
-    },
-    points: {
-      color: '#A9C344',
-      fontSize: 15,
-      textAlign: 'center',
-      margin: 10
-    }
 });
