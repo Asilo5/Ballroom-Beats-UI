@@ -258,7 +258,7 @@ export default class Waltz extends Component {
   };
 
   addComment = () => {
-     this.setState({ stars: [...this.state.stars, { id: this.state.starCount++, right: getRandomNumber(20,150) }]} );
+     this.setState({ stars: [...this.state.stars, { id: this.state.starCount++, right: getRandomNumber(20,-250) }]} );
   };
 
   // randomNumber = (min, max) => {
@@ -283,7 +283,7 @@ export default class Waltz extends Component {
         </View>
         <View >
            {this.state.stars.map((star) => {
-               return <Comments heart={this.Heart} key={star.id} style={{ right: star.right }} />
+               return <Comments heart={this.Heart} key={star.id} style={{ left: star.right }} />
            })}
         </View>
          {/* <Animated.View style={styles.commentsContainer}>
