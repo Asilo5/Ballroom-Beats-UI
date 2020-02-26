@@ -38,6 +38,15 @@ You can also scan the QR code on the expo page that opens after you do the steps
 - PostgreSQL
 - [API we built specifically for Ballroom Beats](https://github.com/Jonpatt92/ballroom-beats-service)
 
+
+### Waltz
+We decided for Waltz to be a great beginners dance.
+The Waltz include the score on the screen as well as positive affirmation for the user so they don't feel like giving up.
 ![Screenshot](https://github.com/Asilo5/Ballroom-Beats-UI/blob/master/Screenshot%202020-02-26%20at%2014.53.27.png)
+
+### Bachata
+We decided for Bachata to be an advanced dance. For the advance dances we decided that the user should already be comfortable dancing thus there was no need to have any positve affirmations or viewable score until the end of the game.
 ![Screenshot](https://github.com/Asilo5/Ballroom-Beats-UI/blob/master/Screenshot%202020-02-26%20at%2014.53.48.png)
+
+### Giff
 ![Giff](https://github.com/Asilo5/Ballroom-Beats-UI/blob/master/ezgif.com-video-to-gif.gif)
