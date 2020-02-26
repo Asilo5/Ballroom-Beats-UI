@@ -134,7 +134,7 @@ export default class Waltz extends Component {
                   borderRadius: 24,
                 }}
               />
-                <Text style={styles.bob}>Bob</Text>
+                <Text style={styles.bob}>Left</Text>
               <Animated.View />
             </TouchableOpacity>
           <View style={styles.upperTwoSteps}>
@@ -156,6 +156,7 @@ export default class Waltz extends Component {
                     borderRadius: 24,
                   }}
                 />
+                  <Text style={styles.bob}>Left</Text>
                 <Animated.View />
               </TouchableOpacity>
 
@@ -176,6 +177,7 @@ export default class Waltz extends Component {
                     borderRadius: 24,
                   }}
                 />
+                  <Text style={styles.bob}>Right</Text>
                 <Animated.View />
               </TouchableOpacity>
 
@@ -201,6 +203,7 @@ export default class Waltz extends Component {
                       borderRadius: 24,
                     }}
                   />
+                    <Text style={styles.bob}>Left</Text>
                   <Animated.View />
                 </TouchableOpacity>
 
@@ -221,6 +224,7 @@ export default class Waltz extends Component {
                           borderRadius:24,
                         }}
                       />
+                        <Text style={styles.bob}>Right</Text>
                       <Animated.View />
                 </TouchableOpacity>
             </View>
@@ -242,6 +246,7 @@ export default class Waltz extends Component {
                       borderRadius: 24,
                     }}
                   />
+                    <Text style={styles.bob}>Right</Text>
                   <Animated.View />
               </TouchableOpacity>
           </View>
