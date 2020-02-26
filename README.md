@@ -40,3 +40,4 @@ You can also scan the QR code on the expo page that opens after you do the steps
 
 ![Screenshot](https://github.com/Asilo5/Ballroom-Beats-UI/blob/master/Screenshot%202020-02-26%20at%2014.53.27.png)
 ![Screenshot](https://github.com/Asilo5/Ballroom-Beats-UI/blob/master/Screenshot%202020-02-26%20at%2014.53.48.png)
+![Giff](https://github.com/Asilo5/Ballroom-Beats-UI/blob/master/ezgif.com-video-to-gif.gif)
