@@ -20,23 +20,40 @@ export default class Waltz extends Component {
       new Animated.Value(1),
     ],
 
-    counters: [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-    ]
+    counter: 0
   };
 
   componentDidMount() {
     this.props.start(this.generateTiming())
+    this.props.stopMusic(this.getSongLength())
+  }
+
+  endGame = (userPoints, gamePoints) => {
+      this.props.stopDance(userPoints, gamePoints)
+  }
+
+  componentWillUnmount() {
+    this.endGame(this.state.counter, this.getExpectedValue())
+  }
+
+  getExpectedValue = () => {
+    return this.props.song.duration/60 * this.props.song.tempo
+  }
+
+  getSongLength = () => {
+    //Real World
+
+    // return (
+    //   this.props.song.duration * 1000
+    // )
+
+    //Demo
+    return 10000
   }
 
   assessPulseDuration = () => {
     return (
-      60000/this.props.song.tempo * .5
+      60000/this.props.song.tempo
     )
   }
 
@@ -56,68 +73,19 @@ export default class Waltz extends Component {
     }).flat();
   }
 
-  countUp = (num) => {
-    const subCounterList = [...this.state.counters];
-    subCounterList[num]++;
-    this.setState({counters: subCounterList});
+  countUp = () => {
+    let newCount = this.state.counter
+    newCount++
+    this.setState({counter: newCount});
   }
 
-
-  // generateNumberCounts = () => {
-  //   return this.state.counters.map((counter, i) => {
-  //     return (
-  //       <Text key={i} style={styles.bob}>{counter.toString()}</Text>
-  //     )
-  //   })
-  // }
-
-  // generateNumberCounts = () => {
-  //     return (
-  //       <>
-  //         <Text key={0}>{this.state.counters[0].toString()}</Text>
-  //         <Text key={1}>{this.state.counters[1].toString()}</Text>
-  //         <Text key={2}>{this.state.counters[2].toString()}</Text>
-  //         <Text key={3}>{this.state.counters[3].toString()}</Text>
-  //         <Text key={4}>{this.state.counters[4].toString()}</Text>
-  //         <Text key={5}>{this.state.counters[5].toString()}</Text>
-  //       </>
-  //     )
-  //
-  // }
-
-  // generateViews = () => {
-  //   const colors = ["#F60091", "#F6811F", "#FFEB00", "#71C043", "#03ABF0", "#6F2C8F"]
-  //   return this.state.counters.map((counter, i) => {
-  //     return (
-  //       <TouchableOpacity onPress={() => {this.countUp(i)}} key={i}>
-  //         <Animated.View
-  //           style={{
-  //             transform: [
-  //               {
-  //                 scaleX: this.state.pulses[i]
-  //               },
-  //               {
-  //                 scaleY: this.state.pulses[i]
-  //               }
-  //             ],
-  //             margin: 20,
-  //             borderWidth: 10,
-  //             borderColor: `${colors[i]}`,
-  //             borderRadius: 10,
-  //           }}
-  //         />
-  //         <Animated.View />
-  //       </TouchableOpacity>
-  //     )
-  //   })
-  // }
 
   generateViews = () => {
     const colors = ["#F60091", "#F6811F", "#FFEB00", "#71C043", "#03ABF0", "#6F2C8F"]
       return (
         <View style={styles.danceFloor}>
           <View style={styles.upperSteps}>
-            <TouchableOpacity onPress={() => {this.countUp(3)}} key={0}>
+            <TouchableOpacity onPress={() => {this.countUp()}} key={0}>
               <Animated.View
                 style={{
                   transform: [
@@ -138,7 +106,7 @@ export default class Waltz extends Component {
             </TouchableOpacity>
           <View style={styles.upperTwoSteps}>
 
-              <TouchableOpacity onPress={() => {this.countUp(3)}} key={2}>
+              <TouchableOpacity onPress={() => {this.countUp()}} key={2}>
                 <Animated.View
                   style={{
                     transform: [
@@ -158,7 +126,7 @@ export default class Waltz extends Component {
                 <Animated.View />
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => {this.countUp(1)}} key={1}>
+              <TouchableOpacity onPress={() => {this.countUp()}} key={1}>
                 <Animated.View
                   style={{
                     transform: [
@@ -183,7 +151,7 @@ export default class Waltz extends Component {
 
           <View style={styles.lowerSteps}>
             <View style={styles.lowerTwoSteps}>
-                <TouchableOpacity onPress={() => {this.countUp(3)}} key={4}>
+                <TouchableOpacity onPress={() => {this.countUp()}} key={4}>
                   <Animated.View
                     style={{
                       transform: [
@@ -203,7 +171,7 @@ export default class Waltz extends Component {
                   <Animated.View />
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => {this.countUp(3)}} key={5}>
+                <TouchableOpacity onPress={() => {this.countUp()}} key={5}>
                       <Animated.View
                         style={{
                           transform: [
@@ -224,7 +192,7 @@ export default class Waltz extends Component {
                 </TouchableOpacity>
             </View>
 
-             <TouchableOpacity onPress={() => {this.countUp(3)}} key={3}>
+             <TouchableOpacity onPress={() => {this.countUp()}} key={3}>
                   <Animated.View
                     style={{
                       transform: [
@@ -246,14 +214,17 @@ export default class Waltz extends Component {
           </View>
         </View>
       )
-
   };
 
   render() {
     return (
+      <View>
         <View style={styles.stepsContainer}>
           {this.generateViews()}
         </View>
+        <Text style={styles.points}>Your Points: {`${this.state.counter}`}</Text>
+        <Text style={styles.points}>Possible Points: {`${Math.floor(this.getExpectedValue())}`}</Text>
+      </View>
     );
   }
 }
@@ -300,4 +271,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
     margin: 10,
   },
+  points: {
+    color: '#A9C344',
+    fontSize: 15,
+    textAlign: 'center',
+    margin: 10
+  }
 });

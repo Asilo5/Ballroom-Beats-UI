@@ -9,23 +9,24 @@ class End extends Component {
       return (
           <View style={styles.container}>
             <Text style={styles.gameEnd}>End Of Game</Text>
-            <Button 
-                style={styles.button} 
-                onPress={() => this.props.navigation.navigate('DanceType')} 
+            <Button
+                style={styles.button}
+                onPress={() => this.props.navigation.navigate('DanceType')}
                 title="PLAY AGAIN">
                 <Text style={styles.playAgain}>Play Again</Text>
             </Button>
+            <Text style={styles.score}>{this.props.navigation.getParam('scoreText', '')}</Text>
           </View>
-      )      
+      )
   }
-} 
+}
 
 const AppNavigator = createStackNavigator({
     End: {
       screen: End,
     },
 });
-  
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -40,6 +41,12 @@ const styles = StyleSheet.create({
         textShadowRadius: 2,
         textShadowColor: '#000',
         marginBottom: 10,
+    },
+    score: {
+        fontSize: 40,
+        color: '#A9C344',
+        margin: 10,
+        textAlign: "center"
     },
     button: {
         backgroundColor: '#BD4413',

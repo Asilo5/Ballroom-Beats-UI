@@ -5,6 +5,9 @@ import {
     Easing,
     TouchableOpacity,
     StyleSheet,
+    ImageBackground,
+    Image,
+    Text
 } from 'react-native';
 
 export default class Bachata extends Component {
@@ -19,21 +22,37 @@ export default class Bachata extends Component {
         new Animated.Value(1),
         new Animated.Value(1)
       ],
-      counters: [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-      ]
+      counter: 0
     };
 
     componentDidMount() {
       this.props.start(this.generateTiming())
+      this.props.stopMusic(this.getSongLength())
     }
+
+    endGame = (userPoints, gamePoints) => {
+        this.props.stopDance(userPoints, gamePoints)
+    }
+
+    componentWillUnmount() {
+      this.endGame(this.state.counter, this.getExpectedValue())
+    }
+
+    getExpectedValue = () => {
+      return this.props.song.duration/60 * this.props.song.tempo
+    }
+
+    getSongLength = () => {
+      //Real World
+
+      // return (
+      //   this.props.song.duration * 1000
+      // )
+
+      //Demo
+      return 10000
+    }
+
     assessPulseDuration = () => {
       return (
         60000/this.props.song.tempo * .5
@@ -117,27 +136,12 @@ export default class Bachata extends Component {
         ]
     };
 
-   // generateTiming = () => {
-   //   return this.state.pulses.map((pulse) => {
-   //     return [
-   //        Animated.timing(pulse, {
-   //            toValue: 3,
-   //            duration: 439,
-   //            easing: Easing.back()
-   //        }),
-   //        Animated.timing(pulse, {
-   //            toValue: 1,
-   //            duration: 439
-   //        })
-   //     ]
-   //   }).flat();
-   // };
 
-   countUp = (num) => {
-     const subCounterList = [...this.state.counters];
-     subCounterList[num]++;
-     this.setState({ counters: subCounterList });
-   };
+    countUp = () => {
+      let newCount = this.state.counter
+      newCount++
+      this.setState({counter: newCount});
+    }
 
 
    generateViews = () => {
@@ -145,7 +149,7 @@ export default class Bachata extends Component {
 
      return (
        <View style={styles.danceFloor}>
-       <TouchableOpacity onPress={() => {this.countUp(6)}} >
+       <TouchableOpacity onPress={() => {this.countUp()}} >
            <Animated.View
                style={{
                    transform: [
@@ -157,13 +161,13 @@ export default class Bachata extends Component {
                       }
                    ],
                    margin: 20,
-                   borderWidth: 18,
+                   borderWidth: 10,
                    borderColor: "#FCFDF9",
-                   borderRadius: 18
+                   borderRadius: 10
                }}  >
            </Animated.View>
        </TouchableOpacity>
-       <TouchableOpacity onPress={() => {this.countUp(7)}} >
+       <TouchableOpacity onPress={() => {this.countUp()}} >
            <Animated.View
                style={{
                    transform: [
@@ -175,15 +179,15 @@ export default class Bachata extends Component {
                       }
                    ],
                    margin: 20,
-                   borderWidth: 18,
+                   borderWidth: 10,
                    borderColor: "#F60091",
-                   borderRadius: 18
+                   borderRadius: 10
                }}  >
            </Animated.View>
        </TouchableOpacity>
        <View style={styles.middleDots}>
           <View style={styles.splitDots}>
-          <TouchableOpacity onPress={() => {this.countUp(1)}} >
+          <TouchableOpacity onPress={() => {this.countUp()}} >
               <Animated.View
                   style={{
                       transform: [
@@ -195,13 +199,13 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 18,
+                      borderWidth: 10,
                       borderColor: "#F6811F",
-                      borderRadius: 18
+                      borderRadius: 10
                   }}  >
               </Animated.View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => {this.countUp(0)}} >
+          <TouchableOpacity onPress={() => {this.countUp()}} >
               <Animated.View
                   style={{
                       transform: [
@@ -213,15 +217,15 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 18,
+                      borderWidth: 10,
                       borderColor: "#FFEB00",
-                      borderRadius: 18
+                      borderRadius: 10
                   }}  >
               </Animated.View>
           </TouchableOpacity>
           </View>
           <View style={styles.splitDots}>
-          <TouchableOpacity onPress={() => {this.countUp(4)}} >
+          <TouchableOpacity onPress={() => {this.countUp()}} >
               <Animated.View
                   style={{
                       transform: [
@@ -233,13 +237,13 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 18,
+                      borderWidth: 10,
                       borderColor: "#71C043",
-                      borderRadius: 18
+                      borderRadius: 10
                   }}  >
               </Animated.View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => {this.countUp(5)}} >
+          <TouchableOpacity onPress={() => {this.countUp()}} >
               <Animated.View
                   style={{
                       transform: [
@@ -251,15 +255,15 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 18,
+                      borderWidth: 10,
                       borderColor: "#03ABF0",
-                      borderRadius: 18
+                      borderRadius: 10
                   }}  >
               </Animated.View>
           </TouchableOpacity>
         </View>
        </View>
-         <TouchableOpacity onPress={() => {this.countUp(3)}} >
+         <TouchableOpacity onPress={() => {this.countUp()}} >
              <Animated.View
                  style={{
                      transform: [
@@ -271,13 +275,13 @@ export default class Bachata extends Component {
                         }
                      ],
                      margin: 20,
-                     borderWidth: 18,
+                     borderWidth: 10,
                      borderColor: "#274FA2",
-                     borderRadius: 18
+                     borderRadius: 10
                  }}  >
              </Animated.View>
          </TouchableOpacity>
-         <TouchableOpacity onPress={() => {this.countUp(2)}} >
+         <TouchableOpacity onPress={() => {this.countUp()}} >
              <Animated.View
                  style={{
                      transform: [
@@ -289,9 +293,9 @@ export default class Bachata extends Component {
                         }
                      ],
                      margin: 20,
-                     borderWidth: 18,
+                     borderWidth: 10,
                      borderColor: "#6F2C8F",
-                     borderRadius: 18
+                     borderRadius: 10
                  }}  >
              </Animated.View>
          </TouchableOpacity>
@@ -302,9 +306,13 @@ export default class Bachata extends Component {
 
     render() {
         return (
+          <View>
             <View style={styles.stepsContainer}>
                 {this.generateViews()}
             </View>
+            <Text style={styles.points}>Your Points: {`${this.state.counter}`}</Text>
+            <Text style={styles.points}>Possible Points: {`${Math.floor(this.getExpectedValue())}`}</Text>
+          </View>
         );
     }
 }
@@ -326,8 +334,6 @@ const styles = StyleSheet.create({
     splitDots: {
       display: "flex",
       flexDirection: "row",
-      marginBottom: 30,
-      // marginTop: 30,
     },
     upperSteps:{
       display: 'flex',
@@ -354,11 +360,16 @@ const styles = StyleSheet.create({
       padding: 10,
       left: 55,
       marginTop: 60,
-      marginBottom: 60,
-      height: '50%'
+      marginBottom: 60
     },
     numberView: {
       backgroundColor: "#FFF",
       margin: 10,
     },
+    points: {
+      color: '#A9C344',
+      fontSize: 15,
+      textAlign: 'center',
+      margin: 10
+    }
   });
