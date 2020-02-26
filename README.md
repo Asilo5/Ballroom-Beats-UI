@@ -1,4 +1,4 @@
-# Ballroom Beats
+# Ballroom Beats 💃🏻🎶
 
 Ever wanted to get better at dancing? But with your busy schedule you weren't sure where you could fit in the practice. Ballroom Beats is here to allow users to practice anywhere, whether you're on the bus or at work. With Ballroom Beats you can practice your steps by following the fun dots we offer on the screen so you can memorise the location of your footing and follow the beat of your song of choice.
 
@@ -21,12 +21,15 @@ Once you have cloned the repo, install dependencies:
 And to view on your local browser:
 
 ``$ npm start``  or ``$ expo start`` then open simulator of choice.
+
+If there is no Android Studio on your computer, to view Android simulator you will need to download it. If you're using a MAC make sure you have XCode downloaded to view the Iphone simulator.
+
 You can also scan the QR code on the expo page that opens after you do the steps above once you download the Expo App to be able to view Ballroom Beats on your phone.
 
 ## Built With:
 - React Native
 - Jest
-- Enzyme
+- React Native Animations
 - [API we built specifically for Ballroom Beats](https://github.com/Jonpatt92/ballroom-beats-service)
 
-![Screenshot]()
+![Screenshot](https://github.com/Asilo5/Ballroom-Beats-UI/blob/master/Screenshot%202020-02-26%20at%2013.44.38.png)
