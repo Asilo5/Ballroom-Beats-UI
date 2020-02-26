@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Picker } from 'react-native';
+import { 
+  View, 
+  Text, 
+  StyleSheet, 
+  Picker 
+} from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Navbar from '../Navbar/Navbar';
 import { getData } from '../../../apiCalls.js'
-
 class SongPick extends Component {
   constructor(props) {
     super(props)
@@ -13,19 +17,19 @@ class SongPick extends Component {
         allSongs: [],
         selectedSong: '',
     }
-  }
+  };
 
   async componentDidMount() {
     const songList = await getData('https://ballroom-blitz.herokuapp.com/api/v1/songs', 'songs')
     const songData = await songList.data
     this.setState({allSongs: songData})
-  }
+  };
 
   findSong = () => {
     return this.state.allSongs.find(song => {
       return song.title === this.state.selectedSong
     })
-  }
+  };
 
   getSelectedSongs = () => {
     if (this.props.navigation.getParam('selectedDance', '') === "Waltz") {
@@ -36,14 +40,6 @@ class SongPick extends Component {
       ]
     }
 
-    if (this.props.navigation.getParam('selectedDance', '') === "Swing") {
-      return [
-        <Picker.Item label="-- Pick a Song --" value="" />,
-        <Picker.Item label="Build Me Up Buttercup - Beginner" value="Build Me Up Buttercup" />,
-        <Picker.Item label="Be My Baby - Advanced" value="Be My Baby" />
-      ]
-    }
-
     if (this.props.navigation.getParam('selectedDance', '') === "Bachata") {
       return [
         <Picker.Item label="-- Pick a Song --" value="" />,
@@ -51,11 +47,9 @@ class SongPick extends Component {
         <Picker.Item label="Melancolia Tropical - Advanced" value="Melancolia Tropical" />
       ]
     }
-  }
+  };
 
-
-
-  render() {
+   render() {
       return (
           <View style={styles.container}>
             <Text style={styles.songPick}>Pick Your Song</Text>
@@ -64,7 +58,7 @@ class SongPick extends Component {
                 style={styles.picker}
                 itemStyle={styles.picker_text}
                 selectedValue={this.state.selectedSong}
-                onValueChange={(itemValue, itemIndex) =>
+                onValueChange={(itemValue) =>
                     this.setState({selectedSong: itemValue})} >
                 {this.getSelectedSongs()}
             </Picker>
@@ -88,7 +82,7 @@ class SongPick extends Component {
             <Navbar />
           </View>
       )
-  }
+   }
 };
 
 const AppNavigator = createStackNavigator({

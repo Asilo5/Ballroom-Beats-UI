@@ -8,7 +8,6 @@ import {
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
-
 class Home extends Component {
 
   render() {
