@@ -13,7 +13,7 @@ export default class DanceFloor extends Component {
 
   componentDidMount() {
     this.setState({dance: this.props.dance})
-  }
+  };
 
   chooseDance = () => {
     if (this.state.dance.includes("Waltz")) {
@@ -39,7 +39,7 @@ export default class DanceFloor extends Component {
         />
       )
     }
-  }
+  };
 
   render() {
     return (
@@ -52,20 +52,17 @@ export default class DanceFloor extends Component {
       </>
     )
   }
-
-}
+};
 
 const styles = StyleSheet.create({
   backgroundImage1: {
     flex: 1,
     width: null,
     height: '95%',
-    // opacity: 0.7
   },
   backgroundImage2: {
     flex: 2,
     width: null,
     height: '95%',
-    // opacity: 0.7
   },
 });

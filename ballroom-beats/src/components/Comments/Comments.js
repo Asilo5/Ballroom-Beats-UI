@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, View, Animated, Dimensions, Easing } from 'react-native';
+import { 
+    Text, 
+    StyleSheet, 
+    Animated, 
+    Dimensions, 
+    Easing 
+} from 'react-native';
 
 const { height } = Dimensions.get('window');
-
 const animationY = Math.ceil(height * 0.7);
 const negativeEnd = animationY * -1;
 
-
 class Comments extends Component {
-
     constructor() {
         super()
         
@@ -32,7 +35,7 @@ class Comments extends Component {
             inputRange: [ 0 , animationY / 6 , animationY / 3, animationY / 2 , animationY],
             outputRange: ['0deg', '-5deg', '0deg', '5deg', '0deg']
           });
-    }
+    };
 
     state = {
       position: new Animated.Value(0)
@@ -69,7 +72,7 @@ class Comments extends Component {
             </Animated.View>
         );
     }
-}
+};
 
 export default Comments;
 

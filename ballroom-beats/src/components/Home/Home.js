@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { 
+    View, 
+    Text, 
+    StyleSheet, 
+    Image 
+} from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -20,7 +25,7 @@ class Home extends Component {
           </View>
       )      
   }
-} 
+}; 
 
 const AppNavigator = createStackNavigator({
     Home: {

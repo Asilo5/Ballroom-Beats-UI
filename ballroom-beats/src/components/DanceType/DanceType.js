@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Picker } from 'react-native';
+import { 
+    View, 
+    Text, 
+    StyleSheet, 
+    Picker 
+} from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -14,7 +19,7 @@ class DanceType extends Component {
     }
   }
 
-  render() {
+   render() {
       return (
           <View style={styles.container}>
             <Text style={styles.dance}>Pick Your Dance Type</Text>
@@ -43,8 +48,8 @@ class DanceType extends Component {
             <Navbar />
           </View>
       )
-  }
-}
+   }
+};
 
 const AppNavigator = createStackNavigator({
     DanceType: {
