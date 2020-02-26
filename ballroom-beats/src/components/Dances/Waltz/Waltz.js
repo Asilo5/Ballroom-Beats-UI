@@ -104,6 +104,7 @@ export default class Waltz extends Component {
                   borderRadius: 24,
                 }}
               />
+                <Text style={styles.footingPosition}>Left</Text>
               <Animated.View />
             </TouchableOpacity>
           <View style={styles.upperTwoSteps}>
@@ -124,6 +125,7 @@ export default class Waltz extends Component {
                     borderRadius: 24,
                   }}
                 />
+                  <Text style={styles.footingPosition}>Left</Text>
                 <Animated.View />
               </TouchableOpacity>
               <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={1}>
@@ -143,6 +145,7 @@ export default class Waltz extends Component {
                     borderRadius: 24,
                   }}
                 />
+                  <Text style={styles.footingPosition}>Right</Text>
                 <Animated.View />
               </TouchableOpacity>
              </View>
@@ -166,6 +169,7 @@ export default class Waltz extends Component {
                       borderRadius: 24,
                     }}
                   />
+                    <Text style={styles.footingPosition}>Left</Text>
                   <Animated.View />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={5}>
@@ -185,6 +189,7 @@ export default class Waltz extends Component {
                           borderRadius:24,
                         }}
                       />
+                        <Text style={styles.footingPosition}>Right</Text>
                       <Animated.View />
                 </TouchableOpacity>
             </View>
@@ -205,6 +210,7 @@ export default class Waltz extends Component {
                       borderRadius: 24,
                     }}
                   />
+                    <Text style={styles.footingPosition}>Right</Text>
                   <Animated.View />
               </TouchableOpacity>
           </View>
@@ -273,6 +279,11 @@ const styles = StyleSheet.create({
   numberView: {
     backgroundColor: "#FFF",
     margin: 10,
+  },
+  footingPosition: {
+    color: 'white',
+    fontSize: 20,
+    left: 24
   },
   commentsContainer: {
     position:'absolute',
