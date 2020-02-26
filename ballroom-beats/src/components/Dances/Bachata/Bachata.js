@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import {
     View,
-    Text,
     Animated,
     Easing,
     TouchableOpacity,
     StyleSheet,
-    ImageBackground
 } from 'react-native';
 
 export default class Bachata extends Component {

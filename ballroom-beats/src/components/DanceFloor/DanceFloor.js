@@ -2,19 +2,13 @@ import React, { Component } from "react";
 import Waltz from "../Dances/Waltz/Waltz.js"
 import Bachata from "../Dances/Bachata/Bachata.js";
 import {
-  Text,
-  View,
   StyleSheet,
-  Animated,
-  Easing,
-  TouchableOpacity,
   ImageBackground
 } from "react-native";
 
 export default class DanceFloor extends Component {
   state = {
     dance: ""
-
   };
 
   componentDidMount() {
@@ -46,11 +40,8 @@ export default class DanceFloor extends Component {
   render() {
     return (
       <>
-        {/* <ImageBackground source={require('../../../images/wood_floor.png/')} style={styles.backgroundImage}> */}
-        <ImageBackground source={require('../../../images/stage_lights_blue.png/')} style={styles.backgroundImage}>
+        <ImageBackground source={require('../../../images/wood_floor.png/')} style={styles.backgroundImage}>
         {/* <ImageBackground source={require('../../../images/lights.png/')} style={styles.backgroundImage}> */}
-
-
           {this.chooseDance()}
         </ImageBackground>
       </>
