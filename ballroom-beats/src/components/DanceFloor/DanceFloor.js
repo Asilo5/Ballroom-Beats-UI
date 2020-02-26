@@ -40,9 +40,10 @@ export default class DanceFloor extends Component {
   render() {
     return (
       <>
-        <ImageBackground source={require('../../../images/wood_floor.png/')} style={styles.backgroundImage}>
-        {/* <ImageBackground source={require('../../../images/lights.png/')} style={styles.backgroundImage}> */}
+        <ImageBackground source={require('../../../images/stage_lights_blue.png/')} style={styles.backgroundImage1}>
+        <ImageBackground source={require('../../../images/wood_floor.png/')} style={styles.backgroundImage2}>
           {this.chooseDance()}
+        </ImageBackground>
         </ImageBackground>
       </>
     )
@@ -51,10 +52,16 @@ export default class DanceFloor extends Component {
 }
 
 const styles = StyleSheet.create({
-  backgroundImage: {
+  backgroundImage1: {
     flex: 1,
     width: null,
-    height: '90%',
+    height: '95%',
+    // opacity: 0.7
+  },
+  backgroundImage2: {
+    flex: 2,
+    width: null,
+    height: '95%',
     // opacity: 0.7
   },
 });
