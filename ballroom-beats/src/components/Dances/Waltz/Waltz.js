@@ -35,9 +35,9 @@ export default class Waltz extends Component {
       0,
     ],
 
-    stars: [],
+    comments: [],
 
-    starCount: 1
+    commentCount: 1
   };
 
   assessPulseDuration = () => {
@@ -258,23 +258,11 @@ export default class Waltz extends Component {
   };
 
   addComment = () => {
-     this.setState({ stars: [...this.state.stars, { id: this.state.starCount++, right: getRandomNumber(20,-250) }]} );
+     this.setState({ comments: [...this.state.comments, { id: this.state.commentCount++, right: getRandomNumber(20,-250) }]} );
   };
 
-  // randomNumber = (min, max) => {
-  //   return Math.random() * (max-min) + min;
-  // }
-
-  Heart = (props) => {
-    return (
-      <View {...props} style={[styles.commentsContainer, props.style]}>
-          <AntDesign name='star' size='48' color={props.color} />
-      </View>
-    )
-  };
   
   render() {
-    console.log(this.state.stars)
     return (
       <View style={styles.waltzComponent}>
           {this.props.start(this.generateTiming())}
@@ -282,13 +270,10 @@ export default class Waltz extends Component {
           {this.generateViews()}
         </View>
         <View >
-           {this.state.stars.map((star) => {
-               return <Comments heart={this.Heart} key={star.id} style={{ left: star.right }} />
+           {this.state.comments.map((star) => {
+               return <Comments key={star.id} style={{ left: star.right }} />
            })}
         </View>
-         {/* <Animated.View style={styles.commentsContainer}>
-            <this.Heart color='blue' />
-         </Animated.View> */}
       </View>
     );
   }
