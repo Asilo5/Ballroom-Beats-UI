@@ -66,7 +66,7 @@ export default class Waltz extends Component {
   // generateNumberCounts = () => {
   //   return this.state.counters.map((counter, i) => {
   //     return (
-  //       <Text key={i} style={styles.bob}>{counter.toString()}</Text>
+  //       <Text key={i} style={styles.footingPosition}>{counter.toString()}</Text>
   //     )
   //   })
   // }
@@ -134,7 +134,7 @@ export default class Waltz extends Component {
                   borderRadius: 24,
                 }}
               />
-                <Text style={styles.bob}>Left</Text>
+                <Text style={styles.footingPosition}>Left</Text>
               <Animated.View />
             </TouchableOpacity>
           <View style={styles.upperTwoSteps}>
@@ -156,7 +156,7 @@ export default class Waltz extends Component {
                     borderRadius: 24,
                   }}
                 />
-                  <Text style={styles.bob}>Left</Text>
+                  <Text style={styles.footingPosition}>Left</Text>
                 <Animated.View />
               </TouchableOpacity>
 
@@ -177,7 +177,7 @@ export default class Waltz extends Component {
                     borderRadius: 24,
                   }}
                 />
-                  <Text style={styles.bob}>Right</Text>
+                  <Text style={styles.footingPosition}>Right</Text>
                 <Animated.View />
               </TouchableOpacity>
 
@@ -203,7 +203,7 @@ export default class Waltz extends Component {
                       borderRadius: 24,
                     }}
                   />
-                    <Text style={styles.bob}>Left</Text>
+                    <Text style={styles.footingPosition}>Left</Text>
                   <Animated.View />
                 </TouchableOpacity>
 
@@ -224,7 +224,7 @@ export default class Waltz extends Component {
                           borderRadius:24,
                         }}
                       />
-                        <Text style={styles.bob}>Right</Text>
+                        <Text style={styles.footingPosition}>Right</Text>
                       <Animated.View />
                 </TouchableOpacity>
             </View>
@@ -246,7 +246,7 @@ export default class Waltz extends Component {
                       borderRadius: 24,
                     }}
                   />
-                    <Text style={styles.bob}>Right</Text>
+                    <Text style={styles.footingPosition}>Right</Text>
                   <Animated.View />
               </TouchableOpacity>
           </View>
@@ -309,8 +309,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
     margin: 10,
   },
-  bob: {
+  footingPosition: {
     color: 'white',
-    fontSize: 20
+    fontSize: 20,
+    left: 24
   }
 });
