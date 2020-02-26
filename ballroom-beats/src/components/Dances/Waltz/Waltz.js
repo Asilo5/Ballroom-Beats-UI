@@ -5,9 +5,13 @@ import {
   StyleSheet,
   Animated,
   Easing,
-  TouchableOpacity,
-  ImageBackground
+  TouchableOpacity
 } from "react-native";
+import Comments from "../../Comments/Comments";
+
+const randomiseNumber = (min, max) => {
+   return Math.random() * (min - max) + min;
+};
 
 export default class Waltz extends Component {
   state = {
@@ -20,7 +24,10 @@ export default class Waltz extends Component {
       new Animated.Value(1),
     ],
 
+    comments: [],
+    commentCount: 1,
     counter: 0
+
   };
 
   componentDidMount() {
@@ -85,7 +92,8 @@ export default class Waltz extends Component {
       return (
         <View style={styles.danceFloor}>
           <View style={styles.upperSteps}>
-            <TouchableOpacity onPress={() => {this.countUp()}} key={0}>
+            <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={0}>
+
               <Animated.View
                 style={{
                   transform: [
@@ -105,8 +113,7 @@ export default class Waltz extends Component {
               <Animated.View />
             </TouchableOpacity>
           <View style={styles.upperTwoSteps}>
-
-              <TouchableOpacity onPress={() => {this.countUp()}} key={2}>
+              <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={2}>
                 <Animated.View
                   style={{
                     transform: [
@@ -125,8 +132,7 @@ export default class Waltz extends Component {
                 />
                 <Animated.View />
               </TouchableOpacity>
-
-              <TouchableOpacity onPress={() => {this.countUp()}} key={1}>
+              <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={1}>
                 <Animated.View
                   style={{
                     transform: [
@@ -151,7 +157,7 @@ export default class Waltz extends Component {
 
           <View style={styles.lowerSteps}>
             <View style={styles.lowerTwoSteps}>
-                <TouchableOpacity onPress={() => {this.countUp()}} key={4}>
+                <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={4}>
                   <Animated.View
                     style={{
                       transform: [
@@ -170,8 +176,7 @@ export default class Waltz extends Component {
                   />
                   <Animated.View />
                 </TouchableOpacity>
-
-                <TouchableOpacity onPress={() => {this.countUp()}} key={5}>
+                <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={5}>
                       <Animated.View
                         style={{
                           transform: [
@@ -191,8 +196,7 @@ export default class Waltz extends Component {
                       <Animated.View />
                 </TouchableOpacity>
             </View>
-
-             <TouchableOpacity onPress={() => {this.countUp()}} key={3}>
+             <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={3}>
                   <Animated.View
                     style={{
                       transform: [
@@ -216,11 +220,21 @@ export default class Waltz extends Component {
       )
   };
 
+  addComment = () => {
+     this.setState({ comments: [...this.state.comments, { id: this.state.commentCount++, right: randomiseNumber(20,-250) }]} );
+  };
+
+  
   render() {
     return (
       <View>
         <View style={styles.stepsContainer}>
           {this.generateViews()}
+        </View>
+        <View >
+           {this.state.comments.map((comment) => {
+               return <Comments key={comment.id} style={{ left: comment.right, color: comment.color }} />
+           })}
         </View>
         <Text style={styles.points}>Your Points: {`${this.state.counter}`}</Text>
         <Text style={styles.points}>Possible Points: {`${Math.floor(this.getExpectedValue())}`}</Text>
@@ -253,12 +267,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: '80%',
     justifyContent: 'space-between',
-    // marginTop: 25,
   },
   lowerTwoSteps:{
     display: 'flex',
     flexDirection: "row",
-    // marginTop: 30,
   },
   stepsContainer: {
     padding: 20,
@@ -270,6 +282,11 @@ const styles = StyleSheet.create({
   numberView: {
     backgroundColor: "#FFF",
     margin: 10,
+  },
+  commentsContainer: {
+    position:'absolute',
+    bottom: 30,
+    backgroundColor: 'transparent'
   },
   points: {
     color: '#A9C344',
