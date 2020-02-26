@@ -26,8 +26,13 @@ class Loader extends Component {
                     until={5}
                     size={35}
                     onFinish={this._gameScreen}
-                    digitStyle={{backgroundColor: 'black'}}
-                    digitTxtStyle={{color: 'white'}}
+                    digitStyle={{backgroundColor: '#666363'}}
+                    digitTxtStyle={{
+                        color: 'white',
+                        textShadowOffset: { width: 2, height: 2 },
+                        textShadowRadius: 2,
+                        textShadowColor: '#000',
+                        }}
                     timeToShow={['S']}
                 />
                 <Icon.Button style={styles.button1}
@@ -51,13 +56,17 @@ const AppNavigator = createStackNavigator({
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'black',
+        backgroundColor: '#666363',
         alignItems: 'center',
         justifyContent: 'center',
     },
     countDown: {
         fontSize: 35,
+        fontWeight: 'bold',
         color: 'white',
+        textShadowOffset: { width: 2, height: 2 },
+        textShadowRadius: 2,
+        textShadowColor: '#000',
         marginBottom: 10,
     },
     button1: {

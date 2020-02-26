@@ -49,7 +49,10 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     textDecorationLine: 'none',
-    color: 'white'
+    color: 'white',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 2,
+    textShadowColor: '#000001',
   }
 });
 
