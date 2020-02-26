@@ -27,7 +27,12 @@ class Loader extends Component {
                     size={35}
                     onFinish={this._gameScreen}
                     digitStyle={{backgroundColor: '#666363'}}
-                    digitTxtStyle={{color: 'black'}}
+                    digitTxtStyle={{
+                        color: 'white',
+                        textShadowOffset: { width: 2, height: 2 },
+                        textShadowRadius: 2,
+                        textShadowColor: '#000',
+                        }}
                     timeToShow={['S']}
                 />
                 <Icon.Button style={styles.button1}
@@ -57,7 +62,11 @@ const styles = StyleSheet.create({
     },
     countDown: {
         fontSize: 35,
-        color: 'black',
+        fontWeight: 'bold',
+        color: 'white',
+        textShadowOffset: { width: 2, height: 2 },
+        textShadowRadius: 2,
+        textShadowColor: '#000',
         marginBottom: 10,
     },
     button1: {
