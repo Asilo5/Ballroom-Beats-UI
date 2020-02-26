@@ -5,11 +5,8 @@ import {
     Easing,
     TouchableOpacity,
     StyleSheet,
-    ImageBackground,
-    Image,
     Text
 } from 'react-native';
-
 export default class Bachata extends Component {
     state = {
       pulses: [
@@ -28,19 +25,19 @@ export default class Bachata extends Component {
     componentDidMount() {
       this.props.start(this.generateTiming())
       this.props.stopMusic(this.getSongLength())
-    }
+    };
 
     endGame = (userPoints, gamePoints) => {
         this.props.stopDance(userPoints, gamePoints)
-    }
+    };
 
     componentWillUnmount() {
       this.endGame(this.state.counter, this.getExpectedValue())
-    }
+    };
 
     getExpectedValue = () => {
       return this.props.song.duration/60 * this.props.song.tempo
-    }
+    };
 
     getSongLength = () => {
       //Real World
@@ -51,13 +48,13 @@ export default class Bachata extends Component {
 
       //Demo
       return 10000
-    }
+    };
 
     assessPulseDuration = () => {
       return (
         60000/this.props.song.tempo * .5
       )
-    }
+    };
 
     generateTiming = () => {
         return [
@@ -136,17 +133,13 @@ export default class Bachata extends Component {
         ]
     };
 
-
     countUp = () => {
       let newCount = this.state.counter
       newCount++
       this.setState({counter: newCount});
-    }
-
+    };
 
    generateViews = () => {
-     const colours = ["#FCFDF9","#F60091", "#F6811F", "#FFEB00", "#71C043", "#03ABF0", "274FA2", "#6F2C8F"];
-
      return (
        <View style={styles.danceFloor}>
        <TouchableOpacity onPress={() => {this.countUp()}} >
@@ -301,7 +294,6 @@ export default class Bachata extends Component {
          </TouchableOpacity>
        </View>
      )
-
    };
 
     render() {
@@ -314,8 +306,8 @@ export default class Bachata extends Component {
             <Text style={styles.points}>Possible Points: {`${Math.floor(this.getExpectedValue())}`}</Text>
           </View>
         );
-    }
-}
+    };
+};
 
 const styles = StyleSheet.create({
     danceFloor: {
@@ -372,4 +364,4 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       margin: 10
     }
-  });
+});

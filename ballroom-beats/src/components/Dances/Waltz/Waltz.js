@@ -12,7 +12,6 @@ import Comments from "../../Comments/Comments";
 const randomiseNumber = (min, max) => {
    return Math.random() * (min - max) + min;
 };
-
 export default class Waltz extends Component {
   state = {
     pulses: [
