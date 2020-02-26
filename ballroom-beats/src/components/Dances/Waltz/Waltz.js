@@ -102,7 +102,6 @@ export default class Waltz extends Component {
                   borderRadius: 24,
                 }}
               />
-                <Text style={styles.bob}>Bob</Text>
               <Animated.View />
             </TouchableOpacity>
           <View style={styles.upperTwoSteps}>
@@ -218,9 +217,7 @@ export default class Waltz extends Component {
   };
 
   render() {
-    console.log('COUNTER', this.state.counter)
     return (
-      <View style={styles.waltzComponent}>
         <View style={styles.stepsContainer}>
           {this.generateViews()}
         </View>
@@ -236,7 +233,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     height: '60%',
-    width: 400
+    width: 400,
   },
   upperSteps:{
     display: 'flex',
@@ -267,7 +264,7 @@ const styles = StyleSheet.create({
     left: 40,
     marginTop: 20,
     marginBottom: 60,
-    height: 350
+    height: 300
   },
   numberView: {
     backgroundColor: "#FFF",
