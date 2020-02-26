@@ -63,6 +63,6 @@ const styles = StyleSheet.create({
   backgroundImage2: {
     flex: 2,
     width: null,
-    height: '95%',
+    height: '100%',
   },
 });

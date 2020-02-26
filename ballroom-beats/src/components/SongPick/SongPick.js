@@ -35,16 +35,16 @@ class SongPick extends Component {
     if (this.props.navigation.getParam('selectedDance', '') === "Waltz") {
       return [
         <Picker.Item label="-- Pick a Song --" value="" />,
-        <Picker.Item label="Beyond The Sea - Beginner" value="Beyond the Sea" />,
-        <Picker.Item label="Games of Thrones - Advanced" value="Game of Thrones" />
+        <Picker.Item label="Beyond The Sea" value="Beyond the Sea" />,
+        <Picker.Item label="Games of Thrones" value="Game of Thrones" />
       ]
     }
 
     if (this.props.navigation.getParam('selectedDance', '') === "Bachata") {
       return [
         <Picker.Item label="-- Pick a Song --" value="" />,
-        <Picker.Item label="Deja Vu - Beginner" value="Deja Vu" />,
-        <Picker.Item label="Melancolia Tropical - Advanced" value="Melancolia Tropical" />
+        <Picker.Item label="Deja Vu" value="Deja Vu" />,
+        <Picker.Item label="Melancolia Tropical" value="Melancolia Tropical" />
       ]
     }
   };
