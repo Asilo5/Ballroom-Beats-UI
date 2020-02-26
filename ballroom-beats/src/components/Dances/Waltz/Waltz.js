@@ -13,6 +13,10 @@ import { AntDesign } from '@expo/vector-icons';
 
 const getRandomNumber = (min, max) => {
    return Math.random() * (min - max) + min;
+};
+
+const randomiseColour = () => {
+  return ` rgb(${getRandomNumber(100, 144)})`
 }
 
 export default class Waltz extends Component {
