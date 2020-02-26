@@ -8,15 +8,37 @@ const negativeEnd = animationY * -1;
 
 
 class Comments extends Component {
+
+    constructor() {
+        super()
+        
+        this.yAnimation = this.state.position.interpolate({
+            inputRange: [negativeEnd, 0],
+            outputRange: [animationY, 0] 
+          });
+   
+          this.scaleAnimation = this.yAnimation.interpolate({
+             inputRange: [0, 15, 30],
+             outputRange: [0, 1.4, 1],
+             extrapolate: 'clamp'
+          });
+    }
+
     state = {
       position: new Animated.Value(0)
     };
 
     componentDidMount() {
-       this.yAnimation = this.state.position.interpolate({
-         inputRange: [negativeEnd, 0],
-         outputRange: [animationY, 0] 
-       });
+    //    this.yAnimation = this.state.position.interpolate({
+    //      inputRange: [negativeEnd, 0],
+    //      outputRange: [animationY, 0] 
+    //    });
+
+    //    this.scaleAnimation = this.yAnimation.interpolate({
+    //       inputRange: [0, 15, 30],
+    //       outputRange: [0, 1.4, 1],
+    //       extrapolate: 'clamp'
+    //    });
 
        Animated.timing(this.state.position, {
          duration: 2000,
@@ -28,9 +50,7 @@ class Comments extends Component {
 
     getStyle = () => {
         return {
-            transform: [
-                { translateY: this.state.position }
-            ]
+            transform: [{ translateY: this.state.position }, { scale: this.scaleAnimation }]
         }
     }
 
@@ -52,7 +72,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent'
     },
     text: {
-        color: 'white',
+        color: 'purple',
         fontSize: 30,
+        fontWeight: 'bold'
     }
 });
