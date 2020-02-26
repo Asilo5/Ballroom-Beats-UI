@@ -51,17 +51,23 @@ class Game extends Component {
     this.props.navigation.navigate('End');
   };
 
-  stopDance = (time, getCounterValue, getExpectedValue) => {
+  stopMusic = (time) => {
     setTimeout(() => {
       this.backgroundMusic.stopAsync();
-      const scoreText = this.getScore(getCounterValue, getExpectedValue)
-      this.props.navigation.navigate('End', {scoreText: scoreText});
+      // const scoreText = this.getScore(getCounterValue, getExpectedValue)
+      // this.props.navigation.navigate('End', {scoreText: scoreText});
     }, time);
   }
 
-  getScore = (getCounterValue, getExpectedFloat) => {
+  stopDance = (getCounterValue, getExpectedValue) => {
+    const scoreText = this.getScore(getCounterValue, getExpectedValue)
+    this.props.navigation.navigate('End', {scoreText: scoreText});
+  }
+
+
+  getScore = (getCounterValue, getExpectedFloat, moose) => {
     let getExpectedValue = Math.floor(getExpectedFloat)
-    
+
     if (getCounterValue > getExpectedValue) {
       return `${getCounterValue} out of ${getExpectedValue} steps - stop stumbling around!`
     } else if (getCounterValue < getExpectedValue) {
@@ -75,7 +81,7 @@ class Game extends Component {
       return (
         <>
           <View style={styles.container}>
-          <DanceFloor start={this._start} song={this.props.navigation.getParam('song', '')} dance={this.props.navigation.getParam('dance', '')} stop={this.stopDance}/>
+          <DanceFloor start={this._start} song={this.props.navigation.getParam('song', '')} dance={this.props.navigation.getParam('dance', '')} stopMusic={this.stopMusic} stopDance={this.stopDance}/>
             <View style={styles.btnContainer}>
                 <TouchableOpacity
                     style={styles.button}

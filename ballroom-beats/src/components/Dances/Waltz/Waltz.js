@@ -33,12 +33,20 @@ export default class Waltz extends Component {
 
   componentDidMount() {
     this.props.start(this.generateTiming())
-    this.props.stop(this.getSongLength(), this.getCounterValue(), this.getExpectedValue())
+    this.props.stopMusic(this.getSongLength())
   }
 
-  getCounterValue = () => {
-    return this.state.counter
+  endGame = () => {
+      this.props.stopDance(this.state.counter, this.getExpectedValue())
   }
+
+  // getCounterValue = () => {
+  //   // setTimeout(() => {
+  //   //   return this.state.counter
+  //   // }, this.getSongLength() - 5);
+  //   return this.state.counter
+  //
+  // }
 
   getExpectedValue = () => {
     return this.props.song.duration/60 * this.props.song.tempo
@@ -270,7 +278,6 @@ export default class Waltz extends Component {
           </View>
         </View>
       )
-
   };
 
   render() {
