@@ -9,10 +9,15 @@ class Game extends Component {
   constructor(props) {
     super(props)
     this.state= {
+      renderDance: true
     }
+    this.danceTime = null
   };
 
   async componentDidMount() {
+    // let timeToEnd = this.props.navigation.getParam('song', '') * 1000
+    let timeToEnd = 10000
+    this.danceTime = setTimeout(() => this.setState({renderDance: false}), timeToEnd);
     let songPath = this.props.navigation.getParam('song', '').url
     this.backgroundMusic = new Audio.Sound();
     try {
@@ -25,6 +30,8 @@ class Game extends Component {
        console.log("The music isn't playing")
     }
   };
+
+
 
   checkSongSwitch = (path) => {
     switch (path) {
@@ -51,15 +58,36 @@ class Game extends Component {
     this.props.navigation.navigate('End');
   };
 
-  render() {
+  stopMusic = (time) => {
     setTimeout(() => {
       this.backgroundMusic.stopAsync();
-      this.props.navigation.navigate('End');
-    }, 30000);
+      // const scoreText = this.getScore(getCounterValue, getExpectedValue)
+      // this.props.navigation.navigate('End', {scoreText: scoreText});
+    }, time);
+  }
+
+  stopDance = (getCounterValue, getExpectedValue) => {
+    this.props.navigation.navigate('End', {scoreText: this.getScore(getCounterValue, getExpectedValue)});
+  }
+
+
+  getScore = (getCounterValue, getExpectedFloat, moose) => {
+    let getExpectedValue = Math.floor(getExpectedFloat)
+
+    if (getCounterValue > getExpectedValue) {
+      return `${getCounterValue} out of ${getExpectedValue} steps - stop stumbling around!`
+    } else if (getCounterValue < getExpectedValue) {
+      return `${getCounterValue} out of ${getExpectedValue} steps - try to keep up!`
+    } else {
+      return `${getCounterValue} out of ${getExpectedValue} steps - you're perfect!  You don't need this app!`
+    }
+  }
+
+  render() {
       return (
         <>
           <View style={styles.container}>
-          <DanceFloor start={this._start} song={this.props.navigation.getParam('song', '')} tempoMultiplier={this.props.navigation.getParam('tempoMultiplier', '')} dance={this.props.navigation.getParam('dance', '')}/>
+          {this.state.renderDance ? <DanceFloor start={this._start} song={this.props.navigation.getParam('song', '')} dance={this.props.navigation.getParam('dance', '')} stopMusic={this.stopMusic} stopDance={this.stopDance}/> : null}
             <View style={styles.btnContainer}>
                 <TouchableOpacity
                     style={styles.button}
