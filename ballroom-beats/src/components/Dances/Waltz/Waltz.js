@@ -122,7 +122,7 @@ export default class Waltz extends Component {
       return (
         <View style={styles.danceFloor}>
           <View style={styles.upperSteps}>
-            <TouchableOpacity onPress={() => {this.countUp(0)}} key={0}>
+            <TouchableOpacity onPress={() => {this.countUp(0), this.addComment()}} key={0}>
               <Animated.View
                 style={{
                   transform: [
@@ -144,7 +144,7 @@ export default class Waltz extends Component {
             </TouchableOpacity>
           <View style={styles.upperTwoSteps}>
 
-              <TouchableOpacity onPress={() => {this.countUp(2)}} key={2}>
+              <TouchableOpacity onPress={() => {this.countUp(2), this.addComment()}} key={2}>
                 <Animated.View
                   style={{
                     transform: [
@@ -164,7 +164,7 @@ export default class Waltz extends Component {
                 <Animated.View />
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => {this.countUp(1)}} key={1}>
+              <TouchableOpacity onPress={() => {this.countUp(1), this.addComment()}} key={1}>
                 <Animated.View
                   style={{
                     transform: [
@@ -189,7 +189,7 @@ export default class Waltz extends Component {
 
           <View style={styles.lowerSteps}>
             <View style={styles.lowerTwoSteps}>
-                <TouchableOpacity onPress={() => {this.countUp(4)}} key={4}>
+                <TouchableOpacity onPress={() => {this.countUp(4), this.addComment()}} key={4}>
                   <Animated.View
                     style={{
                       transform: [
@@ -209,7 +209,7 @@ export default class Waltz extends Component {
                   <Animated.View />
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => {this.countUp(5)}} key={5}>
+                <TouchableOpacity onPress={() => {this.countUp(5), this.addComment()}} key={5}>
                       <Animated.View
                         style={{
                           transform: [
@@ -269,7 +269,7 @@ export default class Waltz extends Component {
         </View>
         <View >
            {this.state.comments.map((comment) => {
-               return <Comments key={comment.id} style={{ left: comment.right }} />
+               return <Comments key={comment.id} style={{ left: comment.right, color: comment.color }} />
            })}
         </View>
       </View>
