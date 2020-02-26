@@ -59,7 +59,6 @@ class SongPick extends Component {
       return (
           <View style={styles.container}>
             <Text style={styles.songPick}>Pick Your Song</Text>
-            <Text style={styles.dance}>{`${this.state.selectedSong}`}</Text>
             <Picker
                 mode="dropdown"
                 style={styles.picker}
@@ -78,7 +77,7 @@ class SongPick extends Component {
                     <Text style={styles.back}>Back</Text>
                 </Icon.Button>
                 <Icon.Button
-                    style={[styles.button2, { backgroundColor: this.state.selectedSong ? '#A9C344' : '#545454'}]}
+                    style={[styles.button2, { backgroundColor: this.state.selectedSong ? '#A9C344' : '#3E3E3E'}]}
                     name="arrowright"
                     onPress={() => this.props.navigation.navigate('Loader', {song: this.findSong(), dance: this.props.navigation.getParam('selectedDance', '')})}
                     disabled={(this.state.selectedSong == '') ? true : false}
@@ -101,7 +100,7 @@ const AppNavigator = createStackNavigator({
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'black',
+        backgroundColor: '#666363',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -109,6 +108,9 @@ const styles = StyleSheet.create({
         fontSize: 40,
         fontWeight: 'bold',
         color: 'white',
+        textShadowOffset: { width: 2, height: 2 },
+        textShadowRadius: 2,
+        textShadowColor: '#000',
         marginBottom: 10,
     },
     picker: {

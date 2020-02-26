@@ -32,7 +32,7 @@ class DanceType extends Component {
                     <Picker.Item label="Swing" value="Swing" />
                 </Picker>
                 <Icon.Button
-                    style={[styles.button, { backgroundColor: this.state.selectedDance ? '#A9C344' : '#545454'}]}
+                    style={[styles.button, { backgroundColor: this.state.selectedDance ? '#A9C344' : '#3E3E3E'}]}
                     name="arrowright"
                     onPress={() => this.props.navigation.navigate('SongPick', {
                       selectedDance: `${this.state.selectedDance}`
@@ -56,7 +56,7 @@ const AppNavigator = createStackNavigator({
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'black',
+        backgroundColor: '#666363',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -64,6 +64,9 @@ const styles = StyleSheet.create({
         fontSize: 35,
         fontWeight: 'bold',
         color: 'white',
+        textShadowOffset: { width: 2, height: 2 },
+        textShadowRadius: 2,
+        textShadowColor: '#000',
         marginBottom: 10,
     },
     picker: {
