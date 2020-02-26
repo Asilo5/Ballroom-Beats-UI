@@ -9,10 +9,15 @@ class Game extends Component {
   constructor(props) {
     super(props)
     this.state= {
+      renderDance: true
     }
+    this.danceTime = null
   };
 
   async componentDidMount() {
+    // let timeToEnd = this.props.navigation.getParam('song', '') * 1000
+    let timeToEnd = 10000
+    this.danceTime = setTimeout(() => this.setState({renderDance: false}), timeToEnd);
     let songPath = this.props.navigation.getParam('song', '').url
     this.backgroundMusic = new Audio.Sound();
     try {
@@ -25,6 +30,8 @@ class Game extends Component {
        console.log("The music isn't playing")
     }
   };
+
+
 
   checkSongSwitch = (path) => {
     switch (path) {
@@ -60,8 +67,7 @@ class Game extends Component {
   }
 
   stopDance = (getCounterValue, getExpectedValue) => {
-    const scoreText = this.getScore(getCounterValue, getExpectedValue)
-    this.props.navigation.navigate('End', {scoreText: scoreText});
+    this.props.navigation.navigate('End', {scoreText: this.getScore(getCounterValue, getExpectedValue)});
   }
 
 
@@ -81,7 +87,7 @@ class Game extends Component {
       return (
         <>
           <View style={styles.container}>
-          <DanceFloor start={this._start} song={this.props.navigation.getParam('song', '')} dance={this.props.navigation.getParam('dance', '')} stopMusic={this.stopMusic} stopDance={this.stopDance}/>
+          {this.state.renderDance ? <DanceFloor start={this._start} song={this.props.navigation.getParam('song', '')} dance={this.props.navigation.getParam('dance', '')} stopMusic={this.stopMusic} stopDance={this.stopDance}/> : null}
             <View style={styles.btnContainer}>
                 <TouchableOpacity
                     style={styles.button}

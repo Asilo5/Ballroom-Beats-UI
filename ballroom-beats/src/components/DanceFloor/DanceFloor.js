@@ -40,7 +40,8 @@ export default class DanceFloor extends Component {
           start={this.props.start}
           style={styles.container1}
           song={this.props.song}
-          stop={this.props.stop}
+          stopDance={this.props.stopDance}
+          stopMusic={this.props.stopMusic}
         />
       )
     }

@@ -21,14 +21,6 @@ export default class Waltz extends Component {
     ],
 
     counter: 0
-    // counters: [
-    //   0,
-    //   0,
-    //   0,
-    //   0,
-    //   0,
-    //   0,
-    // ]
   };
 
   componentDidMount() {
@@ -36,26 +28,26 @@ export default class Waltz extends Component {
     this.props.stopMusic(this.getSongLength())
   }
 
-  endGame = () => {
-      this.props.stopDance(this.state.counter, this.getExpectedValue())
+  endGame = (userPoints, gamePoints) => {
+      this.props.stopDance(userPoints, gamePoints)
   }
 
-  // getCounterValue = () => {
-  //   // setTimeout(() => {
-  //   //   return this.state.counter
-  //   // }, this.getSongLength() - 5);
-  //   return this.state.counter
-  //
-  // }
+  componentWillUnmount() {
+    this.endGame(this.state.counter, this.getExpectedValue())
+  }
 
   getExpectedValue = () => {
     return this.props.song.duration/60 * this.props.song.tempo
   }
 
   getSongLength = () => {
+    //Real World
+
     // return (
     //   this.props.song.duration * 1000
     // )
+
+    //Demo
     return 10000
   }
 
@@ -87,61 +79,6 @@ export default class Waltz extends Component {
     this.setState({counter: newCount});
   }
 
-  // countUp = (num) => {
-  //   const subCounterList = [...this.state.counters];
-  //   subCounterList[num]++;
-  //   this.setState({counters: subCounterList});
-  // }
-
-
-  // generateNumberCounts = () => {
-  //   return this.state.counters.map((counter, i) => {
-  //     return (
-  //       <Text key={i} style={styles.bob}>{counter.toString()}</Text>
-  //     )
-  //   })
-  // }
-
-  // generateNumberCounts = () => {
-  //     return (
-  //       <>
-  //         <Text key={0}>{this.state.counters[0].toString()}</Text>
-  //         <Text key={1}>{this.state.counters[1].toString()}</Text>
-  //         <Text key={2}>{this.state.counters[2].toString()}</Text>
-  //         <Text key={3}>{this.state.counters[3].toString()}</Text>
-  //         <Text key={4}>{this.state.counters[4].toString()}</Text>
-  //         <Text key={5}>{this.state.counters[5].toString()}</Text>
-  //       </>
-  //     )
-  //
-  // }
-
-  // generateViews = () => {
-  //   const colors = ["#F60091", "#F6811F", "#FFEB00", "#71C043", "#03ABF0", "#6F2C8F"]
-  //   return this.state.counters.map((counter, i) => {
-  //     return (
-  //       <TouchableOpacity onPress={() => {this.countUp(i)}} key={i}>
-  //         <Animated.View
-  //           style={{
-  //             transform: [
-  //               {
-  //                 scaleX: this.state.pulses[i]
-  //               },
-  //               {
-  //                 scaleY: this.state.pulses[i]
-  //               }
-  //             ],
-  //             margin: 20,
-  //             borderWidth: 10,
-  //             borderColor: `${colors[i]}`,
-  //             borderRadius: 10,
-  //           }}
-  //         />
-  //         <Animated.View />
-  //       </TouchableOpacity>
-  //     )
-  //   })
-  // }
 
   generateViews = () => {
     const colors = ["#F60091", "#F6811F", "#FFEB00", "#71C043", "#03ABF0", "#6F2C8F"]
@@ -287,6 +224,8 @@ export default class Waltz extends Component {
         <View style={styles.stepsContainer}>
           {this.generateViews()}
         </View>
+        <Text style={styles.bob}>Your Points: {`${this.counter}`}</Text>
+        <Text style={styles.bob}>Possible Points: {`${this.getExpectedValue()}`}</Text>
       </View>
     );
   }
