@@ -23,11 +23,9 @@ export default class Waltz extends Component {
       new Animated.Value(1),
       new Animated.Value(1),
     ],
-
     comments: [],
     commentCount: 1,
     counter: 0
-
   };
 
   componentDidMount() {
@@ -37,15 +35,15 @@ export default class Waltz extends Component {
 
   endGame = (userPoints, gamePoints) => {
       this.props.stopDance(userPoints, gamePoints)
-  }
+  };
 
   componentWillUnmount() {
     this.endGame(this.state.counter, this.getExpectedValue())
-  }
+  };
 
   getExpectedValue = () => {
     return this.props.song.duration/60 * this.props.song.tempo
-  }
+  };
 
   getSongLength = () => {
     //Real World
@@ -56,13 +54,13 @@ export default class Waltz extends Component {
 
     //Demo
     return 10000
-  }
+  };
 
   assessPulseDuration = () => {
     return (
       60000/this.props.song.tempo
     )
-  }
+  };
 
   generateTiming = () => {
     return this.state.pulses.map(pulse => {
@@ -78,22 +76,20 @@ export default class Waltz extends Component {
         })
       ]
     }).flat();
-  }
+  };
 
   countUp = () => {
     let newCount = this.state.counter
     newCount++
     this.setState({counter: newCount});
-  }
-
-
+  };
+ 
   generateViews = () => {
     const colors = ["#F60091", "#F6811F", "#FFEB00", "#71C043", "#03ABF0", "#6F2C8F"]
       return (
         <View style={styles.danceFloor}>
           <View style={styles.upperSteps}>
             <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={0}>
-
               <Animated.View
                 style={{
                   transform: [
@@ -110,6 +106,7 @@ export default class Waltz extends Component {
                   borderRadius: 24,
                 }}
               />
+                <Text style={styles.footingPosition}>Left</Text>
               <Animated.View />
             </TouchableOpacity>
           <View style={styles.upperTwoSteps}>
@@ -130,6 +127,7 @@ export default class Waltz extends Component {
                     borderRadius: 24,
                   }}
                 />
+                  <Text style={styles.footingPosition}>Left</Text>
                 <Animated.View />
               </TouchableOpacity>
               <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={1}>
@@ -149,12 +147,11 @@ export default class Waltz extends Component {
                     borderRadius: 24,
                   }}
                 />
+                  <Text style={styles.footingPosition}>Right</Text>
                 <Animated.View />
               </TouchableOpacity>
-
              </View>
           </View>
-
           <View style={styles.lowerSteps}>
             <View style={styles.lowerTwoSteps}>
                 <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={4}>
@@ -174,6 +171,7 @@ export default class Waltz extends Component {
                       borderRadius: 24,
                     }}
                   />
+                    <Text style={styles.footingPosition}>Left</Text>
                   <Animated.View />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={5}>
@@ -193,6 +191,7 @@ export default class Waltz extends Component {
                           borderRadius:24,
                         }}
                       />
+                        <Text style={styles.footingPosition}>Right</Text>
                       <Animated.View />
                 </TouchableOpacity>
             </View>
@@ -213,6 +212,7 @@ export default class Waltz extends Component {
                       borderRadius: 24,
                     }}
                   />
+                    <Text style={styles.footingPosition}>Right</Text>
                   <Animated.View />
               </TouchableOpacity>
           </View>
@@ -224,7 +224,6 @@ export default class Waltz extends Component {
      this.setState({ comments: [...this.state.comments, { id: this.state.commentCount++, right: randomiseNumber(20,-250) }]} );
   };
 
-  
   render() {
     return (
       <View>
@@ -241,7 +240,7 @@ export default class Waltz extends Component {
       </View>
     );
   }
-}
+};
 
 const styles = StyleSheet.create({
   danceFloor: {
@@ -282,6 +281,11 @@ const styles = StyleSheet.create({
   numberView: {
     backgroundColor: "#FFF",
     margin: 10,
+  },
+  footingPosition: {
+    color: 'white',
+    fontSize: 20,
+    left: 24
   },
   commentsContainer: {
     position:'absolute',
