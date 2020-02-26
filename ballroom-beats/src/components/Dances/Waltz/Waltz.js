@@ -12,12 +12,12 @@ import {
 export default class Waltz extends Component {
   state = {
     pulses: [
-      new Animated.Value(0),
-      new Animated.Value(0),
-      new Animated.Value(0),
-      new Animated.Value(0),
-      new Animated.Value(0),
-      new Animated.Value(0),
+      new Animated.Value(1),
+      new Animated.Value(1),
+      new Animated.Value(1),
+      new Animated.Value(1),
+      new Animated.Value(1),
+      new Animated.Value(1),
     ],
 
     counters: [
