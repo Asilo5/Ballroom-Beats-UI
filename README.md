@@ -1,4 +1,4 @@
-# Ballroom Beats
+# Ballroom Beats 💃🏻🎶
 
 Ever wanted to get better at dancing? But with your busy schedule you weren't sure where you could fit in the practice. Ballroom Beats is here to allow users to practice anywhere, whether you're on the bus or at work. With Ballroom Beats you can practice your steps by following the fun dots we offer on the screen so you can memorise the location of your footing and follow the beat of your song of choice.
 
