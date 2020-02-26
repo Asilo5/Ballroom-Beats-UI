@@ -20,7 +20,7 @@ Once you have cloned the repo, install dependencies:
 
 ``$ npm install``
 
-And to view on your local browser:
+And to view on your local browser or phone:
 
 ``$ npm start``  or ``$ expo start`` then open simulator of choice.
 
