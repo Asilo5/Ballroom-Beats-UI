@@ -12,12 +12,12 @@ import {
 export default class Waltz extends Component {
   state = {
     pulses: [
-      new Animated.Value(0),
-      new Animated.Value(0),
-      new Animated.Value(0),
-      new Animated.Value(0),
-      new Animated.Value(0),
-      new Animated.Value(0),
+      new Animated.Value(1),
+      new Animated.Value(1),
+      new Animated.Value(1),
+      new Animated.Value(1),
+      new Animated.Value(1),
+      new Animated.Value(1),
     ],
 
     counters: [
@@ -256,13 +256,10 @@ export default class Waltz extends Component {
   };
 
   render() {
-    console.log('COUNTERS', this.state.counters)
     return (
-      <View style={styles.waltzComponent}>
         <View style={styles.stepsContainer}>
           {this.generateViews()}
         </View>
-      </View>
     );
   }
 }
@@ -272,7 +269,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     height: '60%',
-    width: 400
+    width: 400,
   },
   upperSteps:{
     display: 'flex',
@@ -303,7 +300,7 @@ const styles = StyleSheet.create({
     left: 40,
     marginTop: 20,
     marginBottom: 60,
-    height: 350
+    height: 300
   },
   numberView: {
     backgroundColor: "#FFF",
