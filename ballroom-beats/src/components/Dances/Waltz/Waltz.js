@@ -5,13 +5,11 @@ import {
   StyleSheet,
   Animated,
   Easing,
-  TouchableOpacity,
-  ImageBackground
+  TouchableOpacity
 } from "react-native";
 import Comments from "../../Comments/Comments";
-import { AntDesign } from '@expo/vector-icons';
 
-const getRandomNumber = (min, max) => {
+const randomiseNumber = (min, max) => {
    return Math.random() * (min - max) + min;
 };
 
@@ -258,7 +256,7 @@ export default class Waltz extends Component {
   };
 
   addComment = () => {
-     this.setState({ comments: [...this.state.comments, { id: this.state.commentCount++, right: getRandomNumber(20,-250) }]} );
+     this.setState({ comments: [...this.state.comments, { id: this.state.commentCount++, right: randomiseNumber(20,-250) }]} );
   };
 
   
@@ -271,7 +269,7 @@ export default class Waltz extends Component {
         </View>
         <View >
            {this.state.comments.map((comment) => {
-               return <Comments key={comment.id} style={{ left: comment.right, color: comment.color }} />
+               return <Comments key={comment.id} style={{ left: comment.right }} />
            })}
         </View>
       </View>

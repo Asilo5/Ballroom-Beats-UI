@@ -57,12 +57,15 @@ class Comments extends Component {
                 { rotate: this.rotateAnimation }
             ]
         }
-    }
+    };
 
     render() {
+      let positiveAffirmation = ['Yass!', 'Doing Great!', 'Awesome!', 'Pro!'];
+      let randomAffirmation = positiveAffirmation[Math.floor(Math.random()*positiveAffirmation.length)];
+
         return (
             <Animated.View style={[styles.commentsContainer, this.props.style, this.getStyle()]}>
-                <Text style={styles.text} >Got it!</Text>
+                <Text style={styles.text}>{randomAffirmation}</Text>
             </Animated.View>
         );
     }
