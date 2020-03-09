@@ -47,7 +47,7 @@ export default class Bachata extends Component {
       // )
 
       //Demo
-      return 10000
+      return 25000
     };
 
     assessPulseDuration = () => {

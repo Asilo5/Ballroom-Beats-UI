@@ -52,7 +52,7 @@ export default class Waltz extends Component {
     // )
 
     //Demo
-    return 10000
+    return 25000
   };
 
   assessPulseDuration = () => {

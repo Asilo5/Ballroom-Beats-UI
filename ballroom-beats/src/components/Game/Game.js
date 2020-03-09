@@ -22,7 +22,7 @@ class Game extends Component {
 
   async componentDidMount() {
     // let timeToEnd = this.props.navigation.getParam('song', '') * 1000
-    let timeToEnd = 10000
+    let timeToEnd = 25000
     this.danceTime = setTimeout(() => this.setState({renderDance: false}), timeToEnd);
     let songPath = this.props.navigation.getParam('song', '').url
     this.backgroundMusic = new Audio.Sound();
