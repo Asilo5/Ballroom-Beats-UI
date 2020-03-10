@@ -47,7 +47,7 @@ export default class Bachata extends Component {
       // )
 
       //Demo
-      return 10000
+      return 25000
     };
 
     assessPulseDuration = () => {
@@ -154,9 +154,9 @@ export default class Bachata extends Component {
                       }
                    ],
                    margin: 20,
-                   borderWidth: 10,
+                   borderWidth: 15,
                    borderColor: "#FCFDF9",
-                   borderRadius: 10
+                   borderRadius: 15
                }}  >
            </Animated.View>
        </TouchableOpacity>
@@ -172,9 +172,9 @@ export default class Bachata extends Component {
                       }
                    ],
                    margin: 20,
-                   borderWidth: 10,
+                   borderWidth: 15,
                    borderColor: "#F60091",
-                   borderRadius: 10
+                   borderRadius: 15
                }}  >
            </Animated.View>
        </TouchableOpacity>
@@ -192,9 +192,9 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 10,
+                      borderWidth: 15,
                       borderColor: "#F6811F",
-                      borderRadius: 10
+                      borderRadius: 15
                   }}  >
               </Animated.View>
           </TouchableOpacity>
@@ -210,9 +210,9 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 10,
+                      borderWidth: 15,
                       borderColor: "#FFEB00",
-                      borderRadius: 10
+                      borderRadius: 15
                   }}  >
               </Animated.View>
           </TouchableOpacity>
@@ -230,9 +230,9 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 10,
+                      borderWidth: 15,
                       borderColor: "#71C043",
-                      borderRadius: 10
+                      borderRadius: 15
                   }}  >
               </Animated.View>
           </TouchableOpacity>
@@ -248,9 +248,9 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 10,
+                      borderWidth: 15,
                       borderColor: "#03ABF0",
-                      borderRadius: 10
+                      borderRadius: 15
                   }}  >
               </Animated.View>
           </TouchableOpacity>
@@ -268,9 +268,9 @@ export default class Bachata extends Component {
                         }
                      ],
                      margin: 20,
-                     borderWidth: 10,
+                     borderWidth: 15,
                      borderColor: "#274FA2",
-                     borderRadius: 10
+                     borderRadius: 15
                  }}  >
              </Animated.View>
          </TouchableOpacity>
@@ -286,9 +286,9 @@ export default class Bachata extends Component {
                         }
                      ],
                      margin: 20,
-                     borderWidth: 10,
+                     borderWidth: 15,
                      borderColor: "#6F2C8F",
-                     borderRadius: 10
+                     borderRadius: 15
                  }}  >
              </Animated.View>
          </TouchableOpacity>
