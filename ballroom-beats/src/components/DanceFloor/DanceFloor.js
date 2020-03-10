@@ -3,8 +3,11 @@ import Waltz from "../Dances/Waltz/Waltz.js"
 import Bachata from "../Dances/Bachata/Bachata.js";
 import {
   StyleSheet,
-  ImageBackground
+  ImageBackground, 
+  Dimensions
 } from "react-native";
+
+const { width, height } = Dimensions.get('screen')
 
 export default class DanceFloor extends Component {
   state = {
@@ -57,12 +60,12 @@ export default class DanceFloor extends Component {
 const styles = StyleSheet.create({
   backgroundImage1: {
     flex: 1,
-    width: null,
-    height: '95%',
+    width: width,
+    height: height,
   },
   backgroundImage2: {
     flex: 2,
-    width: null,
-    height: '100%',
+    width: width,
+    height: height,
   },
 });
