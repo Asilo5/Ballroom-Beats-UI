@@ -10,6 +10,7 @@ import {
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import { Audio } from 'expo-av';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 class Game extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class Game extends Component {
 
   async componentDidMount() {
     // let timeToEnd = this.props.navigation.getParam('song', '') * 1000
-    let timeToEnd = 25000
+    let timeToEnd = 75000 // changed for LANDSCAPE VIEW STYLING ******************
     this.danceTime = setTimeout(() => this.setState({renderDance: false}), timeToEnd);
     let songPath = this.props.navigation.getParam('song', '').url
     this.backgroundMusic = new Audio.Sound();
@@ -110,7 +111,7 @@ const AppNavigator = createStackNavigator({
     },
 });
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'black',
@@ -118,13 +119,23 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     btnContainer: {
-        backgroundColor: "black",
+        // backgroundColor: "black",
+    },
+    '@media (min-width: 500)': {
+      btnContainer: {
+        backgroundColor: '',
+      }
     },
     button: {
         backgroundColor: '#A93133',
         margin: 10,
         width: '80%',
         borderRadius: 50
+    },
+    '@media (min-width: 500)': {
+      button: {
+        width: '30%',
+      }
     },
     quit: {
         fontSize: 30,

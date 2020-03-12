@@ -3,11 +3,9 @@ import Waltz from "../Dances/Waltz/Waltz.js"
 import Bachata from "../Dances/Bachata/Bachata.js";
 import {
   StyleSheet,
-  ImageBackground, 
-  Dimensions
+  ImageBackground
 } from "react-native";
-
-const { width, height } = Dimensions.get('screen')
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 export default class DanceFloor extends Component {
   state = {
@@ -57,15 +55,29 @@ export default class DanceFloor extends Component {
   }
 };
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   backgroundImage1: {
     flex: 1,
-    width: width,
-    height: height,
+    width: null,
+    height: '95%',
+  },
+  '@media (min-width: 500)': {
+    backgroundImage1: {
+      flex: 2,
+      // height: '40%',
+      width: '100%',
+    }
   },
   backgroundImage2: {
     flex: 2,
-    width: width,
-    height: height,
+    width: null,
+    height: '100%',
+  },
+  '@media (min-width: 500)': {
+    backgroundImage2: {
+      flex: 1,
+      // height: '205%',
+      width: '100%',
+    }
   },
 });
