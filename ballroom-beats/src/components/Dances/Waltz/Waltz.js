@@ -8,6 +8,7 @@ import {
   TouchableOpacity
 } from "react-native";
 import Comments from "../../Comments/Comments";
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 const randomiseNumber = (min, max) => {
    return Math.random() * (min - max) + min;
@@ -240,12 +241,19 @@ export default class Waltz extends Component {
   }
 };
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   danceFloor: {
     display: "flex",
     flexDirection: "column",
     height: '60%',
     width: 400,
+  },
+  '@media (orientation: landscape)': {
+    danceFloor: {
+      width: '100%',
+      flex: 1,
+      // backgroundColor: '$bgColor',
+    }
   },
   upperSteps:{
     display: 'flex',
@@ -275,6 +283,12 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 60,
     height: 300
+  },
+  '@media (orientation: landscape)': {
+    stepsContainer: {
+      width: '100%',
+      // backgroundColor: '$bgColor',
+    }
   },
   footingPosition: {
     color: 'white',
