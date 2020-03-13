@@ -49,14 +49,14 @@ const styles = EStyleSheet.create({
   },
   // '@media (orientation: landscape)': {
   //   bottomContainer: {
-  //     bottom: -30,
+  //     bottom: -40,
   //     backgroundColor: '$bgColor',
   //   }
   // },
   '@media (min-width: 500)': {
     bottomContainer: {
       backgroundColor: '$bgColor',
-      // bottom: -40,
+      bottom: -20,
     }
   },
   btnContainer: {
@@ -67,9 +67,10 @@ const styles = EStyleSheet.create({
     padding: 20,
     fontSize: 30
   },
-  '@media (min-width: 500)': {
+  '@media (orientation: landscape)': {
     button: {
-      backgroundColor: '$bgColor',
+      // padding: 5,
+      height: '30%',
     }
   },
   home: {
@@ -81,10 +82,10 @@ const styles = EStyleSheet.create({
     textShadowRadius: 2,
     textShadowColor: '#000001',
   },
-  '@media (min-width: 500)': {
+    '@media (orientation: landscape)': {
     home: {
+      // backgroundColor: '$bgColor',
       fontSize: 25,
-      backgroundColor: '$bgColor',
     }
   },
 });

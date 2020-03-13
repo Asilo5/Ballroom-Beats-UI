@@ -118,12 +118,24 @@ const styles = EStyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    btnContainer: {
-        // backgroundColor: "black",
+    '@media (orientation: landscape)': {
+      container: {
+        width: 650,
+        backgroundColor: '$bgColor',
+      }
     },
-    '@media (min-width: 500)': {
+
+    btnContainer: {
+        // flex: 1,
+        // backgroundColor: "black",
+        width: '100%',
+    },
+    '@media (orientation: landscape)': {
       btnContainer: {
+        // flex: 1,
         backgroundColor: '',
+        alignItems: 'center',
+        // justifyContent: 'center',
       }
     },
     button: {
@@ -132,9 +144,11 @@ const styles = EStyleSheet.create({
         width: '80%',
         borderRadius: 50
     },
-    '@media (min-width: 500)': {
+    '@media (orientation: landscape)': {
       button: {
-        width: '30%',
+        width: '25%',
+        // alignItems: 'center',
+        // justifyContent: 'center',
       }
     },
     quit: {

@@ -40,7 +40,7 @@ const styles = EStyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    '@media (min-width: 500)': {
+    '@media (orientation: landscape)': {
         container: {
           flex: 0,
         }
@@ -48,7 +48,7 @@ const styles = EStyleSheet.create({
     button: {
         backgroundColor: '#A9C344',
     },
-    '@media (min-width: 500)': {
+    '@media (orientation: landscape)': {
         button: {
           backgroundColor: '$bgColor',
         }
@@ -62,12 +62,11 @@ const styles = EStyleSheet.create({
         width: 425, 
         resizeMode : 'stretch'
     },
-    '@media (min-width: 500)': {
+    '@media (orientation: landscape)': {
        logo: {
           height: 340, 
           width: 525, 
-        //   backgroundColor: '$bgColor',
-          resizeMode : 'stretch'
+        //   resizeMode : 'stretch'
         }
       },
 });
