@@ -61,11 +61,12 @@ const styles = EStyleSheet.create({
     width: null,
     height: '95%',
   },
-  '@media (min-width: 500)': {
+  '@media (orientation: landscape)': {
     backgroundImage1: {
-      flex: 2,
-      // height: '40%',
-      width: '100%',
+      // flex: 1,
+      width: 650,
+      // height: '95%',
+      // resizeMode : 'stretch',
     }
   },
   backgroundImage2: {
@@ -73,11 +74,12 @@ const styles = EStyleSheet.create({
     width: null,
     height: '100%',
   },
-  '@media (min-width: 500)': {
+  '@media (orientation: landscape)': {
     backgroundImage2: {
-      flex: 1,
-      // height: '205%',
-      width: '100%',
+      // flex: 2,
+      width: 650,
+      height: '190%',
+      // resizeMode : 'stretch',
     }
   },
 });
