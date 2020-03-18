@@ -320,7 +320,6 @@ const styles = EStyleSheet.create({
     '@media (orientation: landscape)': {
         danceFloor: {
           width: '100%',
-          backgroundColor: '$bgColor',
         }
       },
     middleDots: {
@@ -362,7 +361,6 @@ const styles = EStyleSheet.create({
     '@media (orientation: landscape)': {
         stepsContainer: {
           width: '100%',
-          backgroundColor: '$bgColor',
         }
       },
 });

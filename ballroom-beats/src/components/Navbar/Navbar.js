@@ -42,7 +42,6 @@ const AppNavigator = createStackNavigator({
 const styles = EStyleSheet.create({
   bottomContainer: {
     backgroundColor: '#D1005A',
-    // backgroundColor: '$bgColor',
     bottom: 1,
     width: '100%',
     position: 'absolute',
@@ -84,7 +83,6 @@ const styles = EStyleSheet.create({
   },
     '@media (orientation: landscape)': {
     home: {
-      // backgroundColor: '$bgColor',
       fontSize: 25,
     }
   },

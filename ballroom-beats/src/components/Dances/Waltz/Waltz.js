@@ -252,7 +252,6 @@ const styles = EStyleSheet.create({
     danceFloor: {
       width: '100%',
       flex: 1,
-      // backgroundColor: '$bgColor',
     }
   },
   upperSteps:{
@@ -287,7 +286,6 @@ const styles = EStyleSheet.create({
   '@media (orientation: landscape)': {
     stepsContainer: {
       width: '100%',
-      // backgroundColor: '$bgColor',
     }
   },
   footingPosition: {
