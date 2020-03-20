@@ -19,27 +19,41 @@ export default class Salsa extends Component {
         counter: 0
     };
 
+
+   countUp = () => {
+       let newCount = this.state.counter;
+       newCount++;
+       this.setState({ counter: newCount });
+   } 
+
    generateViews = () => {
        return (
            <View style={styles.danceFloor}>
-               <TouchableOpacity>
+               <TouchableOpacity onPress={() => this.countUp()} key={1}>
+                   <Animated.View>
 
+                   </Animated.View>
                </TouchableOpacity>
                
                <View style={styles.middleSteps}>
-                   <TouchableOpacity>
-                   
+                   <TouchableOpacity onPress={() => this.countUp()} key={4}>
+                      <Animated.View>
+                       
+                       </Animated.View>
                    </TouchableOpacity>
 
-                   <TouchableOpacity>
-                   
+                   <TouchableOpacity onPress={() => this.countUp()} key={2}>
+                      <Animated.View>
+                       
+                       </Animated.View>
                    </TouchableOpacity>
                </View>
 
-               <TouchableOpacity>
-                   
+               <TouchableOpacity onPress={() => this.countUp()} key={3}>
+                  <Animated.View>
+                       
+                  </Animated.View>
                </TouchableOpacity>
-
            </View>
        )
    }
