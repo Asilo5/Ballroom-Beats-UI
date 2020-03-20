@@ -33,6 +33,7 @@ class DanceType extends Component {
                         this.setState({selectedDance: itemValue})} >
                     <Picker.Item label="-- Pick a Dance --" value="" />
                     <Picker.Item label="Novice: Waltz" value="Waltz" />
+                    <Picker.Item label="Novice: Salsa" value="Salsa" />
                     <Picker.Item label="Pro: Bachata" value="Bachata" />
                 </Picker>
                 <Icon.Button

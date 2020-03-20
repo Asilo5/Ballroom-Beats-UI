@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Waltz from "../Dances/Waltz/Waltz.js"
 import Bachata from "../Dances/Bachata/Bachata.js";
+import Salsa from '../Dances/Salsa/Salsa.js';
 import {
   StyleSheet,
   ImageBackground
@@ -36,6 +37,18 @@ export default class DanceFloor extends Component {
           song={this.props.song}
           stopDance={this.props.stopDance}
           stopMusic={this.props.stopMusic}
+        />
+      )
+    }
+
+    if (this.state.dance.includes("Salsa")) {
+      return (
+        <Salsa
+        start={this.props.start}
+        style={styles.container1}
+        song={this.props.song}
+        stopDance={this.props.stopDance}
+        stopMusic={this.props.stopMusic}
         />
       )
     }
