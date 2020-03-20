@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DanceType should match snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#666363",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 35,
+        "fontWeight": "bold",
+        "marginBottom": 10,
+        "textShadowColor": "#000",
+        "textShadowOffset": Object {
+          "height": 2,
+          "width": 2,
+        },
+        "textShadowRadius": 2,
+      }
+    }
+  >
+    Pick Your Dance Type
+  </Text>
+  <View
+    style={
+      Object {
+        "borderColor": "#A9C344",
+        "borderRadius": 3,
+        "borderWidth": 1,
+        "height": 66,
+        "marginBottom": 10,
+        "width": 350,
+      }
+    }
+  >
+    <RCTPicker
+      items={
+        Array [
+          Object {
+            "label": "-- Pick a Dance --",
+            "textColor": undefined,
+            "value": "",
+          },
+          Object {
+            "label": "Novice: Waltz",
+            "textColor": undefined,
+            "value": "Waltz",
+          },
+          Object {
+            "label": "Pro: Bachata",
+            "textColor": undefined,
+            "value": "Bachata",
+          },
+        ]
+      }
+      onChange={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      selectedIndex={0}
+      style={
+        Array [
+          Object {
+            "height": 216,
+          },
+          Object {
+            "backgroundColor": "#39373A",
+            "color": "#A9C344",
+            "fontSize": 30,
+            "fontWeight": "bold",
+            "height": 64,
+          },
+        ]
+      }
+    />
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#007AFF",
+          "borderRadius": 5,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "padding": 8,
+          },
+          Object {
+            "backgroundColor": "#007AFF",
+            "borderRadius": 5,
+          },
+          Array [
+            Object {
+              "backgroundColor": "#A9C344",
+              "width": 130,
+            },
+            Object {
+              "backgroundColor": "#3E3E3E",
+            },
+          ],
+        ]
+      }
+      title="NEXT"
+    >
+      <Text />
+      <Text
+        style={
+          Object {
+            "fontSize": 30,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Next
+      </Text>
+    </View>
+  </View>
+</View>
+`;

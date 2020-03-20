@@ -29,7 +29,7 @@ describe('Game', () => {
    };
 
    it('should match snapshot', () => {
-    const game = renderer.create(<Game navigation={mockProps.navigation} song={mockProps.getParam} dance={mockProps.getParam} />).toJSON();
+    const game = renderer.create(<Game navigation={mockProps.navigation} song={mockProps.navigation.getParam} dance={mockProps.navigation.getParam} />).toJSON();
 
     expect(game).toMatchSnapshot();
    });
