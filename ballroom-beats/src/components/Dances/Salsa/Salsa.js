@@ -19,12 +19,35 @@ export default class Salsa extends Component {
         counter: 0
     };
 
+   generateViews = () => {
+       return (
+           <View style={styles.danceFloor}>
+               <TouchableOpacity>
 
+               </TouchableOpacity>
+               
+               <View style={styles.middleSteps}>
+                   <TouchableOpacity>
+                   
+                   </TouchableOpacity>
+
+                   <TouchableOpacity>
+                   
+                   </TouchableOpacity>
+               </View>
+
+               <TouchableOpacity>
+                   
+               </TouchableOpacity>
+
+           </View>
+       )
+   }
 
 };
 
 const styles = StyleSheet.create({
 
 
-    
+
 });
