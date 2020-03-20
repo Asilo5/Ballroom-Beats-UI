@@ -19,6 +19,56 @@ export default class Salsa extends Component {
         counter: 0
     };
 
+    componentDidMount() {
+        this.props.start(this.generateTiming());
+        this.props.stopMusic(this.getSongLength());
+      };
+    
+      endGame = (userPoints, gamePoints) => {
+          this.props.stopDance(userPoints, gamePoints);
+      };
+    
+      componentWillUnmount() {
+        this.endGame(this.state.counter, this.getExpectedValue());
+      };
+    
+      getExpectedValue = () => {
+        return this.props.song.duration/60 * this.props.song.tempo;
+      };
+    
+      getSongLength = () => {
+        //Real World
+    
+        // return (
+        //   this.props.song.duration * 1000
+        // )
+    
+        //Demo
+        return 25000;
+      };
+    
+      assessPulseDuration = () => {
+        return (
+          60000/this.props.song.tempo
+        )
+      };
+    
+      generateTiming = () => {
+        return this.state.pulses.map(pulse => {
+          return [
+            Animated.timing(pulse, {
+              toValue: 3,
+              duration: this.assessPulseDuration(),
+              easing: Easing.back(),
+            }),
+            Animated.timing(pulse, {
+              toValue: 1,
+              duration: this.assessPulseDuration(),
+            })
+          ];
+        }).flat();
+      };
+
 
    countUp = () => {
        let newCount = this.state.counter;
