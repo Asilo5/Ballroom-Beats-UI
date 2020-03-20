@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`End should match snapshot 1`] = `
+exports[`DanceType should match snapshot 1`] = `
 <View
   style={
     Object {
@@ -15,7 +15,8 @@ exports[`End should match snapshot 1`] = `
     style={
       Object {
         "color": "white",
-        "fontSize": 40,
+        "fontSize": 35,
+        "fontWeight": "bold",
         "marginBottom": 10,
         "textShadowColor": "#000",
         "textShadowOffset": Object {
@@ -26,8 +27,60 @@ exports[`End should match snapshot 1`] = `
       }
     }
   >
-    End Of Game
+    Pick Your Dance Type
   </Text>
+  <View
+    style={
+      Object {
+        "borderColor": "#A9C344",
+        "borderRadius": 3,
+        "borderWidth": 1,
+        "height": 66,
+        "marginBottom": 10,
+        "width": 350,
+      }
+    }
+  >
+    <RCTPicker
+      items={
+        Array [
+          Object {
+            "label": "-- Pick a Dance --",
+            "textColor": undefined,
+            "value": "",
+          },
+          Object {
+            "label": "Novice: Waltz",
+            "textColor": undefined,
+            "value": "Waltz",
+          },
+          Object {
+            "label": "Pro: Bachata",
+            "textColor": undefined,
+            "value": "Bachata",
+          },
+        ]
+      }
+      onChange={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      selectedIndex={0}
+      style={
+        Array [
+          Object {
+            "height": 216,
+          },
+          Object {
+            "backgroundColor": "#39373A",
+            "color": "#A9C344",
+            "fontSize": 30,
+            "fontWeight": "bold",
+            "height": 64,
+          },
+        ]
+      }
+    />
+  </View>
   <View
     accessible={true}
     focusable={true}
@@ -64,14 +117,18 @@ exports[`End should match snapshot 1`] = `
             "backgroundColor": "#007AFF",
             "borderRadius": 5,
           },
-          Object {
-            "backgroundColor": "#D1005A",
-            "fontSize": 25,
-            "padding": 10,
-          },
+          Array [
+            Object {
+              "backgroundColor": "#A9C344",
+              "width": 130,
+            },
+            Object {
+              "backgroundColor": "#3E3E3E",
+            },
+          ],
         ]
       }
-      title="PLAY AGAIN"
+      title="NEXT"
     >
       <Text />
       <Text
@@ -82,27 +139,9 @@ exports[`End should match snapshot 1`] = `
           }
         }
       >
-        Play Again
+        Next
       </Text>
     </View>
   </View>
-  <Text
-    style={
-      Object {
-        "color": "#A9C344",
-        "fontSize": 40,
-        "margin": 10,
-        "textAlign": "center",
-        "textShadowColor": "#000",
-        "textShadowOffset": Object {
-          "height": 2,
-          "width": 2,
-        },
-        "textShadowRadius": 2,
-      }
-    }
-  >
-    Try to keep up!
-  </Text>
 </View>
 `;

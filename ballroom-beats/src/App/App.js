@@ -50,7 +50,6 @@ const MainNavigator = createStackNavigator({
   }
 });
 
-const App = createAppContainer(MainNavigator);
+export const App = createAppContainer(MainNavigator);
 
-export default registerRootComponent(App); 
-
+export default registerRootComponent(App);

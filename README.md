@@ -36,7 +36,7 @@ You can also scan the QR code on the expo page that opens after you do the steps
 - Gin
 - Gorm
 - PostgreSQL
-- [API we built specifically for Ballroom Beats](https://github.com/Jonpatt92/ballroom-beats-service)
+- [API we built specifically for Ballroom Beats](https://github.com/spaceplesiosaur/ballroom-beats-endpoints)
 
 
 ### Waltz
