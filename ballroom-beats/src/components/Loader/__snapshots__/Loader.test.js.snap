@@ -17,7 +17,8 @@ exports[`Loader should match snapshot 1`] = `
         "color": "white",
         "fontSize": 35,
         "fontWeight": "bold",
-        "marginBottom": 10,
+        "margin": 10,
+        "textAlign": "center",
         "textShadowColor": "#000",
         "textShadowOffset": Object {
           "height": 2,
@@ -27,7 +28,26 @@ exports[`Loader should match snapshot 1`] = `
       }
     }
   >
-    GET READY! Make sure your screen is oriented correctly...
+    GET READY! 
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 35,
+        "fontWeight": "bold",
+        "margin": 10,
+        "textAlign": "center",
+        "textShadowColor": "#000",
+        "textShadowOffset": Object {
+          "height": 2,
+          "width": 2,
+        },
+        "textShadowRadius": 2,
+      }
+    }
+  >
+    Make sure your screen is oriented correctly...
   </Text>
   <View>
     <View

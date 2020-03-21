@@ -429,14 +429,10 @@ exports[`Game should match snapshot 1`] = `
             Object {
               "color": "#A9C344",
               "fontSize": 23,
-              "marginTop": 15,
+              "marginTop": 85,
               "textAlign": "center",
               "textShadowColor": "#000",
-              "textShadowOffset": Object {
-                "height": 2,
-                "width": 2,
-              },
-              "textShadowRadius": 2,
+              "textShadowRadius": 10,
             }
           }
         >
@@ -452,11 +448,7 @@ exports[`Game should match snapshot 1`] = `
               "marginTop": 5,
               "textAlign": "center",
               "textShadowColor": "#000",
-              "textShadowOffset": Object {
-                "height": 2,
-                "width": 2,
-              },
-              "textShadowRadius": 2,
+              "textShadowRadius": 10,
             }
           }
         >
@@ -469,6 +461,10 @@ exports[`Game should match snapshot 1`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
+        "bottom": 70,
+        "height": 70,
+        "maxWidth": 140,
         "width": "100%",
       }
     }
@@ -486,9 +482,10 @@ exports[`Game should match snapshot 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "backgroundColor": "#A93133",
-          "borderRadius": 50,
+          "backgroundColor": "#A9C344",
+          "borderRadius": 10,
           "margin": 10,
+          "maxHeight": 60,
           "opacity": 1,
           "width": "80%",
         }
@@ -497,9 +494,10 @@ exports[`Game should match snapshot 1`] = `
       <Text
         style={
           Object {
-            "fontSize": 30,
+            "fontSize": 25,
             "fontWeight": "bold",
-            "padding": 20,
+            "justifyContent": "center",
+            "padding": 10,
             "textAlign": "center",
           }
         }

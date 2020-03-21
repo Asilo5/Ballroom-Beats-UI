@@ -361,14 +361,10 @@ exports[`Waltz should match snapshot 1`] = `
       Object {
         "color": "#A9C344",
         "fontSize": 23,
-        "marginTop": 15,
+        "marginTop": 85,
         "textAlign": "center",
         "textShadowColor": "#000",
-        "textShadowOffset": Object {
-          "height": 2,
-          "width": 2,
-        },
-        "textShadowRadius": 2,
+        "textShadowRadius": 10,
       }
     }
   >
@@ -384,11 +380,7 @@ exports[`Waltz should match snapshot 1`] = `
         "marginTop": 5,
         "textAlign": "center",
         "textShadowColor": "#000",
-        "textShadowOffset": Object {
-          "height": 2,
-          "width": 2,
-        },
-        "textShadowRadius": 2,
+        "textShadowRadius": 10,
       }
     }
   >

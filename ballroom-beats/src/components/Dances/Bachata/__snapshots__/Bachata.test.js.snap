@@ -6,8 +6,8 @@ exports[`Bachata should match snapshot 1`] = `
     style={
       Object {
         "left": 55,
-        "marginBottom": 60,
-        "marginTop": 60,
+        "marginBottom": 80,
+        "marginTop": 30,
         "padding": 10,
       }
     }
@@ -17,10 +17,10 @@ exports[`Bachata should match snapshot 1`] = `
         Object {
           "display": "flex",
           "flexDirection": "row",
-          "height": 400,
+          "height": 350,
           "justifyContent": "space-around",
           "right": 50,
-          "top": 100,
+          "top": 30,
         }
       }
     >
@@ -45,8 +45,8 @@ exports[`Bachata should match snapshot 1`] = `
           style={
             Object {
               "borderColor": "#FCFDF9",
-              "borderRadius": 15,
-              "borderWidth": 15,
+              "borderRadius": 24,
+              "borderWidth": 24,
               "margin": 20,
               "transform": Array [
                 Object {
@@ -81,8 +81,8 @@ exports[`Bachata should match snapshot 1`] = `
           style={
             Object {
               "borderColor": "#F60091",
-              "borderRadius": 15,
-              "borderWidth": 15,
+              "borderRadius": 24,
+              "borderWidth": 24,
               "margin": 20,
               "transform": Array [
                 Object {
@@ -134,8 +134,8 @@ exports[`Bachata should match snapshot 1`] = `
               style={
                 Object {
                   "borderColor": "#F6811F",
-                  "borderRadius": 15,
-                  "borderWidth": 15,
+                  "borderRadius": 24,
+                  "borderWidth": 24,
                   "margin": 20,
                   "transform": Array [
                     Object {
@@ -170,8 +170,8 @@ exports[`Bachata should match snapshot 1`] = `
               style={
                 Object {
                   "borderColor": "#FFEB00",
-                  "borderRadius": 15,
-                  "borderWidth": 15,
+                  "borderRadius": 24,
+                  "borderWidth": 24,
                   "margin": 20,
                   "transform": Array [
                     Object {
@@ -215,8 +215,8 @@ exports[`Bachata should match snapshot 1`] = `
               style={
                 Object {
                   "borderColor": "#71C043",
-                  "borderRadius": 15,
-                  "borderWidth": 15,
+                  "borderRadius": 24,
+                  "borderWidth": 24,
                   "margin": 20,
                   "transform": Array [
                     Object {
@@ -251,8 +251,8 @@ exports[`Bachata should match snapshot 1`] = `
               style={
                 Object {
                   "borderColor": "#03ABF0",
-                  "borderRadius": 15,
-                  "borderWidth": 15,
+                  "borderRadius": 24,
+                  "borderWidth": 24,
                   "margin": 20,
                   "transform": Array [
                     Object {
@@ -289,8 +289,8 @@ exports[`Bachata should match snapshot 1`] = `
           style={
             Object {
               "borderColor": "#274FA2",
-              "borderRadius": 15,
-              "borderWidth": 15,
+              "borderRadius": 24,
+              "borderWidth": 24,
               "margin": 20,
               "transform": Array [
                 Object {
@@ -325,8 +325,8 @@ exports[`Bachata should match snapshot 1`] = `
           style={
             Object {
               "borderColor": "#6F2C8F",
-              "borderRadius": 15,
-              "borderWidth": 15,
+              "borderRadius": 24,
+              "borderWidth": 24,
               "margin": 20,
               "transform": Array [
                 Object {
