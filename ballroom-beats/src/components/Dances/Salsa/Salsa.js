@@ -87,27 +87,87 @@ export default class Salsa extends Component {
        return (
            <View style={styles.danceFloor}>
                <TouchableOpacity onPress={() => this.countUp()} key={1}>
-                   <Animated.View>
+                   <Animated.View
+                       style={{
+                        transform: [
+                            {
+                                scaleX: this.state.pulses[0]
+                            },
+                            {
+                               scaleY: this.state.pulses[0]
+                           }
+                        ],
+                        margin: 20,
+                        borderWidth: 15,
+                        borderColor: "#71C043",
+                        borderRadius: 15
+                    }}
+                   >
 
                    </Animated.View>
                </TouchableOpacity>
                
                <View style={styles.middleSteps}>
                    <TouchableOpacity onPress={() => this.countUp()} key={4}>
-                      <Animated.View>
+                      <Animated.View
+                        style={{
+                          transform: [
+                              {
+                                  scaleX: this.state.pulses[0]
+                              },
+                              {
+                                 scaleY: this.state.pulses[0]
+                             }
+                          ],
+                          margin: 20,
+                          borderWidth: 15,
+                          borderColor: "#71C043",
+                          borderRadius: 15
+                      }}
+                      >
                        
                        </Animated.View>
                    </TouchableOpacity>
 
                    <TouchableOpacity onPress={() => this.countUp()} key={2}>
-                      <Animated.View>
+                      <Animated.View
+                        style={{
+                          transform: [
+                              {
+                                  scaleX: this.state.pulses[1]
+                              },
+                              {
+                                 scaleY: this.state.pulses[1]
+                             }
+                          ],
+                          margin: 20,
+                          borderWidth: 15,
+                          borderColor: "#71C043",
+                          borderRadius: 15
+                      }}
+                      >
                        
                        </Animated.View>
                    </TouchableOpacity>
                </View>
 
                <TouchableOpacity onPress={() => this.countUp()} key={3}>
-                  <Animated.View>
+                  <Animated.View
+                    style={{
+                      transform: [
+                          {
+                              scaleX: this.state.pulses[0]
+                          },
+                          {
+                             scaleY: this.state.pulses[0]
+                         }
+                      ],
+                      margin: 20,
+                      borderWidth: 15,
+                      borderColor: "#71C043",
+                      borderRadius: 15
+                  }}
+                  >
                        
                   </Animated.View>
                </TouchableOpacity>
