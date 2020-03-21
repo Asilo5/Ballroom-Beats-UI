@@ -34,25 +34,25 @@ class SongPick extends Component {
   getSelectedSongs = () => {
     if (this.props.navigation.getParam('selectedDance', '') === "Waltz") {
       return [
-        <Picker.Item label="-- Pick a Song --" value="" />,
-        <Picker.Item label="Beyond The Sea" value="Beyond the Sea" />,
-        <Picker.Item label="Games of Thrones" value="Game of Thrones" />
+        <Picker.Item label="-- Pick a Song --" value="" key="none waltz"/>,
+        <Picker.Item label="Beyond The Sea" value="Beyond the Sea" key="sea"/>,
+        <Picker.Item label="Games of Thrones" value="Game of Thrones" key="thrones"/>
       ]
     };
 
     if (this.props.navigation.getParam('selectedDance', '') === "Bachata") {
       return [
-        <Picker.Item label="-- Pick a Song --" value="" />,
-        <Picker.Item label="Deja Vu" value="Deja Vu" />,
-        <Picker.Item label="Melancolia Tropical" value="Melancolia Tropical" />
+        <Picker.Item label="-- Pick a Song --" value="" key="none bacha"/>,
+        <Picker.Item label="Deja Vu" value="Deja Vu" key="deja"/>,
+        <Picker.Item label="Melancolia Tropical" value="Melancolia Tropical" key="trop"/>
       ]
     };
 
     if (this.props.navigation.getParam('selectedDance', '') === "Salsa") {
       return [
-        <Picker.Item label="-- Pick a Song --" value="" />,
-        <Picker.Item label="Deja Vu" value="Deja Vu" />,
-        <Picker.Item label="Melancolia Tropical" value="Melancolia Tropical" />
+        <Picker.Item label="-- Pick a Song --" value="" key="none salsa"/>,
+        <Picker.Item label="Deja Vu" value="Deja Vu" key="deja2"/>,
+        <Picker.Item label="Melancolia Tropical" value="Melancolia Tropical" key="mel"/>
       ]
     }
   };
