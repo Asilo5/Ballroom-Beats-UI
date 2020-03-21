@@ -193,11 +193,17 @@ const styles = StyleSheet.create({
 
   danceFloor: {
       display: "flex",
-      flexDirection: "row",
+      // flexDirection: "row",
       justifyContent: "space-around",
       right: 50,
       top: 100,
       height: 400
+    },
+
+    middleSteps: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-around",
     }
 
 });
