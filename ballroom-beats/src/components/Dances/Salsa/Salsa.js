@@ -54,26 +54,19 @@ export default class Salsa extends Component {
       };
     
       generateTiming = () => {
+        return this.state.pulses.map(pulse => {
           return [
-            Animated.timing(this.state.pulses[0], {
+            Animated.timing(pulse, {
               toValue: 3,
               duration: this.assessPulseDuration(),
-              easing: Easing.back()
-          }),
-          Animated.timing(this.state.pulses[0], {
+              easing: Easing.back(),
+            }),
+            Animated.timing(pulse, {
               toValue: 1,
-              duration: this.assessPulseDuration()
-          }),
-          Animated.timing(this.state.pulses[1], {
-              toValue: 3,
               duration: this.assessPulseDuration(),
-              easing: Easing.back()
-          }),
-          Animated.timing(this.state.pulses[1], {
-              toValue: 1,
-              duration: this.assessPulseDuration()
-          })
-          ];
+            })
+          ]
+        }).flat();
       };
 
 
@@ -113,10 +106,10 @@ export default class Salsa extends Component {
                         style={{
                           transform: [
                               {
-                                  scaleX: this.state.pulses[0]
+                                  scaleX: this.state.pulses[2]
                               },
                               {
-                                 scaleY: this.state.pulses[0]
+                                 scaleY: this.state.pulses[2]
                              }
                           ],
                           margin: 20,
@@ -156,10 +149,10 @@ export default class Salsa extends Component {
                     style={{
                       transform: [
                           {
-                              scaleX: this.state.pulses[0]
+                              scaleX: this.state.pulses[3]
                           },
                           {
-                             scaleY: this.state.pulses[0]
+                             scaleY: this.state.pulses[3]
                          }
                       ],
                       margin: 20,
