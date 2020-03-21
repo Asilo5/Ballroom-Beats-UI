@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Comments should match snapshot 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "transparent",
+      "bottom": 30,
+      "position": "absolute",
+      "transform": Array [
+        Object {
+          "translateY": 0,
+        },
+        Object {
+          "scale": 0,
+        },
+        Object {
+          "translateX": 0,
+        },
+        Object {
+          "rotate": "0deg",
+        },
+      ],
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 30,
+        "fontWeight": "bold",
+      }
+    }
+  >
+    Awesome!
+  </Text>
+</View>
+`;

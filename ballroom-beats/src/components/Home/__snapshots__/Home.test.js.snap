@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`End should match snapshot 1`] = `
+exports[`Home should match snapshot 1`] = `
 <View
   style={
     Object {
@@ -11,23 +11,16 @@ exports[`End should match snapshot 1`] = `
     }
   }
 >
-  <Text
+  <Image
+    source={1}
     style={
       Object {
-        "color": "white",
-        "fontSize": 40,
-        "marginBottom": 10,
-        "textShadowColor": "#000",
-        "textShadowOffset": Object {
-          "height": 2,
-          "width": 2,
-        },
-        "textShadowRadius": 2,
+        "height": 450,
+        "resizeMode": "stretch",
+        "width": 425,
       }
     }
-  >
-    End Of Game
-  </Text>
+  />
   <View
     accessible={true}
     focusable={true}
@@ -65,13 +58,11 @@ exports[`End should match snapshot 1`] = `
             "borderRadius": 5,
           },
           Object {
-            "backgroundColor": "#D1005A",
-            "fontSize": 25,
-            "padding": 10,
+            "backgroundColor": "#A9C344",
           },
         ]
       }
-      title="PLAY AGAIN"
+      title="ENTER"
     >
       <Text />
       <Text
@@ -82,27 +73,9 @@ exports[`End should match snapshot 1`] = `
           }
         }
       >
-        Play Again
+        ENTER
       </Text>
     </View>
   </View>
-  <Text
-    style={
-      Object {
-        "color": "#A9C344",
-        "fontSize": 40,
-        "margin": 10,
-        "textAlign": "center",
-        "textShadowColor": "#000",
-        "textShadowOffset": Object {
-          "height": 2,
-          "width": 2,
-        },
-        "textShadowRadius": 2,
-      }
-    }
-  >
-    Try to keep up!
-  </Text>
 </View>
 `;

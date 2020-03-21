@@ -6,7 +6,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "test": "jest --watch --coverage=false --changedSince=origin/master"
+    "test": "jest --coverage --watchAll=false"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.6",
@@ -39,10 +39,13 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
+    "array-flat-polyfill": "^1.0.1",
+    "babel-jest": "^25.1.0",
     "babel-preset-expo": "~8.0.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
+    "jest": "^25.1.0",
     "jest-expo": "^36.0.1",
     "react-test-renderer": "^16.12.0"
   },

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  Picker 
+import {
+  View,
+  Text,
+  StyleSheet,
+  Picker
 } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
@@ -20,7 +20,7 @@ class SongPick extends Component {
   };
 
   async componentDidMount() {
-    const songList = await getData('https://ballroom-blitz.herokuapp.com/api/v1/songs', 'songs')
+    const songList = await getData('https://ballroom-beats.herokuapp.com/api/v1/songs', 'songs')
     const songData = await songList.data
     this.setState({allSongs: songData})
   };
@@ -38,9 +38,17 @@ class SongPick extends Component {
         <Picker.Item label="Beyond The Sea" value="Beyond the Sea" />,
         <Picker.Item label="Games of Thrones" value="Game of Thrones" />
       ]
-    }
+    };
 
     if (this.props.navigation.getParam('selectedDance', '') === "Bachata") {
+      return [
+        <Picker.Item label="-- Pick a Song --" value="" />,
+        <Picker.Item label="Deja Vu" value="Deja Vu" />,
+        <Picker.Item label="Melancolia Tropical" value="Melancolia Tropical" />
+      ]
+    };
+
+    if (this.props.navigation.getParam('selectedDance', '') === "Salsa") {
       return [
         <Picker.Item label="-- Pick a Song --" value="" />,
         <Picker.Item label="Deja Vu" value="Deja Vu" />,

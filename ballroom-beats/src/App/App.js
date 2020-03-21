@@ -56,8 +56,6 @@ const entry = EStyleSheet.build({
   $bgColor: 'pink',
 });
 
-const App = createAppContainer(MainNavigator);
+export const App = createAppContainer(MainNavigator);
 
-
-export default registerRootComponent(App, entry); 
-
+export default registerRootComponent(App, entry);

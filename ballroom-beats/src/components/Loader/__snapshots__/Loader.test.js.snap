@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader should match snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#666363",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 35,
+        "fontWeight": "bold",
+        "marginBottom": 10,
+        "textShadowColor": "#000",
+        "textShadowOffset": Object {
+          "height": 2,
+          "width": 2,
+        },
+        "textShadowRadius": 2,
+      }
+    }
+  >
+    Get ready to start the game.....
+  </Text>
+  <View>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderRadius": 5,
+                  "justifyContent": "center",
+                  "marginHorizontal": 2,
+                },
+                Object {
+                  "height": 91,
+                  "width": 80.5,
+                },
+                Object {
+                  "backgroundColor": "#666363",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "white",
+                    "fontVariant": Array [
+                      "tabular-nums",
+                    ],
+                    "fontWeight": "bold",
+                  },
+                  Object {
+                    "fontSize": 35,
+                  },
+                  Object {
+                    "color": "white",
+                    "textShadowColor": "#000",
+                    "textShadowOffset": Object {
+                      "height": 2,
+                      "width": 2,
+                    },
+                    "textShadowRadius": 2,
+                  },
+                ]
+              }
+            >
+              05
+            </Text>
+          </View>
+        </View>
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "white",
+                "marginVertical": 2,
+              },
+              Object {
+                "fontSize": 19.444444444444443,
+              },
+              Object {
+                "color": "#000",
+              },
+            ]
+          }
+        >
+          Seconds
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#007AFF",
+          "borderRadius": 5,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "padding": 8,
+          },
+          Object {
+            "backgroundColor": "#007AFF",
+            "borderRadius": 5,
+          },
+          Object {
+            "backgroundColor": "#A9C344",
+            "fontSize": 25,
+          },
+        ]
+      }
+      title="BACK"
+    >
+      <Text />
+      <Text
+        style={
+          Object {
+            "fontSize": 28,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Back
+      </Text>
+    </View>
+  </View>
+</View>
+`;

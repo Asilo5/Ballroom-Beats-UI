@@ -71,6 +71,12 @@ exports[`Navbar should match snapshot 1`] = `
               "fontSize": 30,
               "fontWeight": "bold",
               "textDecorationLine": "none",
+              "textShadowColor": "#000001",
+              "textShadowOffset": Object {
+                "height": 2,
+                "width": 2,
+              },
+              "textShadowRadius": 2,
             }
           }
         >

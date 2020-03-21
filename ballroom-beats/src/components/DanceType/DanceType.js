@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { 
-    View, 
-    Text, 
-    StyleSheet, 
-    Picker 
+import {
+    View,
+    Text,
+    StyleSheet,
+    Picker
 } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
@@ -32,8 +32,9 @@ class DanceType extends Component {
                     onValueChange={(itemValue, itemIndex) =>
                         this.setState({selectedDance: itemValue})} >
                     <Picker.Item label="-- Pick a Dance --" value="" />
-                    <Picker.Item label="Novice: Waltz" value="Waltz" />
-                    <Picker.Item label="Pro: Bachata" value="Bachata" />
+                    <Picker.Item label="Waltz (Portrait)" value="Waltz" />
+                    <Picker.Item label="Salsa (Portrait)" value="Salsa" />
+                    <Picker.Item label="Bachata (Landscape)" value="Bachata" />
                 </Picker>
                 <Icon.Button
                     style={[styles.button, { backgroundColor: this.state.selectedDance ? '#A9C344' : '#3E3E3E'}]}

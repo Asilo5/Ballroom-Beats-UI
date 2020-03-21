@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import DanceFloor from '../DanceFloor/DanceFloor'
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  Animated, 
-  TouchableOpacity 
+import {
+  View,
+  Text,
+  StyleSheet,
+  Animated,
+  TouchableOpacity
 } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
@@ -23,7 +23,7 @@ class Game extends Component {
 
   async componentDidMount() {
     // let timeToEnd = this.props.navigation.getParam('song', '') * 1000
-    let timeToEnd = 75000 // changed for LANDSCAPE VIEW STYLING ******************
+    let timeToEnd = 25000 // changed for presentation ******************
     this.danceTime = setTimeout(() => this.setState({renderDance: false}), timeToEnd);
     let songPath = this.props.navigation.getParam('song', '').url
     this.backgroundMusic = new Audio.Sound();
