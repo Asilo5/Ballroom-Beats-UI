@@ -54,19 +54,26 @@ export default class Salsa extends Component {
       };
     
       generateTiming = () => {
-        return this.state.pulses.map(pulse => {
           return [
-            Animated.timing(pulse, {
+            Animated.timing(this.state.pulses[0], {
               toValue: 3,
               duration: this.assessPulseDuration(),
-              easing: Easing.back(),
-            }),
-            Animated.timing(pulse, {
+              easing: Easing.back()
+          }),
+          Animated.timing(this.state.pulses[0], {
               toValue: 1,
+              duration: this.assessPulseDuration()
+          }),
+          Animated.timing(this.state.pulses[1], {
+              toValue: 3,
               duration: this.assessPulseDuration(),
-            })
+              easing: Easing.back()
+          }),
+          Animated.timing(this.state.pulses[1], {
+              toValue: 1,
+              duration: this.assessPulseDuration()
+          })
           ];
-        }).flat();
       };
 
 
@@ -108,10 +115,29 @@ export default class Salsa extends Component {
        )
    }
 
+
+   render() {
+    return (
+      <View>
+        <View style={styles.stepsContainer}>
+            {this.generateViews()}
+        </View>
+      </View>
+    );
+  };
+
+
 };
 
 const styles = StyleSheet.create({
 
-
+  danceFloor: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-around",
+      right: 50,
+      top: 100,
+      height: 400
+    }
 
 });
