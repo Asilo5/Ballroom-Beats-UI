@@ -305,7 +305,7 @@ const styles = EStyleSheet.create({
     textShadowColor: '#000',
     fontSize: 23,
     textAlign: 'center',
-    marginTop: 30
+    marginTop: 85
   },
   possiblePoints: {
     color: '#A9C344',

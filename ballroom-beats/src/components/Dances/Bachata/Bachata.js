@@ -163,9 +163,9 @@ export default class Bachata extends Component {
                       }
                    ],
                    margin: 20,
-                   borderWidth: 15,
+                   borderWidth: 24,
                    borderColor: "#FCFDF9",
-                   borderRadius: 15
+                   borderRadius: 24
                }}  >
            </Animated.View>
        </TouchableOpacity>
@@ -181,9 +181,9 @@ export default class Bachata extends Component {
                       }
                    ],
                    margin: 20,
-                   borderWidth: 15,
+                   borderWidth: 24,
                    borderColor: "#F60091",
-                   borderRadius: 15
+                   borderRadius: 24
                }}  >
            </Animated.View>
        </TouchableOpacity>
@@ -201,9 +201,9 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 15,
+                      borderWidth: 24,
                       borderColor: "#F6811F",
-                      borderRadius: 15
+                      borderRadius: 24
                   }}  >
               </Animated.View>
           </TouchableOpacity>
@@ -219,9 +219,9 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 15,
+                      borderWidth: 24,
                       borderColor: "#FFEB00",
-                      borderRadius: 15
+                      borderRadius: 24
                   }}  >
               </Animated.View>
           </TouchableOpacity>
@@ -239,9 +239,9 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 15,
+                      borderWidth: 24,
                       borderColor: "#71C043",
-                      borderRadius: 15
+                      borderRadius: 24
                   }}  >
               </Animated.View>
           </TouchableOpacity>
@@ -257,9 +257,9 @@ export default class Bachata extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 15,
+                      borderWidth: 24,
                       borderColor: "#03ABF0",
-                      borderRadius: 15
+                      borderRadius: 24
                   }}  >
               </Animated.View>
           </TouchableOpacity>
@@ -277,9 +277,9 @@ export default class Bachata extends Component {
                         }
                      ],
                      margin: 20,
-                     borderWidth: 15,
+                     borderWidth: 24,
                      borderColor: "#274FA2",
-                     borderRadius: 15
+                     borderRadius: 24
                  }}  >
              </Animated.View>
          </TouchableOpacity>
@@ -295,9 +295,9 @@ export default class Bachata extends Component {
                         }
                      ],
                      margin: 20,
-                     borderWidth: 15,
+                     borderWidth: 24,
                      borderColor: "#6F2C8F",
-                     borderRadius: 15
+                     borderRadius: 24
                  }}  >
              </Animated.View>
          </TouchableOpacity>
@@ -331,8 +331,8 @@ const styles = EStyleSheet.create({
       flexDirection: "row",
       justifyContent: "space-around",
       right: 50,
-      top: 100,
-      height: 400
+      top: 30,
+      height: 350,
     },
     '@media (orientation: landscape)': {
         danceFloor: {
@@ -377,8 +377,8 @@ const styles = EStyleSheet.create({
     stepsContainer: {
       padding: 10,
       left: 55,
-      marginTop: 60,
-      marginBottom: 60
+      marginTop: 30,
+      marginBottom: 80,
     },
     '@media (orientation: landscape)': {
         stepsContainer: {
