@@ -469,7 +469,7 @@ exports[`Game should match snapshot 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "black",
+        "width": "100%",
       }
     }
   >

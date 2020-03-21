@@ -58,7 +58,7 @@ export default class Waltz extends Component {
 
   assessPulseDuration = () => {
     return (
-      60000/this.props.song.tempo
+      120000/this.props.song.tempo
     )
   };
 
@@ -67,12 +67,12 @@ export default class Waltz extends Component {
       return [
         Animated.timing(pulse, {
           toValue: 3,
-          duration: this.assessPulseDuration(),
-          easing: Easing.back(),
+          duration: (this.assessPulseDuration() * 1/5),
+          easing: Easing.elastic(1),
         }),
         Animated.timing(pulse, {
           toValue: 1,
-          duration: this.assessPulseDuration(),
+          duration: (this.assessPulseDuration() * 4/5),
         })
       ]
     }).flat();

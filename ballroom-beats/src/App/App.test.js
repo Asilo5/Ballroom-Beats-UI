@@ -11,19 +11,3 @@ describe('App', () => {
    });
 
 });
-
-// const mockProps = {
-//    navigation: {
-//      navigate: jest.fn()
-//    }
-//  };
-//
-//
-// describe('App', () => {
-//
-//    it('should match snapshot', () => {
-//     const app = renderer.create(<App navigation={mockProps.navigation} />).toJSON();
-//     expect(app).toMatchSnapshot();
-//    });
-//
-// });

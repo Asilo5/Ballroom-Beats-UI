@@ -4,8 +4,8 @@ exports[`Navbar should match snapshot 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#D1005A",
-      "bottom": 1,
+      "backgroundColor": "pink",
+      "bottom": -20,
       "position": "absolute",
       "width": "100%",
     }
