@@ -8,6 +8,8 @@ import Loader from '../components/Loader/Loader.js';
 import Game from '../components/Game/Game.js';
 import End from '../components/End/End.js';
 import 'react-native-gesture-handler';
+// import React, { Component } from 'react';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 
 const MainNavigator = createStackNavigator({
@@ -50,6 +52,10 @@ const MainNavigator = createStackNavigator({
   }
 });
 
+const entry = EStyleSheet.build({
+  $bgColor: 'pink',
+});
+
 export const App = createAppContainer(MainNavigator);
 
-export default registerRootComponent(App);
+export default registerRootComponent(App, entry);

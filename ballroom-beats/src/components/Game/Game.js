@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import DanceFloor from '../DanceFloor/DanceFloor'
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  Animated, 
-  TouchableOpacity 
+import {
+  View,
+  Text,
+  StyleSheet,
+  Animated,
+  TouchableOpacity
 } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withNavigation } from 'react-navigation';
 import { Audio } from 'expo-av';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 class Game extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class Game extends Component {
 
   async componentDidMount() {
     // let timeToEnd = this.props.navigation.getParam('song', '') * 1000
-    let timeToEnd = 25000
+    let timeToEnd = 25000 // changed for presentation ******************
     this.danceTime = setTimeout(() => this.setState({renderDance: false}), timeToEnd);
     let songPath = this.props.navigation.getParam('song', '').url
     this.backgroundMusic = new Audio.Sound();
@@ -110,21 +111,45 @@ const AppNavigator = createStackNavigator({
     },
 });
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'black',
         alignItems: 'center',
         justifyContent: 'center',
     },
+    '@media (orientation: landscape)': {
+      container: {
+        width: 650,
+        backgroundColor: '$bgColor',
+      }
+    },
+
     btnContainer: {
-        backgroundColor: "black",
+        // flex: 1,
+        // backgroundColor: "black",
+        width: '100%',
+    },
+    '@media (orientation: landscape)': {
+      btnContainer: {
+        // flex: 1,
+        backgroundColor: '',
+        alignItems: 'center',
+        // justifyContent: 'center',
+      }
     },
     button: {
         backgroundColor: '#A93133',
         margin: 10,
         width: '80%',
         borderRadius: 50
+    },
+    '@media (orientation: landscape)': {
+      button: {
+        width: '25%',
+        // alignItems: 'center',
+        // justifyContent: 'center',
+      }
     },
     quit: {
         fontSize: 30,

@@ -7,6 +7,7 @@ import {
     StyleSheet,
     Text
 } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 export default class Bachata extends Component {
     state = {
       pulses: [
@@ -307,7 +308,7 @@ export default class Bachata extends Component {
     };
 };
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     danceFloor: {
       display: "flex",
       flexDirection: "row",
@@ -316,6 +317,11 @@ const styles = StyleSheet.create({
       top: 100,
       height: 400
     },
+    '@media (orientation: landscape)': {
+        danceFloor: {
+          width: '100%',
+        }
+      },
     middleDots: {
       display: "flex",
       bottom: 40,
@@ -352,4 +358,9 @@ const styles = StyleSheet.create({
       marginTop: 60,
       marginBottom: 60
     },
+    '@media (orientation: landscape)': {
+        stepsContainer: {
+          width: '100%',
+        }
+      },
 });

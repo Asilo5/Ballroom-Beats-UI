@@ -6,6 +6,7 @@ import {
   StyleSheet,
   ImageBackground
 } from "react-native";
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 export default class DanceFloor extends Component {
   state = {
@@ -67,15 +68,31 @@ export default class DanceFloor extends Component {
   }
 };
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   backgroundImage1: {
     flex: 1,
     width: null,
     height: '95%',
   },
+  '@media (orientation: landscape)': {
+    backgroundImage1: {
+      // flex: 1,
+      width: 650,
+      // height: '95%',
+      // resizeMode : 'stretch',
+    }
+  },
   backgroundImage2: {
     flex: 2,
     width: null,
     height: '100%',
+  },
+  '@media (orientation: landscape)': {
+    backgroundImage2: {
+      // flex: 2,
+      width: 650,
+      height: '190%',
+      // resizeMode : 'stretch',
+    }
   },
 });
