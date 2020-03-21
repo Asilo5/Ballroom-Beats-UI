@@ -65,7 +65,7 @@ export default class Salsa extends Component {
               toValue: 1,
               duration: this.assessPulseDuration(),
             })
-          ];
+          ]
         }).flat();
       };
 
@@ -80,27 +80,87 @@ export default class Salsa extends Component {
        return (
            <View style={styles.danceFloor}>
                <TouchableOpacity onPress={() => this.countUp()} key={1}>
-                   <Animated.View>
+                   <Animated.View
+                       style={{
+                        transform: [
+                            {
+                                scaleX: this.state.pulses[0]
+                            },
+                            {
+                               scaleY: this.state.pulses[0]
+                           }
+                        ],
+                        margin: 20,
+                        borderWidth: 15,
+                        borderColor: "#FFEB00",
+                        borderRadius: 15
+                    }}
+                   >
 
                    </Animated.View>
                </TouchableOpacity>
                
                <View style={styles.middleSteps}>
                    <TouchableOpacity onPress={() => this.countUp()} key={4}>
-                      <Animated.View>
+                      <Animated.View
+                        style={{
+                          transform: [
+                              {
+                                  scaleX: this.state.pulses[2]
+                              },
+                              {
+                                 scaleY: this.state.pulses[2]
+                             }
+                          ],
+                          margin: 20,
+                          borderWidth: 15,
+                          borderColor: "#F6811F",
+                          borderRadius: 15
+                      }}
+                      >
                        
                        </Animated.View>
                    </TouchableOpacity>
 
                    <TouchableOpacity onPress={() => this.countUp()} key={2}>
-                      <Animated.View>
+                      <Animated.View
+                        style={{
+                          transform: [
+                              {
+                                  scaleX: this.state.pulses[1]
+                              },
+                              {
+                                 scaleY: this.state.pulses[1]
+                             }
+                          ],
+                          margin: 20,
+                          borderWidth: 15,
+                          borderColor: "#03ABF0",
+                          borderRadius: 15
+                      }}
+                      >
                        
                        </Animated.View>
                    </TouchableOpacity>
                </View>
 
                <TouchableOpacity onPress={() => this.countUp()} key={3}>
-                  <Animated.View>
+                  <Animated.View
+                    style={{
+                      transform: [
+                          {
+                              scaleX: this.state.pulses[3]
+                          },
+                          {
+                             scaleY: this.state.pulses[3]
+                         }
+                      ],
+                      margin: 20,
+                      borderWidth: 15,
+                      borderColor: "#6F2C8F",
+                      borderRadius: 15
+                  }}
+                  >
                        
                   </Animated.View>
                </TouchableOpacity>
@@ -108,10 +168,35 @@ export default class Salsa extends Component {
        )
    }
 
+
+   render() {
+    return (
+      <View>
+        <View style={styles.stepsContainer}>
+            {this.generateViews()}
+        </View>
+      </View>
+    );
+  };
+
+
 };
 
 const styles = StyleSheet.create({
 
+  danceFloor: {
+      display: "flex",
+      // flexDirection: "row",
+      justifyContent: "space-around",
+      right: 50,
+      top: 100,
+      height: 400
+    },
 
+    middleSteps: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-around",
+    }
 
 });

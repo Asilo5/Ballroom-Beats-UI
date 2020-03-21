@@ -79,7 +79,6 @@ const styles = EStyleSheet.create({
     backgroundImage1: {
       // flex: 1,
       width: 650,
-      // height: '95%',
       // resizeMode : 'stretch',
     }
   },
@@ -92,7 +91,6 @@ const styles = EStyleSheet.create({
     backgroundImage2: {
       // flex: 2,
       width: 650,
-      height: '190%',
       // resizeMode : 'stretch',
     }
   },
