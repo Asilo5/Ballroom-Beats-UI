@@ -33,7 +33,7 @@ exports[`Comments should match snapshot 1`] = `
       }
     }
   >
-    Doing Great!
+    Yass!
   </Text>
 </View>
 `;
