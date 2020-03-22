@@ -4,8 +4,14 @@ import {
     Animated,
     Easing,
     TouchableOpacity,
-    StyleSheet
-} from 'react-native';
+    StyleSheet,
+    Text
+  } from 'react-native';
+import Comments from "../../Comments/Comments";
+
+const randomiseNumber = (min, max) => {
+  return Math.random() * (min - max) + min;
+};
 
 export default class Salsa extends Component {
   
@@ -14,9 +20,13 @@ export default class Salsa extends Component {
             new Animated.Value(1),
             new Animated.Value(1),
             new Animated.Value(1),
+            new Animated.Value(1),
+            new Animated.Value(1),
             new Animated.Value(1)
         ],
-        counter: 0
+        counter: 0,
+        comments: [],
+        commentCount: 1
     };
 
     componentDidMount() {
@@ -49,7 +59,7 @@ export default class Salsa extends Component {
     
       assessPulseDuration = () => {
         return (
-          60000/this.props.song.tempo
+          49500/this.props.song.tempo
         )
       };
     
@@ -57,7 +67,7 @@ export default class Salsa extends Component {
         return this.state.pulses.map(pulse => {
           return [
             Animated.timing(pulse, {
-              toValue: 3,
+              toValue: 6,
               duration: this.assessPulseDuration(),
               easing: Easing.back(),
             }),
@@ -79,7 +89,8 @@ export default class Salsa extends Component {
    generateViews = () => {
        return (
            <View style={styles.danceFloor}>
-               <TouchableOpacity onPress={() => this.countUp()} key={1}>
+               <Text style={styles.footingPositionLone}>Left Front</Text>
+               <TouchableOpacity style={styles.loneDot} onPress={() => {this.countUp(), this.addComment()}} key={0}>
                    <Animated.View
                        style={{
                         transform: [
@@ -91,9 +102,9 @@ export default class Salsa extends Component {
                            }
                         ],
                         margin: 20,
-                        borderWidth: 15,
-                        borderColor: "#FFEB00",
-                        borderRadius: 15
+                        borderWidth: 24,
+                        borderColor: "#F60091",
+                        borderRadius: 24
                     }}
                    >
 
@@ -101,28 +112,7 @@ export default class Salsa extends Component {
                </TouchableOpacity>
                
                <View style={styles.middleSteps}>
-                   <TouchableOpacity onPress={() => this.countUp()} key={4}>
-                      <Animated.View
-                        style={{
-                          transform: [
-                              {
-                                  scaleX: this.state.pulses[2]
-                              },
-                              {
-                                 scaleY: this.state.pulses[2]
-                             }
-                          ],
-                          margin: 20,
-                          borderWidth: 15,
-                          borderColor: "#F6811F",
-                          borderRadius: 15
-                      }}
-                      >
-                       
-                       </Animated.View>
-                   </TouchableOpacity>
-
-                   <TouchableOpacity onPress={() => this.countUp()} key={2}>
+                   <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={1}>
                       <Animated.View
                         style={{
                           transform: [
@@ -134,17 +124,86 @@ export default class Salsa extends Component {
                              }
                           ],
                           margin: 20,
-                          borderWidth: 15,
-                          borderColor: "#03ABF0",
-                          borderRadius: 15
+                          borderWidth: 24,
+                          borderColor: "#FFEB00",
+                          borderRadius: 24
                       }}
                       >
-                       
+
                        </Animated.View>
+                         <Text style={styles.footingPosition}>Right</Text>
+                   </TouchableOpacity>
+
+                   <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={2}>
+                      <Animated.View
+                        style={{
+                          transform: [
+                              {
+                                  scaleX: this.state.pulses[2]
+                              },
+                              {
+                                 scaleY: this.state.pulses[2]
+                             }
+                          ],
+                          margin: 20,
+                          borderWidth: 24,
+                          borderColor: "#F6811F",
+                          borderRadius: 24
+                      }}
+                      >
+
+                       </Animated.View>
+                        <Text style={styles.footingPosition}>Left</Text>
                    </TouchableOpacity>
                </View>
 
-               <TouchableOpacity onPress={() => this.countUp()} key={3}>
+               <View style={styles.middleSteps}>
+                   <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={5}>
+                      <Animated.View
+                        style={{
+                          transform: [
+                              {
+                                  scaleX: this.state.pulses[5]
+                              },
+                              {
+                                 scaleY: this.state.pulses[5]
+                             }
+                          ],
+                          margin: 20,
+                          borderWidth: 24,
+                          borderColor: "#71C043",
+                          borderRadius: 24
+                      }}
+                      >
+
+                       </Animated.View>
+                         <Text style={styles.footingPosition}>Right</Text>
+                   </TouchableOpacity>
+
+                   <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={4}>
+                      <Animated.View
+                        style={{
+                          transform: [
+                              {
+                                  scaleX: this.state.pulses[4]
+                              },
+                              {
+                                 scaleY: this.state.pulses[4]
+                             }
+                          ],
+                          margin: 20,
+                          borderWidth: 24,
+                          borderColor: "#03ABF0",
+                          borderRadius: 24
+                      }}
+                      >
+
+                       </Animated.View>
+                         <Text style={styles.footingPosition}>Left</Text>
+                   </TouchableOpacity>
+               </View>
+
+               <TouchableOpacity style={styles.loneDot} onPress={() => {this.countUp(), this.addComment()}} key={3}>
                   <Animated.View
                     style={{
                       transform: [
@@ -156,18 +215,22 @@ export default class Salsa extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 15,
+                      borderWidth: 24,
                       borderColor: "#6F2C8F",
-                      borderRadius: 15
+                      borderRadius: 24
                   }}
                   >
-                       
+                  
                   </Animated.View>
                </TouchableOpacity>
+               <Text style={styles.footingPositionLone}>Right Back</Text>
            </View>
        )
-   }
+   };
 
+   addComment = () => {
+    this.setState({ comments: [...this.state.comments, { id: this.state.commentCount++, right: randomiseNumber(20,-250) }]} );
+ };
 
    render() {
     return (
@@ -175,28 +238,57 @@ export default class Salsa extends Component {
         <View style={styles.stepsContainer}>
             {this.generateViews()}
         </View>
+
+        <View >
+           {this.state.comments.map((comment) => {
+               return <Comments key={comment.id} style={{ left: comment.right, color: comment.color }} />
+           })}
+        </View>
       </View>
     );
   };
-
-
 };
 
 const styles = StyleSheet.create({
 
   danceFloor: {
       display: "flex",
-      // flexDirection: "row",
       justifyContent: "space-around",
-      right: 50,
       top: 100,
-      height: 400
+      padding: 50,
+      left: 10
     },
 
     middleSteps: {
       display: "flex",
       flexDirection: "row",
       justifyContent: "space-around",
-    }
+      padding: 20
+    },
+
+    stepsContainer: {
+      marginBottom: 60,
+      width: 600
+    },
+
+    loneDot: {
+      width: '5%',
+      left: '35%',
+      padding: 20
+    },
+
+    footingPosition: {
+      color: 'white',
+      fontSize: 20,
+      left: 24
+    },
+
+    footingPositionLone: {
+      color: 'white',
+      fontSize: 20,
+      left: 200,
+      marginTop: -25,
+      marginBottom: -25
+    },
 
 });
