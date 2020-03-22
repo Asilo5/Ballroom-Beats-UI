@@ -51,7 +51,7 @@ export default class Salsa extends Component {
     
       assessPulseDuration = () => {
         return (
-          60000/this.props.song.tempo
+          49500/this.props.song.tempo
         )
       };
     
@@ -232,17 +232,26 @@ const styles = StyleSheet.create({
 
   danceFloor: {
       display: "flex",
-      // flexDirection: "row",
       justifyContent: "space-around",
       right: 50,
       top: 100,
-      height: 400
+      // height: 400,
+      left: 20
     },
 
     middleSteps: {
+      left: 20,
       display: "flex",
       flexDirection: "row",
       justifyContent: "space-around",
-    }
+    },
+
+    stepsContainer: {
+      padding: 20,
+      // left: 40,
+      marginTop: 20,
+      marginBottom: 60,
+      height: 300
+    },
 
 });
