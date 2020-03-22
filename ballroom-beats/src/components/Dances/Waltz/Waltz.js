@@ -247,6 +247,7 @@ const styles = EStyleSheet.create({
     flexDirection: "column",
     height: '60%',
     width: 400,
+    top: 30
   },
   '@media (orientation: landscape)': {
     danceFloor: {
