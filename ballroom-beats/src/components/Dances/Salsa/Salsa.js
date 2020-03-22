@@ -231,27 +231,23 @@ export default class Salsa extends Component {
 const styles = StyleSheet.create({
 
   danceFloor: {
-      display: "flex",
-      justifyContent: "space-around",
-      right: 50,
-      top: 100,
-      // height: 400,
-      left: 20
+      // display: "flex",
+      // justifyContent: "space-around",
+      // right: 20,
+      top: 200,
+      padding: 50,
+      left: 10
     },
 
     middleSteps: {
-      left: 20,
       display: "flex",
       flexDirection: "row",
       justifyContent: "space-around",
     },
 
     stepsContainer: {
-      padding: 20,
-      // left: 40,
-      marginTop: 20,
       marginBottom: 60,
-      height: 300
+      width: 600
     },
 
 });
