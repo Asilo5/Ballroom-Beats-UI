@@ -27,7 +27,7 @@ exports[`Loader should match snapshot 1`] = `
       }
     }
   >
-    Get ready to start the game.....
+    GET READY! Make sure your screen is oriented correctly...
   </Text>
   <View>
     <View

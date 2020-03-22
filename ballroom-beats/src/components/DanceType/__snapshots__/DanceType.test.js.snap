@@ -50,12 +50,17 @@ exports[`DanceType should match snapshot 1`] = `
             "value": "",
           },
           Object {
-            "label": "Novice: Waltz",
+            "label": "Waltz (Portrait)",
             "textColor": undefined,
             "value": "Waltz",
           },
           Object {
-            "label": "Pro: Bachata",
+            "label": "Salsa (Portrait)",
+            "textColor": undefined,
+            "value": "Salsa",
+          },
+          Object {
+            "label": "Bachata (Landscape)",
             "textColor": undefined,
             "value": "Bachata",
           },

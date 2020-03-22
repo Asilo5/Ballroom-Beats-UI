@@ -7,7 +7,13 @@ import {
     StyleSheet,
     Text
 } from 'react-native';
+import Comments from "../../Comments/Comments";
 import EStyleSheet from 'react-native-extended-stylesheet';
+
+const randomiseNumber = (min, max) => {
+   return Math.random() * (min - max) + min;
+};
+
 export default class Bachata extends Component {
     state = {
       pulses: [
@@ -20,6 +26,8 @@ export default class Bachata extends Component {
         new Animated.Value(1),
         new Animated.Value(1)
       ],
+      comments: [],
+      commentCount: 1,
       counter: 0
     };
 
@@ -53,7 +61,7 @@ export default class Bachata extends Component {
 
     assessPulseDuration = () => {
       return (
-        60000/this.props.song.tempo * .5
+        60000/this.props.song.tempo
       )
     };
 
@@ -61,75 +69,75 @@ export default class Bachata extends Component {
         return [
            Animated.timing(this.state.pulses[0], {
                toValue: 3,
-               duration: this.assessPulseDuration(),
-               easing: Easing.back()
-           }),
-           Animated.timing(this.state.pulses[0], {
+               duration: (this.assessPulseDuration() * 1/5),
+               easing: Easing.elastic(1),
+             }),
+             Animated.timing(this.state.pulses[0], {
                toValue: 1,
-               duration: this.assessPulseDuration()
+               duration: (this.assessPulseDuration() * 4/5),
            }),
            Animated.timing(this.state.pulses[1], {
                toValue: 3,
-               duration: this.assessPulseDuration(),
-               easing: Easing.back()
-           }),
-           Animated.timing(this.state.pulses[1], {
+               duration: (this.assessPulseDuration() * 1/5),
+               easing: Easing.elastic(1),
+             }),
+             Animated.timing(this.state.pulses[1], {
                toValue: 1,
-               duration: this.assessPulseDuration()
+               duration: (this.assessPulseDuration() * 4/5),
            }),
            Animated.timing(this.state.pulses[2], {
                toValue: 3,
-               duration: this.assessPulseDuration(),
-               easing: Easing.back()
-           }),
-           Animated.timing(this.state.pulses[2], {
+               duration: (this.assessPulseDuration() * 1/5),
+               easing: Easing.elastic(1),
+             }),
+             Animated.timing(this.state.pulses[2], {
                toValue: 1,
-               duration: this.assessPulseDuration()
+               duration: (this.assessPulseDuration() * 4/5),
            }),
            Animated.timing(this.state.pulses[3], {
                toValue: 4,
-               duration: this.assessPulseDuration(),
-               easing: Easing.back()
-           }),
-           Animated.timing(this.state.pulses[3], {
+               duration: (this.assessPulseDuration() * 1/5),
+               easing: Easing.elastic(1),
+             }),
+             Animated.timing(this.state.pulses[3], {
                toValue: 1,
-               duration: this.assessPulseDuration()
+               duration: (this.assessPulseDuration() * 4/5),
            }),
            Animated.timing(this.state.pulses[4], {
                toValue: 3,
-               duration: this.assessPulseDuration(),
-               easing: Easing.back()
-           }),
-           Animated.timing(this.state.pulses[4], {
+               duration: (this.assessPulseDuration() * 1/5),
+               easing: Easing.elastic(1),
+             }),
+             Animated.timing(this.state.pulses[4], {
                toValue: 1,
-               duration: this.assessPulseDuration()
+               duration: (this.assessPulseDuration() * 4/5),
            }),
            Animated.timing(this.state.pulses[5], {
                toValue: 3,
-               duration: this.assessPulseDuration(),
-               easing: Easing.back()
-           }),
-           Animated.timing(this.state.pulses[5], {
+               duration: (this.assessPulseDuration() * 1/5),
+               easing: Easing.elastic(1),
+             }),
+             Animated.timing(this.state.pulses[5], {
                toValue: 1,
-               duration: this.assessPulseDuration()
+               duration: (this.assessPulseDuration() * 4/5),
            }),
            Animated.timing(this.state.pulses[6], {
                toValue: 3,
-               duration: this.assessPulseDuration(),
-               easing: Easing.back()
-           }),
-           Animated.timing(this.state.pulses[6], {
+               duration: (this.assessPulseDuration() * 1/5),
+               easing: Easing.elastic(1),
+             }),
+             Animated.timing(this.state.pulses[6], {
                toValue: 1,
-               duration: this.assessPulseDuration()
+               duration: (this.assessPulseDuration() * 4/5),
            }),
            Animated.timing(this.state.pulses[7], {
                toValue: 4,
-               duration: this.assessPulseDuration(),
-               easing: Easing.back()
-           }),
-           Animated.timing(this.state.pulses[7], {
+               duration: (this.assessPulseDuration() * 1/5),
+               easing: Easing.elastic(1),
+             }),
+             Animated.timing(this.state.pulses[7], {
                toValue: 1,
-               duration: this.assessPulseDuration()
+               duration: (this.assessPulseDuration() * 4/5),
            }),
         ]
     };
@@ -143,7 +151,7 @@ export default class Bachata extends Component {
    generateViews = () => {
      return (
        <View style={styles.danceFloor}>
-       <TouchableOpacity onPress={() => {this.countUp()}} >
+       <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={6}>
            <Animated.View
                style={{
                    transform: [
@@ -161,7 +169,7 @@ export default class Bachata extends Component {
                }}  >
            </Animated.View>
        </TouchableOpacity>
-       <TouchableOpacity onPress={() => {this.countUp()}} >
+       <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={7}>
            <Animated.View
                style={{
                    transform: [
@@ -181,7 +189,7 @@ export default class Bachata extends Component {
        </TouchableOpacity>
        <View style={styles.middleDots}>
           <View style={styles.splitDots}>
-          <TouchableOpacity onPress={() => {this.countUp()}} >
+          <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={1}>
               <Animated.View
                   style={{
                       transform: [
@@ -199,7 +207,7 @@ export default class Bachata extends Component {
                   }}  >
               </Animated.View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => {this.countUp()}} >
+          <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={0}>
               <Animated.View
                   style={{
                       transform: [
@@ -219,7 +227,7 @@ export default class Bachata extends Component {
           </TouchableOpacity>
           </View>
           <View style={styles.splitDots}>
-          <TouchableOpacity onPress={() => {this.countUp()}} >
+          <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={4}>
               <Animated.View
                   style={{
                       transform: [
@@ -237,7 +245,7 @@ export default class Bachata extends Component {
                   }}  >
               </Animated.View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => {this.countUp()}} >
+          <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={5}>
               <Animated.View
                   style={{
                       transform: [
@@ -257,7 +265,7 @@ export default class Bachata extends Component {
           </TouchableOpacity>
         </View>
        </View>
-         <TouchableOpacity onPress={() => {this.countUp()}} >
+         <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={3}>
              <Animated.View
                  style={{
                      transform: [
@@ -275,7 +283,7 @@ export default class Bachata extends Component {
                  }}  >
              </Animated.View>
          </TouchableOpacity>
-         <TouchableOpacity onPress={() => {this.countUp()}} >
+         <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={2}>
              <Animated.View
                  style={{
                      transform: [
@@ -297,12 +305,21 @@ export default class Bachata extends Component {
      )
    };
 
+   addComment = () => {
+      this.setState({ comments: [...this.state.comments, { id: this.state.commentCount++, right: randomiseNumber(20,-250) }]} );
+   };
+
     render() {
         return (
           <View>
             <View style={styles.stepsContainer}>
                 {this.generateViews()}
             </View>
+            {/*<View >
+               {this.state.comments.map((comment) => {
+                   return <Comments key={comment.id} style={{ left: comment.right, color: comment.color }} />
+               })}
+            </View>*/}
           </View>
         );
     };
@@ -351,6 +368,11 @@ const styles = EStyleSheet.create({
     lowerTwoSteps:{
       display: 'flex',
       flexDirection: "row",
+    },
+    commentsContainer: {
+      position:'absolute',
+      bottom: 30,
+      backgroundColor: 'transparent'
     },
     stepsContainer: {
       padding: 10,

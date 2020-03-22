@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Salsa should match snapshot 1`] = `
+<View>
+  <View>
+    <View
+      style={
+        Object {
+          "display": "flex",
+          "height": 400,
+          "justifyContent": "space-around",
+          "right": 50,
+          "top": 100,
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "borderColor": "#FFEB00",
+              "borderRadius": 15,
+              "borderWidth": 15,
+              "margin": 20,
+              "transform": Array [
+                Object {
+                  "scaleX": 1,
+                },
+                Object {
+                  "scaleY": 1,
+                },
+              ],
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "space-around",
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderColor": "#F6811F",
+                "borderRadius": 15,
+                "borderWidth": 15,
+                "margin": 20,
+                "transform": Array [
+                  Object {
+                    "scaleX": 1,
+                  },
+                  Object {
+                    "scaleY": 1,
+                  },
+                ],
+              }
+            }
+          />
+        </View>
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderColor": "#03ABF0",
+                "borderRadius": 15,
+                "borderWidth": 15,
+                "margin": 20,
+                "transform": Array [
+                  Object {
+                    "scaleX": 1,
+                  },
+                  Object {
+                    "scaleY": 1,
+                  },
+                ],
+              }
+            }
+          />
+        </View>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "borderColor": "#6F2C8F",
+              "borderRadius": 15,
+              "borderWidth": 15,
+              "margin": 20,
+              "transform": Array [
+                Object {
+                  "scaleX": 1,
+                },
+                Object {
+                  "scaleY": 1,
+                },
+              ],
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;
