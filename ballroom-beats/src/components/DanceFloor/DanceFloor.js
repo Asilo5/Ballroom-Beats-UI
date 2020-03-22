@@ -55,15 +55,33 @@ export default class DanceFloor extends Component {
     }
   };
 
+  chooseBackground = () => {
+    if (this.state.dance.includes("Waltz")) {
+      return (
+        <>
+          <ImageBackground source={require('../../../images/stage_lights_blue.png/')} style={styles.backgroundImage1}>
+          <ImageBackground source={require('../../../images/wood_floor.png/')}
+          style={styles.backgroundImage2}>
+            {this.chooseDance()}
+          </ImageBackground>
+          </ImageBackground>
+        </>
+      )
+    }
+
+    if (this.state.dance.includes("Bachata")) {
+      return (
+        <ImageBackground source={require('../../../images/stage_lights_blue.png/')} style={styles.backgroundImage3}>
+        {this.chooseDance()}
+        </ImageBackground>
+      )
+    }
+  }
+
   render() {
-    console.log("styles")
     return (
       <>
-        <ImageBackground source={require('../../../images/stage_lights_blue.png/')} style={styles.backgroundImage1}>
-        <ImageBackground source={require('../../../images/wood_floor.png/')} style={styles.backgroundImage2}>
-          {this.chooseDance()}
-        </ImageBackground>
-        </ImageBackground>
+        {this.chooseBackground()}
       </>
     )
   }
@@ -93,5 +111,11 @@ const styles = EStyleSheet.create({
       width: 650,
       // resizeMode : 'stretch',
     }
+  },
+  backgroundImage3: {
+    width: '95%',
+    height: '100%',
+    top: 75,
+    // bottom: 60,
   },
 });

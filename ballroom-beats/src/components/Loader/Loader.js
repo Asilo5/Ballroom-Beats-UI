@@ -22,7 +22,8 @@ class Loader extends Component {
    render() {
       return (
           <View style={styles.container}>
-            <Text style={styles.countDown}>GET READY! Make sure your screen is oriented correctly...</Text>
+            <Text style={styles.countDown}>GET READY! </Text>
+            <Text style={styles.countDown}>Make sure your screen is oriented correctly...</Text>
                 <CountDown
                     until={5}
                     size={35}
@@ -68,7 +69,8 @@ const styles = StyleSheet.create({
         textShadowOffset: { width: 2, height: 2 },
         textShadowRadius: 2,
         textShadowColor: '#000',
-        marginBottom: 10,
+        margin: 10,
+        textAlign: "center"
     },
     button1: {
         backgroundColor: '#A9C344',

@@ -129,6 +129,10 @@ const styles = EStyleSheet.create({
         // flex: 1,
         // backgroundColor: "black",
         width: '100%',
+        maxWidth: 140,
+        alignItems: "center",
+        height: 70,
+        bottom: 70
     },
     '@media (orientation: landscape)': {
       btnContainer: {
@@ -139,10 +143,11 @@ const styles = EStyleSheet.create({
       }
     },
     button: {
-        backgroundColor: '#A93133',
+        backgroundColor: '#A9C344',
         margin: 10,
         width: '80%',
-        borderRadius: 50
+        borderRadius: 10,
+        maxHeight: 60
     },
     '@media (orientation: landscape)': {
       button: {
@@ -152,10 +157,11 @@ const styles = EStyleSheet.create({
       }
     },
     quit: {
-        fontSize: 30,
+        fontSize: 25,
         fontWeight: "bold",
         textAlign: "center",
-        padding: 20
+        justifyContent: "center",
+        padding: 10
     },
     text: {
       color: 'white',

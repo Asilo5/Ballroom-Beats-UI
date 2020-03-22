@@ -300,17 +300,17 @@ const styles = EStyleSheet.create({
   },
   userPoints: {
     color: '#A9C344',
-    textShadowOffset: { width: 2, height: 2 },
-    textShadowRadius: 2,
+    // textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 10,
     textShadowColor: '#000',
     fontSize: 23,
     textAlign: 'center',
-    marginTop: 15
+    marginTop: 85
   },
   possiblePoints: {
     color: '#A9C344',
-    textShadowOffset: { width: 2, height: 2 },
-    textShadowRadius: 2,
+    // textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 10,
     textShadowColor: '#000',
     fontSize: 23,
     textAlign: 'center',
