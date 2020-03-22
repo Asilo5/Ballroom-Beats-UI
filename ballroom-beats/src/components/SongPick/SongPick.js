@@ -51,8 +51,8 @@ class SongPick extends Component {
     if (this.props.navigation.getParam('selectedDance', '') === "Salsa") {
       return [
         <Picker.Item label="-- Pick a Song --" value="" key="none salsa"/>,
-        <Picker.Item label="Deja Vu" value="Deja Vu" key="deja2"/>,
-        <Picker.Item label="Melancolia Tropical" value="Melancolia Tropical" key="mel"/>
+        <Picker.Item label="Ahora Quien" value="Ahora Quien" key="ahora2"/>,
+        <Picker.Item label="En Barranquilla Me Quedo" value="En Barranquilla Me Quedo" key="quedo"/>
       ]
     }
   };
