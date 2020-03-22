@@ -14,6 +14,8 @@ export default class Salsa extends Component {
             new Animated.Value(1),
             new Animated.Value(1),
             new Animated.Value(1),
+            new Animated.Value(1),
+            new Animated.Value(1),
             new Animated.Value(1)
         ],
         counter: 0
