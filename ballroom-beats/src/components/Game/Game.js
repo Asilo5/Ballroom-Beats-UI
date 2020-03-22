@@ -48,6 +48,10 @@ class Game extends Component {
         return require('../../../assets/Music/Game_-_of_-_Thrones.mp3');
       case "melancolia-tropical":
         return require('../../../assets/Music/Melancolia_-_Tropical.mp3');
+      case "ahora-quien":
+        return require('../../../assets/Music/Ahora_-_Quien.mp3');
+      case "me-quedo":
+        return require('../../../assets/Music/En_-_Barranquilla_-_Me_-_Quedo.mp3');
       default:
         return require('../../../assets/Music/Never_-_Gonna_-_Give_-_You_-_Up.mp3');
     }

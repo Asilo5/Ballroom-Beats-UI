@@ -56,7 +56,7 @@ export default class DanceFloor extends Component {
   };
 
   chooseBackground = () => {
-    if (this.state.dance.includes("Waltz")) {
+    if (this.state.dance.includes("Waltz") || this.state.dance.includes("Salsa")) {
       return (
         <>
           <ImageBackground source={require('../../../images/stage_lights_blue.png/')} style={styles.backgroundImage1}>
