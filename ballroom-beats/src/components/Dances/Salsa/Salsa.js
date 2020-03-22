@@ -144,6 +144,50 @@ export default class Salsa extends Component {
                    </TouchableOpacity>
                </View>
 
+               <View style={styles.middleSteps}>
+                   <TouchableOpacity onPress={() => this.countUp()} key={4}>
+                      <Animated.View
+                        style={{
+                          transform: [
+                              {
+                                  scaleX: this.state.pulses[2]
+                              },
+                              {
+                                 scaleY: this.state.pulses[2]
+                             }
+                          ],
+                          margin: 20,
+                          borderWidth: 15,
+                          borderColor: "#F6811F",
+                          borderRadius: 15
+                      }}
+                      >
+                       
+                       </Animated.View>
+                   </TouchableOpacity>
+
+                   <TouchableOpacity onPress={() => this.countUp()} key={2}>
+                      <Animated.View
+                        style={{
+                          transform: [
+                              {
+                                  scaleX: this.state.pulses[1]
+                              },
+                              {
+                                 scaleY: this.state.pulses[1]
+                             }
+                          ],
+                          margin: 20,
+                          borderWidth: 15,
+                          borderColor: "#03ABF0",
+                          borderRadius: 15
+                      }}
+                      >
+                       
+                       </Animated.View>
+                   </TouchableOpacity>
+               </View>
+
                <TouchableOpacity onPress={() => this.countUp()} key={3}>
                   <Animated.View
                     style={{
