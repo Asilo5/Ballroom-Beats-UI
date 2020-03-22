@@ -93,9 +93,9 @@ export default class Salsa extends Component {
                            }
                         ],
                         margin: 20,
-                        borderWidth: 15,
+                        borderWidth: 24,
                         borderColor: "#FFEB00",
-                        borderRadius: 15
+                        borderRadius: 24
                     }}
                    >
 
@@ -115,9 +115,9 @@ export default class Salsa extends Component {
                              }
                           ],
                           margin: 20,
-                          borderWidth: 15,
+                          borderWidth: 24,
                           borderColor: "#F6811F",
-                          borderRadius: 15
+                          borderRadius: 24
                       }}
                       >
                        
@@ -136,9 +136,9 @@ export default class Salsa extends Component {
                              }
                           ],
                           margin: 20,
-                          borderWidth: 15,
+                          borderWidth: 24,
                           borderColor: "#03ABF0",
-                          borderRadius: 15
+                          borderRadius: 24
                       }}
                       >
                        
@@ -159,9 +159,9 @@ export default class Salsa extends Component {
                              }
                           ],
                           margin: 20,
-                          borderWidth: 15,
+                          borderWidth: 24,
                           borderColor: "#F6811F",
-                          borderRadius: 15
+                          borderRadius: 24
                       }}
                       >
                        
@@ -180,9 +180,9 @@ export default class Salsa extends Component {
                              }
                           ],
                           margin: 20,
-                          borderWidth: 15,
+                          borderWidth: 24,
                           borderColor: "#03ABF0",
-                          borderRadius: 15
+                          borderRadius: 24
                       }}
                       >
                        
@@ -202,9 +202,9 @@ export default class Salsa extends Component {
                          }
                       ],
                       margin: 20,
-                      borderWidth: 15,
+                      borderWidth: 24,
                       borderColor: "#6F2C8F",
-                      borderRadius: 15
+                      borderRadius: 24
                   }}
                   >
                        
