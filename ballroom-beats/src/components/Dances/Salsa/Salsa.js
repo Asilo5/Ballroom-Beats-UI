@@ -7,6 +7,11 @@ import {
     StyleSheet,
     Text
   } from 'react-native';
+import Comments from "../../Comments/Comments";
+
+const randomiseNumber = (min, max) => {
+  return Math.random() * (min - max) + min;
+};
 
 export default class Salsa extends Component {
   
@@ -19,7 +24,9 @@ export default class Salsa extends Component {
             new Animated.Value(1),
             new Animated.Value(1)
         ],
-        counter: 0
+        counter: 0,
+        comments: [],
+        commentCount: 1
     };
 
     componentDidMount() {
@@ -83,7 +90,7 @@ export default class Salsa extends Component {
        return (
            <View style={styles.danceFloor}>
                <Text style={styles.footingPositionLone}>Left Front</Text>
-               <TouchableOpacity style={styles.loneDot} onPress={() => this.countUp()} key={0}>
+               <TouchableOpacity style={styles.loneDot} onPress={() => {this.countUp(), this.addComment()}} key={0}>
                    <Animated.View
                        style={{
                         transform: [
@@ -105,7 +112,7 @@ export default class Salsa extends Component {
                </TouchableOpacity>
                
                <View style={styles.middleSteps}>
-                   <TouchableOpacity onPress={() => this.countUp()} key={1}>
+                   <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={1}>
                       <Animated.View
                         style={{
                           transform: [
@@ -127,7 +134,7 @@ export default class Salsa extends Component {
                          <Text style={styles.footingPosition}>Right</Text>
                    </TouchableOpacity>
 
-                   <TouchableOpacity onPress={() => this.countUp()} key={2}>
+                   <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={2}>
                       <Animated.View
                         style={{
                           transform: [
@@ -151,7 +158,7 @@ export default class Salsa extends Component {
                </View>
 
                <View style={styles.middleSteps}>
-                   <TouchableOpacity onPress={() => this.countUp()} key={5}>
+                   <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={5}>
                       <Animated.View
                         style={{
                           transform: [
@@ -173,7 +180,7 @@ export default class Salsa extends Component {
                          <Text style={styles.footingPosition}>Right</Text>
                    </TouchableOpacity>
 
-                   <TouchableOpacity onPress={() => this.countUp()} key={4}>
+                   <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={4}>
                       <Animated.View
                         style={{
                           transform: [
@@ -196,7 +203,7 @@ export default class Salsa extends Component {
                    </TouchableOpacity>
                </View>
 
-               <TouchableOpacity style={styles.loneDot} onPress={() => this.countUp()} key={3}>
+               <TouchableOpacity style={styles.loneDot} onPress={() => {this.countUp(), this.addComment()}} key={3}>
                   <Animated.View
                     style={{
                       transform: [
@@ -219,8 +226,11 @@ export default class Salsa extends Component {
                <Text style={styles.footingPositionLone}>Right Back</Text>
            </View>
        )
-   }
+   };
 
+   addComment = () => {
+    this.setState({ comments: [...this.state.comments, { id: this.state.commentCount++, right: randomiseNumber(20,-250) }]} );
+ };
 
    render() {
     return (
@@ -228,11 +238,15 @@ export default class Salsa extends Component {
         <View style={styles.stepsContainer}>
             {this.generateViews()}
         </View>
+
+        <View >
+           {this.state.comments.map((comment) => {
+               return <Comments key={comment.id} style={{ left: comment.right, color: comment.color }} />
+           })}
+        </View>
       </View>
     );
   };
-
-
 };
 
 const styles = StyleSheet.create({
