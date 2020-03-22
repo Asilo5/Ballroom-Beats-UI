@@ -81,7 +81,7 @@ export default class Salsa extends Component {
    generateViews = () => {
        return (
            <View style={styles.danceFloor}>
-               <TouchableOpacity onPress={() => this.countUp()} key={0}>
+               <TouchableOpacity style={styles.loneDot} onPress={() => this.countUp()} key={0}>
                    <Animated.View
                        style={{
                         transform: [
@@ -190,7 +190,7 @@ export default class Salsa extends Component {
                    </TouchableOpacity>
                </View>
 
-               <TouchableOpacity onPress={() => this.countUp()} key={3}>
+               <TouchableOpacity style={styles.loneDot} onPress={() => this.countUp()} key={3}>
                   <Animated.View
                     style={{
                       transform: [
@@ -231,9 +231,8 @@ export default class Salsa extends Component {
 const styles = StyleSheet.create({
 
   danceFloor: {
-      // display: "flex",
-      // justifyContent: "space-around",
-      // right: 20,
+      display: "flex",
+      justifyContent: "space-around",
       top: 200,
       padding: 50,
       left: 10
@@ -243,11 +242,18 @@ const styles = StyleSheet.create({
       display: "flex",
       flexDirection: "row",
       justifyContent: "space-around",
+      padding: 20
     },
 
     stepsContainer: {
       marginBottom: 60,
       width: 600
     },
+
+    loneDot: {
+      width: '5%',
+      left: '40%',
+      padding: 20
+    }
 
 });
