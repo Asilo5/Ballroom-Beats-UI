@@ -14,7 +14,7 @@ const randomiseNumber = (min, max) => {
 };
 
 export default class Salsa extends Component {
-  
+
     state = {
         pulses: [
             new Animated.Value(1),
@@ -29,51 +29,74 @@ export default class Salsa extends Component {
         commentCount: 1
     };
 
+    pulse1;
+    pulse2;
+    pulse3;
+    pulse4;
+    pulse5;
+    pulse6;
+
+    listeners = [this.pulse1, this.pulse2, this.pulse3, this.pulse4, this.pulse5, this.pulse6]
+
     componentDidMount() {
         this.props.start(this.generateTiming());
+        this.generateListeners()
         this.props.stopMusic(this.getSongLength());
       };
-    
+
       endGame = (userPoints, gamePoints) => {
           this.props.stopDance(userPoints, gamePoints);
       };
-    
+
       componentWillUnmount() {
         this.endGame(this.state.counter, this.getExpectedValue());
+        this.removeListeners()
       };
-    
+
       getExpectedValue = () => {
         return this.props.song.duration/60 * this.props.song.tempo;
       };
-    
+
       getSongLength = () => {
         //Real World
-    
+
         // return (
         //   this.props.song.duration * 1000
         // )
-    
+
         //Demo
         return 25000;
       };
-    
+
       assessPulseDuration = () => {
         return (
-          49500/this.props.song.tempo
+          // 49500/this.props.song.tempo
+          60000/this.props.song.tempo
         )
       };
-    
+
+      generateListeners = () => {
+        return this.state.pulses.map((pulse, i) => {
+          pulse.addListener((pulse) => this.listeners[i]= pulse.value)
+        });
+      }
+      removeListeners = () => {
+          return this.state.pulses.map(pulse => {
+            pulse.removeAllListeners()
+          });
+      }
+
       generateTiming = () => {
         return this.state.pulses.map(pulse => {
           return [
             Animated.timing(pulse, {
               toValue: 6,
-              duration: this.assessPulseDuration(),
+              duration: (this.assessPulseDuration() * 1/5),
               easing: Easing.back(),
             }),
             Animated.timing(pulse, {
               toValue: 1,
-              duration: this.assessPulseDuration(),
+              duration: (this.assessPulseDuration() * 4/5),
             })
           ]
         }).flat();
@@ -84,13 +107,20 @@ export default class Salsa extends Component {
        let newCount = this.state.counter;
        newCount++;
        this.setState({ counter: newCount });
-   } 
+   }
+
+   registerCount = (i) => {
+     if (this.listeners[i] > 1) {
+       this.countUp()
+       this.addComment()
+     }
+   }
 
    generateViews = () => {
        return (
            <View style={styles.danceFloor}>
                <Text style={styles.footingPositionLone}>Left Front</Text>
-               <TouchableOpacity style={styles.loneDot} onPress={() => {this.countUp(), this.addComment()}} key={0}>
+               <TouchableOpacity style={styles.loneDot} onPress={() => {this.registerCount(0)}} key={0}>
                    <Animated.View
                        style={{
                         transform: [
@@ -110,9 +140,9 @@ export default class Salsa extends Component {
 
                    </Animated.View>
                </TouchableOpacity>
-               
+
                <View style={styles.middleSteps}>
-                   <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={1}>
+                   <TouchableOpacity onPress={() => {this.registerCount(1)}} key={1}>
                       <Animated.View
                         style={{
                           transform: [
@@ -134,7 +164,7 @@ export default class Salsa extends Component {
                          <Text style={styles.footingPosition}>Right</Text>
                    </TouchableOpacity>
 
-                   <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={2}>
+                   <TouchableOpacity onPress={() => {this.registerCount(2)}} key={2}>
                       <Animated.View
                         style={{
                           transform: [
@@ -158,7 +188,7 @@ export default class Salsa extends Component {
                </View>
 
                <View style={styles.middleSteps}>
-                   <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={5}>
+                   <TouchableOpacity onPress={() => {this.registerCount(5)}} key={5}>
                       <Animated.View
                         style={{
                           transform: [
@@ -180,7 +210,7 @@ export default class Salsa extends Component {
                          <Text style={styles.footingPosition}>Right</Text>
                    </TouchableOpacity>
 
-                   <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={4}>
+                   <TouchableOpacity onPress={() => {this.registerCount(4)}} key={4}>
                       <Animated.View
                         style={{
                           transform: [
@@ -203,7 +233,7 @@ export default class Salsa extends Component {
                    </TouchableOpacity>
                </View>
 
-               <TouchableOpacity style={styles.loneDot} onPress={() => {this.countUp(), this.addComment()}} key={3}>
+               <TouchableOpacity style={styles.loneDot} onPress={() => {this.registerCount(3)}} key={3}>
                   <Animated.View
                     style={{
                       transform: [
@@ -220,7 +250,7 @@ export default class Salsa extends Component {
                       borderRadius: 24
                   }}
                   >
-                  
+
                   </Animated.View>
                </TouchableOpacity>
                <Text style={styles.footingPositionLone}>Right Back</Text>

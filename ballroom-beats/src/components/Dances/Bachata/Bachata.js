@@ -31,8 +31,20 @@ export default class Bachata extends Component {
       counter: 0
     };
 
+    pulse1;
+    pulse2;
+    pulse3;
+    pulse4;
+    pulse5;
+    pulse6;
+    pulse7;
+    pulse8;
+
+    listeners = [this.pulse1, this.pulse2, this.pulse3, this.pulse4, this.pulse5, this.pulse6, this.pulse7, this.pulse8]
+
     componentDidMount() {
       this.props.start(this.generateTiming())
+      this.generateListeners()
       this.props.stopMusic(this.getSongLength())
     };
 
@@ -42,6 +54,7 @@ export default class Bachata extends Component {
 
     componentWillUnmount() {
       this.endGame(this.state.counter, this.getExpectedValue())
+      this.removeListeners()
     };
 
     getExpectedValue = () => {
@@ -64,6 +77,17 @@ export default class Bachata extends Component {
         60000/this.props.song.tempo
       )
     };
+
+    generateListeners = () => {
+      return this.state.pulses.map((pulse, i) => {
+        pulse.addListener((pulse) => this.listeners[i]= pulse.value)
+      });
+    }
+    removeListeners = () => {
+        return this.state.pulses.map(pulse => {
+          pulse.removeAllListeners()
+        });
+    }
 
     generateTiming = () => {
         return [
@@ -148,10 +172,17 @@ export default class Bachata extends Component {
       this.setState({counter: newCount});
     };
 
+    registerCount = (i) => {
+      if (this.listeners[i] > 1) {
+        this.countUp()
+        this.addComment()
+      }
+    }
+
    generateViews = () => {
      return (
        <View style={styles.danceFloor}>
-       <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={6}>
+       <TouchableOpacity onPress={() => {this.registerCount(6)}} key={6}>
            <Animated.View
                style={{
                    transform: [
@@ -169,7 +200,7 @@ export default class Bachata extends Component {
                }}  >
            </Animated.View>
        </TouchableOpacity>
-       <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={7}>
+       <TouchableOpacity onPress={() => {this.registerCount(7)}} key={7}>
            <Animated.View
                style={{
                    transform: [
@@ -189,7 +220,7 @@ export default class Bachata extends Component {
        </TouchableOpacity>
        <View style={styles.middleDots}>
           <View style={styles.splitDots}>
-          <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={1}>
+          <TouchableOpacity onPress={() => {this.registerCount(1)}} key={1}>
               <Animated.View
                   style={{
                       transform: [
@@ -207,7 +238,7 @@ export default class Bachata extends Component {
                   }}  >
               </Animated.View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={0}>
+          <TouchableOpacity onPress={() => {this.registerCount(0)}} key={0}>
               <Animated.View
                   style={{
                       transform: [
@@ -227,7 +258,7 @@ export default class Bachata extends Component {
           </TouchableOpacity>
           </View>
           <View style={styles.splitDots}>
-          <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={4}>
+          <TouchableOpacity onPress={() => {this.registerCount(4)}} key={4}>
               <Animated.View
                   style={{
                       transform: [
@@ -245,7 +276,7 @@ export default class Bachata extends Component {
                   }}  >
               </Animated.View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={5}>
+          <TouchableOpacity onPress={() => {this.registerCount(5)}} key={5}>
               <Animated.View
                   style={{
                       transform: [
@@ -265,7 +296,7 @@ export default class Bachata extends Component {
           </TouchableOpacity>
         </View>
        </View>
-         <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={3}>
+         <TouchableOpacity onPress={() => {this.registerCount(3)}} key={3}>
              <Animated.View
                  style={{
                      transform: [
@@ -283,7 +314,7 @@ export default class Bachata extends Component {
                  }}  >
              </Animated.View>
          </TouchableOpacity>
-         <TouchableOpacity onPress={() => {this.countUp(), this.addComment()}} key={2}>
+         <TouchableOpacity onPress={() => {this.registerCount(2)}} key={2}>
              <Animated.View
                  style={{
                      transform: [
