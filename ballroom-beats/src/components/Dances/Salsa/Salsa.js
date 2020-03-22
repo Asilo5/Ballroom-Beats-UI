@@ -57,7 +57,7 @@ export default class Salsa extends Component {
         return this.state.pulses.map(pulse => {
           return [
             Animated.timing(pulse, {
-              toValue: 3,
+              toValue: 6,
               duration: this.assessPulseDuration(),
               easing: Easing.back(),
             }),
@@ -79,7 +79,7 @@ export default class Salsa extends Component {
    generateViews = () => {
        return (
            <View style={styles.danceFloor}>
-               <TouchableOpacity onPress={() => this.countUp()} key={1}>
+               <TouchableOpacity onPress={() => this.countUp()} key={0}>
                    <Animated.View
                        style={{
                         transform: [
@@ -101,15 +101,15 @@ export default class Salsa extends Component {
                </TouchableOpacity>
                
                <View style={styles.middleSteps}>
-                   <TouchableOpacity onPress={() => this.countUp()} key={4}>
+                   <TouchableOpacity onPress={() => this.countUp()} key={1}>
                       <Animated.View
                         style={{
                           transform: [
                               {
-                                  scaleX: this.state.pulses[2]
+                                  scaleX: this.state.pulses[1]
                               },
                               {
-                                 scaleY: this.state.pulses[2]
+                                 scaleY: this.state.pulses[1]
                              }
                           ],
                           margin: 20,
@@ -127,10 +127,10 @@ export default class Salsa extends Component {
                         style={{
                           transform: [
                               {
-                                  scaleX: this.state.pulses[1]
+                                  scaleX: this.state.pulses[2]
                               },
                               {
-                                 scaleY: this.state.pulses[1]
+                                 scaleY: this.state.pulses[2]
                              }
                           ],
                           margin: 20,
@@ -145,15 +145,15 @@ export default class Salsa extends Component {
                </View>
 
                <View style={styles.middleSteps}>
-                   <TouchableOpacity onPress={() => this.countUp()} key={4}>
+                   <TouchableOpacity onPress={() => this.countUp()} key={5}>
                       <Animated.View
                         style={{
                           transform: [
                               {
-                                  scaleX: this.state.pulses[2]
+                                  scaleX: this.state.pulses[5]
                               },
                               {
-                                 scaleY: this.state.pulses[2]
+                                 scaleY: this.state.pulses[5]
                              }
                           ],
                           margin: 20,
@@ -166,15 +166,15 @@ export default class Salsa extends Component {
                        </Animated.View>
                    </TouchableOpacity>
 
-                   <TouchableOpacity onPress={() => this.countUp()} key={2}>
+                   <TouchableOpacity onPress={() => this.countUp()} key={4}>
                       <Animated.View
                         style={{
                           transform: [
                               {
-                                  scaleX: this.state.pulses[1]
+                                  scaleX: this.state.pulses[4]
                               },
                               {
-                                 scaleY: this.state.pulses[1]
+                                 scaleY: this.state.pulses[4]
                              }
                           ],
                           margin: 20,
