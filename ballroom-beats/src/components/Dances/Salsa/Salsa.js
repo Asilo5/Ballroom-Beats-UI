@@ -233,7 +233,7 @@ const styles = StyleSheet.create({
   danceFloor: {
       display: "flex",
       justifyContent: "space-around",
-      top: 200,
+      top: 100,
       padding: 50,
       left: 10
     },
@@ -252,7 +252,7 @@ const styles = StyleSheet.create({
 
     loneDot: {
       width: '5%',
-      left: '40%',
+      left: '35%',
       padding: 20
     }
 
