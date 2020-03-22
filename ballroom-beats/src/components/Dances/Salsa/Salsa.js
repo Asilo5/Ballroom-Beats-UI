@@ -4,8 +4,9 @@ import {
     Animated,
     Easing,
     TouchableOpacity,
-    StyleSheet
-} from 'react-native';
+    StyleSheet,
+    Text
+  } from 'react-native';
 
 export default class Salsa extends Component {
   
@@ -81,6 +82,7 @@ export default class Salsa extends Component {
    generateViews = () => {
        return (
            <View style={styles.danceFloor}>
+               <Text style={styles.footingPositionLone}>Left Front</Text>
                <TouchableOpacity style={styles.loneDot} onPress={() => this.countUp()} key={0}>
                    <Animated.View
                        style={{
@@ -120,8 +122,9 @@ export default class Salsa extends Component {
                           borderRadius: 24
                       }}
                       >
-                       
+
                        </Animated.View>
+                         <Text style={styles.footingPosition}>Right</Text>
                    </TouchableOpacity>
 
                    <TouchableOpacity onPress={() => this.countUp()} key={2}>
@@ -141,8 +144,9 @@ export default class Salsa extends Component {
                           borderRadius: 24
                       }}
                       >
-                       
+
                        </Animated.View>
+                        <Text style={styles.footingPosition}>Left</Text>
                    </TouchableOpacity>
                </View>
 
@@ -164,8 +168,9 @@ export default class Salsa extends Component {
                           borderRadius: 24
                       }}
                       >
-                       
+
                        </Animated.View>
+                         <Text style={styles.footingPosition}>Right</Text>
                    </TouchableOpacity>
 
                    <TouchableOpacity onPress={() => this.countUp()} key={4}>
@@ -185,8 +190,9 @@ export default class Salsa extends Component {
                           borderRadius: 24
                       }}
                       >
-                       
+
                        </Animated.View>
+                         <Text style={styles.footingPosition}>Left</Text>
                    </TouchableOpacity>
                </View>
 
@@ -207,9 +213,10 @@ export default class Salsa extends Component {
                       borderRadius: 24
                   }}
                   >
-                       
+                  
                   </Animated.View>
                </TouchableOpacity>
+               <Text style={styles.footingPositionLone}>Right Back</Text>
            </View>
        )
    }
@@ -254,6 +261,20 @@ const styles = StyleSheet.create({
       width: '5%',
       left: '35%',
       padding: 20
-    }
+    },
+
+    footingPosition: {
+      color: 'white',
+      fontSize: 20,
+      left: 24
+    },
+
+    footingPositionLone: {
+      color: 'white',
+      fontSize: 20,
+      left: 200,
+      marginTop: -25,
+      marginBottom: -25
+    },
 
 });
