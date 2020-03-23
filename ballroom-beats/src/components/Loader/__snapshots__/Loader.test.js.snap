@@ -30,25 +30,6 @@ exports[`Loader should match snapshot 1`] = `
   >
     GET READY! 
   </Text>
-  <Text
-    style={
-      Object {
-        "color": "white",
-        "fontSize": 35,
-        "fontWeight": "bold",
-        "margin": 10,
-        "textAlign": "center",
-        "textShadowColor": "#000",
-        "textShadowOffset": Object {
-          "height": 2,
-          "width": 2,
-        },
-        "textShadowRadius": 2,
-      }
-    }
-  >
-    Make sure your screen is oriented correctly...
-  </Text>
   <View>
     <View
       style={

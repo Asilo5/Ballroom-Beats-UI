@@ -79,7 +79,10 @@ exports[`Salsa should match snapshot 1`] = `
             "display": "flex",
             "flexDirection": "row",
             "justifyContent": "space-around",
-            "padding": 20,
+            "paddingBottom": 3,
+            "paddingLeft": 20,
+            "paddingRight": 20,
+            "paddingTop": 3,
           }
         }
       >
@@ -184,7 +187,10 @@ exports[`Salsa should match snapshot 1`] = `
             "display": "flex",
             "flexDirection": "row",
             "justifyContent": "space-around",
-            "padding": 20,
+            "paddingBottom": 3,
+            "paddingLeft": 20,
+            "paddingRight": 20,
+            "paddingTop": 3,
           }
         }
       >
