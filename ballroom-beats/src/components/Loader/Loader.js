@@ -19,11 +19,31 @@ class Loader extends Component {
     this.props.navigation.navigate('Game', {song: this.props.navigation.getParam('song', ''), dance: this.props.navigation.getParam('dance', '')});
   };
 
+  chooseMessage = () => {
+    if (this.props.navigation.getParam('dance', '') === "Bachata") {
+      return (
+        <Text style={styles.countDown}>Your screen should be in LANDSCAPE mode!</Text>
+      )
+    }
+
+    if (this.props.navigation.getParam('dance', '') === "Waltz") {
+      return (
+        <Text style={styles.countDown}>Your screen should be in PORTRAIT mode!</Text>
+      )
+    }
+
+    if (this.props.navigation.getParam('dance', '') === "Salsa") {
+      return (
+        <Text style={styles.countDown}>Your screen should be in PORTRAIT mode!</Text>
+      )
+    }
+  }
+
    render() {
       return (
           <View style={styles.container}>
             <Text style={styles.countDown}>GET READY! </Text>
-            <Text style={styles.countDown}>Make sure your screen is oriented correctly...</Text>
+            {this.chooseMessage()}
                 <CountDown
                     until={5}
                     size={35}

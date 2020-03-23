@@ -19,6 +19,7 @@ exports[`Waltz should match snapshot 1`] = `
           "display": "flex",
           "flexDirection": "column",
           "height": "60%",
+          "top": 30,
           "width": 400,
         }
       }

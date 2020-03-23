@@ -32,9 +32,9 @@ class DanceType extends Component {
                     onValueChange={(itemValue, itemIndex) =>
                         this.setState({selectedDance: itemValue})} >
                     <Picker.Item label="-- Pick a Dance --" value="" />
-                    <Picker.Item label="Waltz (Portrait)" value="Waltz" />
-                    <Picker.Item label="Salsa (Portrait)" value="Salsa" />
-                    <Picker.Item label="Bachata (Landscape)" value="Bachata" />
+                    <Picker.Item label="Waltz (Novice)" value="Waltz" />
+                    <Picker.Item label="Salsa (Medial)" value="Salsa" />
+                    <Picker.Item label="Bachata (Pro)" value="Bachata" />
                 </Picker>
                 <Icon.Button
                     style={[styles.button, { backgroundColor: this.state.selectedDance ? '#A9C344' : '#3E3E3E'}]}
