@@ -71,7 +71,7 @@ export default class Salsa extends Component {
       assessPulseDuration = () => {
         return (
           // 49500/this.props.song.tempo
-          60000/this.props.song.tempo
+          30000/this.props.song.tempo
         )
       };
 
@@ -86,20 +86,78 @@ export default class Salsa extends Component {
           });
       }
 
+      // generateTiming = () => {
+      //   return this.state.pulses.map(pulse => {
+      //     return [
+      //       Animated.timing(pulse, {
+      //         toValue: 6,
+      //         duration: (this.assessPulseDuration() * 1/5),
+      //         easing: Easing.back(),
+      //       }),
+      //       Animated.timing(pulse, {
+      //         toValue: 1,
+      //         duration: (this.assessPulseDuration() * 4/5),
+      //       })
+      //     ]
+      //   }).flat();
+      // };
       generateTiming = () => {
-        return this.state.pulses.map(pulse => {
           return [
-            Animated.timing(pulse, {
-              toValue: 6,
-              duration: (this.assessPulseDuration() * 1/5),
-              easing: Easing.back(),
-            }),
-            Animated.timing(pulse, {
-              toValue: 1,
-              duration: (this.assessPulseDuration() * 4/5),
-            })
+             Animated.timing(this.state.pulses[0], {
+                 toValue: 3,
+                 duration: (this.assessPulseDuration() * 1/5),
+                 easing: Easing.elastic(1),
+               }),
+               Animated.timing(this.state.pulses[0], {
+                 toValue: 1,
+                 duration: (this.assessPulseDuration() * 4/5),
+             }),
+             Animated.timing(this.state.pulses[1], {
+                 toValue: 3,
+                 duration: (this.assessPulseDuration() * 1/5),
+                 easing: Easing.elastic(1),
+               }),
+               Animated.timing(this.state.pulses[1], {
+                 toValue: 1,
+                 duration: (this.assessPulseDuration() * 4/5),
+             }),
+             Animated.timing(this.state.pulses[2], {
+                 toValue: 3,
+                 duration: (this.assessPulseDuration() * 2/5),
+                 easing: Easing.elastic(1),
+               }),
+               Animated.timing(this.state.pulses[2], {
+                 toValue: 1,
+                 duration: (this.assessPulseDuration() * 8/5),
+             }),
+             Animated.timing(this.state.pulses[3], {
+                 toValue: 4,
+                 duration: (this.assessPulseDuration() * 1/5),
+                 easing: Easing.elastic(1),
+               }),
+               Animated.timing(this.state.pulses[3], {
+                 toValue: 1,
+                 duration: (this.assessPulseDuration() * 4/5),
+             }),
+             Animated.timing(this.state.pulses[4], {
+                 toValue: 3,
+                 duration: (this.assessPulseDuration() * 1/5),
+                 easing: Easing.elastic(1),
+               }),
+               Animated.timing(this.state.pulses[4], {
+                 toValue: 1,
+                 duration: (this.assessPulseDuration() * 4/5),
+             }),
+             Animated.timing(this.state.pulses[5], {
+                 toValue: 3,
+                 duration: (this.assessPulseDuration() * 2/5),
+                 easing: Easing.elastic(1),
+               }),
+               Animated.timing(this.state.pulses[5], {
+                 toValue: 1,
+                 duration: (this.assessPulseDuration() * 8/5),
+             })
           ]
-        }).flat();
       };
 
 
@@ -293,8 +351,18 @@ const styles = StyleSheet.create({
       display: "flex",
       flexDirection: "row",
       justifyContent: "space-around",
-      padding: 20
+      paddingLeft: 20,
+      paddingRight: 20,
+      paddingTop: 3,
+      paddingBottom: 3
     },
+
+    // middleSteps: {
+    //   display: "flex",
+    //   flexDirection: "row",
+    //   justifyContent: "space-around",
+    //   padding: 20
+    // },
 
     stepsContainer: {
       marginBottom: 60,
